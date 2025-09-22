@@ -34,7 +34,7 @@ const HeroSection = () => {
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 bg-accent-100 rounded-full">
                 <span className="text-sm font-semibold text-accent-700">
-                  🇰🇪 Nairobi's Premier Print Shop
+                  🇰🇪 Nairobi's Premier Print Shop | Quality Printing
                 </span>
               </div>
               
@@ -45,7 +45,7 @@ const HeroSection = () => {
               </h1>
               
               <p className="text-lg sm:text-xl text-text-secondary leading-relaxed max-w-2xl">
-                From large format banners to custom merchandise, we deliver high-quality printing services 
+                As a leading print shop in Nairobi, we deliver high-quality printing services 
                 with cutting-edge technology. Trusted by businesses across Nairobi for over a decade.
               </p>
             </div>

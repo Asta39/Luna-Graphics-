@@ -192,9 +192,15 @@ const Footer = () => {
                 Terms of Service
               </button>
               <div className="flex items-center space-x-2">
-                <span>Made with</span>
-                <Icon name="Heart" size={14} color="var(--color-error)" className="fill-current" />
-                <span>in Kenya</span>
+                <span>Crafted by </span>
+                <a 
+                  href="https://evoqcreative.co.ke" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-600 transition-colors duration-200"
+                >
+                  EVOQ TECH
+                </a>
               </div>
             </div>
           </div>

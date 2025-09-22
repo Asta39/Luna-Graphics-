@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 const Homepage = () => {
    const brandName = "Luna Graphics";
-  const tagline = "Professional large format printing Kenya, UV printing, CNC cutting, laser cutting, political campaign materials, election printing 2027";
+  const tagline = "Premier Print Shop in Nairobi | Quality Printing Services | Large Format, UV Printing, CNC Cutting, Laser Cutting, Political Campaign Materials, Election Printing 2027";
   const pageUrl = "https://lunagraphics.co.ke"; // Replace with your actual domain
   const imageUrl = "https://lunagraphics.co.ke/social-sharing-image.jpg"; // IMPORTANT: Create and upload this image
   const twitterHandle = "@LunaGraphicsKE"; // Replace with your actual Twitter handle
@@ -35,10 +35,10 @@ const Homepage = () => {
   <title>{`${brandName} | ${tagline}`}</title>
   
   {/* The Description of the page (the ~160 character snippet in search results) */}
-  <meta name="description" content="Your trusted partner for professional printing in Nairobi. We offer high-quality UV printing, large format banners, CNC cutting, custom t-shirts, and corporate branding. Get a free quote today!" />
+  <meta name="description" content="Luna Graphics is a premier print shop in Nairobi, offering quality printing services including high-quality UV printing, large format banners, CNC cutting, custom t-shirts, and corporate branding. Get a free quote today!" />
   
   {/* Keywords - Yours were great, I've kept them */}
-  <meta name="keywords" content="printing services Nairobi, " />
+  <meta name="keywords" content="printing services Nairobi, print shops in Nairobi, quality print shop, premium print shops, large format printing, UV printing, CNC cutting, laser cutting, political campaign materials, election printing 2027" />
   
   {/* The "preferred" version of a page to avoid duplicate content issues */}
   <link rel="canonical" href={pageUrl} />
@@ -58,7 +58,7 @@ const Homepage = () => {
   <meta property="og:title" content={`${brandName} | ${tagline}`} />
 
   {/* A compelling, human-readable description for social media */}
-  <meta property="og:description" content="From eye-catching campaign materials to professional corporate branding, Luna Graphics delivers top-tier printing solutions in Nairobi. See our work and get a quote!" />
+  <meta property="og:description" content="Luna Graphics: A premier and quality print shop in Nairobi. From eye-catching campaign materials to professional corporate branding, we deliver top-tier printing solutions. See our work and get a quote!" />
   
   {/* The type of content. "website" is correct for a homepage. */}
   <meta property="og:type" content="website" />
@@ -92,7 +92,7 @@ const Homepage = () => {
   <meta name="twitter:title" content={`${brandName} | ${tagline}`} />
   
   {/* Description for Twitter (can be the same as OG) */}
-  <meta name="twitter:description" content="From eye-catching campaign materials to professional corporate branding, Luna Graphics delivers top-tier printing solutions in Nairobi. See our work and get a quote!" />
+  <meta name="twitter:description" content="Luna Graphics: A premier and quality print shop in Nairobi. From eye-catching campaign materials to professional corporate branding, we deliver top-tier printing solutions. See our work and get a quote!" />
 
   {/* !! CRITICAL !! Image for Twitter (can be the same as OG) */}
   <meta name="twitter:image" content={imageUrl} />
