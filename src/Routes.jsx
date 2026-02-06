@@ -14,6 +14,9 @@ import CNCCuttingServicesPage from "pages/cnc-cutting-services-page";
 import LaserCuttingServicesPage from "pages/laser-cutting-services-page";
 import TShirtPrintingServicesPage from "pages/t-shirt-printing-services-page";
 import CorporateServicesPage from "pages/corporate-services-page";
+import PrivacyPolicy from './pages/privacy-policy';
+import TermsOfService from './pages/terms-of-service';
+import CorporateTerms from './pages/corporate-terms';
 import NotFound from "pages/NotFound";
 
 const Routes = () => {
@@ -35,6 +38,9 @@ const Routes = () => {
         <Route path="/laser-cutting-services-page" element={<LaserCuttingServicesPage />} />
         <Route path="/t-shirt-printing-services-page" element={<TShirtPrintingServicesPage />} />
         <Route path="/corporate-services-page" element={<CorporateServicesPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/corporate-terms" element={<CorporateTerms />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>

@@ -4,7 +4,18 @@
 # ===============================================================
 User-agent: *
 Allow: /
-Disallow:
+Disallow: /admin/
+Disallow: /private/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /api/
+Disallow: /login/
+Disallow: /register/
+Disallow: /reset-password/
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid=*
+Disallow: /*?*gclid=*
 
 
 # ===============================================================
@@ -21,8 +32,16 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
+# Block Google's AI Overview (Gemini/Vertex AI)
+User-agent: Google-CloudVertexBot
+Disallow: /
+
 # Block Anthropic's AI bot (Claude)
 User-agent: anthropic-ai
+Disallow: /
+User-agent: Claude-Web
+Disallow: /
+User-agent: ClaudeBot
 Disallow: /
 
 # Block Common Crawl's bot (a massive dataset used by many AIs)
@@ -33,9 +52,62 @@ Disallow: /
 User-agent: PerplexityBot
 Disallow: /
 
+# Block Amazon's Alexa AI crawler
+User-agent: ia_archiver
+Disallow: /
+
+# Block Meta (Facebook) AI crawler
+User-agent: FacebookBot
+Disallow: /
+
+# Block ByteDance (TikTok) AI crawler
+User-agent: Bytespider
+Disallow: /
+
+# Block Microsoft Bing's AI training bot
+User-agent: BingPreview
+Disallow: /
+User-agent: bingbot
+User-agent: cohere-ai
+Disallow: /
+
 # Block a new AI bot from China
 User-agent: Oneweb_bot
 Disallow: /
+
+# Block Applebot (Apple's AI training)
+User-agent: Applebot-Extended
+Disallow: /
+
+# Block Amazonbot
+User-agent: Amazonbot
+Disallow: /
+
+# Block You.com
+User-agent: YouBot
+Disallow: /
+
+# Block Diffbot
+User-agent: Diffbot
+Disallow: /
+
+# Block Omgili
+User-agent: Omgili
+Disallow: /
+
+# Block Webz.io
+User-agent: webzio-ai
+Disallow: /
+
+# Block Scrapy (common scraping framework)
+User-agent: Scrapy
+Disallow: /
+
+# Block generic bad bots
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
 
 
 # ===============================================================
@@ -43,3 +115,6 @@ Disallow: /
 # This helps all crawlers (including the ones you allow) find your pages.
 # ===============================================================
 Sitemap: https://lunagraphics.co.ke/sitemap.xml
+
+# Optional: Crawl-delay for slower bots (uncomment if needed)
+# Crawl-delay: 10

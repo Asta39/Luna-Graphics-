@@ -32,10 +32,98 @@ const UVPrintingServicesPage = () => {
 
   const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
   const pageDescription = pageData.description;
+  // ===== ENHANCED SEO: Fixed spacing in URL =====
   const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
   const imageUrl = pageData.heroImage;
   const brandName = "Luna Graphics";
-  const twitterHandle = "@YourTwitterHandle";
+  const twitterHandle = "@LunaGraphicsKE";
+
+    // Helper function to safely extract price
+  const safePrice = (price) => {
+    if (typeof price === 'number') return price.toString();
+    if (typeof price === 'string') return price.replace(/[^0-9.]/g, '');
+    return '';
+  };
+
+  // ===== ENHANCED SEO: Structured Data =====
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": pageData.title,
+    "name": pageData.title,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": brandName,
+      "image": `https://lunagraphics.co.ke${logoImage}`,
+      "telephone": "+254-791-159-618",
+      "email": "info@lunagraphics.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "url": "https://lunagraphics.co.ke"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Nairobi",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Kenya"
+      }
+    },
+    "description": pageDescription,
+    "offers": Array.isArray(pageData.pricing) ? pageData.pricing.map(pkg => ({
+      "@type": "Offer",
+      "name": pkg.name || 'Package',
+      "description": pkg.description || '',
+      "price": safePrice(pkg.price),
+      "priceCurrency": "KES",
+      "availability": "https://schema.org/InStock",
+      "url": pageUrl
+    })) : []
+  };
+
+  
+  // ===== ENHANCED SEO: Breadcrumb Schema =====
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lunagraphics.co.ke/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://lunagraphics.co.ke/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": pageData.title,
+        "item": pageUrl
+      }
+    ]
+  };
+
+  // ===== ENHANCED SEO: FAQ Schema (if FAQs exist in data) =====
+  const faqSchema = pageData.faqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": pageData.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
 
   const breadcrumbItems = [ { label: "Home", path: "/" }, { label: "Services", path: "/services" }, { label: pageData.title, path: null } ];
 
@@ -50,6 +138,7 @@ const UVPrintingServicesPage = () => {
     let message = `*New Quote Request*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Service Requested:* ${currentQuote.service}`;
     if (currentQuote.package) message += `\n*Package:* ${currentQuote.package}`;
     message += `\n\nPlease provide a quote. Thank you!`;
+    // ===== ENHANCED SEO: Fixed spacing in WhatsApp URL =====
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     setTimeout(() => { setIsModalOpen(false); }, 500);
@@ -58,6 +147,7 @@ const UVPrintingServicesPage = () => {
   const handleWhatsAppChat = () => {
     const phoneNumber = '254791159618';
     const message = `Hello! I'm interested in ${pageData.title} services.`;
+    // ===== ENHANCED SEO: Fixed spacing in WhatsApp URL =====
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -68,16 +158,58 @@ const UVPrintingServicesPage = () => {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href={pageUrl} />
+        
+        {/* ===== ENHANCED SEO: Robots and Language ===== */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <html lang="en" />
+        
+        {/* ===== ENHANCED SEO: Keywords Meta ===== */}
+        <meta name="keywords" content="UV printing Nairobi, UV flatbed printing Kenya, direct to substrate printing, rigid material printing Nairobi, acrylic UV printing, glass printing Kenya, metal printing, wood UV printing, promotional items printing, Luna Graphics UV services" />
+        
+        {/* Open Graph Tags */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:site_name" content={brandName} />
+        <meta property="og:type" content="business.business" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:locale" content="en_KE" />
+        <meta property="business:contact_data:locality" content="Nairobi" />
+        <meta property="business:contact_data:country" content="Kenya" />
+        <meta property="business:contact_data:phone_number" content="+254791159618" />
+        
+        {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={pageUrl} />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:site" content={twitterHandle} />
+        <meta name="twitter:creator" content={twitterHandle} />
+        <meta name="twitter:image:alt" content={`${pageData.title} services in Nairobi`} />
+        
+        {/* ===== ENHANCED SEO: Geo Tags for Local SEO ===== */}
+        <meta name="geo.region" content="KE-30" />
+        <meta name="geo.placename" content="Nairobi" />
+        <meta name="geo.position" content="-1.2921;36.8219" />
+        <meta name="ICBM" content="-1.2921, 36.8219" />
+        
+        {/* ===== ENHANCED SEO: Author and Copyright ===== */}
+        <meta name="author" content={brandName} />
+        <meta name="copyright" content={`© ${new Date().getFullYear()} ${brandName}. All rights reserved.`} />
+
+        {/* ===== ENHANCED SEO: Structured Data (JSON-LD) ===== */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
       <Header />
       <main className="pt-16">
@@ -100,7 +232,8 @@ const UVPrintingServicesPage = () => {
                 <img 
                   src={logoImage} 
                   alt="Luna Graphics Logo" 
-                  className="w-12 h-12 rounded-lg object-cover" // Added size and rounded corners
+                  className="w-12 h-12 rounded-lg object-cover"
+                  loading="lazy"
                 />
                 <div>
                   <span className="text-xl font-heading font-bold">Luna Graphics</span>
@@ -127,7 +260,7 @@ const UVPrintingServicesPage = () => {
             <div>
               <h3 className="font-heading font-semibold mb-4">Contact Info</h3>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li>‪+254 791 159 618‬ </li>
+                <li>+254 791 159 618</li>
                 <li>info@lunagraphics.co.ke</li>
                 <li>Nairobi, Kenya</li>
                 <li>Mon-Fri: 8AM-6PM</li>

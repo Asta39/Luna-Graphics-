@@ -46,7 +46,7 @@ const CorporateServices = () => {
   const corporatePackages = [
     {
       name: "Startup Package",
-      price: "100000",
+      price: "200000",
       description: "Perfect for new political parties and small campaigns",
       features: [
         "500 A4 flyers",
@@ -59,7 +59,7 @@ const CorporateServices = () => {
     },
     {
       name: "Campaign Package",
-      price: "300000",
+      price: "600000",
       description: "Comprehensive solution for active political campaigns",
       features: [
         "2,000 A4 flyers",
@@ -73,7 +73,7 @@ const CorporateServices = () => {
     },
     {
       name: "Presidential Package",
-      price: "1000000",
+      price: "2000000",
       description: "Full-scale printing solution for major political campaigns",
       features: [
         "5,000+ promotional materials",

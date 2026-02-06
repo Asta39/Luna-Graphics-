@@ -535,7 +535,11 @@ export const services =
       image: relatedCncCuttingImg,
       startingPrice: 800,
       turnaround: "3-5 days",
-      features: ["Precision Cutting", "Multiple Materials", "Custom Shapes"]
+      features: ["Precision Cutting", "Multiple Materials", "Custom Shapes"],
+       faqs: [
+      { question: "What materials can you cut?", answer: "We cut acrylic, wood, MDF, aluminum..." }
+    ]
+
     },
     {
       title: "Large Format Printing",

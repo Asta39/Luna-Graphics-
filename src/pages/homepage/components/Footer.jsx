@@ -19,6 +19,14 @@ const Footer = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  // ===== COOKIE SETTINGS HANDLER =====
+  const openCookieSettings = () => {
+    // Clear the consent to reopen the banner
+    localStorage.removeItem('lunaCookieConsent');
+    // Reload page to show banner again
+    window.location.reload();
+  };
+
   const handleSocialClick = (platform) => {
     const urls = {
       instagram: 'https://www.instagram.com/lunagraphics_ke?igsh=MWY4NDZreXczM25meg==',
@@ -30,12 +38,12 @@ const Footer = () => {
   };
 
   const quickLinks = [
-    { label: 'Home', path: '/homepage' },
-    { label: 'Services', path: '/service-detail-page' },
-    { label: 'Corporate Solutions', path: '/corporate-services-page' },
-    { label: 'Gallery', path: '/gallery-page' },
-    { label: 'Our Team', path: '/team-page' },
-    { label: 'Contact', path: '/contact-page' }
+    { label: 'Home', path: '/' },
+    { label: 'Services', path: '/services' },
+    { label: 'Corporate Solutions', path: '/corporate-services' },
+    { label: 'Gallery', path: '/gallery' },
+    { label: 'Our Team', path: '/team' },
+    { label: 'Contact', path: '/contact' }
   ];
 
   const services = [
@@ -52,7 +60,6 @@ const Footer = () => {
        <img 
         src={logoImage} 
         alt="Luna Graphics Logo" 
-        // We can use the same consistent styling as the header
         className="w-12 h-12 rounded-lg object-cover" 
       />
       <div className="flex flex-col">
@@ -136,7 +143,7 @@ const Footer = () => {
               {services.map((service) => (
                 <li key={service}>
                   <button
-                    onClick={() => handleNavigation('/service-detail-page')}
+                    onClick={() => handleNavigation('/services')}
                     className="text-surface-300 hover:text-accent transition-colors duration-200 text-sm"
                   >
                     {service}
@@ -184,24 +191,50 @@ const Footer = () => {
               © {currentYear} Luna Graphics. All rights reserved.
             </div>
             
-            <div className="flex items-center space-x-6 text-sm text-surface-300">
-              <button className="hover:text-accent transition-colors duration-200">
+            {/* ===== LEGAL LINKS WITH COOKIE SETTINGS ===== */}
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-surface-300">
+              <button 
+                onClick={() => navigate('/privacy-policy')} 
+                className="hover:text-accent transition-colors"
+              >
                 Privacy Policy
               </button>
-              <button className="hover:text-accent transition-colors duration-200">
+              <span>|</span>
+              <button 
+                onClick={() => navigate('/terms-of-service')} 
+                className="hover:text-accent transition-colors"
+              >
                 Terms of Service
               </button>
-              <div className="flex items-center space-x-2">
-                <span>Crafted by </span>
-                <a 
-                  href="https://evoqcreative.co.ke" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-accent hover:text-accent-600 transition-colors duration-200"
-                >
-                  EVOQ TECH
-                </a>
-              </div>
+              <span>|</span>
+              <button 
+                onClick={() => navigate('/corporate-terms')} 
+                className="hover:text-accent transition-colors"
+              >
+                Corporate Terms
+              </button>
+              <span>|</span>
+              {/* ===== COOKIE SETTINGS BUTTON ===== */}
+              <button 
+                onClick={openCookieSettings}
+                className="hover:text-accent transition-colors flex items-center gap-1"
+              >
+                <Icon name="Shield" size={14} />
+                Cookie Settings
+              </button>
+            </div>
+
+            {/* Credit */}
+            <div className="flex items-center space-x-2 text-sm text-surface-300">
+              <span>Crafted by</span>
+              <a 
+                href="https://evoqcreative.co.ke" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent-600 transition-colors duration-200"
+              >
+                EVOQ TECH
+              </a>
             </div>
           </div>
         </div>

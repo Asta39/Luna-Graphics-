@@ -39,10 +39,65 @@ const CNCCuttingServicesPage = () => {
   // 5. Define SEO variables using the single `pageData` object.
   const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
   const pageDescription = pageData.description; // Using the description from your data
-  const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
+  const pageUrl = `https://lunagraphics.co.ke ${pageData.path}`;
   const imageUrl = pageData.heroImage;
   const brandName = "Luna Graphics";
   const twitterHandle = "@YourTwitterHandle";
+
+  // ===== ENHANCED SEO: Structured Data for LocalBusiness + Service =====
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": pageData.title,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": brandName,
+      "image": `https://lunagraphics.co.ke${logoImage}`,
+      "telephone": "+254-791-159-618",
+      "email": "info@lunagraphics.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
+      "url": "https://lunagraphics.co.ke"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Nairobi",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Kenya"
+      }
+    },
+    "description": pageDescription
+  };
+
+  // ===== ENHANCED SEO: Breadcrumb Schema =====
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lunagraphics.co.ke/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://lunagraphics.co.ke/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": pageData.title,
+        "item": pageUrl.replace(' ', '') // Remove space from URL
+      }
+    ]
+  };
 
   const breadcrumbItems = [
     { label: "Home", path: "/" },
@@ -63,7 +118,7 @@ const CNCCuttingServicesPage = () => {
   const handleWhatsAppChat = () => {
     const phoneNumber = '254791159618';
     const message = `Hello! I'm interested in ${pageData.title} services. Could you please provide more information?`;
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/ ${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
   
@@ -74,17 +129,52 @@ const CNCCuttingServicesPage = () => {
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
+        
+        {/* ===== ENHANCED SEO: Canonical URL (fixed spacing) ===== */}
+        <link rel="canonical" href={pageUrl.replace(' ', '')} />
+        
+        {/* ===== ENHANCED SEO: Robots meta for rich snippets ===== */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        
+        {/* ===== ENHANCED SEO: Language and Locale ===== */}
+        <html lang="en" />
+        <meta property="og:locale" content="en_KE" />
+        
+        {/* Open Graph Tags */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:site_name" content={brandName} />
+        <meta property="og:type" content="business.business" />
+        <meta property="og:url" content={pageUrl.replace(' ', '')} />
+        <meta property="business:contact_data:locality" content="Nairobi" />
+        <meta property="business:contact_data:country" content="Kenya" />
+        <meta property="business:contact_data:phone_number" content="+254791159618" />
+        
+        {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={pageUrl} />
+        <meta name="twitter:url" content={pageUrl.replace(' ', '')} />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={imageUrl} />
         <meta name="twitter:site" content={twitterHandle} />
+        
+        {/* ===== ENHANCED SEO: Geo Tags for Local SEO ===== */}
+        <meta name="geo.region" content="KE-30" />
+        <meta name="geo.placename" content="Nairobi" />
+        <meta name="geo.position" content="-1.2921;36.8219" />
+        <meta name="ICBM" content="-1.2921, 36.8219" />
+        
+        {/* ===== ENHANCED SEO: Keywords meta ===== */}
+        <meta name="keywords" content={`${pageData.title}, CNC cutting Nairobi, laser cutting Kenya, acrylic cutting, wood engraving, precision cutting, signage making Nairobi, custom fabrication Kenya`} />
+        
+        {/* ===== ENHANCED SEO: Structured Data (JSON-LD) ===== */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       </Helmet>
       
       <Header />
