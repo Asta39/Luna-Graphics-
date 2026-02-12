@@ -26,78 +26,78 @@ Disallow: /*?*gclid=*
 
 # Block OpenAI's GPTBot
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 # Block Google's AI training bot (this is separate from the main Googlebot)
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 # Block Google's AI Overview (Gemini/Vertex AI)
 User-agent: Google-CloudVertexBot
-Disallow: /
+Allow: /
 
 # Block Anthropic's AI bot (Claude)
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
 User-agent: Claude-Web
-Disallow: /
+Allow: /
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 
 # Block Common Crawl's bot (a massive dataset used by many AIs)
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 # Block Perplexity AI's bot
 User-agent: PerplexityBot
-Disallow: /
+Allow: /
 
 # Block Amazon's Alexa AI crawler
 User-agent: ia_archiver
-Disallow: /
+Allow: /
 
 # Block Meta (Facebook) AI crawler
 User-agent: FacebookBot
-Disallow: /
+Allow: /
 
 # Block ByteDance (TikTok) AI crawler
 User-agent: Bytespider
-Disallow: /
+Allow: /
 
 # Block Microsoft Bing's AI training bot
 User-agent: BingPreview
-Disallow: /
+Allow: /
 User-agent: bingbot
 User-agent: cohere-ai
-Disallow: /
+Allow: /
 
 # Block a new AI bot from China
 User-agent: Oneweb_bot
-Disallow: /
+Allow: /
 
 # Block Applebot (Apple's AI training)
 User-agent: Applebot-Extended
-Disallow: /
+Allow: /
 
 # Block Amazonbot
 User-agent: Amazonbot
-Disallow: /
+Allow: /
 
 # Block You.com
 User-agent: YouBot
-Disallow: /
+Allow: /
 
 # Block Diffbot
 User-agent: Diffbot
-Disallow: /
+Allow: /
 
 # Block Omgili
 User-agent: Omgili
-Disallow: /
+Allow: /
 
 # Block Webz.io
 User-agent: webzio-ai
-Disallow: /
+Allow: /
 
 # Block Scrapy (common scraping framework)
 User-agent: Scrapy

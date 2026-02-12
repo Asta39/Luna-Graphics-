@@ -30,7 +30,7 @@
 
   <!-- Main Corporate Page (Very High Priority) -->
   <url>
-    <loc>https://lunagraphics.co.ke/corporate-services</loc>
+    <loc>https://lunagraphics.co.ke/corporate-services-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -38,37 +38,37 @@
 
   <!-- Key Service Pages (High Priority) -->
   <url>
-    <loc>https://lunagraphics.co.ke/services/uv-printing</loc>
+    <loc>https://lunagraphics.co.ke/services/uv-printing-services-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/services/cnc-cutting</loc>
+    <loc>https://lunagraphics.co.ke/services/cnc-cutting-services-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/services/laser-cutting</loc>
+    <loc>https://lunagraphics.co.ke/services/laser-cutting-services-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/services/t-shirt-printing</loc>
+    <loc>https://lunagraphics.co.ke/services/t-shirt-printing-services-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/services/plotting</loc>
+    <loc>https://lunagraphics.co.ke/services/plotting-services-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/services/large-format-printing</loc>
+    <loc>https://lunagraphics.co.ke/services/service-detail-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -76,7 +76,7 @@
 
   <!-- Gallery Page (Important, updated often) -->
   <url>
-    <loc>https://lunagraphics.co.ke/gallery</loc>
+    <loc>https://lunagraphics.co.ke/gallery-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -84,7 +84,7 @@
   
   <!-- Contact Page (Important, but rarely changes) -->
   <url>
-    <loc>https://lunagraphics.co.ke/contact</loc>
+    <loc>https://lunagraphics.co.ke/contact-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
@@ -92,10 +92,17 @@
   
   <!-- Team Page -->
   <url>
-    <loc>https://lunagraphics.co.ke/team</loc>
+    <loc>https://lunagraphics.co.ke/team-page</loc>
     <lastmod>2025-07-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+    <url>
+    <loc>https://lunagraphics.co.ke/homepage</loc>
+    <lastmod>2025-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- REMOVED: Generic Service Detail Page (duplicate content risk) -->
