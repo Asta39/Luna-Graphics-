@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Icon from '../components/AppIcon';
 import Image from '../components/AppImage';
 import BlogCard from '../components/blog/BlogCard';
+import Header from '../components/ui/Header';
 import { getPostBySlug, getRelatedPosts, blogCategories, generateBlogPostSchema } from '../data/blogData';
 
 const BlogPost = () => {
@@ -43,6 +44,7 @@ const BlogPost = () => {
           {JSON.stringify(generateBlogPostSchema(post))}
         </script>
       </Helmet>
+      <Header/>
 
       {/* Breadcrumb */}
       <div className="bg-gray-50 border-b border-gray-200">

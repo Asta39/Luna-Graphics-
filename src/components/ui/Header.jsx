@@ -9,53 +9,103 @@ import logoImage from '../../assets/luna-logo2.png';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
+  const [corporateDropdownOpen, setCorporateDropdownOpen] = useState(false);
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+  const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
 
   // Refs for click-outside detection
   const servicesDropdownRef = useRef(null);
+  const shopDropdownRef = useRef(null);
+  const corporateDropdownRef = useRef(null);
   const resourcesDropdownRef = useRef(null);
+  const careersDropdownRef = useRef(null);
   const mobileMenuButtonRef = useRef(null);
-  const mobileMenuContainerRef = useRef(null); // NEW: Ref for the mobile menu itself
+  const mobileMenuContainerRef = useRef(null);
 
   // Close dropdowns when clicking outside (desktop only)
   useClickOutside([servicesDropdownRef], () => {
-    if (window.innerWidth >= 1024) {
-      setServicesDropdownOpen(false);
-    }
+    if (window.innerWidth >= 1024) setServicesDropdownOpen(false);
   });
   
+  useClickOutside([shopDropdownRef], () => {
+    if (window.innerWidth >= 1024) setShopDropdownOpen(false);
+  });
+
+  useClickOutside([corporateDropdownRef], () => {
+    if (window.innerWidth >= 1024) setCorporateDropdownOpen(false);
+  });
+
   useClickOutside([resourcesDropdownRef], () => {
-    if (window.innerWidth >= 1024) {
-      setResourcesDropdownOpen(false);
-    }
+    if (window.innerWidth >= 1024) setResourcesDropdownOpen(false);
   });
 
-  // FIXED: Close mobile menu when clicking OUTSIDE both the button AND the menu container
+  useClickOutside([careersDropdownRef], () => {
+    if (window.innerWidth >= 1024) setCareersDropdownOpen(false);
+  });
+
+  // Close mobile menu when clicking outside
   useClickOutside([mobileMenuButtonRef, mobileMenuContainerRef], () => {
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
+    if (mobileMenuOpen) setMobileMenuOpen(false);
   });
 
-  // Close other dropdown when opening one
+  // Close all dropdowns
+  const closeAllDropdowns = () => {
+    setServicesDropdownOpen(false);
+    setShopDropdownOpen(false);
+    setCorporateDropdownOpen(false);
+    setResourcesDropdownOpen(false);
+    setCareersDropdownOpen(false);
+  };
+
   const toggleServices = () => {
     setServicesDropdownOpen(prev => !prev);
+    setShopDropdownOpen(false);
+    setCorporateDropdownOpen(false);
     setResourcesDropdownOpen(false);
+    setCareersDropdownOpen(false);
+  };
+
+  const toggleShop = () => {
+    setShopDropdownOpen(prev => !prev);
+    setServicesDropdownOpen(false);
+    setCorporateDropdownOpen(false);
+    setResourcesDropdownOpen(false);
+    setCareersDropdownOpen(false);
+  };
+
+  const toggleCorporate = () => {
+    setCorporateDropdownOpen(prev => !prev);
+    setServicesDropdownOpen(false);
+    setShopDropdownOpen(false);
+    setResourcesDropdownOpen(false);
+    setCareersDropdownOpen(false);
   };
 
   const toggleResources = () => {
     setResourcesDropdownOpen(prev => !prev);
     setServicesDropdownOpen(false);
+    setShopDropdownOpen(false);
+    setCorporateDropdownOpen(false);
+    setCareersDropdownOpen(false);
+  };
+
+  const toggleCareers = () => {
+    setCareersDropdownOpen(prev => !prev);
+    setServicesDropdownOpen(false);
+    setShopDropdownOpen(false);
+    setCorporateDropdownOpen(false);
+    setResourcesDropdownOpen(false);
   };
 
   // Close mobile menu and dropdowns on route change
   useEffect(() => {
     setMobileMenuOpen(false);
-    setServicesDropdownOpen(false);
-    setResourcesDropdownOpen(false);
+    closeAllDropdowns();
   }, [location.pathname]);
 
   // Analytics tracking helper
@@ -65,66 +115,156 @@ const Header = () => {
     }
   }, []);
 
-  const navigationItems = [
-    { label: 'Home', path: '/', icon: 'Home' },
+  // Handle search
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      trackEvent('search', { category: 'Header', label: searchQuery });
+      navigate(`/shop?search=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery('');
+    }
+  };
+
+  // Shop categories
+  const shopCategories = [
     {
-      label: 'Services',
-      path: '/services',
-      icon: 'Settings',
-      hasDropdown: true,
-      dropdownItems: [
-        {
-          label: 'Large Format Printing',
-          path: '/services/large-format',
-          icon: 'Printer',
-          description: 'Banners, posters, and signage'
-        },
-        {
-          label: 'CNC Cutting',
-          path: '/services/cnc-cutting',
-          icon: 'Monitor',
-          description: 'Acrylic Signages, Wood Engraving, Metal Cutting'
-        },
-        {
-          label: 'Laser Cutting',
-          path: '/services/laser-cutting',
-          icon: 'FileText',
-          description: 'Acrylic cutting, Wood engraving, Custom Design'
-        },
-        {
-          label: 'Custom Merchandise',
-          path: '/services/t-shirt-printing',
-          icon: 'ShoppingBag',
-          description: 'T-shirts, mugs, promotional items'
-        },
-        {
-          label: 'Plotting Services',
-          path: '/services/plotting',
-          icon: 'BookOpen',
-          description: 'Posters, Banners, Technical drawings'
-        },
-        {
-          label: 'UV Printing',
-          path: '/services/uv-printing',
-          icon: 'Palette',
-          description: 'Acrylic wall art, Nameplates, and custom prints'
-        }
-      ]
+      label: 'All Products',
+      path: '/shop',
+      icon: 'Grid',
+      description: 'Browse all printing products'
     },
-    { label: 'Corporate Solutions', path: '/corporate-services', icon: 'Building2' },
-    { label: 'Gallery', path: '/gallery', icon: 'Image' },
-    { label: 'Our Team', path: '/team', icon: 'Users' },
-    { label: 'Contact', path: '/contact', icon: 'Phone' }
+    {
+      label: 'Banners & Displays',
+      path: '/shop/category/banners',
+      icon: 'Image',
+      description: 'Roll-up, pull-up, and backdrop banners'
+    },
+    {
+      label: 'Signage',
+      path: '/shop/category/signage',
+      icon: 'Signpost',
+      description: 'Acrylic, metal, and LED signs'
+    },
+    {
+      label: 'Corporate Materials',
+      path: '/shop/category/corporate',
+      icon: 'Briefcase',
+      description: 'Business cards, brochures, stationery'
+    },
+    {
+      label: 'Event Materials',
+      path: '/shop/category/events',
+      icon: 'Calendar',
+      description: 'Backdrops, table covers, programs'
+    },
+    {
+      label: 'Branded Merchandise',
+      path: '/shop/category/merchandise',
+      icon: 'Gift',
+      description: 'Apparel, mugs, pens, bags'
+    },
+    {
+      label: 'Large Format',
+      path: '/shop/category/large-format',
+      icon: 'Maximize',
+      description: 'Posters, billboards, wall graphics'
+    }
+  ];
+
+  // Services dropdown items
+  const servicesItems = [
+    {
+      label: 'Large Format Printing',
+      path: '/services/large-format',
+      icon: 'Printer',
+      description: 'Banners, posters, and signage'
+    },
+    {
+      label: 'CNC Cutting',
+      path: '/services/cnc-cutting',
+      icon: 'Monitor',
+      description: 'Acrylic Signages, Wood Engraving'
+    },
+    {
+      label: 'Laser Cutting',
+      path: '/services/laser-cutting',
+      icon: 'FileText',
+      description: 'Acrylic cutting, Custom Design'
+    },
+    {
+      label: 'Custom Merchandise',
+      path: '/services/t-shirt-printing',
+      icon: 'ShoppingBag',
+      description: 'T-shirts, mugs, promotional items'
+    },
+    {
+      label: 'Plotting Services',
+      path: '/services/plotting',
+      icon: 'BookOpen',
+      description: 'Posters, Technical drawings'
+    },
+    {
+      label: 'UV Printing',
+      path: '/services/uv-printing',
+      icon: 'Palette',
+      description: 'Acrylic wall art, Nameplates'
+    }
+  ];
+
+  // Corporate Branding dropdown items
+  const corporateItems = [
+    {
+      label: 'Corporate Solutions',
+      path: '/corporate-services',
+      icon: 'Building2',
+      description: 'Comprehensive B2B printing solutions'
+    },
+    {
+      label: 'Political Branding',
+      path: 'https://lunapolitics.co.ke',
+      icon: 'Flag',
+      description: 'Campaign materials & election solutions',
+      isExternal: true
+    },
+    {
+      label: 'Events & Exhibitions',
+      path: '/corporate/events-exhibitions',
+      icon: 'Calendar',
+      description: 'Trade shows & event branding'
+    },
+    {
+      label: 'Corporate Branding',
+      path: '/corporate/corporate-branding',
+      icon: 'Briefcase',
+      description: 'Office branding & identity'
+    }
+  ];
+
+  // Careers dropdown items
+  const careersItems = [
+    {
+      label: 'About',
+      path: '/about',
+      icon: 'Info',
+      description: 'Our story and mission'
+    },
+    {
+      label: 'Our Team',
+      path: '/team',
+      icon: 'Users',
+      description: 'Meet the experts'
+    },
+    {
+      label: 'Jobs',
+      path: 'https://lunaaccounts.co.ke',
+      icon: 'Briefcase',
+      description: 'Join our team',
+      isExternal: true
+    }
   ];
 
   // Resources items
   const resourcesItems = [
-    {
-      label: 'Case Studies',
-      path: '/case-studies',
-      icon: 'Briefcase',
-      description: 'See our successful projects'
-    },
     {
       label: 'Blog & Articles',
       path: '/blog',
@@ -153,7 +293,6 @@ const Header = () => {
     };
 
     handleScroll();
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -161,10 +300,7 @@ const Header = () => {
   // Close dropdowns on scroll (desktop only)
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth >= 1024) {
-        setServicesDropdownOpen(false);
-        setResourcesDropdownOpen(false);
-      }
+      if (window.innerWidth >= 1024) closeAllDropdowns();
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -178,29 +314,24 @@ const Header = () => {
     } else {
       document.body.style.overflow = '';
     }
-    
-    return () => {
-      document.body.style.overflow = '';
-    };
+    return () => { document.body.style.overflow = ''; };
   }, [mobileMenuOpen]);
 
-  const handleNavigation = (path) => {
-    trackEvent('navigation', {
-      category: 'Header',
-      label: path
-    });
+  const handleNavigation = (path, isExternal = false) => {
+    trackEvent('navigation', { category: 'Header', label: path });
 
-    navigate(path);
+    if (isExternal) {
+      window.open(path, '_blank');
+    } else {
+      navigate(path);
+    }
+    
     setMobileMenuOpen(false);
-    setServicesDropdownOpen(false);
-    setResourcesDropdownOpen(false);
+    closeAllDropdowns();
   };
 
   const handleWhatsAppClick = () => {
-    trackEvent('contact_click', {
-      category: 'Header',
-      label: 'WhatsApp'
-    });
+    trackEvent('contact_click', { category: 'Header', label: 'WhatsApp' });
 
     const phoneNumber = '254791159618';
     const message = 'Hello! I would like to inquire about your printing services.';
@@ -212,8 +343,20 @@ const Header = () => {
     return location.pathname === path;
   };
 
+  const isShopActive = () => {
+    return location.pathname.includes('/shop');
+  };
+
+  const isCareersActive = () => {
+    return ['/about', '/team'].includes(location.pathname);
+  };
+
+  const isCorporateActive = () => {
+    return location.pathname.includes('/corporate');
+  };
+
   const Logo = () => (
-    <div className="flex items-center space-x-3">
+    <div className="flex items-left space-x-2">
       <img 
         src={logoImage} 
         alt="Luna Graphics Logo" 
@@ -239,103 +382,295 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div 
-              className="flex-shrink-0 cursor-pointer"
+              className="flex-shrink-0 cursor-pointer mr-8 lg:mr-12"
               onClick={() => handleNavigation('/')}
             >
               <Logo />
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6">
-              {navigationItems.map((item) => (
-                <div key={item.label} className="relative">
-                  {item.hasDropdown ? (
-                    <div ref={servicesDropdownRef}>
-                      <button
-                        className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                          location.pathname.includes('/services') 
-                            ? 'text-primary border-b-2 border-primary' 
-                            : 'text-text-secondary hover:text-primary'
-                        }`}
-                        onClick={toggleServices}
-                        onMouseEnter={() => {
-                          if (window.innerWidth >= 1024) {
-                            setServicesDropdownOpen(true);
-                            setResourcesDropdownOpen(false);
-                          }
-                        }}
-                      >
-                        <span>{item.label}</span>
-                        <Icon 
-                          name="ChevronDown" 
-                          size={16} 
-                          className={`transition-transform duration-200 ${
-                            servicesDropdownOpen ? 'rotate-180' : ''
+            <nav className="hidden lg:flex items-center space-x-4">
+              {/* Home */}
+              <button
+                className={`px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                  isActivePath('/')
+                    ? 'text-primary border-b-2 border-primary' 
+                    : 'text-text-secondary hover:text-primary'
+                }`}
+                onClick={() => handleNavigation('/')}
+              >
+                Home
+              </button>
+
+              {/* Shop Dropdown */}
+              <div className="relative" ref={shopDropdownRef}>
+                <button
+                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                    isShopActive()
+                      ? 'text-primary border-b-2 border-primary' 
+                      : 'text-text-secondary hover:text-primary'
+                  }`}
+                  onClick={toggleShop}
+                  onMouseEnter={() => {
+                    if (window.innerWidth >= 1024) {
+                      closeAllDropdowns();
+                      setShopDropdownOpen(true);
+                    }
+                  }}
+                >
+                  <span>Shop</span>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={16} 
+                    className={`transition-transform duration-200 ${
+                      shopDropdownOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {shopDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
+                    style={{ zIndex: 9999 }}
+                    onMouseLeave={() => setShopDropdownOpen(false)}
+                  >
+                    <div className="p-2">
+                      {shopCategories.map((item, index) => (
+                        <button
+                          key={item.label}
+                          className={`flex items-start space-x-3 w-full p-3 rounded-lg transition-all duration-200 text-left group hover:bg-emerald-50 ${
+                            index !== shopCategories.length - 1 ? 'mb-1' : ''
                           }`}
-                        />
-                      </button>
-
-                      {/* Desktop Services Dropdown */}
-                      {servicesDropdownOpen && (
-                        <div 
-                          className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
-                          style={{ zIndex: 9999 }}
-                          onMouseLeave={() => setServicesDropdownOpen(false)}
+                          onClick={() => handleNavigation(item.path)}
                         >
-                          <div className="p-2">
-                            {item.dropdownItems.map((dropdownItem, index) => (
-                              <button
-                                key={dropdownItem.label}
-                                className={`flex items-start space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 text-left ${
-                                  index !== item.dropdownItems.length - 1 ? 'mb-1' : ''
-                                }`}
-                                onClick={() => handleNavigation(dropdownItem.path)}
-                              >
-                                <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
-                                  <Icon name={dropdownItem.icon} size={18} color="var(--color-primary)" />
-                                </div>
-                                <div className="flex-1">
-                                  <div className="text-sm font-semibold text-gray-900">
-                                    {dropdownItem.label}
-                                  </div>
-                                  <div className="text-xs text-gray-500 mt-1">
-                                    {dropdownItem.description}
-                                  </div>
-                                </div>
-                              </button>
-                            ))}
+                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                            <Icon name={item.icon} size={18} className="text-emerald-600" />
                           </div>
-                        </div>
-                      )}
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-semibold text-gray-900">
+                                {item.label}
+                              </span>
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">{item.description}</div>
+                          </div>
+                        </button>
+                      ))}
                     </div>
-                  ) : (
-                    <button
-                      className={`px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                        isActivePath(item.path)
-                          ? 'text-primary border-b-2 border-primary' 
-                          : 'text-text-secondary hover:text-primary'
-                      }`}
-                      onClick={() => handleNavigation(item.path)}
-                    >
-                      {item.label}
-                    </button>
-                  )}
-                </div>
-              ))}
+                  </div>
+                )}
+              </div>
 
-              {/* Desktop Resources Dropdown */}
+              {/* Services Dropdown */}
+              <div className="relative" ref={servicesDropdownRef}>
+                <button
+                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                    location.pathname.includes('/services') 
+                      ? 'text-primary border-b-2 border-primary' 
+                      : 'text-text-secondary hover:text-primary'
+                  }`}
+                  onClick={toggleServices}
+                  onMouseEnter={() => {
+                    if (window.innerWidth >= 1024) {
+                      closeAllDropdowns();
+                      setServicesDropdownOpen(true);
+                    }
+                  }}
+                >
+                  <span>Services</span>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={16} 
+                    className={`transition-transform duration-200 ${
+                      servicesDropdownOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {servicesDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
+                    style={{ zIndex: 9999 }}
+                    onMouseLeave={() => setServicesDropdownOpen(false)}
+                  >
+                    <div className="p-2">
+                      {servicesItems.map((item, index) => (
+                        <button
+                          key={item.label}
+                          className={`flex items-start space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 text-left ${
+                            index !== servicesItems.length - 1 ? 'mb-1' : ''
+                          }`}
+                          onClick={() => handleNavigation(item.path)}
+                        >
+                          <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <Icon name={item.icon} size={18} color="var(--color-primary)" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="text-sm font-semibold text-gray-900">
+                              {item.label}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">
+                              {item.description}
+                            </div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Corporate Branding Dropdown */}
+              <div className="relative" ref={corporateDropdownRef}>
+                <button
+                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                    isCorporateActive()
+                      ? 'text-primary border-b-2 border-primary' 
+                      : 'text-text-secondary hover:text-primary'
+                  }`}
+                  onClick={toggleCorporate}
+                  onMouseEnter={() => {
+                    if (window.innerWidth >= 1024) {
+                      closeAllDropdowns();
+                      setCorporateDropdownOpen(true);
+                    }
+                  }}
+                >
+                  <span>Corporate</span>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={16} 
+                    className={`transition-transform duration-200 ${
+                      corporateDropdownOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {corporateDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
+                    style={{ zIndex: 9999 }}
+                    onMouseLeave={() => setCorporateDropdownOpen(false)}
+                  >
+                    <div className="p-2">
+                      {corporateItems.map((item, index) => (
+                        <button
+                          key={item.label}
+                          className={`flex items-start space-x-3 w-full p-3 rounded-lg transition-all duration-200 text-left group hover:bg-gray-50 ${
+                            index !== corporateItems.length - 1 ? 'mb-1' : ''
+                          }`}
+                          onClick={() => {
+                            if (item.isExternal) {
+                              trackEvent('external_link', { category: 'Corporate', label: item.label });
+                              handleNavigation(item.path, true);
+                            } else {
+                              handleNavigation(item.path);
+                            }
+                          }}
+                        >
+                          <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
+                            <Icon name={item.icon} size={18} color="var(--color-primary)" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-semibold text-gray-900">
+                                {item.label}
+                              </span>
+                              {item.isExternal && (
+                                <Icon name="ExternalLink" size={14} className="text-gray-400" />
+                              )}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">{item.description}</div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Careers Dropdown */}
+              <div className="relative" ref={careersDropdownRef}>
+                <button
+                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                    isCareersActive()
+                      ? 'text-primary border-b-2 border-primary' 
+                      : 'text-text-secondary hover:text-primary'
+                  }`}
+                  onClick={toggleCareers}
+                  onMouseEnter={() => {
+                    if (window.innerWidth >= 1024) {
+                      closeAllDropdowns();
+                      setCareersDropdownOpen(true);
+                    }
+                  }}
+                >
+                  <span>Careers</span>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={16} 
+                    className={`transition-transform duration-200 ${
+                      careersDropdownOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {careersDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
+                    style={{ zIndex: 9999 }}
+                    onMouseLeave={() => setCareersDropdownOpen(false)}
+                  >
+                    <div className="p-2">
+                      {careersItems.map((item, index) => (
+                        <button
+                          key={item.label}
+                          className={`flex items-start space-x-3 w-full p-3 rounded-lg transition-all duration-200 text-left group hover:bg-gray-50 ${
+                            index !== careersItems.length - 1 ? 'mb-1' : ''
+                          }`}
+                          onClick={() => {
+                            if (item.isExternal) {
+                              trackEvent('external_link', { category: 'Careers', label: 'Jobs' });
+                              handleNavigation(item.path, true);
+                            } else {
+                              handleNavigation(item.path);
+                            }
+                          }}
+                        >
+                          <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
+                            <Icon name={item.icon} size={18} color="var(--color-primary)" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-semibold text-gray-900">
+                                {item.label}
+                              </span>
+                              {item.isExternal && (
+                                <Icon name="ExternalLink" size={14} className="text-gray-400" />
+                              )}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">{item.description}</div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Resources Dropdown */}
               <div className="relative" ref={resourcesDropdownRef}>
                 <button
                   className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                    ['/case-studies', '/blog', '/faq'].some(path => location.pathname === path)
+                    ['/blog', '/faq'].some(path => location.pathname === path)
                       ? 'text-primary border-b-2 border-primary' 
                       : 'text-text-secondary hover:text-primary'
                   }`}
                   onClick={toggleResources}
                   onMouseEnter={() => {
                     if (window.innerWidth >= 1024) {
+                      closeAllDropdowns();
                       setResourcesDropdownOpen(true);
-                      setServicesDropdownOpen(false);
                     }
                   }}
                 >
@@ -397,7 +732,38 @@ const Header = () => {
                   </div>
                 )}
               </div>
+
+              {/* Contact */}
+              <button
+                className={`px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                  isActivePath('/contact')
+                    ? 'text-primary border-b-2 border-primary' 
+                    : 'text-text-secondary hover:text-primary'
+                }`}
+                onClick={() => handleNavigation('/contact')}
+              >
+                Contact
+              </button>
             </nav>
+
+            {/* Search Bar - Desktop */}
+            <div className="hidden lg:flex items-center flex-1 max-w-md mx-8">
+              <form onSubmit={handleSearch} className="w-full relative">
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-4 pr-12 py-2 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-sm"
+                />
+                <button 
+                  type="submit"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-emerald-600 transition-colors"
+                >
+                  <Icon name="Search" size={18} />
+                </button>
+              </form>
+            </div>
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-3">
@@ -410,13 +776,6 @@ const Header = () => {
                 className="text-accent border-accent hover:bg-accent hover:text-white"
               >
                 WhatsApp
-              </Button>
-              <Button
-                variant="primary"
-                size="sm"
-                onClick={() => handleNavigation('/contact')}
-              >
-                Get Quote
               </Button>
             </div>
 
@@ -435,70 +794,202 @@ const Header = () => {
         </div>
       </header>
 
-      {/* MOBILE MENU - Full screen overlay with ref */}
+      {/* MOBILE MENU */}
       {mobileMenuOpen && (
         <div 
-          ref={mobileMenuContainerRef} // NEW: Added ref here
+          ref={mobileMenuContainerRef}
           className="lg:hidden fixed inset-0 z-40 bg-white"
           style={{ top: '64px' }}
         >
           <div className="h-full overflow-y-auto bg-white">
             <div className="px-4 py-4 space-y-2 pb-32">
-              {/* Main Navigation */}
-              {navigationItems.map((item) => (
-                <div key={item.label} className="border-b border-gray-100 last:border-0 pb-2 last:pb-0">
-                  {item.hasDropdown ? (
-                    <div className="space-y-2">
-                      {/* Services Toggle */}
-                      <button 
-                        className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
-                        onClick={toggleServices}
-                        aria-expanded={servicesDropdownOpen}
-                      >
-                        <span className="text-base font-semibold text-gray-900">{item.label}</span>
-                        <Icon 
-                          name="ChevronDown" 
-                          size={20} 
-                          className={`text-gray-400 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`}
-                        />
-                      </button>
-                      
-                      {/* Services Submenu - Accordion style */}
-                      {servicesDropdownOpen && (
-                        <div className="pl-4 space-y-1 animate-slide-down">
-                          {item.dropdownItems.map((dropdownItem) => (
-                            <button
-                              key={dropdownItem.label}
-                              className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
-                              onClick={() => handleNavigation(dropdownItem.path)}
-                            >
-                              <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
-                                <Icon name={dropdownItem.icon} size={16} color="var(--color-primary)" />
-                              </div>
-                              <div className="flex-1">
-                                <div className="text-sm font-semibold text-gray-900">{dropdownItem.label}</div>
-                                <div className="text-xs text-gray-500">{dropdownItem.description}</div>
-                              </div>
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <button
-                      className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-colors duration-200 text-left ${
-                        isActivePath(item.path) ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50'
-                      }`}
-                      onClick={() => handleNavigation(item.path)}
-                    >
-                      <Icon name={item.icon} size={20} />
-                      <span className="text-base font-medium">{item.label}</span>
-                    </button>
-                  )}
-                </div>
-              ))}
+              {/* Search - Mobile */}
+              <div className="mb-4">
+                <form onSubmit={handleSearch} className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search products..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-4 pr-12 py-3 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none"
+                  />
+                  <button 
+                    type="submit"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-gray-400"
+                  >
+                    <Icon name="Search" size={20} />
+                  </button>
+                </form>
+              </div>
 
-              {/* Resources Section - Mobile Accordion */}
+              {/* Home */}
+              <button
+                className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-colors duration-200 text-left border-b border-gray-100 ${
+                  isActivePath('/') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50'
+                }`}
+                onClick={() => handleNavigation('/')}
+              >
+                <Icon name="Home" size={20} />
+                <span className="text-base font-medium">Home</span>
+              </button>
+
+              {/* Shop Section - Mobile */}
+              <div className="border-b border-gray-100 pb-2">
+                <button 
+                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={toggleShop}
+                  aria-expanded={shopDropdownOpen}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Icon name="ShoppingBag" size={20} className="text-gray-600" />
+                    <span className="text-base font-semibold text-gray-900">Shop</span>
+                  </div>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={20} 
+                    className={`text-gray-400 transition-transform duration-200 ${shopDropdownOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                
+                {shopDropdownOpen && (
+                  <div className="pl-4 space-y-1 animate-slide-down">
+                    {shopCategories.map((item) => (
+                      <button
+                        key={item.label}
+                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-emerald-50 transition-colors duration-200 text-left"
+                        onClick={() => handleNavigation(item.path)}
+                      >
+                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name={item.icon} size={16} className="text-emerald-600" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-sm font-semibold text-gray-900">{item.label}</div>
+                          <div className="text-xs text-gray-500">{item.description}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Services Section - Mobile */}
+              <div className="border-b border-gray-100 pb-2">
+                <button 
+                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={toggleServices}
+                  aria-expanded={servicesDropdownOpen}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Icon name="Settings" size={20} className="text-gray-600" />
+                    <span className="text-base font-semibold text-gray-900">Services</span>
+                  </div>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={20} 
+                    className={`text-gray-400 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                
+                {servicesDropdownOpen && (
+                  <div className="pl-4 space-y-1 animate-slide-down">
+                    {servicesItems.map((item) => (
+                      <button
+                        key={item.label}
+                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
+                        onClick={() => handleNavigation(item.path)}
+                      >
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                          <Icon name={item.icon} size={16} color="var(--color-primary)" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-sm font-semibold text-gray-900">{item.label}</div>
+                          <div className="text-xs text-gray-500">{item.description}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Corporate Section - Mobile */}
+              <div className="border-b border-gray-100 pb-2">
+                <button 
+                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={toggleCorporate}
+                  aria-expanded={corporateDropdownOpen}
+                >
+                  <span className="text-base font-semibold text-gray-900">Corporate</span>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={20} 
+                    className={`text-gray-400 transition-transform duration-200 ${corporateDropdownOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                
+                {corporateDropdownOpen && (
+                  <div className="pl-4 space-y-1 animate-slide-down">
+                    {corporateItems.map((item) => (
+                      <button
+                        key={item.label}
+                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
+                        onClick={() => handleNavigation(item.path, item.isExternal)}
+                      >
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                          <Icon name={item.icon} size={16} color="var(--color-primary)" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm font-semibold text-gray-900">{item.label}</span>
+                            {item.isExternal && <Icon name="ExternalLink" size={14} className="text-gray-400" />}
+                          </div>
+                          <div className="text-xs text-gray-500">{item.description}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Careers Section - Mobile */}
+              <div className="border-b border-gray-100 pb-2">
+                <button 
+                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={toggleCareers}
+                  aria-expanded={careersDropdownOpen}
+                >
+                  <span className="text-base font-semibold text-gray-900">Careers</span>
+                  <Icon 
+                    name="ChevronDown" 
+                    size={20} 
+                    className={`text-gray-400 transition-transform duration-200 ${careersDropdownOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                
+                {careersDropdownOpen && (
+                  <div className="pl-4 space-y-1 animate-slide-down">
+                    {careersItems.map((item) => (
+                      <button
+                        key={item.label}
+                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
+                        onClick={() => handleNavigation(item.path, item.isExternal)}
+                      >
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                          <Icon name={item.icon} size={16} color="var(--color-primary)" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm font-semibold text-gray-900">{item.label}</span>
+                            {item.isExternal && <Icon name="ExternalLink" size={14} className="text-gray-400" />}
+                          </div>
+                          <div className="text-xs text-gray-500">{item.description}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Resources Section - Mobile */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
                   className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
@@ -549,10 +1040,21 @@ const Header = () => {
                   </div>
                 )}
               </div>
+
+              {/* Contact */}
+              <button
+                className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-colors duration-200 text-left border-b border-gray-100 ${
+                  isActivePath('/contact') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50'
+                }`}
+                onClick={() => handleNavigation('/contact')}
+              >
+                <Icon name="Phone" size={20} />
+                <span className="text-base font-medium">Contact</span>
+              </button>
             </div>
           </div>
 
-          {/* Mobile Actions - Fixed at bottom INSIDE the menu container */}
+          {/* Mobile Actions */}
           <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 space-y-3">
             <Button
               variant="outline"
@@ -564,18 +1066,9 @@ const Header = () => {
             >
               WhatsApp Us
             </Button>
-            <Button
-              variant="primary"
-              size="md"
-              onClick={() => handleNavigation('/contact')}
-              className="w-full"
-            >
-              Get Quote
-            </Button>
           </div>
         </div>
       )}
-
     </>
   );
 };

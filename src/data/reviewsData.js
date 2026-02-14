@@ -1,5 +1,5 @@
 // ⚠️ AUTO-GENERATED FILE - DO NOT EDIT MANUALLY
-// Generated at: 13/02/2026, 14:36:16
+// Generated at: 14/02/2026, 21:34:52
 // Run 'npm run fetch-reviews' to update
 
 export const reviews = [
@@ -38,5 +38,5 @@ export const reviews = [
 export const reviewStats = {
   "averageRating": 5,
   "totalReviews": 3,
-  "lastUpdated": "2026-02-13T11:36:16.583Z"
+  "lastUpdated": "2026-02-14T18:34:52.448Z"
 };

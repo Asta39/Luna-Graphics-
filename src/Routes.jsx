@@ -19,6 +19,16 @@ import PrivacyPolicy from "pages/privacy-policy";           // FIXED: removed '.
 import TermsOfService from "pages/terms-of-service";        // FIXED: removed './'
 import CorporateTerms from "pages/corporate-terms";  
 import WhatsAppChat from './components/ui/WhatsAppChat';
+import About from './pages/about/About';
+import EventsExhibitions from './pages/corporate/EventsExhibitions';
+import CorporateBranding from './pages/corporate/CorporateBranding';
+import Shop from './pages/shop/Shop';
+import ProductDetail from './pages/shop/ProductDetail';
+
+
+
+
+
        // FIXED: removed './'
 // TODO: Create these pages or remove routes
 // import CaseStudiesPage from "pages/case-studies";
@@ -50,11 +60,22 @@ const Routes = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/gallery" element={<GalleryPage />} />  {/* FIXED: was broken */}
           <Route path="/corporate-services" element={<CorporateServicesPage />} />
+          <Route path="/corporate/events-exhibitions" element={<EventsExhibitions />} />
+          <Route path="/corporate/corporate-branding" element={<CorporateBranding />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/category/:categoryId" element={<Shop />} />
+          <Route path="/shop/product/:productId" element={<ProductDetail />} />
+
+
+
           
           {/* Legal pages */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/corporate-terms" element={<CorporateTerms />} />
+
+          <Route path="/about" element={<About />} />
+
           
           {/* TODO: Uncomment when pages are created */}
           {/* <Route path="/case-studies" element={<CaseStudiesPage />} /> */}

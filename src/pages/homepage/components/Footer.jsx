@@ -39,7 +39,7 @@ const Footer = () => {
 
   const quickLinks = [
     { label: 'Home', path: '/' },
-    { label: 'Services', path: '/services' },
+    { label: 'Services', path: '/services/large-format' },
     { label: 'Corporate Solutions', path: '/corporate-services' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'Our Team', path: '/team' },

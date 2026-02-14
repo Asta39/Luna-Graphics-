@@ -112,7 +112,7 @@ export const leadershipTeam = [
 
     {
       id: 5,
-      name: "Fidel Okal",
+      name: "Lloyd Murago",
       title: "UV Printing Specialist",
       specialization: "UV printing",
       image: teamMemberPlaceholder,
@@ -120,7 +120,7 @@ export const leadershipTeam = [
       whatsapp: "+254791159618",
       email: "info.lunagraphics@gmail.com",
       briefDescription: "UV printing specialist with expertise in high-volume commercial printing and color management.",
-      detailedBackground: `Fidel manages our UV printing operations, ensuring consistent quality across all print runs. His attention to detail and color management expertise has made him invaluable for projects requiring precise color matching.\n\nHe specializes in high-volume commercial printing and has developed efficient workflows that maintain quality while meeting tight deadlines.`,
+      detailedBackground: `Lloyd manages our UV printing operations, ensuring consistent quality across all print runs. His attention to detail and color management expertise has made him invaluable for projects requiring precise color matching.\n\nHe specializes in high-volume commercial printing and has developed efficient workflows that maintain quality while meeting tight deadlines.`,
       skills: ["UV Printing", "Color Management", "Print Finishing", "Quality Assurance"],
       certifications: [
         "UV Printing Technology Certificate",
@@ -134,20 +134,20 @@ export const leadershipTeam = [
       ],
       projectsCompleted: 1200,
       clientSatisfaction: 97
-    }
-    ];
-    /*
+    },
+    
+    
     {
       id: 6,
-      name: "Sarah Akinyi",
+      name: "Daniel Anangwe",
       title: "Custom Merchandise Specialist",
       specialization: "T-shirt Printing & Promotional Items",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face",
+      image: teamMemberPlaceholder,
       experience: 5,
-      whatsapp: "+254700000006",
-      email: "sarah@halocreatives.co.ke",
+      whatsapp: "+254791159618",
+      email: "info@lunagraphics.co.ke",
       briefDescription: "Creative specialist in custom merchandise production, from t-shirt printing to promotional item customization.",
-      detailedBackground: `Sarah heads our custom merchandise division, bringing creativity and technical expertise to every project. She has mastered various printing techniques including screen printing, heat transfer, and embroidery.\n\nHer work spans from corporate branded merchandise to custom event apparel, always ensuring that the final products meet the highest quality standards and client expectations.`,
+      detailedBackground: `Daniel heads our custom merchandise division, bringing creativity and technical expertise to every project. He has mastered various printing techniques including screen printing, heat transfer, and embroidery.\n\nHis work spans from corporate branded merchandise to custom event apparel, always ensuring that the final products meet the highest quality standards and client expectations.`,
       skills: ["Screen Printing", "Heat Transfer", "Embroidery", "Product Design", "Material Selection"],
       certifications: [
         "Screen Printing Professional Certificate",
@@ -162,7 +162,7 @@ export const leadershipTeam = [
       projectsCompleted: 600,
       clientSatisfaction: 96
     }
-  ];*/
+  ];
 
   // Design Team Data
   export const designTeam = [
@@ -215,8 +215,8 @@ export const leadershipTeam = [
       ],
       projectsCompleted: 200,
       clientSatisfaction: 95
-    },
-        {
+    }
+       /* {
       id: 9,
       name: "Stephen Kimani",
       title: "Graphic Designer",
@@ -240,5 +240,5 @@ export const leadershipTeam = [
       ],
       projectsCompleted: 300,
       clientSatisfaction: 98
-    },
+    },*/
   ];
