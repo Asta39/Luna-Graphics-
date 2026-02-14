@@ -1,51 +1,42 @@
-// 1. Import the single placeholder image for avatars
-import avatarPlaceholder from '../assets/team-member-placeholder.png'; // Using the same placeholder for consistency
+// ⚠️ AUTO-GENERATED FILE - DO NOT EDIT MANUALLY
+// Generated at: 13/02/2026, 14:36:16
+// Run 'npm run fetch-reviews' to update
 
-// 2. Define and export your reviews data
 export const reviews = [
-{
-      id: 1,
-      name: "Ian Gichora",
-      avatar: avatarPlaceholder,
-      rating: 5,
-      date: "2 weeks ago",
-      review: `Excellent service! Luna Graphics printed our company banners for a trade show and the quality was outstanding. The colors were vibrant and the material was durable. They delivered on time and the pricing was very competitive. Highly recommend for any business printing needs.`,
-      service: "Large Format Printing"
-    },
-    {
-      id: 2,
-      name: "David Kimani",
-      avatar: avatarPlaceholder,
-      rating: 5,
-      date: "1 month ago",
-      review: `I needed custom t-shirts for my team and Luna Graphics exceeded my expectations. The print quality is excellent and hasn't faded after multiple washes. The staff was professional and helped with the design. Will definitely use them again for future projects.`,
-      service: "T-shirt Printing"
-    },
-    {
-      id: 3,
-      name: "Grace Mutua",
-      avatar: avatarPlaceholder,
-      rating: 5,
-      date: "3 weeks ago",
-      review: `Professional UV printing service for our promotional items. The team understood our requirements perfectly and delivered high-quality results. The prints on our phone cases and awards look amazing. Great customer service and fast turnaround time.`,
-      service: "UV Printing"
-    },
-    {
-      id: 4,
-      name: "Ian Johathan",
-      avatar: avatarPlaceholder,
-      rating: 5,
-      date: "2 months ago",
-      review: `Luna Graphics handled our architectural plotting needs with precision. The technical drawings were clear and accurate. They work with various CAD formats and the output quality is consistently excellent. Reliable partner for our engineering firm.`,
-      service: "Plotting Services"
-    },
-    {
-      id: 5,
-      name: "Stevoh Rudisha",
-      avatar: avatarPlaceholder,
-      rating: 5,
-      date: "1 week ago",
-      review: `Amazing laser cutting service! They created beautiful decorative panels for our restaurant. The precision and attention to detail is remarkable. The team provided excellent advice on materials and design. Definitely the best printing shop in Nairobi.`,
-      service: "Laser Cutting"
-    }
-  ];
+  {
+    "id": 1751527203,
+    "name": "Stephen Njoroge",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKpTtF0dZw7m2V8wzPVhwOvumchJHeIyWaeWsDWGfaaBfPZkQ=s128-c0x00000000-cc-rp-mo",
+    "rating": 5,
+    "review": "Excellent service and top-quality prints! PrintingCompany delivered exactly what I needed, on time and with great attention to detail. Highly recommend!",
+    "date": "3 Jul 2025",
+    "relativeTime": "7 months ago",
+    "service": "Google Review"
+  },
+  {
+    "id": 1751618955,
+    "name": "Joseph Masiga254",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJIGhcOQcYirYIYWforvRE_DBgn_ZyOm47fix5I4JDg4LGruJBI=s128-c0x00000000-cc-rp-mo",
+    "rating": 5,
+    "review": "Creative designs and precise printing solutions. I loved the experience.",
+    "date": "4 Jul 2025",
+    "relativeTime": "7 months ago",
+    "service": "Google Review"
+  },
+  {
+    "id": 1751643283,
+    "name": "Brian Katana",
+    "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjWtQEGj7CBrANy-Az8lHzYyMJnzYGpS4q4CfW2adaOGXhquZsraKA=s128-c0x00000000-cc-rp-mo",
+    "rating": 5,
+    "review": "Best customer service. Timely execution.💥🔥",
+    "date": "4 Jul 2025",
+    "relativeTime": "7 months ago",
+    "service": "Google Review"
+  }
+];
+
+export const reviewStats = {
+  "averageRating": 5,
+  "totalReviews": 3,
+  "lastUpdated": "2026-02-13T11:36:16.583Z"
+};

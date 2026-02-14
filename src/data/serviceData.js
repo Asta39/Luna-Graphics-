@@ -88,7 +88,7 @@ export const services =
 {
     "cnc-cutting":{
         id: 2,
-    path: "/cnc-cutting-services-page",
+    path: "/cnc-cutting",
     title: "CNC Cutting Services",
     category: "Precision Fabrication",
     description: "Professional CNC cutting services for precise fabrication of various materials including wood, acrylic, metal, and foam with custom design capabilities.",
@@ -292,7 +292,7 @@ export const services =
  ],
     related: [ {
       title: "Laser Cutting",
-      path: "/laser-cutting-services-page",
+      path: "/laser-cutting",
       category: "Precision Cutting",
       description: "High-precision laser cutting for intricate designs and detailed fabrication.",
       image: relatedLaserCuttingImg,
@@ -302,7 +302,7 @@ export const services =
     },
     {
       title: "Large Format Printing",
-      path: "/services-detail-page",
+      path: "/large-format",
       category: "Digital Printing",
       description: "Professional large format printing for banners, posters, and displays.",
       image: relatedLargeFormatImg,
@@ -312,7 +312,7 @@ export const services =
     },
     {
       title: "UV Printing",
-      path: "/uv-printing-services-page",
+      path: "/uv-printing",
       category: "Specialty Printing",
       description: "Direct UV printing on various materials including glass, metal, and plastics.",
       image: relatedUvPrintingImg,
@@ -326,7 +326,7 @@ export const services =
 
   "laser-cutting":{
     id: 3,
-    path: "/laser-cutting-services-page",
+    path: "/laser-cutting",
     title: "Laser Cutting Services",
     category: "Precision Laser Technology",
     description: "Professional laser cutting services for intricate designs and detailed fabrication on various materials including wood, acrylic, leather, and fabric with precision and design complexity capabilities.",
@@ -529,7 +529,7 @@ export const services =
  ],
     related: [  {
       title: "CNC Cutting",
-      path: "/cnc-cutting-services-page",
+      path: "/cnc-cutting",
       category: "Precision Fabrication",
       description: "Professional CNC cutting services for precise fabrication of various materials.",
       image: relatedCncCuttingImg,
@@ -543,7 +543,7 @@ export const services =
     },
     {
       title: "Large Format Printing",
-      path: "/service-detail-page",
+      path: "/large-format",
       category: "Digital Printing",
       description: "Professional large format printing for banners, posters, and displays.",
       image: relatedLargeFormatImg,
@@ -553,7 +553,7 @@ export const services =
     },
     {
       title: "UV Printing",
-      path: "/uv-printing-services-page",
+      path: "/uv-printing",
       category: "Specialty Printing",
       description: "Direct UV printing on various materials including glass, metal, and plastics.",
       image: relatedUvPrintingImg,
@@ -566,7 +566,7 @@ export const services =
 
     "plotting-services": {
          id: 2,
-    path: "/plotting-services-page",     
+    path: "/plotting",     
     title: "Plotting Services",
     category: "Technical Drawing",
     description: "Professional plotting services for technical drawings, architectural plans, engineering drawings, and CAD documentation with precision and clarity.",
@@ -767,7 +767,7 @@ export const services =
  ],
     related: [  {
       title: "Large Format Printing",
-      path: "/large-format-printing-services-page",
+      path: "/large-format",
       category: "Branding and Printing",
       description: "Professional large format printing for banners, posters, and signage applications.",
       image: relatedLargeFormatImg,
@@ -777,7 +777,7 @@ export const services =
     },
     {
       title: "UV printing services",
-      path: "/uv-printing-services-page",
+      path: "/uv-printing",
       category: "Production",
       description: "Professional UV printing services to produce impactful products.",
       image: relatedUvPrintingImg,
@@ -787,7 +787,7 @@ export const services =
     },
     {
       title: "CNC cutting services",
-      path: "/cnc-cutting-services-page",
+      path: "/cnc-cutting",
       category: "Production",
       description: "Professional CNC cutting services for precise fabrication of various materials.",
       image: relatedCncCuttingImg,
@@ -800,7 +800,7 @@ export const services =
 
      "large-format":{
     id: 1,
-    path: "/service-detail-page",
+    path: "/large-format",
     title: "Large Format Printing",
     category: "Digital Printing",
     description: "Professional large format printing services for banners, posters, signage, and displays with vibrant colors and exceptional quality.",
@@ -997,7 +997,7 @@ export const services =
  ],
     related: [ {
       title: "Laser Cutting",
-      path: "/laser-cutting-services-page",
+      path: "/laser-cutting",
       category: "Specialty Cutting",
       description: "High-quality laser cutting for signages, cutouts and more print works.",
       image: relatedLaserCuttingImg,
@@ -1007,7 +1007,7 @@ export const services =
     },
     {
       title: "UV Printing",
-      path: "/uv-printing-services-page",
+      path: "/uv-printing",
       category: "Specialty Printing",
       description: "Direct UV printing on various materials including glass, metal, wood, and plastics.",
       image: relatedUvPrintingImg,
@@ -1017,7 +1017,7 @@ export const services =
     },
     {
       title: "CNC Cutting",
-      path: "/cnc-cutting-services-page",
+      path: "/cnc-cutting",
       category: "Fabrication",
       description: "Precision CNC cutting services for signage, displays, and custom fabrication projects.",
       image: relatedCncCuttingImg,
@@ -1029,7 +1029,7 @@ export const services =
 },
     "t-shirt-printing":{
     id: 6,
-    path: "/t-shirt-printing-services-page",
+    path: "/t-shirt-printing",
     title: "T-shirt Printing Services",
     category: "Custom Apparel",
     description: "Professional custom t-shirt printing services targeting businesses, events, and personal branding needs with comprehensive printing method options and bulk pricing in KES currency.",
@@ -1228,7 +1228,7 @@ export const services =
 ],
     related: [     {
       title: "Large Format Printing",
-      path: "/service-detail-page",
+      path: "/large-format",
       category: "Digital Printing",
       description: "Professional large format printing for banners, posters, and business signage.",
       image: relatedLargeFormatImg,
@@ -1238,7 +1238,7 @@ export const services =
     },
     {
       title: "UV Printing",
-      path: "/uv-printing-services-page",
+      path: "/uv-printing",
       category: "Specialty Printing",
       description: "Direct UV printing on promotional items, phone cases, and custom accessories.",
       image: relatedUvPrintingImg,
@@ -1248,7 +1248,7 @@ export const services =
     },
     {
       title: "Corporate Services",
-      path: "/corporate-services-page",
+      path: "/corporate-services",
       category: "Business Solutions",
       description: "Comprehensive corporate branding and marketing material solutions.",
       image: relatedCorporateImg,
@@ -1262,7 +1262,7 @@ export const services =
   "uv-printing": {
     
     id: 3,
-    path: "/uv-printing-services-page",
+    path: "/uv-printing",
     title: "UV Printing Services",
     category: "Specialty Printing",
     description: "Advanced UV printing services for premium materials and custom applications offering exceptional durability, vibrant colors, and versatile substrate compatibility.",
@@ -1459,7 +1459,7 @@ export const services =
 ],
     related: [    {
       title: "Large Format Printing",
-      path: "/service-detail-page",
+      path: "/large-format",
       category: "Digital Printing",
       description: "Professional large format printing for banners, posters, and signage applications.",
       image: relatedLargeFormatImg,
@@ -1469,7 +1469,7 @@ export const services =
     },
     {
       title: "CNC Cutting",
-      path:"/cnc-cutting-services-page",
+      path:"/cnc-cutting",
       category: "Fabrication",
       description: "Precision CNC cutting services for signage, displays, and custom fabrication projects.",
       image: relatedCncCuttingImg,
@@ -1479,7 +1479,7 @@ export const services =
     },
     {
       title: "Laser Engraving",
-      path:"/laser-cutting-services-page",
+      path:"/laser-cutting",
       category: "Engraving",
       description: "Professional laser engraving services for promotional items and custom applications.",
       image: relatedLaserCuttingImg,
@@ -1492,7 +1492,7 @@ export const services =
 
    "offset-printing": {
     id: 7, // Give it a unique ID
-    path: "/offset-printing-services-page", // A future path
+    path: "/offset-printing", // A future path
     title: "Offset Printing Services",
     category: "Commercial Printing",
     description: "High-volume commercial printing for books, brochures, packaging, and more with exceptional quality and color consistency.",

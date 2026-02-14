@@ -12,7 +12,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleGetQuote = () => {
-    navigate('/contact-page');
+    navigate('/contact');
   };
 
   const handleWhatsAppClick = () => {

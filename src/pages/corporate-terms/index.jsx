@@ -428,7 +428,7 @@ const CorporateTerms = () => {
         {/* Back to Home */}
         <div className="mt-12 pt-8 border-t border-gray-200 flex justify-between items-center">
           <button 
-            onClick={() => navigate('/corporate-services-page')}
+            onClick={() => navigate('/corporate-services')}
             className="text-primary hover:text-primary-dark font-medium transition-colors"
           >
             ← Back to Corporate Services
