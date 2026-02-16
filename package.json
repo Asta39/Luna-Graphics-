@@ -32,12 +32,15 @@
   },
   "scripts": {
     "fetch-reviews": "node scripts/fetch-reviews.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "ping-google": "node scripts/ping-google.js",
     "prestart": "npm run fetch-reviews",
     "start": "vite",
-    "prebuild": "npm run fetch-reviews",
+    "prebuild": "npm run generate-sitemap && npm run fetch-reviews",
     "build": "vite build --sourcemap",
     "serve": "vite preview",
-    "postinstall": "npm run fetch-reviews"
+    "postinstall": "npm run fetch-reviews",
+    "deploy": "npm run build && npm run ping-google"
   },
   "eslintConfig": {
     "extends": [

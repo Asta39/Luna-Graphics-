@@ -16,13 +16,13 @@ const HeroBanner = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-emerald-100 rounded-full mb-4">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-emerald-800">New Collection Available</span>
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-amber-100 rounded-full mb-4">
+              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-amber-800">New Collection Available</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 leading-tight mb-4">
-              Professional <span className="text-emerald-600">Printing</span> Solutions
+              Professional <span className="text-amber-500">Printing</span> Solutions
             </h1>
             
             <p className="text-lg text-gray-600 mb-6 max-w-lg">
@@ -39,8 +39,9 @@ const HeroBanner = () => {
                 Shop Now
               </Button>
               <Button 
-                variant="outline" 
+                variant="secondary" 
                 size="lg"
+                className="border-white text-white hover:bg-amber-500"
                 onClick={() => navigate('/contact')}
               >
                 Get Quote

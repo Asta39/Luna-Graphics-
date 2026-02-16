@@ -24,6 +24,10 @@ import EventsExhibitions from './pages/corporate/EventsExhibitions';
 import CorporateBranding from './pages/corporate/CorporateBranding';
 import Shop from './pages/shop/Shop';
 import ProductDetail from './pages/shop/ProductDetail';
+import Cart from './pages/cart/Cart';
+import ServiceDetail from './pages/shop/components/ServiceDetail';
+
+
 
 
 
@@ -65,6 +69,9 @@ const Routes = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/category/:categoryId" element={<Shop />} />
           <Route path="/shop/product/:productId" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/service/:serviceId" element={<ServiceDetail />} />
+
 
 
 

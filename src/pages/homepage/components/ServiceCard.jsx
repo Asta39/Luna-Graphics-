@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
   const handleLearnMore = () => {
     // We check if service.path exists to avoid errors
     if (service.path) {
-      navigate(service.path);
+      navigate(`/services/${service.path}`);
     } else {
       // Log an error if the path is missing in the data, which helps debugging.
       console.error(`Error: No path defined for service "${service.name}".`);

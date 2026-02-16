@@ -1,17 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet-async';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
+import { getProductById, products } from '../../data/products';
+import { useCart } from '../../context/CartContext';
 import Header from '../../components/ui/Header';
-import { getProductById, products, categories } from '../../data/products';
-import InquiryModal from './components/InquiryModal';
+
+
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
+  const { addItem } = useCart();
   const formRef = useRef();
   
   const [product, setProduct] = useState(null);
@@ -19,21 +22,22 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [addedToCart, setAddedToCart] = useState(false);
   
-  // Form state for direct inquiry on page
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
     const found = getProductById(productId);
     if (found) {
       setProduct(found);
+      setQuantity(found.minOrder);
+      setSelectedImage(0);
       window.scrollTo(0, 0);
     } else {
       navigate('/shop');
@@ -48,9 +52,11 @@ const ProductDetail = () => {
     );
   }
 
-  const relatedProducts = products
-    .filter(p => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
+  const relatedProducts = product.relatedProducts 
+    ? product.relatedProducts.map(id => getProductById(id)).filter(Boolean)
+    : products
+        .filter(p => p.category === product.category && p.id !== product.id)
+        .slice(0, 4);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-KE', {
@@ -66,23 +72,26 @@ const ProductDetail = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const handleAddToCart = () => {
+    addItem(product, quantity);
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 2000);
+  };
+
   const handleDirectInquiry = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+    setSubmitStatus('sending');
 
     try {
-      const templateParams = {
-        product_name: product.name,
-        product_id: product.id,
-        quantity: quantity,
-        ...formData
-      };
-
       await emailjs.send(
         'YOUR_SERVICE_ID',
         'YOUR_TEMPLATE_ID',
-        templateParams,
+        {
+          product_name: product.name,
+          product_id: product.id,
+          quantity: quantity,
+          ...formData
+        },
         'YOUR_PUBLIC_KEY'
       );
 
@@ -91,8 +100,6 @@ const ProductDetail = () => {
     } catch (error) {
       console.error('EmailJS Error:', error);
       setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -103,14 +110,6 @@ const ProductDetail = () => {
     }));
   };
 
-  // Mock additional images (in real app, product would have image array)
-  const productImages = [
-    product.image,
-    product.image, // Replace with actual additional images
-    product.image,
-    product.image
-  ];
-
   const tabs = [
     { id: 'description', label: 'Description' },
     { id: 'specifications', label: 'Specifications' },
@@ -118,12 +117,15 @@ const ProductDetail = () => {
     { id: 'shipping', label: 'Shipping & Returns' }
   ];
 
+  // Use product images or fallback to single image
+  const productImages = product.images || [product.image];
+
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       <Helmet>
-        <title>{product.name} | Luna Graphics Kenya</title>
+        <title>{`${product.name} | Luna Graphics Kenya`}</title>
         <meta name="description" content={product.description} />
-      </Helmet>
+      </Helmet>.
       <Header/>
 
       {/* Breadcrumb */}
@@ -183,19 +185,21 @@ const ProductDetail = () => {
               </div>
               
               {/* Thumbnail Grid */}
-              <div className="grid grid-cols-4 gap-3">
-                {productImages.map((img, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setSelectedImage(idx)}
-                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                      selectedImage === idx ? 'border-emerald-600 ring-2 ring-emerald-100' : 'border-gray-200 hover:border-emerald-300'
-                    }`}
-                  >
-                    <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
+              {productImages.length > 1 && (
+                <div className="grid grid-cols-4 gap-3">
+                  {productImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSelectedImage(idx)}
+                      className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
+                        selectedImage === idx ? 'border-emerald-600 ring-2 ring-emerald-100' : 'border-gray-200 hover:border-emerald-300'
+                      }`}
+                    >
+                      <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </motion.div>
 
             {/* Product Info */}
@@ -300,6 +304,35 @@ const ProductDetail = () => {
                 </Button>
               </div>
 
+              {/* Add to Cart Button - CENTERED */}
+              <div className="pt-4 border-t border-gray-100">
+                <Button 
+                  variant="primary" 
+                  size="lg"
+                  className={`w-full sm:w-auto mx-auto block px-12 py-4 text-lg font-semibold transition-all ${
+                    addedToCart 
+                      ? 'bg-green-500 hover:bg-green-600' 
+                      : 'bg-gray-900 hover:bg-gray-800'
+                  }`}
+                  onClick={handleAddToCart}
+                >
+                  {addedToCart ? (
+                    <span className="flex items-center">
+                      <Icon name="Check" size={20} className="mr-2" />
+                      Added to Cart!
+                    </span>
+                  ) : (
+                    <span className="flex items-center">
+                      <Icon name="ShoppingCart" size={20} className="mr-2" />
+                      Add to Cart
+                    </span>
+                  )}
+                </Button>
+                <p className="text-center text-sm text-gray-500 mt-2">
+                  Free delivery in Nairobi • {product.turnaround} turnaround
+                </p>
+              </div>
+
               {/* Trust Badges */}
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                 <div className="text-center">
@@ -356,9 +389,9 @@ const ProductDetail = () => {
                 >
                   {activeTab === 'description' && (
                     <div className="prose max-w-none text-gray-600 leading-relaxed">
-                      <p className="text-lg mb-4">{product.description}</p>
-                      <p>Perfect for businesses looking to make a lasting impression. Our {product.name} is crafted with premium materials and cutting-edge printing technology to ensure vibrant colors and durability.</p>
-                      <p className="mt-4">Whether you need it for a trade show, corporate event, or retail display, this product delivers professional results every time.</p>
+                      <div className="whitespace-pre-line text-lg">
+                        {product.longDescription || product.description}
+                      </div>
                     </div>
                   )}
 
@@ -413,7 +446,7 @@ const ProductDetail = () => {
                           </li>
                           <li className="flex items-center gap-2">
                             <Icon name="Package" size={18} className="text-emerald-600" />
-                            <span><strong> Nationwide shipping</strong> via trusted courier partners</span>
+                            <span><strong>Nationwide shipping</strong> via trusted courier partners</span>
                           </li>
                         </ul>
                       </div>
@@ -435,7 +468,7 @@ const ProductDetail = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Quick Inquiry</h2>
-            <p className="text-gray-600">Have questions? Send us a message and we'll respond within 24 hours.</p>
+            <p className="text-gray-600">Have questions? Send us a message and we will respond within 24 hours.</p>
           </div>
 
           {submitStatus === 'success' ? (
@@ -524,9 +557,9 @@ const ProductDetail = () => {
                   variant="primary"
                   size="lg"
                   className="flex-1 bg-emerald-600 hover:bg-emerald-700"
-                  disabled={isSubmitting}
+                  disabled={submitStatus === 'sending'}
                 >
-                  {isSubmitting ? (
+                  {submitStatus === 'sending' ? (
                     <span className="flex items-center justify-center">
                       <Icon name="Loader2" size={20} className="mr-2 animate-spin" />
                       Sending...
@@ -554,64 +587,63 @@ const ProductDetail = () => {
       </section>
 
       {/* Related Products */}
-      {relatedProducts.length > 0 && (
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">Related Products</h2>
-                <p className="text-gray-500 mt-1">You might also be interested in</p>
+{/* Related Products */}
+{relatedProducts.length > 0 && (
+  <section className="py-12 bg-gray-50">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900">Related Products</h2>
+          <p className="text-gray-500 mt-1">You might also be interested in</p>
+        </div>
+        <Button variant="outline" onClick={() => navigate('/shop')}>
+          View All
+        </Button>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        {relatedProducts.map((item, index) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer flex flex-col"
+            onClick={() => navigate(`/shop/product/${item.id}`)}
+          >
+            {/* Fixed height image container - 160px height */}
+            <div className="relative h-40 bg-gray-100 overflow-hidden flex-shrink-0">
+              <img 
+                src={item.image || (item.images && item.images[0])} 
+                alt={item.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.target.src = '/images/placeholder-product.jpg';
+                }}
+              />
+              {item.discount && (
+                <div className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
+                  {item.discount}
+                </div>
+              )}
+            </div>
+            <div className="p-4 flex flex-col flex-grow">
+              <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors text-sm leading-snug min-h-[40px]">
+                {item.name}
+              </h3>
+              <div className="flex items-center justify-between mt-auto">
+                <span className="text-lg font-bold text-emerald-600">{formatPrice(item.price)}</span>
+                <span className="text-xs text-gray-500">/{item.priceUnit}</span>
               </div>
-              <Button variant="outline" onClick={() => navigate('/shop')}>
-                View All
-              </Button>
             </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {relatedProducts.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer"
-                  onClick={() => navigate(`/shop/product/${item.id}`)}
-                >
-                  <div className="relative aspect-square bg-gray-100 overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    {item.discount && (
-                      <div className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
-                        {item.discount}
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors">
-                      {item.name}
-                    </h3>
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-bold text-emerald-600">{formatPrice(item.price)}</span>
-                      <span className="text-xs text-gray-500">/{item.priceUnit}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
       )}
-
-      {/* Inquiry Modal */}
-      <InquiryModal 
-        isOpen={isInquiryOpen} 
-        onClose={() => setIsInquiryOpen(false)} 
-        product={product}
-      />
     </div>
   );
 };

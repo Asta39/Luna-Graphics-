@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Button from './Button';
 import useClickOutside from '../../hooks/useClickOutside';
-
+import { useCart } from '../../context/CartContext';
 import logoImage from '../../assets/luna-logo2.png';
 
 const Header = () => {
@@ -15,8 +15,22 @@ const Header = () => {
   const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  
   const location = useLocation();
   const navigate = useNavigate();
+  const { getCartCount, getCartTotal } = useCart();
+  
+  const cartCount = getCartCount();
+  const cartTotal = getCartTotal();
+
+  // Format price helper
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-KE', {
+      style: 'currency',
+      currency: 'KES',
+      minimumFractionDigits: 0
+    }).format(price);
+  };
 
   // Refs for click-outside detection
   const servicesDropdownRef = useRef(null);
@@ -221,7 +235,7 @@ const Header = () => {
     },
     {
       label: 'Political Branding',
-      path: 'https://lunapolitics.co.ke',
+      path: 'https://lunapolitics.co.ke ',
       icon: 'Flag',
       description: 'Campaign materials & election solutions',
       isExternal: true
@@ -256,7 +270,7 @@ const Header = () => {
     },
     {
       label: 'Jobs',
-      path: 'https://lunaaccounts.co.ke',
+      path: 'https://lunaaccounts.co.ke ',
       icon: 'Briefcase',
       description: 'Join our team',
       isExternal: true
@@ -335,7 +349,7 @@ const Header = () => {
 
     const phoneNumber = '254791159618';
     const message = 'Hello! I would like to inquire about your printing services.';
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/ ${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -356,15 +370,15 @@ const Header = () => {
   };
 
   const Logo = () => (
-    <div className="flex items-left space-x-2">
+    <div className="flex items-center space-x-3 mr-8">
       <img 
         src={logoImage} 
         alt="Luna Graphics Logo" 
         className="w-12 h-12 rounded-lg object-cover" 
       />
       <div className="flex flex-col">
-        <span className="text-xl font-heading font-bold text-primary">Luna</span>
-        <span className="text-sm font-heading font-semibold text-secondary">Graphics</span>
+        <span className="text-xl font-heading font-bold text-emerald-600">Luna</span>
+        <span className="text-sm font-heading font-semibold text-gray-700">Graphics</span>
       </div>
     </div>
   );
@@ -374,15 +388,15 @@ const Header = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
-            ? 'bg-background/95 backdrop-blur-md shadow-md' 
-            : 'bg-background'
+            ? 'bg-white/95 backdrop-blur-md shadow-md' 
+            : 'bg-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div 
-              className="flex-shrink-0 cursor-pointer mr-8 lg:mr-12"
+              className="flex-shrink-0 cursor-pointer"
               onClick={() => handleNavigation('/')}
             >
               <Logo />
@@ -394,8 +408,8 @@ const Header = () => {
               <button
                 className={`px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
                   isActivePath('/')
-                    ? 'text-primary border-b-2 border-primary' 
-                    : 'text-text-secondary hover:text-primary'
+                    ? 'text-emerald-600 border-b-2 border-emerald-600' 
+                    : 'text-gray-600 hover:text-emerald-600'
                 }`}
                 onClick={() => handleNavigation('/')}
               >
@@ -407,8 +421,8 @@ const Header = () => {
                 <button
                   className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
                     isShopActive()
-                      ? 'text-primary border-b-2 border-primary' 
-                      : 'text-text-secondary hover:text-primary'
+                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
+                      : 'text-gray-600 hover:text-emerald-600'
                   }`}
                   onClick={toggleShop}
                   onMouseEnter={() => {
@@ -466,8 +480,8 @@ const Header = () => {
                 <button
                   className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
                     location.pathname.includes('/services') 
-                      ? 'text-primary border-b-2 border-primary' 
-                      : 'text-text-secondary hover:text-primary'
+                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
+                      : 'text-gray-600 hover:text-emerald-600'
                   }`}
                   onClick={toggleServices}
                   onMouseEnter={() => {
@@ -502,8 +516,8 @@ const Header = () => {
                           }`}
                           onClick={() => handleNavigation(item.path)}
                         >
-                          <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
-                            <Icon name={item.icon} size={18} color="var(--color-primary)" />
+                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                            <Icon name={item.icon} size={18} className="text-emerald-600" />
                           </div>
                           <div className="flex-1">
                             <div className="text-sm font-semibold text-gray-900">
@@ -525,8 +539,8 @@ const Header = () => {
                 <button
                   className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
                     isCorporateActive()
-                      ? 'text-primary border-b-2 border-primary' 
-                      : 'text-text-secondary hover:text-primary'
+                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
+                      : 'text-gray-600 hover:text-emerald-600'
                   }`}
                   onClick={toggleCorporate}
                   onMouseEnter={() => {
@@ -568,8 +582,8 @@ const Header = () => {
                             }
                           }}
                         >
-                          <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
-                            <Icon name={item.icon} size={18} color="var(--color-primary)" />
+                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                            <Icon name={item.icon} size={18} className="text-emerald-600" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
@@ -594,8 +608,8 @@ const Header = () => {
                 <button
                   className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
                     isCareersActive()
-                      ? 'text-primary border-b-2 border-primary' 
-                      : 'text-text-secondary hover:text-primary'
+                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
+                      : 'text-gray-600 hover:text-emerald-600'
                   }`}
                   onClick={toggleCareers}
                   onMouseEnter={() => {
@@ -637,8 +651,8 @@ const Header = () => {
                             }
                           }}
                         >
-                          <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
-                            <Icon name={item.icon} size={18} color="var(--color-primary)" />
+                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                            <Icon name={item.icon} size={18} className="text-emerald-600" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
@@ -663,8 +677,8 @@ const Header = () => {
                 <button
                   className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
                     ['/blog', '/faq'].some(path => location.pathname === path)
-                      ? 'text-primary border-b-2 border-primary' 
-                      : 'text-text-secondary hover:text-primary'
+                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
+                      : 'text-gray-600 hover:text-emerald-600'
                   }`}
                   onClick={toggleResources}
                   onMouseEnter={() => {
@@ -708,9 +722,9 @@ const Header = () => {
                           }}
                         >
                           <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
-                            item.isDownload ? 'bg-green-100 group-hover:bg-green-200' : 'bg-primary-100 group-hover:bg-primary-200'
+                            item.isDownload ? 'bg-green-100 group-hover:bg-green-200' : 'bg-emerald-100 group-hover:bg-emerald-200'
                           }`}>
-                            <Icon name={item.icon} size={18} color={item.isDownload ? 'var(--color-green-600)' : 'var(--color-primary)'} />
+                            <Icon name={item.icon} size={18} className={item.isDownload ? 'text-green-600' : 'text-emerald-600'} />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
@@ -737,8 +751,8 @@ const Header = () => {
               <button
                 className={`px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
                   isActivePath('/contact')
-                    ? 'text-primary border-b-2 border-primary' 
-                    : 'text-text-secondary hover:text-primary'
+                    ? 'text-emerald-600 border-b-2 border-emerald-600' 
+                    : 'text-gray-600 hover:text-emerald-600'
                 }`}
                 onClick={() => handleNavigation('/contact')}
               >
@@ -747,7 +761,7 @@ const Header = () => {
             </nav>
 
             {/* Search Bar - Desktop */}
-            <div className="hidden lg:flex items-center flex-1 max-w-md mx-8">
+            <div className="hidden lg:flex items-center flex-1 max-w-md mx-auto">
               <form onSubmit={handleSearch} className="w-full relative">
                 <input
                   type="text"
@@ -773,16 +787,45 @@ const Header = () => {
                 iconName="MessageCircle"
                 iconPosition="left"
                 onClick={handleWhatsAppClick}
-                className="text-accent border-accent hover:bg-accent hover:text-white"
+                className="text-emerald-600 border-emerald-600 hover:bg-emerald-50"
               >
                 WhatsApp
               </Button>
+              
+              {/* Cart Button */}
+              <button
+                onClick={() => navigate('/cart')}
+                className="relative p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Shopping cart"
+              >
+                <Icon name="ShoppingCart" size={22} className="text-gray-700" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-emerald-600 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {cartCount > 99 ? '99+' : cartCount}
+                  </span>
+                )}
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden" ref={mobileMenuButtonRef}>
+            <div className="lg:hidden flex items-center gap-2">
+              {/* Mobile Cart Icon */}
               <button
-                className="p-2 rounded-md text-text-secondary hover:text-primary hover:bg-surface-100 transition-colors duration-200"
+                onClick={() => navigate('/cart')}
+                className="relative p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Shopping cart"
+              >
+                <Icon name="ShoppingCart" size={22} className="text-gray-700" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-emerald-600 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                    {cartCount > 99 ? '99+' : cartCount}
+                  </span>
+                )}
+              </button>
+              
+              <button
+                ref={mobileMenuButtonRef}
+                className="p-2 rounded-md text-gray-600 hover:text-emerald-600 hover:bg-gray-100 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileMenuOpen}
@@ -802,7 +845,8 @@ const Header = () => {
           style={{ top: '64px' }}
         >
           <div className="h-full overflow-y-auto bg-white">
-            <div className="px-4 py-4 space-y-2 pb-32">
+            <div className="px-4 py-4 space-y-2 pb-40">
+              
               {/* Search - Mobile */}
               <div className="mb-4">
                 <form onSubmit={handleSearch} className="relative">
@@ -822,10 +866,35 @@ const Header = () => {
                 </form>
               </div>
 
+              {/* Cart Button - Mobile */}
+              <button
+                onClick={() => {
+                  navigate('/cart');
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center justify-between w-full p-4 rounded-xl bg-emerald-50 border border-emerald-100 mb-4"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
+                    <Icon name="ShoppingCart" size={20} className="text-white" />
+                  </div>
+                  <div className="text-left">
+                    <span className="font-semibold text-gray-900">Shopping Cart</span>
+                    <p className="text-sm text-gray-500">{cartCount} {cartCount === 1 ? 'item' : 'items'}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-emerald-600">
+                    {cartCount > 0 ? formatPrice(cartTotal) : 'Ksh 0'}
+                  </span>
+                  <Icon name="ChevronRight" size={20} className="text-gray-400" />
+                </div>
+              </button>
+
               {/* Home */}
               <button
                 className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-colors duration-200 text-left border-b border-gray-100 ${
-                  isActivePath('/') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50'
+                  isActivePath('/') ? 'bg-emerald-50 text-emerald-600' : 'text-gray-600 hover:bg-gray-50'
                 }`}
                 onClick={() => handleNavigation('/')}
               >
@@ -898,8 +967,8 @@ const Header = () => {
                         className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path)}
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
-                          <Icon name={item.icon} size={16} color="var(--color-primary)" />
+                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name={item.icon} size={16} className="text-emerald-600" />
                         </div>
                         <div className="flex-1">
                           <div className="text-sm font-semibold text-gray-900">{item.label}</div>
@@ -911,14 +980,17 @@ const Header = () => {
                 )}
               </div>
 
-              {/* Corporate Section - Mobile */}
+              {/* Corporate Section - Mobile - WITH ICON */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
                   className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
                   onClick={toggleCorporate}
                   aria-expanded={corporateDropdownOpen}
                 >
-                  <span className="text-base font-semibold text-gray-900">Corporate</span>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="Building2" size={20} className="text-gray-600" />
+                    <span className="text-base font-semibold text-gray-900">Corporate</span>
+                  </div>
                   <Icon 
                     name="ChevronDown" 
                     size={20} 
@@ -934,8 +1006,8 @@ const Header = () => {
                         className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path, item.isExternal)}
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
-                          <Icon name={item.icon} size={16} color="var(--color-primary)" />
+                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name={item.icon} size={16} className="text-emerald-600" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
@@ -950,14 +1022,17 @@ const Header = () => {
                 )}
               </div>
 
-              {/* Careers Section - Mobile */}
+              {/* Careers Section - Mobile - WITH ICON */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
                   className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
                   onClick={toggleCareers}
                   aria-expanded={careersDropdownOpen}
                 >
-                  <span className="text-base font-semibold text-gray-900">Careers</span>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="Users" size={20} className="text-gray-600" />
+                    <span className="text-base font-semibold text-gray-900">Careers</span>
+                  </div>
                   <Icon 
                     name="ChevronDown" 
                     size={20} 
@@ -973,8 +1048,8 @@ const Header = () => {
                         className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path, item.isExternal)}
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
-                          <Icon name={item.icon} size={16} color="var(--color-primary)" />
+                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name={item.icon} size={16} className="text-emerald-600" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
@@ -989,14 +1064,17 @@ const Header = () => {
                 )}
               </div>
 
-              {/* Resources Section - Mobile */}
+              {/* Resources Section - Mobile - WITH ICON */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
                   className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
                   onClick={toggleResources}
                   aria-expanded={resourcesDropdownOpen}
                 >
-                  <span className="text-base font-semibold text-gray-900">Resources</span>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="BookOpen" size={20} className="text-gray-600" />
+                    <span className="text-base font-semibold text-gray-900">Resources</span>
+                  </div>
                   <Icon 
                     name="ChevronDown" 
                     size={20} 
@@ -1022,9 +1100,9 @@ const Header = () => {
                         }}
                       >
                         <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
-                          item.isDownload ? 'bg-green-100' : 'bg-primary-100'
+                          item.isDownload ? 'bg-green-100' : 'bg-emerald-100'
                         }`}>
-                          <Icon name={item.icon} size={16} color={item.isDownload ? 'var(--color-green-600)' : 'var(--color-primary)'} />
+                          <Icon name={item.icon} size={16} className={item.isDownload ? 'text-green-600' : 'text-emerald-600'} />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
@@ -1044,7 +1122,7 @@ const Header = () => {
               {/* Contact */}
               <button
                 className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-colors duration-200 text-left border-b border-gray-100 ${
-                  isActivePath('/contact') ? 'bg-primary-50 text-primary' : 'text-gray-600 hover:bg-gray-50'
+                  isActivePath('/contact') ? 'bg-emerald-50 text-emerald-600' : 'text-gray-600 hover:bg-gray-50'
                 }`}
                 onClick={() => handleNavigation('/contact')}
               >
@@ -1056,13 +1134,28 @@ const Header = () => {
 
           {/* Mobile Actions */}
           <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 space-y-3">
+            {/* Cart Quick Access */}
+            <button
+              onClick={() => {
+                navigate('/cart');
+                setMobileMenuOpen(false);
+              }}
+              className="w-full flex items-center justify-center gap-2 p-3 bg-emerald-50 text-emerald-700 rounded-lg font-medium"
+            >
+              <Icon name="ShoppingCart" size={20} />
+              <span>View Cart ({cartCount})</span>
+              {cartCount > 0 && (
+                <span className="text-sm">- {formatPrice(cartTotal)}</span>
+              )}
+            </button>
+            
             <Button
               variant="outline"
               size="md"
               iconName="MessageCircle"
               iconPosition="left"
               onClick={handleWhatsAppClick}
-              className="w-full text-accent border-accent hover:bg-accent hover:text-white"
+              className="w-full text-emerald-600 border-emerald-600 hover:bg-emerald-50"
             >
               WhatsApp Us
             </Button>

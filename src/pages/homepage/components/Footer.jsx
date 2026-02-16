@@ -47,12 +47,12 @@ const Footer = () => {
   ];
 
   const services = [
-    'Large Format Printing',
+    'Large Format',
     'UV Printing',
     'T-shirt Printing',
     'CNC Cutting',
     'Laser Cutting',
-    'Plotting Services'
+    'Plotting'
   ];
 
   const Logo = () => (
@@ -143,7 +143,7 @@ const Footer = () => {
               {services.map((service) => (
                 <li key={service}>
                   <button
-                    onClick={() => handleNavigation('/services')}
+                    onClick={() => handleNavigation(`/services/${service.toLowerCase().replace(/\s+/g, '-')}`)}
                     className="text-surface-300 hover:text-accent transition-colors duration-200 text-sm"
                   >
                     {service}

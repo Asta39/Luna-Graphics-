@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Icon from '../components/AppIcon';
@@ -11,7 +11,28 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [maxVisiblePages, setMaxVisiblePages] = useState(6); // Default to 6 for desktop
+  
   const postsPerPage = 6;
+
+  // Handle responsive max visible pages
+  useEffect(() => {
+    const handleResize = () => {
+      // Mobile: show 5 pages, Tablet/Desktop: show 6 pages
+      if (window.innerWidth < 640) { // sm breakpoint
+        setMaxVisiblePages(5);
+      } else {
+        setMaxVisiblePages(6);
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Listen for resize
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Filter posts based on search and category
   const filteredPosts = useMemo(() => {
@@ -25,7 +46,7 @@ const Blog = () => {
       posts = searchPosts(searchQuery);
     }
 
-    return posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+    return posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedDate));
   }, [searchQuery, selectedCategory]);
 
   // Pagination
@@ -47,39 +68,34 @@ const Blog = () => {
 
   // Fixed sliding window pagination - smooth carousel behavior
   const getVisiblePages = () => {
-    const maxVisible = 10;
+    // Use half of maxVisible for the "center" position calculation
+    const centerOffset = Math.floor(maxVisiblePages / 2); // 3 for 6 pages, 2 for 5 pages
     
-    if (totalPages <= maxVisible) {
+    if (totalPages <= maxVisiblePages) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
 
-    // Keep window at start (1-10) until page 7, then slide
-    // At page 8, show 1-10 (page 8 is at position 8)
-    // At page 9, show 2-11 (page 9 is at position 8)
-    // This keeps the active page in the right half of the window for smooth sliding
-    
     let start;
     
-    if (currentPage <= 7) {
-      // First phase: fixed at 1-10
+    // Adjust breakpoints based on visible page count
+    const slideThreshold = centerOffset + 2; // 5 for 6 pages, 4 for 5 pages
+    
+    if (currentPage <= slideThreshold) {
+      // First phase: fixed at start
       start = 1;
-    } else if (currentPage >= totalPages - 2) {
-      // Near end: show last 10 pages
-      start = totalPages - 9;
+    } else if (currentPage >= totalPages - (centerOffset - 1)) {
+      // Near end: show last pages
+      start = totalPages - (maxVisiblePages - 1);
     } else {
-      // Middle: slide so currentPage is at position 8 (index 7)
-      // When on page 8, start is 1 (shows 1-10, 8 is at pos 8)
-      // When on page 9, start is 2 (shows 2-11, 9 is at pos 8)
-      // When on page 10, start is 3 (shows 3-12, 10 is at pos 8)
-      start = currentPage - 7;
+      // Middle: slide so currentPage stays centered-ish
+      start = currentPage - centerOffset;
     }
     
-    // Ensure start doesn't go below 1
+    // Ensure bounds
     start = Math.max(1, start);
-    // Ensure start doesn't go too high
-    start = Math.min(start, totalPages - 9);
+    start = Math.min(start, totalPages - (maxVisiblePages - 1));
     
-    return Array.from({ length: maxVisible }, (_, i) => start + i);
+    return Array.from({ length: maxVisiblePages }, (_, i) => start + i);
   };
 
   const visiblePages = getVisiblePages();
@@ -87,7 +103,7 @@ const Blog = () => {
   const showEndEllipsis = visiblePages[visiblePages.length - 1] < totalPages;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-18">
       <Helmet>
         <title>Blog | Printing Tips & Branding Insights | Luna Graphics Nairobi</title>
         <meta name="description" content="Expert printing tips, political campaign guides, corporate branding insights, and large format printing advice from Kenya's leading printing company." />
@@ -190,16 +206,16 @@ const Blog = () => {
                 ))}
               </div>
 
-              {/* Dynamic Pagination */}
+              {/* Dynamic Pagination - Responsive */}
               {totalPages > 1 && (
-                <div className="flex justify-center items-center gap-2 mt-12">
+                <div className="flex justify-center items-center gap-1 sm:gap-2 mt-12">
                   {/* Previous Button */}
                   <button
                     onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
-                    className="p-2 rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-all duration-200 hover:scale-105 active:scale-95"
+                    className="p-1.5 sm:p-2 rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-all duration-200 hover:scale-105 active:scale-95"
                   >
-                    <Icon name="ChevronLeft" size={20} />
+                    <Icon name="ChevronLeft" size={18} className="sm:w-5 sm:h-5" />
                   </button>
 
                   {/* First Page + Start Ellipsis */}
@@ -207,22 +223,22 @@ const Blog = () => {
                     <>
                       <button
                         onClick={() => setCurrentPage(1)}
-                        className="w-10 h-10 rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-200 hover:scale-105"
+                        className="w-8 h-8 sm:w-10 sm:h-10 text-sm sm:text-base rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-200 hover:scale-105"
                       >
                         1
                       </button>
-                      <span className="px-2 text-gray-400 select-none">...</span>
+                      <span className="px-1 sm:px-2 text-gray-400 select-none">...</span>
                     </>
                   )}
 
-                  {/* Visible Page Numbers - Clean styling without outer borders */}
-                  <div className="flex gap-2">
+                  {/* Visible Page Numbers */}
+                  <div className="flex gap-1 sm:gap-2">
                     {visiblePages.map((page, index) => (
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
                         className={`
-                          w-10 h-10 rounded-lg font-medium transition-all duration-300 ease-out
+                          w-8 h-8 sm:w-10 sm:h-10 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 ease-out
                           transform hover:scale-110 active:scale-95
                           ${currentPage === page
                             ? 'bg-primary text-white shadow-lg scale-105'
@@ -241,10 +257,10 @@ const Blog = () => {
                   {/* End Ellipsis + Last Page */}
                   {showEndEllipsis && (
                     <>
-                      <span className="px-2 text-gray-400 select-none">...</span>
+                      <span className="px-1 sm:px-2 text-gray-400 select-none">...</span>
                       <button
                         onClick={() => setCurrentPage(totalPages)}
-                        className="w-10 h-10 rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-200 hover:scale-105"
+                        className="w-8 h-8 sm:w-10 sm:h-10 text-sm sm:text-base rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-all duration-200 hover:scale-105"
                       >
                         {totalPages}
                       </button>
@@ -255,9 +271,9 @@ const Blog = () => {
                   <button
                     onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                     disabled={currentPage === totalPages}
-                    className="p-2 rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-all duration-200 hover:scale-105 active:scale-95"
+                    className="p-1.5 sm:p-2 rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-all duration-200 hover:scale-105 active:scale-95"
                   >
-                    <Icon name="ChevronRight" size={20} />
+                    <Icon name="ChevronRight" size={18} className="sm:w-5 sm:h-5" />
                   </button>
                 </div>
               )}

@@ -11,13 +11,13 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const API_KEY = process.env.VITE_GOOGLE_PLACES_API_KEY || process.env.REACT_APP_GOOGLE_PLACES_API_KEY;
-const PLACE_ID = process.env.VITE_GOOGLE_PLACE_ID || process.env.REACT_APP_GOOGLE_PLACE_ID;
+const API_KEY = process.env.VITE_GOOGLE_PLACES_API_KEY || process.env.VITE_GOOGLE_PLACES_API_KEY;
+const PLACE_ID = process.env.VITE_GOOGLE_PLACES_ID || process.env.VITE_GOOGLE_PLACES_ID;
 
 if (!API_KEY || !PLACE_ID) {
   console.error('❌ Missing environment variables:');
-  console.error('VITE_GOOGLE_PLACES_API_KEY or REACT_APP_GOOGLE_PLACES_API_KEY:', API_KEY ? 'Set' : 'Missing');
-  console.error('VITE_GOOGLE_PLACE_ID or REACT_APP_GOOGLE_PLACE_ID:', PLACE_ID ? 'Set' : 'Missing');
+  console.error('VITE_GOOGLE_PLACES_API_KEY or VITE_GOOGLE_PLACES_API_KEY:', API_KEY ? 'Set' : 'Missing');
+  console.error('VITE_GOOGLE_PLACES_ID or VITE_GOOGLE_PLACES_ID:', PLACE_ID ? 'Set' : 'Missing');
   process.exit(1);
 }
 
