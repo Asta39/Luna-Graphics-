@@ -1,13 +1,20 @@
-import React, { useState, useRef } from 'react';
+// src/shop/components/InquiryModal.jsx
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
+// EmailJS Configuration - REPLACE WITH YOUR CREDENTIALS
+const EMAILJS_CONFIG = {
+  SERVICE_ID: 'service_b1lp7ef',
+  TEMPLATE_ID: 'template_5qy4nwm',
+  PUBLIC_KEY: 'kiEUK4XklpodvcXo-'
+};
+
 const InquiryModal = ({ isOpen, onClose, product }) => {
-  const formRef = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -15,9 +22,19 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
     phone: '',
     quantity: '1',
     message: '',
-    productName: product?.name || '',
-    productId: product?.id || ''
+    productName: '',
+    productId: ''
   });
+
+  useEffect(() => {
+    if (product) {
+      setFormData(prev => ({
+        ...prev,
+        productName: product.name || '',
+        productId: product.id || ''
+      }));
+    }
+  }, [product]);
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -32,18 +49,42 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
     setSubmitStatus(null);
 
     try {
-      // EmailJS configuration - replace with your actual credentials
-      const result = await emailjs.sendForm(
-        'YOUR_SERVICE_ID',    // EmailJS service ID
-        'YOUR_TEMPLATE_ID',   // EmailJS template ID
-        formRef.current,
-        'YOUR_PUBLIC_KEY'     // EmailJS public key
+      // Get current timestamp
+      const now = new Date();
+      const timestamp = now.toLocaleString('en-KE', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        quantity: formData.quantity,
+        message: formData.message || 'No additional message provided',
+        product_name: formData.productName,
+        product_id: formData.productId,
+        reply_to: formData.email,
+        timestamp: timestamp
+      };
+
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
       );
 
-      if (result.text === 'OK') {
-        setSubmitStatus('success');
+      console.log('EmailJS Success:', result);
+      setSubmitStatus('success');
+      
+      setTimeout(() => {
+        onClose();
         setTimeout(() => {
-          onClose();
           setSubmitStatus(null);
           setFormData({
             name: '',
@@ -54,8 +95,9 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
             productName: product?.name || '',
             productId: product?.id || ''
           });
-        }, 2000);
-      }
+        }, 300);
+      }, 2000);
+      
     } catch (error) {
       console.error('EmailJS Error:', error);
       setSubmitStatus('error');
@@ -65,7 +107,19 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
   };
 
   const handleWhatsApp = () => {
-    const message = `Hello! I'm interested in ${product?.name} (ID: ${product?.id}). Please provide more information.`;
+    const message = `Hello Luna Graphics! 
+
+I'm interested in:
+📦 Product: ${product?.name}
+🆔 ID: ${product?.id}
+
+Name: ${formData.name || 'Not provided'}
+Phone: ${formData.phone || 'Not provided'}
+Email: ${formData.email || 'Not provided'}
+Quantity: ${formData.quantity}
+
+Message: ${formData.message || 'No additional message'}`;
+
     const whatsappUrl = `https://wa.me/254791159618?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     onClose();
@@ -75,11 +129,14 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+      <motion.div 
+        key="modal-overlay"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      >
+        <div 
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={onClose}
         />
@@ -88,17 +145,21 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
+          transition={{ duration: 0.2 }}
+          className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden max-h-[90vh] overflow-y-auto"
         >
           {/* Header */}
-          <div className="bg-emerald-600 px-6 py-4 flex items-center justify-between">
+          <div className="bg-emerald-600 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
             <div>
               <h3 className="text-lg font-semibold text-white">Product Inquiry</h3>
-              <p className="text-emerald-100 text-sm">{product?.name}</p>
+              <p className="text-emerald-100 text-sm truncate max-w-[200px] sm:max-w-xs">
+                {formData.productName || 'General Inquiry'}
+              </p>
             </div>
             <button 
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+              className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors flex-shrink-0"
+              type="button"
             >
               <Icon name="X" size={20} />
             </button>
@@ -115,13 +176,15 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
                 <p className="text-gray-600">We'll get back to you within 24 hours.</p>
               </div>
             ) : (
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <input type="hidden" name="product_name" value={formData.productName} />
                 <input type="hidden" name="product_id" value={formData.productId} />
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Name <span className="text-red-500">*</span>
+                    </label>
                     <input
                       type="text"
                       name="name"
@@ -133,7 +196,9 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone <span className="text-red-500">*</span>
+                    </label>
                     <input
                       type="tel"
                       name="phone"
@@ -147,7 +212,9 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Email <span className="text-red-500">*</span>
+                  </label>
                   <input
                     type="email"
                     name="email"
@@ -165,7 +232,7 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
                     name="quantity"
                     value={formData.quantity}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
                   >
                     <option value="1">1 unit</option>
                     <option value="5">5 units</option>
@@ -173,6 +240,7 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
                     <option value="25">25 units</option>
                     <option value="50">50+ units</option>
                     <option value="100">100+ units</option>
+                    <option value="custom">Custom amount</option>
                   </select>
                 </div>
 
@@ -184,22 +252,25 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all resize-none"
-                    placeholder="Any specific requirements..."
+                    placeholder="Any specific requirements, deadline, or questions..."
                   />
                 </div>
 
                 {submitStatus === 'error' && (
-                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-600 text-sm">
-                    <Icon name="AlertCircle" size={16} />
-                    <span>Failed to send. Please try WhatsApp instead.</span>
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2 text-red-600 text-sm">
+                    <Icon name="AlertCircle" size={18} className="flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium">Failed to send email</p>
+                      <p>Please try WhatsApp or call us directly.</p>
+                    </div>
                   </div>
                 )}
 
-                <div className="flex gap-3 pt-2">
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Button
                     type="button"
                     variant="outline"
-                    className="flex-1"
+                    className="flex-1 border-emerald-200 text-emerald-700 hover:bg-emerald-50"
                     onClick={handleWhatsApp}
                   >
                     <Icon name="MessageCircle" size={18} className="mr-2" />
@@ -208,16 +279,22 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
                   <Button
                     type="submit"
                     variant="primary"
-                    className="flex-1 bg-emerald-600 hover:bg-emerald-700"
+                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      <span className="flex items-center">
-                        <Icon name="Loader2" size={18} className="mr-2 animate-spin" />
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
                         Sending...
                       </span>
                     ) : (
-                      'Send Inquiry'
+                      <>
+                        <Icon name="Send" size={18} className="mr-2" />
+                        Send Inquiry
+                      </>
                     )}
                   </Button>
                 </div>
@@ -225,7 +302,7 @@ const InquiryModal = ({ isOpen, onClose, product }) => {
             )}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </AnimatePresence>
   );
 };

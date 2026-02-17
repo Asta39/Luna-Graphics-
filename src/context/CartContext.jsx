@@ -83,13 +83,17 @@ export const CartProvider = ({ children }) => {
   }, [state.items, isLoaded]);
 
   const addItem = (product, quantity = 1) => {
+    const productImage = product.images && product.images.length > 0
+      ? product.images[0]
+      : product.image;
+
     dispatch({
       type: 'ADD_ITEM',
       payload: {
         id: product.id,
         name: product.name,
         price: product.price,
-        image: product.image,
+        image: productImage,
         category: product.category,
         subcategory: product.subcategory,
         quantity: Math.max(product.minOrder || 1, quantity),

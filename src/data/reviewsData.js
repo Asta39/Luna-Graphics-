@@ -37,6 +37,6 @@ export const reviews = [
 export const reviewStats = {
   averageRating: 4.9,
   totalReviews: 150,
-  lastUpdated: "2026-02-16T14:29:26.664Z",
+  lastUpdated: "2026-02-17T16:46:49.138Z",
   note: "Fallback data - API fetch failed"
 };

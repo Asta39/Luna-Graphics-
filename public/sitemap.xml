@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://lunagraphics.co.ke/</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+<image:image>
+<image:loc>https://lunagraphics.co.ke/social-sharing-image.jpg</image:loc>
+<image:title>Luna Graphics - Premier Print Shop in Nairobi</image:title>
+<image:caption>Nairobi's top choice for professional printing services</image:caption>
+</image:image>
+</url>
   <url>
     <loc>https://lunagraphics.co.ke/shop</loc>
     <lastmod>2026-02-16</lastmod>
@@ -19,35 +30,119 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/BlogPost</loc>
+    <loc>https://lunagraphics.co.ke/corporate/corporate-branding</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/corporate/CorporateBranding</loc>
+    <loc>https://lunagraphics.co.ke/corporate/events-exhibitions</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://lunagraphics.co.ke/corporate/EventsExhibitions</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lunagraphics.co.ke/shop/ProductDetail</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://lunagraphics.co.ke/cart</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <!--  Main Corporate Page (Very High Priority)  -->
+<url>
+<loc>https://lunagraphics.co.ke/corporate-services</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  Key Service Pages (High Priority)  -->
+<url>
+<loc>https://lunagraphics.co.ke/services/uv-printing</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lunagraphics.co.ke/services/cnc-cutting</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lunagraphics.co.ke/services/laser-cutting</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lunagraphics.co.ke/services/t-shirt-printing</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lunagraphics.co.ke/services/plotting</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://lunagraphics.co.ke/services/large-format</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  Gallery Page (Important, updated often)  -->
+<url>
+<loc>https://lunagraphics.co.ke/faq</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<!--  Contact Page (Important, but rarely changes)  -->
+<url>
+<loc>https://lunagraphics.co.ke/contact</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.8</priority>
+</url>
+<!--  Team Page  -->
+<url>
+<loc>https://lunagraphics.co.ke/team</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.6</priority>
+</url>
+<!--  REMOVED: Generic Service Detail Page (duplicate content risk)  -->
+<!--  This page should NOT be in sitemap as it's a template, not a standalone page  -->
+<!--  Optional: Add if you have these pages  -->
+<!--  About Page  -->
+<url>
+<loc>https://lunagraphics.co.ke/about</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://lunagraphics.co.ke/privacy-policy</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://lunagraphics.co.ke/terms-of-service</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://lunagraphics.co.ke/corporate-terms</loc>
+<lastmod>2025-07-03</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.5</priority>
+</url>
+</urlset>
   <url>
     <loc>https://lunagraphics.co.ke/blog/uv-vs-screen-printing-nairobi-guide</loc>
     <lastmod>2024-01-15T08:00:00Z</lastmod>
@@ -2449,253 +2544,253 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/roll-up-banner-850</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/roll-up-banner-850</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/roll-up-banner-1000</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/roll-up-banner-1000</loc> 
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/x-banner-stand</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/x-banner-stand</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/pop-up-backdrop-3x3</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/pop-up-backdrop-3x3</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/pop-up-backdrop-4x3</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/pop-up-backdrop-4x3</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/fabric-backdrop</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/fabric-backdrop</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/fabric-backdrop-10x8</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/fabric-backdrop-10x8</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/banners/teardrop-banner</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/teardrop-banner</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/signage/acrylic-signage-5mm</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/acrylic-signage-5mm</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/signage/acrylic-signage-10mm</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/acrylic-signage-10mm</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/signage/led-signage-acrylic</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/led-signage-acrylic</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/signage/metal-signage</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/metal-signage</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/signage/neon-signage-led</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/neon-signage-led</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/signage/wayfinding-signage</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/wayfinding-signage</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/signage/safety-signage</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/safety-signage</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/business-cards-premium</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/business-cards-premium</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/business-cards-luxury</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/business-cards-luxury</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/letterheads</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/letterheads</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/compliment-slips</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/compliment-slips</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/brochures-a4</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/brochures-a4</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/flyers-a4</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/flyers-a4</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/presentation-folders</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/presentation-folders</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/corporate/certificates</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/certificates</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/events/event-backdrop-fabric</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/event-backdrop-fabric</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/events/step-repeat-banner</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/step-repeat-banner</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/events/table-covers</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/table-covers</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/events/event-tickets</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/event-tickets</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/events/lanyards</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/lanyards</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/events/wristbands</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/wristbands</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/events/red-carpet-runner</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/red-carpet-runner</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-tshirts-polo</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-tshirts-polo</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-tshirts-round</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-tshirts-round</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-mugs-ceramic</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-mugs-ceramic</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-mugs-travel</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-mugs-travel</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-bottles</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-bottles</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-pens</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-pens</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-notebooks</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-notebooks</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-usb</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-usb</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/merchandise/branded-powerbank</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/branded-powerbank</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/large-format/posters-a2</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/posters-a2</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/large-format/foam-board</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/foam-board</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/shop/large-format/vinyl-banner</loc>
+    <loc>https://lunagraphics.co.ke/shop/product/vinyl-banner</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

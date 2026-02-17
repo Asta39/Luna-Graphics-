@@ -7,6 +7,7 @@ import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import { useCart } from '../../context/CartContext';
 import Header from '../../components/ui/Header';
+import { getProductById } from '../../data/products';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -22,6 +23,14 @@ const Cart = () => {
     message: ''
   });
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  const getCartItemImage = (item) => {
+    if (item.image) return item.image;
+    const product = getProductById(item.id);
+    if (!product) return '/images/placeholder-product.jpg';
+    if (product.images && product.images.length > 0) return product.images[0];
+    return product.image || '/images/placeholder-product.jpg';
+  };
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-KE', {
@@ -84,8 +93,8 @@ const Cart = () => {
       }));
 
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_b1lp7ef',
+        'template_5qy4nwm',
         {
           customer_name: formData.name,
           customer_email: formData.email,
@@ -96,7 +105,7 @@ const Cart = () => {
           item_count: items.length.toString(),
           order_summary: generateOrderSummary()
         },
-        'YOUR_PUBLIC_KEY'
+        'kiEUK4XklpodvcXo-'
       );
 
       setSubmitStatus('success');
@@ -180,9 +189,12 @@ const Cart = () => {
                     onClick={() => navigate(`/shop/product/${item.id}`)}
                   >
                     <img 
-                      src={item.image} 
+                      src={getCartItemImage(item)} 
                       alt={item.name}
                       className="w-full h-full object-cover hover:scale-105 transition-transform"
+                      onError={(e) => {
+                        e.target.src = '/images/placeholder-product.jpg';
+                      }}
                     />
                   </div>
 

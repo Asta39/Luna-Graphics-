@@ -9,13 +9,17 @@ import { getProductById, products } from '../../data/products';
 import { useCart } from '../../context/CartContext';
 import Header from '../../components/ui/Header';
 
-
+// EmailJS Configuration - REPLACE WITH YOUR CREDENTIALS
+const EMAILJS_CONFIG = {
+  SERVICE_ID: 'service_b1lp7ef',
+  TEMPLATE_ID: 'template_5qy4nwm',
+  PUBLIC_KEY: 'kiEUK4XklpodvcXo-'
+};
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const { addItem } = useCart();
-  const formRef = useRef();
   
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -23,14 +27,6 @@ const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState('description');
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
     const found = getProductById(productId);
@@ -78,38 +74,6 @@ const ProductDetail = () => {
     setTimeout(() => setAddedToCart(false), 2000);
   };
 
-  const handleDirectInquiry = async (e) => {
-    e.preventDefault();
-    setSubmitStatus('sending');
-
-    try {
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        {
-          product_name: product.name,
-          product_id: product.id,
-          quantity: quantity,
-          ...formData
-        },
-        'YOUR_PUBLIC_KEY'
-      );
-
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      setSubmitStatus('error');
-    }
-  };
-
-  const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   const tabs = [
     { id: 'description', label: 'Description' },
     { id: 'specifications', label: 'Specifications' },
@@ -117,7 +81,6 @@ const ProductDetail = () => {
     { id: 'shipping', label: 'Shipping & Returns' }
   ];
 
-  // Use product images or fallback to single image
   const productImages = product.images || [product.image];
 
   return (
@@ -125,7 +88,7 @@ const ProductDetail = () => {
       <Helmet>
         <title>{`${product.name} | Luna Graphics Kenya`}</title>
         <meta name="description" content={product.description} />
-      </Helmet>.
+      </Helmet>
       <Header/>
 
       {/* Breadcrumb */}
@@ -184,7 +147,6 @@ const ProductDetail = () => {
                 </button>
               </div>
               
-              {/* Thumbnail Grid */}
               {productImages.length > 1 && (
                 <div className="grid grid-cols-4 gap-3">
                   {productImages.map((img, idx) => (
@@ -304,7 +266,7 @@ const ProductDetail = () => {
                 </Button>
               </div>
 
-              {/* Add to Cart Button - CENTERED */}
+              {/* Add to Cart Button */}
               <div className="pt-4 border-t border-gray-100">
                 <Button 
                   variant="primary" 
@@ -357,7 +319,6 @@ const ProductDetail = () => {
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-            {/* Tab Headers */}
             <div className="flex border-b border-gray-200 overflow-x-auto">
               {tabs.map(tab => (
                 <button
@@ -378,7 +339,6 @@ const ProductDetail = () => {
               ))}
             </div>
 
-            {/* Tab Content */}
             <div className="p-6 md:p-8">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -463,188 +423,387 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Quick Inquiry Form */}
+      {/* Quick Inquiry Form Section - Simplified */}
       <section className="py-12 bg-white border-t border-gray-200">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Quick Inquiry</h2>
-            <p className="text-gray-600">Have questions? Send us a message and we will respond within 24 hours.</p>
-          </div>
-
-          {submitStatus === 'success' ? (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center"
-            >
-              <div className="w-16 h-16 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-4">
-                <Icon name="CheckCircle" size={32} className="text-emerald-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Inquiry Sent Successfully!</h3>
-              <p className="text-gray-600">Thank you for your interest. Our team will contact you shortly.</p>
-              <Button 
-                variant="outline" 
-                className="mt-4" 
-                onClick={() => setSubmitStatus(null)}
-              >
-                Send Another
-              </Button>
-            </motion.div>
-          ) : (
-            <form ref={formRef} onSubmit={handleDirectInquiry} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
-                    placeholder="07XX XXX XXX"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea
-                  name="message"
-                  rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all resize-none"
-                  placeholder="Tell us about your requirements..."
-                />
-              </div>
-
-              {submitStatus === 'error' && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-600">
-                  <Icon name="AlertCircle" size={20} />
-                  <span>Failed to send inquiry. Please try WhatsApp instead.</span>
-                </div>
-              )}
-
-              <div className="flex gap-3">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="lg"
-                  className="flex-1 bg-emerald-600 hover:bg-emerald-700"
-                  disabled={submitStatus === 'sending'}
-                >
-                  {submitStatus === 'sending' ? (
-                    <span className="flex items-center justify-center">
-                      <Icon name="Loader2" size={20} className="mr-2 animate-spin" />
-                      Sending...
-                    </span>
-                  ) : (
-                    <>
-                      <Icon name="Send" size={20} className="mr-2" />
-                      Send Inquiry
-                    </>
-                  )}
-                </Button>
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="lg"
-                  onClick={handleWhatsApp}
-                >
-                  <Icon name="MessageCircle" size={20} className="mr-2" />
-                  WhatsApp
-                </Button>
-              </div>
-            </form>
-          )}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Have Questions?</h2>
+          <p className="text-gray-600 mb-6">Click the button below to send us a detailed inquiry about this product.</p>
+          <Button 
+            variant="primary" 
+            size="lg"
+            className="bg-emerald-600 hover:bg-emerald-700"
+            onClick={() => setIsInquiryOpen(true)}
+          >
+            <Icon name="Send" size={20} className="mr-2" />
+            Open Inquiry Form
+          </Button>
         </div>
       </section>
 
       {/* Related Products */}
-{/* Related Products */}
-{relatedProducts.length > 0 && (
-  <section className="py-12 bg-gray-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900">Related Products</h2>
-          <p className="text-gray-500 mt-1">You might also be interested in</p>
-        </div>
-        <Button variant="outline" onClick={() => navigate('/shop')}>
-          View All
-        </Button>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-        {relatedProducts.map((item, index) => (
-          <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer flex flex-col"
-            onClick={() => navigate(`/shop/product/${item.id}`)}
-          >
-            {/* Fixed height image container - 160px height */}
-            <div className="relative h-40 bg-gray-100 overflow-hidden flex-shrink-0">
-              <img 
-                src={item.image || (item.images && item.images[0])} 
-                alt={item.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src = '/images/placeholder-product.jpg';
-                }}
-              />
-              {item.discount && (
-                <div className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
-                  {item.discount}
-                </div>
-              )}
-            </div>
-            <div className="p-4 flex flex-col flex-grow">
-              <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors text-sm leading-snug min-h-[40px]">
-                {item.name}
-              </h3>
-              <div className="flex items-center justify-between mt-auto">
-                <span className="text-lg font-bold text-emerald-600">{formatPrice(item.price)}</span>
-                <span className="text-xs text-gray-500">/{item.priceUnit}</span>
+      {relatedProducts.length > 0 && (
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">Related Products</h2>
+                <p className="text-gray-500 mt-1">You might also be interested in</p>
               </div>
+              <Button variant="outline" onClick={() => navigate('/shop')}>
+                View All
+              </Button>
             </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
 
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+              {relatedProducts.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer flex flex-col"
+                  onClick={() => navigate(`/shop/product/${item.id}`)}
+                >
+                  <div className="relative h-40 bg-gray-100 overflow-hidden flex-shrink-0">
+                    <img 
+                      src={item.image || (item.images && item.images[0])} 
+                      alt={item.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        e.target.src = '/images/placeholder-product.jpg';
+                      }}
+                    />
+                    {item.discount && (
+                      <div className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
+                        {item.discount}
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-4 flex flex-col flex-grow">
+                    <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors text-sm leading-snug min-h-[40px]">
+                      {item.name}
+                    </h3>
+                    <div className="flex items-center justify-between mt-auto">
+                      <span className="text-lg font-bold text-emerald-600">{formatPrice(item.price)}</span>
+                      <span className="text-xs text-gray-500">/{item.priceUnit}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
+
+      {/* Modern Inquiry Modal */}
+      <InquiryModal 
+        isOpen={isInquiryOpen} 
+        onClose={() => setIsInquiryOpen(false)} 
+        product={product}
+        initialQuantity={quantity}
+      />
     </div>
+  );
+};
+
+// Modern Inquiry Modal Component (same as shop component)
+const InquiryModal = ({ isOpen, onClose, product, initialQuantity = 1 }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    quantity: initialQuantity.toString(),
+    message: '',
+    productName: '',
+    productId: ''
+  });
+
+  useEffect(() => {
+    if (product) {
+      setFormData(prev => ({
+        ...prev,
+        productName: product.name || '',
+        productId: product.id || '',
+        quantity: initialQuantity.toString()
+      }));
+    }
+  }, [product, initialQuantity]);
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
+
+  let result; // Define result outside try block so it's accessible everywhere
+
+  try {
+    const now = new Date();
+    const timestamp = now.toLocaleString('en-KE', {
+      weekday: 'short',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      quantity: formData.quantity,
+      message: formData.message || 'No additional message provided',
+      product_name: formData.productName,
+      product_id: formData.productId,
+      reply_to: formData.email,
+      timestamp: timestamp
+    };
+
+    // Assign to the outer result variable
+    const EMAILJS_CONFIG = {
+  SERVICE_ID: 'service_bllp7ef',
+  TEMPLATE_ID: 'template_5qy4nwm', 
+  PUBLIC_KEY: 'kiEUK4XklpodvcXo-'
+};
+
+    console.log('EmailJS Success:', result);
+    setSubmitStatus('success');
+    
+    setTimeout(() => {
+      onClose();
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          quantity: '1',
+          message: '',
+          productName: product?.name || '',
+          productId: product?.id || ''
+        });
+      }, 300);
+    }, 2000);
+    
+  } catch (error) {
+    console.error('EmailJS Error:', error);
+    // Log result here only if it was defined (it might be undefined if error happened before assignment)
+    console.log('Result status:', result); 
+    setSubmitStatus('error');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+  const handleWhatsApp = () => {
+    const message = `Hello Luna Graphics! 
+
+I'm interested in:
+📦 Product: ${product?.name}
+🆔 ID: ${product?.id}
+
+Name: ${formData.name || 'Not provided'}
+Phone: ${formData.phone || 'Not provided'}
+Email: ${formData.email || 'Not provided'}
+Quantity: ${formData.quantity}
+
+Message: ${formData.message || 'No additional message'}`;
+
+    const whatsappUrl = `https://wa.me/254791159618?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    onClose();
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <AnimatePresence>
+      <motion.div 
+        key="modal-overlay"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      >
+        <div 
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          onClick={onClose}
+        />
+        
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 20 }}
+          transition={{ duration: 0.2 }}
+          className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden max-h-[90vh] overflow-y-auto"
+        >
+          {/* Header */}
+          <div className="bg-emerald-600 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
+            <div>
+              <h3 className="text-lg font-semibold text-white">Product Inquiry</h3>
+              <p className="text-emerald-100 text-sm truncate max-w-[200px] sm:max-w-xs">
+                {formData.productName || 'General Inquiry'}
+              </p>
+            </div>
+            <button 
+              onClick={onClose}
+              className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors flex-shrink-0"
+              type="button"
+            >
+              <Icon name="X" size={20} />
+            </button>
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+            {submitStatus === 'success' ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                  <Icon name="CheckCircle" size={32} className="text-emerald-600" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Inquiry Sent!</h4>
+                <p className="text-gray-600">We'll get back to you within 24 hours.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input type="hidden" name="product_name" value={formData.productName} />
+                <input type="hidden" name="product_id" value={formData.productId} />
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                      placeholder="07XX XXX XXX"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                    placeholder="john@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Quantity Needed</label>
+                  <select
+                    name="quantity"
+                    value={formData.quantity}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
+                  >
+                    <option value="1">1 unit</option>
+                    <option value="5">5 units</option>
+                    <option value="10">10 units</option>
+                    <option value="25">25 units</option>
+                    <option value="50">50+ units</option>
+                    <option value="100">100+ units</option>
+                    <option value="custom">Custom amount</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                  <textarea
+                    name="message"
+                    rows="3"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all resize-none"
+                    placeholder="Any specific requirements, deadline, or questions..."
+                  />
+                </div>
+
+                {submitStatus === 'error' && (
+                  <div className="p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2 text-red-600 text-sm">
+                    <Icon name="AlertCircle" size={18} className="flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium">Failed to send email</p>
+                      <p>Please try WhatsApp or call us directly.</p>
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="flex-1 border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+                    onClick={handleWhatsApp}
+                  >
+                    <Icon name="MessageCircle" size={18} className="mr-2" />
+                    WhatsApp
+                  </Button>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      <>
+                        <Icon name="Send" size={18} className="mr-2" />
+                        Send Inquiry
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </form>
+            )}
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

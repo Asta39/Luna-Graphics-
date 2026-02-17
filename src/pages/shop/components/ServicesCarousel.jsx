@@ -1,21 +1,8 @@
 // src/shop/components/ServicesCarousel.jsx
 import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Printer, Sun, FileText, Thermometer, Layers, Scissors, Zap, Truck, MapPin, Users, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { services, getWhatsAppLink } from '../../../data/services.js';
-
-const iconMap = {
-  Printer,
-  Sun,
-  FileText,
-  Thermometer,
-  Layers,
-  Scissors,
-  Zap,
-  Truck,
-  MapPin,
-  Users
-};
 
 const ServicesCarousel = () => {
   const navigate = useNavigate();
@@ -184,63 +171,66 @@ const ServicesCarousel = () => {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {duplicatedServices.map((service, index) => {
-          const IconComponent = iconMap[service.icon] || Printer;
-          
-          return (
-            <div
-              key={`${service.id}-${index}`}
-              onClick={() => handleServiceClick(service.id)}
-              className="flex-shrink-0 w-80 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group"
-            >
-              {/* Card Header with Icon */}
-              <div className="h-32 bg-gradient-to-br from-green-50 to-green-100 rounded-t-lg flex items-center justify-center group-hover:from-green-100 group-hover:to-green-200 transition-colors">
-                <IconComponent className="w-16 h-16 text-green-600" />
+        {duplicatedServices.map((service, index) => (
+          <div
+            key={`${service.id}-${index}`}
+            onClick={() => handleServiceClick(service.id)}
+            className="flex-shrink-0 w-80 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group"
+          >
+            {/* Card Header with Image */}
+            <div className="h-48 rounded-t-lg overflow-hidden relative">
+              <img
+                src={service.image}
+                alt={service.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                draggable="false"
+              />
+              {/* Subtle overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            
+            {/* Card Content */}
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                {service.name}
+              </h3>
+              <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                {service.shortDescription}
+              </p>
+              
+              {/* Features Preview */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {service.features.slice(0, 2).map((feature, idx) => (
+                  <span 
+                    key={idx}
+                    className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded"
+                  >
+                    {feature.split(' ').slice(0, 3).join(' ')}...
+                  </span>
+                ))}
               </div>
               
-              {/* Card Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                  {service.name}
-                </h3>
-                <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                  {service.shortDescription}
-                </p>
-                
-                {/* Features Preview */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {service.features.slice(0, 2).map((feature, idx) => (
-                    <span 
-                      key={idx}
-                      className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded"
-                    >
-                      {feature.split(' ').slice(0, 3).join(' ')}...
-                    </span>
-                  ))}
-                </div>
-                
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <button
-                    onClick={(e) => handleWhatsAppClick(e, service)}
-                    className="flex-1 bg-green-600 text-white text-sm font-medium py-2 px-4 rounded hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
-                  >
-                    <span>Inquire</span>
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleServiceClick(service.id);
-                    }}
-                    className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded hover:border-green-600 hover:text-green-600 transition-colors"
-                  >
-                    Details
-                  </button>
-                </div>
+              {/* Action Buttons */}
+              <div className="flex gap-3">
+                <button
+                  onClick={(e) => handleWhatsAppClick(e, service)}
+                  className="flex-1 bg-green-600 text-white text-sm font-medium py-2 px-4 rounded hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>Inquire</span>
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleServiceClick(service.id);
+                  }}
+                  className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded hover:border-green-600 hover:text-green-600 transition-colors"
+                >
+                  Details
+                </button>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       {/* Gradient Overlays for smooth fade effect */}
