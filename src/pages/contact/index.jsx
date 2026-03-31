@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from '../../components/SEO';
 import Header from '../../components/ui/Header';
 import ContactForm from './components/ContactForm';
 import ContactInfo from './components/ContactInfo';
@@ -58,15 +58,12 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-surface-50">
-      <Helmet>
-        <title>Contact Us - Luna Graphics | Professional Printing Services in Nairobi</title>
-        <meta name="description" content="Get in touch with Luna Graphics for professional printing services in Nairobi. Call +254 700 000 000, WhatsApp, or visit our CBD location for quotes and consultations." />
-        <meta name="keywords" content="contact luna graphics, printing services nairobi, print shop contact, nairobi printing company, professional printing quotes" />
-        <meta property="og:title" content="Contact Luna Graphics - Professional Printing Services" />
-        <meta property="og:description" content="Contact Luna Graphics for all your printing needs. Located in Nairobi CBD with multiple contact options including phone, WhatsApp, and email." />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://lunagraphics.co.ke/contact-page" />
-      </Helmet>
+      <SEO 
+        title="Contact Us | Get a Printing Quote"
+        description="Get in touch with Luna Graphics for professional printing services in Nairobi. Call +254 791 159 618, WhatsApp, or visit our CBD location for quotes and consultations."
+        canonical="/contact"
+        keywords="contact luna graphics, printing services nairobi, print shop contact, nairobi printing company, professional printing quotes"
+      />
 
       <Header />
 

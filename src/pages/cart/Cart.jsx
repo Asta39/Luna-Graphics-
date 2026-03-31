@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import { useCart } from '../../context/CartContext';
@@ -133,10 +133,18 @@ const Cart = () => {
   if (items.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 pt-24 pb-12">
-        <Helmet>
-          <title>Shopping Cart | Luna Graphics Kenya</title>
-          <meta name="description" content="Your shopping cart at Luna Graphics Kenya" />
-        </Helmet>
+      <SEO 
+        title="Shopping Cart | Luna Graphics Kenya"
+        description="Review your selected printing and branding products. Secure checkout available for all custom orders in Nairobi."
+        keywords="printing shopping cart, checkout Nairobi, custom order summary, Luna Graphics checkout"
+        type="website"
+        robots="noindex, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+      />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -163,10 +171,18 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-12">
-      <Helmet>
-        <title>{`Shopping Cart (${items.length}) | Luna Graphics Kenya`}</title>
-        <meta name="description" content="Your shopping cart at Luna Graphics Kenya" />
-      </Helmet>
+      <SEO 
+        title={`Shopping Cart (${items.length}) | Luna Graphics Kenya`}
+        description={`You have ${items.length} items in your cart. Complete your printing and branding order with Luna Graphics Nairobi.`}
+        keywords="printing shopping cart, checkout Nairobi, custom order summary, Luna Graphics checkout"
+        type="website"
+        robots="noindex, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+      />
       <Header />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

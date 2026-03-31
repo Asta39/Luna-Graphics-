@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, CheckCircle, MessageCircle, Phone } from 'lucide-react';
 import { services, getWhatsAppLink } from '../../../data/services.js';
+import SEO from '../../../components/SEO';
 import Header from 'components/ui/Header.jsx';
 
 const ServiceDetail = () => {
@@ -35,7 +36,52 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen bg-white pt-18">
-        <Header />
+      <SEO 
+        title={`${service.name} | Printing Services Nairobi`}
+        description={service.shortDescription || `Professional ${service.name} services at Luna Graphics Kenya. Fast turnaround and premium quality.`}
+        canonical={`/service/${service.id}`}
+        keywords={`${service.name}, printing Nairobi, branding Kenya, corporate branding, professional printing, ${service.name} near me, Luna Graphics services`}
+        type="website"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={{
+          "@context": "https://schema.org/",
+          "@type": "Service",
+          "serviceType": service.name,
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Luna Graphics Limited",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Nairobi CBD",
+              "addressLocality": "Nairobi",
+              "addressRegion": "Nairobi",
+              "postalCode": "00100",
+              "addressCountry": "KE"
+            }
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Nairobi"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Printing Services",
+            "itemListElement": service.features.map(f => ({
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": f
+              }
+            }))
+          }
+        }}
+      />
+      <Header />
       {/* Header */}
       <div className="bg-gray-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

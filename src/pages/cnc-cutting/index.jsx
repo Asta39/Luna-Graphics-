@@ -1,6 +1,5 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import { services } from '../../data/serviceData'; // 1. Your central data import
 
 // --- UI Component Imports ---
@@ -126,56 +125,21 @@ const CNCCuttingServicesPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        
-        {/* ===== ENHANCED SEO: Canonical URL (fixed spacing) ===== */}
-        <link rel="canonical" href={pageUrl.replace(' ', '')} />
-        
-        {/* ===== ENHANCED SEO: Robots meta for rich snippets ===== */}
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        
-        {/* ===== ENHANCED SEO: Language and Locale ===== */}
-        <html lang="en" />
-        <meta property="og:locale" content="en_KE" />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:site_name" content={brandName} />
-        <meta property="og:type" content="business.business" />
-        <meta property="og:url" content={pageUrl.replace(' ', '')} />
-        <meta property="business:contact_data:locality" content="Nairobi" />
-        <meta property="business:contact_data:country" content="Kenya" />
-        <meta property="business:contact_data:phone_number" content="+254791159618" />
-        
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={pageUrl.replace(' ', '')} />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:site" content={twitterHandle} />
-        
-        {/* ===== ENHANCED SEO: Geo Tags for Local SEO ===== */}
-        <meta name="geo.region" content="KE-30" />
-        <meta name="geo.placename" content="Nairobi" />
-        <meta name="geo.position" content="-1.2921;36.8219" />
-        <meta name="ICBM" content="-1.2921, 36.8219" />
-        
-        {/* ===== ENHANCED SEO: Keywords meta ===== */}
-        <meta name="keywords" content={`${pageData.title}, CNC cutting Nairobi, laser cutting Kenya, acrylic cutting, wood engraving, precision cutting, signage making Nairobi, custom fabrication Kenya`} />
-        
-        {/* ===== ENHANCED SEO: Structured Data (JSON-LD) ===== */}
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageUrl.replace(' ', '')}
+        ogImage={imageUrl}
+        type="business.business"
+        keywords={`${pageData.title}, CNC cutting Nairobi, laser cutting Kenya, acrylic cutting, wood engraving, precision cutting, signage making Nairobi, custom fabrication Kenya`}
+        schemaData={[structuredData, breadcrumbSchema]}
+        robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+      />
       
       <Header />
       

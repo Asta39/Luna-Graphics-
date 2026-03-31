@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../../components/SEO';
 import Header from '../../components/ui/Header';
 
 const TermsOfService = () => {
@@ -12,16 +12,19 @@ const TermsOfService = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      <SEO 
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageUrl}
+        type="website"
+        keywords="terms of service, printing agreement, service policies, Luna Graphics terms, business printing Nairobi"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+      />
 
       <Header />
 

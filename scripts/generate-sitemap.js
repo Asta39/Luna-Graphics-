@@ -29,56 +29,56 @@ function scanPagesFolderRecursive(dir, basePath = '') {
     } else if (item.endsWith('.jsx') || item.endsWith('.js')) {
       const pageName = item.replace(/\.(jsx|js)$/, '');
       
-      if (SKIP_FILES.includes(pageName.toLowerCase())) return;
       if (pageName.includes('.test') || pageName.includes('.spec')) return;
       
       // Build clean URL
-      let urlPath = path.join(basePath, pageName).replace(/\\/g, '/');
-      const pathParts = urlPath.split('/').filter(p => p);
+      const pagePath = path.join(basePath, pageName).replace(/\\/g, '/');
+      const pathParts = pagePath.split('/').filter(p => p);
       
-      // Remove duplicates like "about/about"
-      const cleanedParts = [];
-      for (let i = 0; i < pathParts.length; i++) {
-        if (i === 0 || pathParts[i].toLowerCase() !== pathParts[i-1].toLowerCase()) {
-          cleanedParts.push(pathParts[i]);
-        }
+      // NEW LOGIC: Support index.jsx as the parent folder's route
+      let urlPath = pagePath;
+      if (pageName.toLowerCase() === 'index') {
+        if (!basePath) return; // Skip src/pages/index.js if it's the main entry (usually handled elsewhere)
+        urlPath = basePath.replace(/\\/g, '/');
+      } else if (SKIP_FILES.includes(pageName.toLowerCase())) {
+        return;
       }
       
-      urlPath = cleanedParts.join('/');
-      
       // Skip dynamic templates
-      if (pageName.toLowerCase() === 'blog-post' || pageName.toLowerCase() === 'product-detail') return;
+      if (pageName.toLowerCase() === 'blog-post' || pageName.toLowerCase() === 'product-detail' || pageName.toLowerCase() === 'service-detail') return;
       
       // Determine priority
       let priority = '0.7';
       let changefreq = 'monthly';
       
-      if (!urlPath || urlPath === 'home' || urlPath === 'homepage') {
+      const cleanUrl = urlPath.replace(/^\//, '').toLowerCase();
+      
+      if (!cleanUrl || cleanUrl === 'home' || cleanUrl === 'homepage') {
         urlPath = '/';
         priority = '1.0';
         changefreq = 'daily';
-      } else if (urlPath === 'about') {
+      } else if (cleanUrl === 'about') {
         priority = '0.8';
-      } else if (urlPath === 'shop') {
+      } else if (cleanUrl === 'shop') {
         priority = '0.9';
         changefreq = 'weekly';
-      } else if (urlPath === 'blog') {
+      } else if (cleanUrl === 'blog') {
         priority = '0.8';
         changefreq = 'daily';
-      } else if (urlPath === 'contact') {
+      } else if (cleanUrl === 'contact') {
         priority = '0.7';
-      } else if (urlPath.includes('service')) {
+      } else if (cleanUrl.includes('service')) {
         priority = '0.8';
-      } else if (urlPath === 'gallery') {
+      } else if (cleanUrl === 'gallery') {
         priority = '0.7';
-      } else if (urlPath === 'team') {
-        priority = '0.6';
-      } else if (urlPath === 'cart') {
+      } else if (cleanUrl === 'team') {
+        priority = '0.7';
+      } else if (cleanUrl === 'cart') {
         priority = '0.5';
       }
       
       pages.push({
-        url: urlPath === '/' ? '/' : `/${urlPath}`,
+        url: urlPath === '/' ? '/' : `/${urlPath.replace(/^\//, '')}`,
         priority,
         changefreq,
         source: path.join(basePath, item)
@@ -116,10 +116,28 @@ async function loadData() {
         return;
       }
       
-      // WINDOWS FIX: Convert to file:// URL
-      const fileUrl = new URL('file://' + filePath.replace(/\\/g, '/')).href;
+      // Read the file, replace asset imports, write to temp file
+      let fileContent = fs.readFileSync(filePath, 'utf8');
       
-      const module = await import(fileUrl);
+      // Replace asset imports: import xyz from '../assets/foo.jpg' -> const xyz = '../assets/foo.jpg'
+      // This handles the error where node fails to parse .jpg files
+      fileContent = fileContent.replace(/import\s+([a-zA-Z0-9_]+)\s+from\s+['"]([^'"]+\.(jpe?g|png|gif|svg|webp|ico|mp4|webm))['"];?/gi, "const $1 = '$2';");
+      
+      const tempFileName = `.temp-${fileName}`;
+      const tempFilePath = path.join(dataDir, tempFileName);
+      fs.writeFileSync(tempFilePath, fileContent, 'utf8');
+      
+      // WINDOWS FIX: Convert to file:// URL using the temp file
+      const fileUrl = new URL('file://' + tempFilePath.replace(/\\/g, '/')).href;
+      
+      let module;
+      try {
+        module = await import(fileUrl);
+      } finally {
+        if (fs.existsSync(tempFilePath)) {
+          fs.unlinkSync(tempFilePath);
+        }
+      }
       
       let exportedData = null;
       let foundExportName = null;
@@ -216,7 +234,30 @@ async function loadData() {
   // IMPORTANT: serviceData.js exports an object, not array
   await tryLoad('serviceData.js', ['services', 'serviceList', 'serviceItems', 'serviceData', 'data']);
   
-  await tryLoad('teamData.js', ['team', 'teamMembers', 'members', 'staff']);
+  // Load team data (handles multiple groups: leadership, technical, design)
+  await tryLoad('teamData.js', ['leadershipTeam', 'technicalTeam', 'designTeam', 'team', 'teamMembers']);
+  
+  // If we only loaded one group, let's try to get others if needed 
+  // (Note: the current tryLoad implementation only picks the first match)
+  // For teamData specifically, we want everything.
+  try {
+    const teamFile = path.join(dataDir, 'teamData.js');
+    if (fs.existsSync(teamFile)) {
+      const fileUrl = new URL('file://' + teamFile.replace(/\\/g, '/')).href;
+      const module = await import(fileUrl);
+      const allMembers = [];
+      if (Array.isArray(module.leadershipTeam)) allMembers.push(...module.leadershipTeam);
+      if (Array.isArray(module.technicalTeam)) allMembers.push(...module.technicalTeam);
+      if (Array.isArray(module.designTeam)) allMembers.push(...module.designTeam);
+      if (allMembers.length > 0) {
+        data.team = allMembers;
+        console.log(`✅ Refined teamData.js: Merged leadership, technical, and design teams (${allMembers.length} members total)`);
+      }
+    }
+  } catch (e) {
+    console.log("ℹ️ Standard team loading used");
+  }
+
   await tryLoad('reviewsData.js', ['reviews', 'testimonials', 'customerReviews']);
   await tryLoad('faqData.js', ['faq', 'faqs', 'questions', 'faqList']);
   await tryLoad('corporateEquipData.js', ['corporate', 'corporateEquipment', 'equipment', 'corpEquip']);
@@ -228,170 +269,167 @@ async function loadData() {
 
 // ==================== GENERATE SITEMAP ====================
 
+function chunkArray(array, size) {
+  const chunks = [];
+  for (let i = 0; i < array.length; i += size) {
+    chunks.push(array.slice(i, i + size));
+  }
+  return chunks;
+}
+
+function generateSitemapString(urls) {
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  urls.forEach(u => {
+    sitemap += `\n  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`;
+  });
+  sitemap += `\n</urlset>`;
+  return sitemap;
+}
+
+function writeSitemapFile(filename, content) {
+  const publicDir = path.resolve(__dirname, '../public');
+  if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+  const outputPath = path.join(publicDir, filename);
+  try {
+    fs.writeFileSync(outputPath, content, 'utf8');
+    console.log(`✅ Saved: ${filename}`);
+  } catch (err) {
+    console.error(`❌ Error saving ${filename}:`, err);
+  }
+}
+
 function generateSitemap(staticPages, data) {
-  // Remove duplicates
+  const ITEMS_PER_SITEMAP = 50;
+  const sitemapFiles = [];
+
+  // 1. Static Pages
   const seenUrls = new Set();
   const uniquePages = [];
-  
   staticPages.forEach(page => {
     if (!seenUrls.has(page.url)) {
       seenUrls.add(page.url);
       uniquePages.push(page);
     }
   });
-  
-  // Sort by priority
   uniquePages.sort((a, b) => parseFloat(b.priority) - parseFloat(a.priority));
   
-  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  const staticUrls = uniquePages.map(page => ({
+    loc: `${BASE_URL}${page.url}`,
+    lastmod: today,
+    changefreq: page.changefreq,
+    priority: page.priority
+  }));
+  console.log(`\n📄 Adding ${staticUrls.length} static pages...`);
+  writeSitemapFile('sitemap-pages.xml', generateSitemapString(staticUrls));
+  sitemapFiles.push('sitemap-pages.xml');
 
-  // Add static pages
-  console.log(`\n📄 Adding ${uniquePages.length} unique pages...`);
-  uniquePages.forEach(page => {
-    sitemap += `
-  <url>
-    <loc>${BASE_URL}${page.url}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`;
-  });
-
-  // Add blog posts
-  if (data.blogs && data.blogs.length > 0) {
-    console.log(`📝 Adding ${data.blogs.length} blog posts...`);
-    data.blogs.forEach(blog => {
-      const slug = blog.slug || blog.id || (blog.title ? blog.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `post-${Math.random().toString(36).substr(2, 9)}`);
-      const date = blog.date || blog.publishDate || blog.updatedAt || blog.createdAt || today;
-      
-      sitemap += `
-  <url>
-    <loc>${BASE_URL}/blog/${slug}</loc>
-    <lastmod>${date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`;
-    });
-  }
-
-  // Add products
-  if (data.products && data.products.length > 0) {
-    console.log(`🛍️ Adding ${data.products.length} products...`);
-    data.products.forEach(product => {
-      const slug = product.slug || product.id || (product.name ? product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `product-${Math.random().toString(36).substr(2, 9)}`);
-      const category = (product.category || 'general').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      
-      sitemap += `
-  <url>
-    <loc>${BASE_URL}/shop/${category}/${slug}</loc>
-    <lastmod>${product.updatedAt || product.date || today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>`;
-    });
-  }
-
-  // Add services (now properly converted from object to array)
+  // 2. Services
+  const servicesUrls = [];
   if (data.services && data.services.length > 0) {
     console.log(`🔧 Adding ${data.services.length} services...`);
     data.services.forEach(service => {
-      // Your services have a 'path' property like "/cnc-cutting"
-      const slug = service.path ? service.path.replace(/^\//, '') : 
-                   service.slug || service.id || 
-                   (service.title ? service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `service-${Math.random().toString(36).substr(2, 9)}`);
-      
-      sitemap += `
-  <url>
-    <loc>${BASE_URL}/services/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
+      // Use service.id to match the /service/:serviceId route in App.jsx
+      const serviceId = service.id || (service.name ? service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `service-${Math.random().toString(36).substr(2, 9)}`);
+      servicesUrls.push({
+        loc: `${BASE_URL}/service/${serviceId}`,
+        lastmod: today,
+        changefreq: 'monthly',
+        priority: '0.8'
+      });
     });
-  } else {
-    console.log('⚠️ No services found to add');
+    writeSitemapFile('sitemap-services.xml', generateSitemapString(servicesUrls));
+    sitemapFiles.push('sitemap-services.xml');
   }
 
-  // Add case studies
+  // 3. Blogs (Chunked)
+  if (data.blogs && data.blogs.length > 0) {
+    console.log(`📝 Processing ${data.blogs.length} blog posts into chunks...`);
+    const blogUrls = data.blogs.map(blog => {
+      const slug = blog.slug || blog.id || (blog.title ? blog.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `post-${Math.random().toString(36).substr(2, 9)}`);
+      const date = blog.date || blog.publishDate || blog.updatedAt || blog.createdAt || today;
+      return {
+        loc: `${BASE_URL}/blog/${slug}`,
+        lastmod: date,
+        changefreq: 'monthly',
+        priority: '0.6'
+      };
+    });
+    const chunks = chunkArray(blogUrls, ITEMS_PER_SITEMAP);
+    chunks.forEach((chunk, index) => {
+      const filename = `sitemap-blogs-${index + 1}.xml`;
+      writeSitemapFile(filename, generateSitemapString(chunk));
+      sitemapFiles.push(filename);
+    });
+  }
+
+  // 4. Products (Chunked)
+  if (data.products && data.products.length > 0) {
+    console.log(`🛍️ Processing ${data.products.length} products into chunks...`);
+    const productUrls = data.products.map(product => {
+      const slug = product.slug || product.id || (product.name ? product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `product-${Math.random().toString(36).substr(2, 9)}`);
+      const category = (product.category || 'general').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      return {
+        loc: `${BASE_URL}/shop/product/${slug}`,
+        lastmod: product.updatedAt || product.date || today,
+        changefreq: 'weekly',
+        priority: '0.7'
+      };
+    });
+    const chunks = chunkArray(productUrls, ITEMS_PER_SITEMAP);
+    chunks.forEach((chunk, index) => {
+      const filename = `sitemap-products-${index + 1}.xml`;
+      writeSitemapFile(filename, generateSitemapString(chunk));
+      sitemapFiles.push(filename);
+    });
+  }
+
+  // 5. Others (Case studies, gallery, team)
+  const otherUrls = [];
   if (data.caseStudies && data.caseStudies.length > 0) {
     console.log(`📊 Adding ${data.caseStudies.length} case studies...`);
     data.caseStudies.forEach(study => {
       const slug = study.slug || study.id || (study.title ? study.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `case-${Math.random().toString(36).substr(2, 9)}`);
-      
-      sitemap += `
-  <url>
-    <loc>${BASE_URL}/case-studies/${slug}</loc>
-    <lastmod>${study.date || study.updatedAt || today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`;
+      otherUrls.push({
+        loc: `${BASE_URL}/case-studies/${slug}`,
+        lastmod: study.date || study.updatedAt || today,
+        changefreq: 'monthly',
+        priority: '0.6'
+      });
     });
   }
-
-  // Add gallery items
   if (data.gallery && data.gallery.length > 0) {
     console.log(`🖼️ Adding ${data.gallery.length} gallery items...`);
     data.gallery.forEach(item => {
       const slug = item.slug || item.id || (item.title ? item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `gallery-${Math.random().toString(36).substr(2, 9)}`);
-      
-      sitemap += `
-  <url>
-    <loc>${BASE_URL}/gallery/${slug}</loc>
-    <lastmod>${item.date || item.updatedAt || today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>`;
+      otherUrls.push({
+        loc: `${BASE_URL}/gallery/${slug}`,
+        lastmod: item.date || item.updatedAt || today,
+        changefreq: 'monthly',
+        priority: '0.5'
+      });
     });
   }
-
-  // Add team members
   if (data.team && data.team.length > 0) {
-    console.log(`👥 Adding ${data.team.length} team members...`);
-    data.team.forEach(member => {
-      const slug = member.slug || member.id || (member.name ? member.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : `team-${Math.random().toString(36).substr(2, 9)}`);
-      
-      sitemap += `
-  <url>
-    <loc>${BASE_URL}/team/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>`;
-    });
-  }
-
-  sitemap += `
-</urlset>`;
-
-  // Write to public folder
-  const publicDir = path.resolve(__dirname, '../public');
-  const outputPath = path.join(publicDir, 'sitemap.xml');
-  
-  // Ensure public directory exists
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
+    console.log(`👥 Found ${data.team.length} team members. (Individual pages skipped as they use in-page expansion)`);
+    // Team member individual pages skipped as they are handled by expansion cards on /team
   }
   
-  // Write file
-  try {
-    fs.writeFileSync(outputPath, sitemap, 'utf8');
-    console.log(`\n✅ Sitemap saved successfully!`);
-  } catch (err) {
-    console.error(`❌ Error saving sitemap:`, err);
+  if (otherUrls.length > 0) {
+    writeSitemapFile('sitemap-others.xml', generateSitemapString(otherUrls));
+    sitemapFiles.push('sitemap-others.xml');
   }
-  
-  const totalDynamic = (data.blogs?.length || 0) + 
-    (data.products?.length || 0) + 
-    (data.services?.length || 0) +
-    (data.caseStudies?.length || 0) + 
-    (data.gallery?.length || 0) + 
-    (data.team?.length || 0);
 
-  console.log(`📄 Static pages: ${uniquePages.length}`);
-  console.log(`📊 Dynamic content: ${totalDynamic}`);
-  console.log(`🔗 Total URLs: ${uniquePages.length + totalDynamic}`);
-  console.log(`📁 Location: ${outputPath}`);
+  // 6. Master Sitemap Index
+  let sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  sitemapFiles.forEach(file => {
+    sitemapIndex += `\n  <sitemap>\n    <loc>${BASE_URL}/${file}</loc>\n    <lastmod>${today}</lastmod>\n  </sitemap>`;
+  });
+  sitemapIndex += `\n</sitemapindex>`;
+  
+  console.log(`\n🔗 Assembling global sitemap index with ${sitemapFiles.length} chunked sitemaps...`);
+  writeSitemapFile('sitemap.xml', sitemapIndex);
+
+  console.log(`\n✅ Completed Sitemap Generation! Your main sitemap index is now sitemap.xml in /public`);
 }
 
 // ==================== RUN ====================

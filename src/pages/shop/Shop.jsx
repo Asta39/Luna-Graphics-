@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../../components/AppIcon';
@@ -129,10 +129,44 @@ const Shop = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-0">
-      <Helmet>
-        <title>{searchQuery ? `${searchQuery} - Search Results` : 'Shop Printing Products'} | Luna Graphics Kenya</title>
-        <meta name="description" content="Browse banners, signage, corporate materials, and branded merchandise. Quality printing in Nairobi, Kenya." />
-      </Helmet>
+      <SEO 
+        title={searchQuery ? `Search: ${searchQuery} | Luna Graphics` : activeCategory !== 'all' ? `${categories.find(c => c.id === activeCategory)?.name || 'Products'} | Luna Graphics` : "Shop Premium Printing & Branding Services | Luna Graphics"}
+        description={searchQuery ? `Looking for ${searchQuery}? Browse our selection of professional printing and branding products at Luna Graphics Nairobi.` : "Browse professional banners, signage, corporate materials, and branded merchandise. High-quality offset and digital printing in Nairobi, Kenya."}
+        canonical={activeCategory === 'all' && !searchQuery ? "https://lunagraphics.co.ke/shop" : `https://lunagraphics.co.ke/shop?category=${activeCategory}${searchQuery ? `&search=${searchQuery}` : ''}`}
+        type="website"
+        keywords="print shop Nairobi, business cards Nairobi, banner printing Kenya, brand identity, marketing materials, corporate gifts Nairobi, offset printing, digital printing Kenya"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": searchQuery ? `Search Results for ${searchQuery}` : activeCategory !== 'all' ? categories.find(c => c.id === activeCategory)?.name : "Luna Graphics Shop",
+            "description": "Premium collection of printing and branding products in Nairobi, Kenya.",
+            "url": "https://lunagraphics.co.ke/shop",
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": paginatedData.items.map((prod, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "url": `https://lunagraphics.co.ke/shop/product/${prod.id}`
+              }))
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lunagraphics.co.ke/" },
+              { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://lunagraphics.co.ke/shop" }
+            ]
+          }
+        ]}
+      />
       
       <Header />
 

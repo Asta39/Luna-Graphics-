@@ -1,20 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import TeamHero from './components/TeamHero';
 import TeamStats from './components/TeamStats';
 import TeamSection from './components/TeamSection';
 import CareersSection from './components/CareersSection';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 
 
 import { leadershipTeam, technicalTeam, designTeam } from '../../data/teamData';
 
 const TeamPage = () => {
+  const navigate = useNavigate();
   // Leadership Team Data
 
     const pageTitle = `Luna Graphics Team in Nairobi | Luna Graphics`;
   const pageDescription = `Expert team in Nairobi. We are dedicated to delivering top-notch printing solutions to our clients.`;
-  const pageUrl = `https://lunagraphics.co.ke/team-page`; // Use the actual URL for this page
+  const pageUrl = `https://lunagraphics.co.ke/team`; // Use the actual URL for this page
   const imageUrl = "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop"; // Use this page's hero image for social sharing
   const brandName = "Luna Graphics";
   const twitterHandle = "@YourTwitterHandle"; // Replace with your handle
@@ -24,28 +26,35 @@ const TeamPage = () => {
   return (
     <div className="min-h-screen bg-background">
 
-            <Helmet>
-        {/* --- Primary Meta Tags (MUST be unique for each page) --- */}
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-
-        {/* --- Open Graph / Facebook --- */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:site_name" content={brandName} />
-
-        {/* --- Twitter --- */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={pageUrl} />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:site" content={twitterHandle} />
-      </Helmet>
+      <SEO 
+        title="Meet Our Expert Printing & Design Team | Luna Graphics Nairobi"
+        description="Meet the creative minds and technical specialists leading Nairobi's premier printing and branding company. Expert designers and printing technicians dedicated to your vision."
+        canonical="/team"
+        ogImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop"
+        type="website"
+        keywords="printing team Nairobi, graphic designers Kenya, printing technicians, professional branding experts, Luna Graphics staff, expert printers Nairobi"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Luna Graphics",
+              "employee": [
+                ...leadershipTeam.map(m => ({ "@type": "Person", "name": m.name, "jobTitle": m.role })),
+                ...technicalTeam.map(m => ({ "@type": "Person", "name": m.name, "jobTitle": m.role })),
+                ...designTeam.map(m => ({ "@type": "Person", "name": m.name, "jobTitle": m.role }))
+              ]
+            }
+          }
+        ]}
+      />
 
 
       <Header />
@@ -93,13 +102,13 @@ const TeamPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => window.location.href = '/contact-page'}
+              onClick={() => navigate('/contact')}
               className="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-surface-100 transition-colors duration-200"
             >
               Get Started Today
             </button>
             <button
-              onClick={() => window.location.href = '/gallery-page'}
+              onClick={() => navigate('/gallery')}
               className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors duration-200"
             >
               View Our Portfolio

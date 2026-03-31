@@ -1035,7 +1035,7 @@ export const services =
     description: "Professional custom t-shirt printing services targeting businesses, events, and personal branding needs with comprehensive printing method options and bulk pricing in KES currency.",
     detailedDescription: `Our T-shirt Printing Services showcase custom apparel printing capabilities for businesses, events, and personal branding with various printing methods and competitive bulk pricing. Using mobile-first responsive approach, we deliver high-quality custom t-shirts with vibrant designs and exceptional durability.\n\nWhether you need promotional apparel for corporate events, branded merchandise for your business, or custom designs for personal use, our comprehensive printing methods include screen printing, heat transfer, vinyl cutting, and direct-to-garment printing. Each method is carefully selected based on your design requirements, quantity, and budget.\n\nOur experienced team provides design consultation, artwork requirements guidance, and color matching capabilities to ensure your vision becomes reality. With quick turnaround times and competitive KES pricing, we make custom apparel accessible for projects of all sizes.`,
     heroImage: tShirtHeroImage,
-    startingPrice: 450,
+    startingPrice: 600,
     turnaround: "3-5 days",
     minimumOrder: "10 pieces",
     keyFeatures: [

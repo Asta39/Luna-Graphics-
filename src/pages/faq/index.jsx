@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import Header from '../../components/ui/Header';
 import FAQ from '../../components/ui/FAQ';
 import Button from '../../components/ui/Button';
@@ -10,21 +10,43 @@ const FAQPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://lunagraphics.co.ke/faq" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://lunagraphics.co.ke/faq" />
-        <meta property="og:type" content="website" />
-        
-        {/* Keywords */}
-        <meta name="keywords" content="printing FAQ Nairobi, print shop questions, banner printing FAQ, t-shirt printing questions, corporate printing Kenya, file requirements printing, turnaround time printing" />
-      </Helmet>
+      <SEO 
+        title={pageTitle}
+        description={pageDescription}
+        keywords="printing FAQ Nairobi, print shop questions, banner printing FAQ, t-shirt printing questions, corporate printing Kenya, file requirements printing, turnaround time printing"
+        canonical="https://lunagraphics.co.ke/faq"
+        type="website"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What are your printing turnaround times?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Turnaround times vary by service. Small orders are often ready same-day, while large format and bulk orders typically take 2-3 business days."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer delivery in Nairobi?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we offer reliable delivery services across Nairobi and surrounding areas for all our printing and branding projects."
+                }
+              }
+            ]
+          }
+        ]}
+      />
 
       <Header />
 

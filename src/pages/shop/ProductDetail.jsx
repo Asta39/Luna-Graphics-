@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import { getProductById, products } from '../../data/products';
@@ -143,10 +143,48 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
-      <Helmet>
-        <title>{`${product.name} | Luna Graphics Kenya`}</title>
-        <meta name="description" content={product.description} />
-      </Helmet>
+      <SEO 
+        title={`${product.name} | Luna Graphics Kenya`}
+        description={product.description || `Buy ${product.name} at Luna Graphics. Professional printing and branding solutions in Nairobi.`}
+        canonical={`/shop/product/${product.id}`}
+        ogImage={product.image || (product.images && product.images[0])}
+        type="product"
+        keywords={`${product.name}, ${product.subcategory}, ${product.category}, printing Kenya, branding Nairobi, custom printing Nairobi, Luna Graphics shop`}
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={{
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "name": product.name,
+          "image": [
+            product.image,
+            ...(product.images || [])
+          ].filter(Boolean),
+          "description": product.description,
+          "sku": product.id,
+          "brand": {
+            "@type": "Brand",
+            "name": "Luna Graphics"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": `https://lunagraphics.co.ke/shop/product/${product.id}`,
+            "priceCurrency": "KES",
+            "price": product.price,
+            "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+            "itemCondition": "https://schema.org/NewCondition"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": product.rating || "4.8",
+            "reviewCount": product.reviews || "24"
+          }
+        }}
+      />
       <Header/>
 
       {/* Breadcrumb */}

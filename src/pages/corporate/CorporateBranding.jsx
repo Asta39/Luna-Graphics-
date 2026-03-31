@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
@@ -41,17 +41,20 @@ const CorporateBranding = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-        <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="corporate branding Kenya, business cards printing Nairobi, office signage Kenya, company rebranding, branded merchandise Nairobi, corporate identity design Kenya, business branding services, office branding Nairobi" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={pageUrl} />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-      </Helmet>
+      <SEO 
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageUrl}
+        keywords="corporate branding Kenya, business cards printing Nairobi, office signage Kenya, company rebranding, branded merchandise Nairobi, corporate identity design Kenya, business branding services, office branding Nairobi"
+        type="website"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={structuredData}
+      />
       <Header/>
 
       <main className="pt-24 pb-16">

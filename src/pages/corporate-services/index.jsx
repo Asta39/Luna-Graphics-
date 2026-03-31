@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import { services } from '../../data/serviceData';
 
 import Header from '../../components/ui/Header';
@@ -131,64 +132,21 @@ const organizationSchema = {
 const CorporateServicesPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        {/* --- Primary Meta Tags (MUST be unique for each page) --- */}
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-        
-        {/* ===== ENHANCED SEO: Robots and Language ===== */}
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <html lang="en" />
-        <meta name="keywords" content="corporate printing Nairobi, political campaign printing Kenya, election materials, corporate branding Nairobi, large format printing, commercial printing services, branded merchandise Kenya, campaign posters Kenya, corporate gifts Nairobi" />
-        
-        {/* --- Open Graph / Facebook --- */}
-        <meta property="og:type" content="business.business" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Luna Graphics Corporate Printing Services in Nairobi" />
-        <meta property="og:site_name" content={brandName} />
-        <meta property="og:locale" content="en_KE" />
-        <meta property="business:contact_data:locality" content="Nairobi" />
-        <meta property="business:contact_data:country" content="Kenya" />
-        <meta property="business:contact_data:phone_number" content="+254791159618" />
-        <meta property="business:contact_data:email" content="info.lunagraphics@gmail.com" />
-
-        {/* --- Twitter --- */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={pageUrl} />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:site" content={twitterHandle} />
-        <meta name="twitter:creator" content={twitterHandle} />
-        <meta name="twitter:image:alt" content="Luna Graphics Corporate Printing Services" />
-
-        {/* ===== ENHANCED SEO: Geo Tags for Local SEO ===== */}
-        <meta name="geo.region" content="KE-30" />
-        <meta name="geo.placename" content="Nairobi" />
-        <meta name="geo.position" content="-1.2921;36.8219" />
-        <meta name="ICBM" content="-1.2921, 36.8219" />
-        
-        {/* ===== ENHANCED SEO: Author and Copyright ===== */}
-        <meta name="author" content={brandName} />
-        <meta name="copyright" content={`© ${new Date().getFullYear()} ${brandName}. All rights reserved.`} />
-
-        {/* ===== ENHANCED SEO: Structured Data (JSON-LD) ===== */}
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageUrl}
+        ogImage={imageUrl}
+        type="business.business"
+        keywords="corporate printing Nairobi, political campaign printing Kenya, election materials, corporate branding Nairobi, large format printing, commercial printing services, branded merchandise Kenya, campaign posters Kenya, corporate gifts Nairobi"
+        robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={[structuredData, breadcrumbSchema, organizationSchema]}
+      />
 
       <Header />
       
@@ -203,16 +161,12 @@ const CorporateServicesPage = () => {
       </main>
 
       {/* Footer - Enhanced with LocalBusiness Schema */}
-      <footer className="bg-primary-900 text-white py-12" itemScope itemType="https://schema.org/LocalBusiness">
-        <meta itemProp="name" content={brandName} />
-        <meta itemProp="image" content={logoImage} />
-        <meta itemProp="telephone" content="+254791159618" />
-        <meta itemProp="email" content="info.lunagraphics@gmail.com" />
+      <footer className="bg-primary-900 text-white py-12">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-4 gap-8">
             {/* Company Info */}
-            <div className="lg:col-span-2" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+            <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
                 <img 
                   src={logoImage} 
@@ -248,21 +202,21 @@ const CorporateServicesPage = () => {
             {/* Quick Links */}
             <div>
               <h4 className="text-lg font-semibold mb-6">Corporate Services</h4>
-              <ul className="space-y-3 text-primary-200" itemScope itemType="https://schema.org/OfferCatalog">
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-                  <a href="/corporate-services" className="hover:text-white transition-colors" itemProp="name">Election Campaigns</a>
+              <ul className="space-y-3 text-primary-200">
+                <li>
+                  <a href="/corporate-services" className="hover:text-white transition-colors">Election Campaigns</a>
                 </li>
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-                  <a href="/corporate-services" className="hover:text-white transition-colors" itemProp="name">Corporate Branding</a>
+                <li>
+                  <a href="/corporate-services" className="hover:text-white transition-colors">Corporate Branding</a>
                 </li>
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-                  <a href="/large-format" className="hover:text-white transition-colors" itemProp="name">Large Format Printing</a>
+                <li>
+                  <a href="/large-format" className="hover:text-white transition-colors">Large Format Printing</a>
                 </li>
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-                  <a href="/cnc-cutting" className="hover:text-white transition-colors" itemProp="name">CNC Cutting</a>
+                <li>
+                  <a href="/cnc-cutting" className="hover:text-white transition-colors">CNC Cutting</a>
                 </li>
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
-                  <a href="/t-shirt-printing" className="hover:text-white transition-colors" itemProp="name">Custom Merchandise</a>
+                <li>
+                  <a href="/t-shirt-printing" className="hover:text-white transition-colors">Custom Merchandise</a>
                 </li>
               </ul>
             </div>
@@ -281,9 +235,9 @@ const CorporateServicesPage = () => {
                 </div>
                 <div>
                   <div className="font-medium text-white">Address</div>
-                  <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                    <span itemProp="streetAddress">Kweria Road</span>, <span itemProp="addressLocality">Nairobi</span><br />
-                    <span itemProp="addressCountry">Kenya</span>
+                  <div>
+                    Kweria Road, Nairobi<br />
+                    Kenya
                   </div>
                 </div>
               </div>

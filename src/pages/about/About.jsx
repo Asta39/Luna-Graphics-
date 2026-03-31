@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../../components/AppIcon';
@@ -76,30 +76,20 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-        <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="printing company Nairobi, large format printing Kenya, UV printing Nairobi, laser cutting Kenya, CNC cutting Nairobi, custom signage Kenya, corporate branding Nairobi, printing services Kenya, branding company Nairobi, signage fabrication Kenya" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://lunagraphics.co.ke/og-image.jpg" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="About Us | Professional Printing & Branding Solutions | Luna Graphics Kenya"
+        description="Luna Graphics is a leading printing and branding company in Nairobi, Kenya. We specialize in large format printing, UV printing, laser cutting, CNC cutting, and custom signage."
+        canonical="/about"
+        keywords="printing company Nairobi, large format printing Kenya, UV printing Nairobi, laser cutting Kenya, CNC cutting Nairobi, custom signage Kenya, corporate branding Nairobi"
+        type="website"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={structuredData}
+      />
       <Header />
 
       <main className="pt-24 pb-16">

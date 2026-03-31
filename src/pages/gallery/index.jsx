@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 
 import Header from '../../components/ui/Header';
 import FilterChips from './components/FilterChips';
@@ -243,28 +243,11 @@ const GalleryPage = () => {
     <div className="min-h-screen bg-background">
 
             {/* 3. ADD THE HELMET COMPONENT RIGHT AT THE TOP */}
-      <Helmet>
-        {/* --- Primary Meta Tags (MUST be unique for each page) --- */}
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-
-        {/* --- Open Graph / Facebook --- */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:site_name" content={brandName} />
-
-        {/* --- Twitter --- */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={pageUrl} />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:site" content={twitterHandle} />
-      </Helmet>
+      <SEO 
+        title="Project Gallery | Printing Portfolio"
+        description="Explore our portfolio of completed printing and branding projects in Nairobi. From large format banners to corporate signage and custom merchandise."
+        canonical="/gallery"
+      />
       <Header />
       
       {/* Page Header */}

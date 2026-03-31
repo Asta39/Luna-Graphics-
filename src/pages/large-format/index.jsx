@@ -1,8 +1,5 @@
-// src/pages/service-detail-page/index.jsx
-
-import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import { services } from '../../data/serviceData';
 
 // --- 1. UPDATED, CORRECT IMPORT PATHS ---
@@ -155,63 +152,21 @@ const ServiceDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-        
-        {/* ===== ENHANCED SEO: Robots and Language ===== */}
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <html lang="en" />
-        
-        {/* ===== ENHANCED SEO: Dynamic Keywords Meta ===== */}
-        <meta name="keywords" content={`${pageData.title}, printing services Nairobi, ${serviceKey} Kenya, professional printing, Luna Graphics Nairobi, custom printing services`} />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:site_name" content={brandName} />
-        <meta property="og:type" content="business.business" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:locale" content="en_KE" />
-        <meta property="business:contact_data:locality" content="Nairobi" />
-        <meta property="business:contact_data:country" content="Kenya" />
-        <meta property="business:contact_data:phone_number" content="+254791159618" />
-        
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={pageUrl} />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:site" content={twitterHandle} />
-        <meta name="twitter:creator" content={twitterHandle} />
-        <meta name="twitter:image:alt" content={`${pageData.title} services in Nairobi`} />
-        
-        {/* ===== ENHANCED SEO: Geo Tags for Local SEO ===== */}
-        <meta name="geo.region" content="KE-30" />
-        <meta name="geo.placename" content="Nairobi" />
-        <meta name="geo.position" content="-1.2921;36.8219" />
-        <meta name="ICBM" content="-1.2921, 36.8219" />
-        
-        {/* ===== ENHANCED SEO: Author and Copyright ===== */}
-        <meta name="author" content={brandName} />
-        <meta name="copyright" content={`© ${new Date().getFullYear()} ${brandName}. All rights reserved.`} />
-
-        {/* ===== ENHANCED SEO: Structured Data (JSON-LD) ===== */}
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-        {faqSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(faqSchema)}
-          </script>
-        )}
-      </Helmet>
+      <SEO 
+        title={pageTitle}
+        description={pageDescription}
+        canonical={pageUrl}
+        ogImage={imageUrl}
+        type="business.business"
+        keywords={`${pageData.title}, large format printing services Nairobi, ${serviceKey} Kenya, professional printing, Luna Graphics Nairobi, custom printing services`}
+        schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
+        robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+      />
 
       <Header />
       

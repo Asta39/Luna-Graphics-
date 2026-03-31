@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import Icon from '../components/AppIcon';
 import Image from '../components/AppImage';
 import BlogCard from '../components/blog/BlogCard';
@@ -27,23 +26,21 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>{post.metaTitle}</title>
-        <meta name="description" content={post.metaDescription} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={post.featuredImage} />
-        <meta property="og:type" content="article" />
-        <meta property="article:published_time" content={post.publishedAt} />
-        <meta property="article:modified_time" content={post.updatedAt} />
-        <meta property="article:section" content={category?.name} />
-        {post.tags.map(tag => (
-          <meta property="article:tag" content={tag} key={tag} />
-        ))}
-        <script type="application/ld+json">
-          {JSON.stringify(generateBlogPostSchema(post))}
-        </script>
-      </Helmet>
+      <SEO 
+        title={post.metaTitle || post.title}
+        description={post.metaDescription || post.excerpt}
+        canonical={`/blog/${post.slug}`}
+        ogImage={post.featuredImage}
+        type="article"
+        keywords={post.tags.join(', ')}
+        article={{
+          publishedTime: post.publishedAt,
+          modifiedTime: post.updatedAt,
+          section: category?.name,
+          tags: post.tags,
+        }}
+        schemaData={generateBlogPostSchema(post)}
+      />
       <Header/>
 
       {/* Breadcrumb */}

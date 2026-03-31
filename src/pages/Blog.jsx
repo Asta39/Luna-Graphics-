@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Icon from '../components/AppIcon';
 import BlogCard from '../components/blog/BlogCard';
 import Header from '../components/ui/Header';
@@ -104,13 +104,20 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-18">
-      <Helmet>
-        <title>Blog | Printing Tips & Branding Insights | Luna Graphics Nairobi</title>
-        <meta name="description" content="Expert printing tips, political campaign guides, corporate branding insights, and large format printing advice from Kenya's leading printing company." />
-        <script type="application/ld+json">
-          {JSON.stringify(generateBlogListingSchema())}
-        </script>
-      </Helmet>
+      <SEO 
+        title="Blog | Printing Tips & Branding Insights | Luna Graphics Kenya"
+        description="Expert printing tips, political campaign guides, corporate branding insights, and large format printing advice from Kenya's leading printing company."
+        canonical="/blog"
+        keywords="printing tips Kenya, branding insights Nairobi, political campaign printing, large format printing advice, graphic design blog Kenya, Luna Graphics blog"
+        type="website"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.2921;36.8219"
+        }}
+        schemaData={generateBlogListingSchema()}
+      />
       <Header />
       
       {/* Hero Section */}
