@@ -26,7 +26,7 @@ import Shop from './pages/shop/Shop';
 import ProductDetail from './pages/shop/ProductDetail';
 import Cart from './pages/cart/Cart';
 import ServiceDetail from './pages/shop/components/ServiceDetail';
-import BlogPage from "pages/blog";
+import BlogPage from "pages/Blog";
 import BlogPost from "pages/BlogPost";
 import FAQPage from "pages/faq";
 import NotFound from "pages/NotFound";

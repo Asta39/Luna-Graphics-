@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Icon from '../components/AppIcon';
@@ -141,7 +142,7 @@ const BlogPost = () => {
                 Written by {post.author.name}
               </h3>
               <p className="text-primary font-medium text-sm mb-2">{post.author.role}</p>
-              <p className="text-gray-600 text-sm">{post.author.bio}</p>
+              <p className="text-gray-600 text-sm">{post.author.bio || 'Professional contributor at Luna Graphics specializing in printing and branding solutions.'}</p>
             </div>
           </div>
         </div>

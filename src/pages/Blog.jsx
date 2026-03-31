@@ -46,7 +46,7 @@ const Blog = () => {
       posts = searchPosts(searchQuery);
     }
 
-    return posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedDate));
+    return posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
   }, [searchQuery, selectedCategory]);
 
   // Pagination
