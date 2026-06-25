@@ -118,8 +118,21 @@ const ServicesCarousel = () => {
     setTimeout(updateArrowVisibility, 300);
   };
 
+  const SERVICE_ROUTES = {
+    'large-format-printing': '/services/large-format',
+    'uv-printing': '/services/uv-printing',
+    'digital-printing': '/services/digital-printing',
+    'sublimation-printing': '/services/sublimation-printing',
+    'screen-printing': '/services/t-shirt-printing',
+    'embroidery': '/services/t-shirt-printing',
+    'laser-engraving': '/services/laser-cutting',
+    'vehicle-branding': '/corporate-services',
+    'signage-solutions': '/services/cnc-cutting',
+    'branding-consultation': '/corporate-services',
+  };
+
   const handleServiceClick = (serviceId) => {
-    navigate(`/service/${serviceId}`);
+    navigate(SERVICE_ROUTES[serviceId] || '/corporate-services');
   };
 
   const handleWhatsAppClick = (e, service) => {

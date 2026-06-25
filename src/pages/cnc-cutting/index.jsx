@@ -195,7 +195,7 @@ const CNCCuttingServicesPage = () => {
               <h3 className="font-heading font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li><button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button></li>
-                <li><button onClick={() => navigate('/large-format')} className="hover:text-white transition-colors">Services</button></li>
+                <li><button onClick={() => navigate('/services/large-format')} className="hover:text-white transition-colors">Services</button></li>
                 <li><button onClick={() => navigate('/gallery')} className="hover:text-white transition-colors">Gallery</button></li>
                 <li><button onClick={() => navigate('/contact')} className="hover:text-white transition-colors">Contact</button></li>
               </ul>
