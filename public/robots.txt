@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lunagraphics.co.ke/sitemap.xml

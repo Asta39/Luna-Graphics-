@@ -1,0 +1,1797 @@
+{
+  "count": 224,
+  "routes": [
+    {
+      "url": "/",
+      "priority": "1.0",
+      "changefreq": "daily",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/about",
+      "priority": "0.75",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog",
+      "priority": "0.8",
+      "changefreq": "daily",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/3d-signage-vs-flat-signage-comparison",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/acrylic-letter-signage-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/ai-printing-branding-industry-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/airport-transport-branding-concepts",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/back-to-school-branding-campaign-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/bank-financial-institution-branding-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/billboard-design-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/brand-consistency-physical-touchpoints-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branded-hoodies-corporate-teams",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branded-merchandise-for-events",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branded-packaging-smes",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branded-power-banks-tech-accessories-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branding-for-corporate-award-ceremonies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branding-for-government-events",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branding-for-product-launch-events",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/branding-roi-measurement-framework-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/building-fascia-signage-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/cap-hat-printing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/church-event-branding-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/church-outdoor-signage-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/construction-site-branding-boards",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/corporate-calendar-printing-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/corporate-rebranding-strategy-kenya-2024",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/corporate-t-shirt-branding-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/custom-stamp-seal-branding-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/eco-friendly-promotional-merchandise",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/embossing-foiling-corporate-branding-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/employee-welcome-kit-branding-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/end-year-corporate-gift-branding-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/event-branding-budget-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/event-ticket-wristband-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/executive-gift-branding-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/exhibition-booth-lighting-print-synergy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/exhibition-branding-for-universities",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/exhibition-fabric-printing-trends",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/exhibition-giveaway-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/exhibition-printing-timeline-planning",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/exhibition-stand-design-trends-nairobi-2024",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/fleet-branding-strategy-logistics-companies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/future-trends-print-branding-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/government-building-signage-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/government-tender-branding-requirements-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/high-traffic-location-branding-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/hospital-clinic-signage-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/hotel-hospitality-signage-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/how-to-price-corporate-merchandise-projects-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/illuminated-signage-vs-non-illuminated",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/industrial-park-signage-solutions",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/influencer-merchandise-printing-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/interior-office-signage-trends",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/lanyard-branding-for-conferences",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/large-format-printing-file-preparation-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/led-signage-for-retail-stores",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/luxury-brand-print-finishing-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/mall-signage-branding-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/matatu-branding-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/microfinance-institution-branding-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/mug-drinkware-printing-corporate-gifts",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/ngo-event-branding-in-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/ngo-promotional-merchandise-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/outdoor-event-branding-nairobi-weather",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/outdoor-signage-guide-nairobi-businesses",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/packaging-design-trends-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/photo-booth-branding-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/political-billboard-placement-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/political-campaign-merchandise-bulk-planning-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/political-campaign-printing-kenya-2027-elections",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/political-youth-wing-merchandise-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/post-event-brand-visibility-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/printing-large-stage-backdrops",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/product-label-branding-fmcg-companies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/qr-codes-event-print-materials",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/real-estate-developer-branding-kit-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/real-estate-directional-signage",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/real-estate-signboard-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/reflective-signage-roadside-advertising",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/reflector-jacket-branding-field-staff",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/restaurant-menu-board-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/sacco-branding-guide-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/safety-sign-printing-standards-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/scale-printing-branding-business-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/school-signage-design-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/shop-front-branding-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/signage-compliance-regulations-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/signage-maintenance-longevity",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/sme-branding-budget-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/sports-event-branding-solutions",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/startup-branding-checklist-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/temporary-event-signage-solutions",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/transit-advertising-vehicle-wraps",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/uv-vs-screen-printing-nairobi-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/vehicle-wrap-branding-guide-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/wayfinding-signage-corporate-offices",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/wedding-event-branding-printing-guide-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/blog/window-frosting-branding-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/contact",
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/corporate-services",
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/corporate-terms",
+      "priority": "0.3",
+      "changefreq": "yearly",
+      "type": "legal",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/corporate/corporate-branding",
+      "priority": "0.75",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/corporate/events-exhibitions",
+      "priority": "0.75",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/faq",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/gallery",
+      "priority": "0.75",
+      "changefreq": "weekly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/privacy-policy",
+      "priority": "0.3",
+      "changefreq": "yearly",
+      "type": "legal",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/service/branding-consultation",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/digital-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/embroidery",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/large-format-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/laser-engraving",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/screen-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/signage-solutions",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/sublimation-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/uv-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/service/vehicle-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "service-detail",
+      "source": "src/data/services.js",
+      "lastmod": "2026-03-31"
+    },
+    {
+      "url": "/services/cnc-cutting",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/services/large-format",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/services/laser-cutting",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/services/plotting",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/services/t-shirt-printing",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/services/uv-printing",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop",
+      "priority": "0.9",
+      "changefreq": "weekly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/3d-signage",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/acrylic-signage-10mm",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/acrylic-signage-5mm",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/annual-reports",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/banner-printing",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/banners",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-bottles",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-caps",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-diaries",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-hoodies",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-mugs-ceramic",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-mugs-travel",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-notebooks",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-pens",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-powerbank",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-reflector-jackets",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-tshirts-polo",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-tshirts-round",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/branded-usb",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/brochures-a4",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/business-cards-luxury",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/business-cards-premium",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/calendar-2026",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/catalogue-printing",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/certificates",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/compliment-slips",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/conference-bags",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/construction-safety-helmet",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/corporate",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/custom-notepads",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/custom-tshirts",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/custom-water-bottles",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/door-hangers",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/door-stand-frame",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/emergency-signs",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/event-backdrop-fabric",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/event-signage-a0",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/event-signage-a1",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/event-tickets",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/events",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/fabric-backdrop",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/fabric-backdrop-10x8",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/feather-banner-3m",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/feather-banner-4m",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/floor-graphics",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/flyers-a4",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/foam-board",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/gazebo-2x2",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/gazebo-3x3",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/id-cards",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/lanyards",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/large-format",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/led-signage-acrylic",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/letterheads",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/light-box-signage",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/magazine-printing",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/magic-cup",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/media-banner-3x2-25",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/menu-folders",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/merchandise",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/metal-signage",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/mouse-pad-branding",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/name-tags",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/neon-signage-led",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/office-signs",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/overall-apron-branded",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/plastic-card-printing",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/pop-up-backdrop-3x3",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/pop-up-banner-1-6",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/pop-up-banner-2m",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/posters-a2",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/presentation-folders",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/pull-up-banner",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/red-carpet-runner",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/reflective-signs",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/roll-up-banner-1000",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/roll-up-banner-850",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/s-banner-stand",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/safety-signage",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/safety-vest-branding",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/signage",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/step-repeat-banner",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/sticker-printing",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/sublimation-mugs",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/table-covers",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/table-tents",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/teardrop-banner-3-5",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/teardrop-banner-4-5",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/telescopic-banner-3m",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/telescopic-banner-4m",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/thermal-mug-branding",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/umbrella-branding",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/vehicle-branding",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/vinyl-banner",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/wayfinding-signage",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/wheel-covers",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/window-graphics",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/wristbands",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/shop/product/x-banner-stand",
+      "priority": "0.7",
+      "changefreq": "weekly",
+      "type": "product",
+      "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/team",
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/terms-of-service",
+      "priority": "0.3",
+      "changefreq": "yearly",
+      "type": "legal",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    }
+  ]
+}

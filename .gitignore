@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules
+
+# IDEs and editors
+.idea
+.vscode/
+
+# Build outputs
+/build
+dist/
+
+# Vite
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Auto-generated files
+src/data/reviewsData.js
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating system files
+Thumbs.db
