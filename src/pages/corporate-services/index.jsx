@@ -32,7 +32,7 @@ const structuredData = {
     "name": brandName,
     "image": `https://lunagraphics.co.ke${logoImage}`,
     "telephone": "+254-791-159-618",
-    "email": "info.lunagraphics@gmail.com",
+    "email": "info@lunagraphics.co.ke",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Kweria Road",
@@ -231,7 +231,7 @@ const CorporateServicesPage = () => {
                 </div>
                 <div>
                   <div className="font-medium text-white">Email</div>
-                  <div itemProp="email">info.lunagraphics@gmail.com</div>
+                  <div itemProp="email">info@lunagraphics.co.ke</div>
                 </div>
                 <div>
                   <div className="font-medium text-white">Address</div>

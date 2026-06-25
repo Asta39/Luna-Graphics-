@@ -417,7 +417,7 @@ const CorporateTerms = () => {
               <p className="text-gray-800 font-medium">Luna Graphics - Corporate Division</p>
               <p className="text-gray-600">Kweria Road, Nairobi, Kenya</p>
               <p className="text-gray-600"><strong>Corporate Hotline:</strong> +254 791 159 618</p>
-              <p className="text-gray-600"><strong>Email:</strong> info.lunagraphics@gmail.com</p>
+              <p className="text-gray-600"><strong>Email:</strong> info@lunagraphics.co.ke</p>
               <p className="text-gray-600"><strong>Business Hours:</strong> Monday-Friday 8AM-6PM, Saturday 9AM-2PM</p>
               <p className="text-gray-600 mt-2"><strong>Dedicated Support:</strong> Available for Platinum tier clients</p>
             </div>

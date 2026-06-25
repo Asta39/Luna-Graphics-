@@ -27869,7 +27869,366 @@ ${createTable(
   "featured": true,
   "metaTitle": "Future of Corporate Branding in Kenya 2024 | Trends & Transformation | Luna Graphics",
   "metaDescription": "Explore how Kenyan corporate branding is evolving through digital innovation, sustainability, and cultural authenticity. Strategic insights for brand transformation."
-}
+},
+
+  {
+    id: 201,
+    slug: 'dtf-printing-nairobi-guide',
+    title: 'DTF Printing in Nairobi: The Complete Guide to Direct to Film Printing for Kenyan Businesses',
+    excerpt: 'Everything you need to know about DTF (Direct to Film) printing in Nairobi — how it works, what it costs, which fabrics it works on, and why it\'s replacing screen printing for short runs in Kenya.',
+    content: `
+<h2>What is DTF Printing and Why is Nairobi Embracing It?</h2>
+<p>DTF (Direct to Film) printing has taken the garment decoration industry by storm across East Africa. Unlike traditional screen printing — which requires separate screens per colour and high minimum orders — DTF printing produces full-colour, photographic-quality transfers on PET film, which are then heat-pressed onto virtually any fabric. The result: vibrant, durable prints with no minimum order and zero setup fees.</p>
+<p>At Luna Graphics, we operate industrial-grade DTF printers in Nairobi's CBD, serving corporate clients, political campaigns, NGOs, event organisers, and individual customers who need anything from one T-shirt to 10,000 branded garments.</p>
+
+<h2>How DTF Printing Works: Step by Step</h2>
+<p>The DTF process involves four key steps:</p>
+<ol>
+  <li><strong>Print:</strong> Your design is printed in CMYK + white ink onto a special PET film using a DTF printer.</li>
+  <li><strong>Powder:</strong> Hot-melt adhesive powder is applied to the wet ink while still on the film.</li>
+  <li><strong>Cure:</strong> The film is passed through a curing oven to bond the powder to the ink.</li>
+  <li><strong>Press:</strong> The finished transfer is heat-pressed onto your garment at 160°C for 15 seconds, bonding permanently to the fabric fibres.</li>
+</ol>
+<p>The entire process from artwork approval to finished garment takes as little as 2 hours for small quantities.</p>
+
+<h2>DTF vs Screen Printing vs Sublimation: Which is Right for You?</h2>
+${createTable(
+  ['Factor', 'DTF Printing', 'Screen Printing', 'Sublimation'],
+  [
+    ['Minimum Order', 'No minimum', '12–24 pieces typically', '1 piece'],
+    ['Setup Cost', 'None', 'KES 500–2,000 per colour', 'None'],
+    ['Fabric Types', 'Any fabric', 'Most fabrics', '100% polyester only'],
+    ['Colour Limit', 'Unlimited', 'Cost increases per colour', 'Unlimited'],
+    ['Best For', 'Short runs, complex designs', 'Large runs, simple designs', 'Sportswear, all-over prints'],
+    ['Wash Durability', '50+ washes', '100+ washes', 'Permanent'],
+    ['Print Feel', 'Slightly raised, soft', 'Flat, embedded', 'Smooth, part of fabric'],
+    ['Price per piece (50 pcs)', 'KES 120–150', 'KES 80–100', 'KES 400–800']
+  ]
+)}
+
+<h2>What Fabrics Work with DTF Printing?</h2>
+<p>One of DTF printing's biggest advantages is its compatibility with virtually any fabric type:</p>
+<ul>
+  <li><strong>100% Cotton</strong> — the most popular choice for T-shirts</li>
+  <li><strong>100% Polyester</strong> — jerseys, sportswear</li>
+  <li><strong>Cotton/Polyester blends</strong> — most corporate polo shirts</li>
+  <li><strong>Nylon</strong> — jackets, bags</li>
+  <li><strong>Denim</strong> — jeans, jackets</li>
+  <li><strong>Canvas</strong> — tote bags, aprons</li>
+  <li><strong>Leather and faux leather</strong></li>
+</ul>
+<p>The only fabrics DTF does NOT work well on are heat-sensitive materials like nylon at very high temperatures, and waterproof/treated fabrics that prevent adhesion.</p>
+
+<h2>DTF Printing Prices in Nairobi (2024)</h2>
+<p>At Luna Graphics, our DTF pricing is transparent and competitive:</p>
+${createTable(
+  ['Quantity', 'Transfer Size', 'Price per Transfer'],
+  [
+    ['1–4 pieces', 'Up to A4', 'KES 200 each'],
+    ['5–20 pieces', 'Up to A4', 'KES 150 each'],
+    ['21–100 pieces', 'Up to A4', 'KES 120 each'],
+    ['100+ pieces', 'Up to A4', 'KES 90 each'],
+    ['A3 size', 'Any quantity', 'Add KES 50 per transfer']
+  ]
+)}
+<p><em>Prices above are for the DTF transfer only. Garments supplied separately or sourced from us at cost price.</em></p>
+
+<h2>Common DTF Applications We Handle in Nairobi</h2>
+<p><strong>Corporate branded T-shirts:</strong> Company logos, staff names, and department branding on any quantity of polo shirts or T-shirts — popular with NGOs, government agencies, and private companies.</p>
+<p><strong>Political campaign merchandise:</strong> Face prints, party colours, and candidate branding on T-shirts, vests, and caps. We handle both short pre-launch runs and bulk election-day quantities.</p>
+<p><strong>Event merchandise:</strong> Conference T-shirts, team-building branded shirts, marathon jerseys — DTF is ideal because you can print specific sizes and quantities without waste.</p>
+<p><strong>School and sports kits:</strong> Numbered and named sports jerseys, school house colours, tournament kits.</p>
+<p><strong>Promotional gifts:</strong> Branded bags, caps, and garments for corporate gifting and trade show giveaways.</p>
+
+<h2>How to Get a DTF Print Quote in Nairobi</h2>
+<p>Getting a quote from Luna Graphics is simple. WhatsApp us at +254 791 159 618 with your design file (PNG with transparent background preferred), the quantity you need, and the garment type. We will respond with pricing and turnaround time within the hour during business hours.</p>
+<p>Walk-in customers are welcome at our Kweria Road, Nairobi CBD office Monday–Friday 8AM–6PM and Saturday 9AM–2PM.</p>
+    `,
+    author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.jpg" },
+    category: "printing-tips",
+    tags: ["DTF Printing Nairobi", "Direct to Film Kenya", "T-shirt Printing Nairobi", "Garment Printing Kenya", "Custom T-shirts Nairobi", "DTF vs Screen Printing"],
+    featuredImage: "/assets/dtf-printer.jpg",
+    publishedAt: "2024-06-01T09:00:00Z",
+    updatedAt: "2024-06-01T09:00:00Z",
+    readTime: 8,
+    featured: true,
+    metaTitle: "DTF Printing Nairobi: Complete Guide to Direct to Film Printing | Luna Graphics",
+    metaDescription: "Everything about DTF printing in Nairobi — how it works, prices, fabric compatibility, and how it compares to screen printing. No minimum order. Same-day available."
+  },
+
+  {
+    id: 202,
+    slug: 'sublimation-printing-nairobi-guide',
+    title: 'Sublimation Printing in Nairobi: Mugs, Jerseys & Corporate Gifts Explained',
+    excerpt: 'A complete guide to dye sublimation printing in Nairobi — what it is, what you can print on, price ranges for mugs and jerseys, and when to choose sublimation over other methods.',
+    content: `
+<h2>What is Sublimation Printing?</h2>
+<p>Dye sublimation printing is a heat-transfer printing method where solid dye converts directly to gas (sublimes) and bonds permanently into the coating or fibres of a substrate. Unlike transfers that sit on top of a surface, sublimation colour becomes part of the material itself — which is why it never cracks, peels, or fades with normal use.</p>
+<p>In Nairobi, sublimation printing is widely used for corporate gifts (mugs, photo panels, keyrings), sports team kits (all-over printed jerseys), NGO and hospitality branded uniforms, and personalised gifts (photo mugs, framed panels).</p>
+
+<h2>What Can You Print on with Sublimation?</h2>
+<p>Sublimation requires either polyester fabric (minimum 65% polyester) or hard goods with a special polyester coating. Materials we commonly print on include:</p>
+<ul>
+  <li><strong>Mugs</strong> — standard 11oz and 15oz ceramic sublimation mugs</li>
+  <li><strong>Polyester jerseys and sportswear</strong> — all-over full-colour printing</li>
+  <li><strong>Metal photo panels</strong> — aluminium panels with vibrant, gallery-quality prints</li>
+  <li><strong>Phone cases</strong> — sublimation-coated hard cases</li>
+  <li><strong>Coasters</strong> — ceramic and MDF sublimation coasters</li>
+  <li><strong>Keyrings and bottle openers</strong> — popular corporate giveaways</li>
+  <li><strong>Cushion covers</strong> — personalised home décor</li>
+  <li><strong>Caps and hats</strong> — sublimation-coated panels</li>
+</ul>
+
+<h2>Sublimation Printing Prices in Nairobi</h2>
+${createTable(
+  ['Product', 'Description', 'Price (KES)'],
+  [
+    ['Standard Mug (11oz)', 'Full wraparound, any design', '350 per mug'],
+    ['Large Mug (15oz)', 'Full wraparound', '450 per mug'],
+    ['Sublimation Jersey', 'All-over print, polyester', '800 per piece'],
+    ['Metal Photo Panel (A4)', 'Aluminium, glossy', '600 per panel'],
+    ['Ceramic Coaster', 'Both sides, 9cm round/square', '250 per coaster'],
+    ['Phone Case', 'iPhone/Samsung, custom design', '400 per case'],
+    ['Keyring', 'Metal sublimation keyring', '200 per piece'],
+    ['Corporate Mug Set (50+)', 'Same design, bulk pricing', 'From 280 per mug']
+  ]
+)}
+
+<h2>Sublimation vs DTF vs Screen Printing for Corporate Gifts</h2>
+<p>When choosing a printing method for corporate gifts and branded apparel in Kenya, the right choice depends on the substrate:</p>
+<ul>
+  <li><strong>Use sublimation for:</strong> mugs, metal panels, all-over polyester sportswear, corporate gift sets, personalised items</li>
+  <li><strong>Use DTF for:</strong> cotton T-shirts, mixed-fabric polo shirts, caps — where sublimation won't bond properly</li>
+  <li><strong>Use screen printing for:</strong> very large quantities (500+) of simple 1–3 colour designs on cotton garments</li>
+</ul>
+
+<h2>Corporate Sublimation Gift Sets in Nairobi</h2>
+<p>Corporate gift sets are one of our most popular sublimation products. A typical set might include a branded mug, coaster, pen, and photo panel in a gift box — all customised with your company logo and employee name. These are popular for staff rewards, client appreciation gifts, and conference welcome packs.</p>
+<p>We handle corporate gift orders from as few as 10 sets to hundreds of units, with full design and packaging support available.</p>
+
+<h2>Get a Sublimation Printing Quote</h2>
+<p>WhatsApp Luna Graphics at +254 791 159 618 or visit us on Kweria Road, Nairobi CBD. Share your design, the product type, and quantity — we will provide a quote within the hour.</p>
+    `,
+    author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.jpg" },
+    category: "printing-tips",
+    tags: ["Sublimation Printing Nairobi", "Dye Sublimation Kenya", "Mug Printing Nairobi", "Sports Jersey Printing Kenya", "Corporate Gifts Nairobi", "Sublimation Gifts Kenya"],
+    featuredImage: "/assets/heatpress.jpg",
+    publishedAt: "2024-06-05T09:00:00Z",
+    updatedAt: "2024-06-05T09:00:00Z",
+    readTime: 7,
+    featured: false,
+    metaTitle: "Sublimation Printing Nairobi: Mugs, Jerseys & Corporate Gifts | Luna Graphics",
+    metaDescription: "Complete guide to sublimation printing in Nairobi. Prices for mugs (KES 350), jerseys (KES 800), and corporate gift sets. Dye sublimation for polyester garments and hard goods."
+  },
+
+  {
+    id: 203,
+    slug: 'corporate-gifts-printing-nairobi',
+    title: 'Corporate Gifts Printing in Nairobi: 15 Branded Gift Ideas for Kenyan Businesses',
+    excerpt: 'Looking for branded corporate gifts in Nairobi? We cover 15 popular corporate gift items, printing methods, typical prices in KES, and lead times — with tips on choosing the right gift for your industry.',
+    content: `
+<h2>Why Branded Corporate Gifts Matter for Kenyan Businesses</h2>
+<p>In Kenya's competitive business environment, branded corporate gifts serve a dual purpose: they strengthen relationships with clients and partners, while keeping your brand visible long after the initial meeting. A well-chosen branded gift — whether a mug used daily at someone's desk or a quality pen signed into dozens of contracts — generates sustained brand impressions at a fraction of the cost of traditional advertising.</p>
+<p>At Luna Graphics in Nairobi, we produce corporate branded gifts across all major categories, from sublimation mugs and UV-printed items to custom T-shirts and premium stationery sets.</p>
+
+<h2>Top 15 Corporate Gift Ideas with Prices in Nairobi</h2>
+
+<h3>1. Branded Mugs (KES 350–500 each)</h3>
+<p>The most popular corporate gift in Kenya. Full-colour sublimation printing on white ceramic mugs, with your logo, message, or employee name. Minimum order: 1 piece.</p>
+
+<h3>2. Custom T-Shirts (KES 500–1,200 each)</h3>
+<p>Branded polo shirts or T-shirts with your logo via DTF printing or screen printing. Works for staff uniforms, event merchandise, and client gifts. No minimum for DTF.</p>
+
+<h3>3. Metal Photo Panels (KES 600–1,200 each)</h3>
+<p>Aluminium panels with high-resolution sublimation prints — popular for employee recognition awards, anniversary gifts, and executive desk pieces.</p>
+
+<h3>4. UV-Printed Power Banks (KES 800–2,000 each)</h3>
+<p>Branded power banks with your logo directly printed using UV technology for a premium, permanent finish. Practical and used daily.</p>
+
+<h3>5. Custom Notebooks & Journals (KES 200–800 each)</h3>
+<p>Branded hardcover notebooks with your logo on the cover, available in A5 and A4. Popular for conference welcome packs and new employee onboarding kits.</p>
+
+<h3>6. Branded Pens (KES 80–400 each)</h3>
+<p>Pad-printed or laser-engraved branded pens. Budget-friendly and universally useful. Order quantities from 50 pieces.</p>
+
+<h3>7. Sublimation Coasters (KES 250 each)</h3>
+<p>Full-colour ceramic or MDF coasters, perfect for executive desk sets and hospitality applications.</p>
+
+<h3>8. Branded Tote Bags (KES 300–600 each)</h3>
+<p>Custom-printed canvas or non-woven tote bags with your logo. Popular for retail, conferences, and eco-conscious brands.</p>
+
+<h3>9. Branded Caps and Hats (KES 400–800 each)</h3>
+<p>Embroidered or sublimation-printed caps. Great for outdoor events, sports sponsorships, and staff uniform kits.</p>
+
+<h3>10. Custom Phone Cases (KES 400 each)</h3>
+<p>Sublimation-printed hard phone cases for iPhones and Samsung models with your brand, pattern, or team photo.</p>
+
+<h3>11. Gift Boxes & Hampers (KES 1,500–10,000+)</h3>
+<p>Curated branded gift sets combining multiple items — a mug, notebook, pen, and coaster in a branded gift box. We handle sourcing, printing, and packaging.</p>
+
+<h3>12. Branded Umbrellas (KES 800–2,500 each)</h3>
+<p>Full-colour printed umbrellas — practical for Kenya's rainy seasons and highly visible at outdoor events.</p>
+
+<h3>13. Custom Keyrings (KES 150–400 each)</h3>
+<p>Metal sublimation keyrings or acrylic UV-printed keyrings with your logo. Minimum order from 20 pieces.</p>
+
+<h3>14. Branded USB Drives (KES 500–1,200 each)</h3>
+<p>UV-printed USB drives preloaded with your company profile or event materials. Popular for product launches and conferences.</p>
+
+<h3>15. Personalised Award Plaques (KES 1,000–5,000 each)</h3>
+<p>Acrylic, wood, or metal award plaques produced via CNC cutting and laser engraving with your design and recipient name. Perfect for staff recognition, sports awards, and annual events.</p>
+
+<h2>How to Order Corporate Gifts from Luna Graphics</h2>
+<p>We make corporate gifting easy. Share your logo, the items you want, and your quantity — we will provide a full quote with printing costs, lead times, and packaging options within the same business day. For large orders (50+ pieces), we can arrange free delivery within Nairobi.</p>
+<p>Contact us on WhatsApp at +254 791 159 618 or visit our Kweria Road, CBD showroom to see samples.</p>
+    `,
+    author: { name: "Luna Graphics Team", role: "Corporate Solutions", avatar: "/assets/team-member-placeholder.jpg" },
+    category: "corporate-branding",
+    tags: ["Corporate Gifts Nairobi", "Branded Gifts Kenya", "Corporate Printing Kenya", "Promotional Items Nairobi", "Branded Merchandise Kenya", "Corporate Gifting Nairobi"],
+    featuredImage: "/assets/giftbox.jpg",
+    publishedAt: "2024-06-10T09:00:00Z",
+    updatedAt: "2024-06-10T09:00:00Z",
+    readTime: 9,
+    featured: true,
+    metaTitle: "Corporate Gifts Printing Nairobi: 15 Branded Gift Ideas & Prices | Luna Graphics",
+    metaDescription: "15 branded corporate gift ideas for Kenyan businesses with prices in KES. Mugs, T-shirts, notebooks, plaques, and more. Same-day printing available in Nairobi CBD."
+  },
+
+  {
+    id: 204,
+    slug: 'roll-up-banner-printing-nairobi-cost',
+    title: 'Roll-Up Banner Printing in Nairobi: Prices, Sizes & What Affects the Cost',
+    excerpt: 'Planning to print roll-up banners in Nairobi? This guide breaks down the real cost factors — material quality, banner size, stand type, print resolution, and turnaround time — with current 2024 prices from Luna Graphics.',
+    content: `
+<h2>Roll-Up Banner Prices in Nairobi (2024)</h2>
+<p>Roll-up banners (also called retractable banners or pull-up banners) are the most popular portable display solution for businesses in Nairobi. They are used at trade shows, exhibitions, office receptions, events, product launches, and in-store promotions. At Luna Graphics, we produce roll-up banners daily and know exactly what drives the cost — let us break it down for you.</p>
+
+${createTable(
+  ['Banner Type', 'Size', 'Print Only', 'Print + Economy Stand', 'Print + Premium Stand'],
+  [
+    ['Standard Roll-Up', '85cm × 200cm', 'KES 1,500', 'KES 3,500', 'KES 5,500'],
+    ['Wide Roll-Up', '100cm × 200cm', 'KES 1,800', 'KES 4,000', 'KES 6,500'],
+    ['Extra-Wide Roll-Up', '120cm × 200cm', 'KES 2,200', 'KES 5,000', 'KES 7,500'],
+    ['Double-Sided Roll-Up', '85cm × 200cm', 'KES 3,000', 'KES 6,500', 'KES 9,000'],
+    ['Outdoor Roll-Up', '85cm × 200cm', 'KES 2,500', 'KES 5,500', 'KES 8,000']
+  ]
+)}
+
+<h2>Key Factors That Affect Roll-Up Banner Cost in Nairobi</h2>
+
+<h3>1. Banner Material Quality</h3>
+<p>Economy banners use standard 380gsm PVC print film. Mid-range uses 440gsm satin film for richer colours. Premium banners use photo-quality film at 220gsm for crisp text and gradient images. The material alone can change the price by KES 500–1,500 per banner.</p>
+
+<h3>2. Stand Quality</h3>
+<p>Economy aluminium stands start at KES 1,500–2,000. Mid-range stands with wider, more stable bases run KES 2,500–3,500. Premium chrome or heavy-duty stands for high-traffic events cost KES 4,000–6,000. The stand determines durability and how professional the display looks.</p>
+
+<h3>3. Banner Size</h3>
+<p>Standard 85cm width is the most affordable and most common. Wider banners (100cm, 120cm) cost more for both the print and the stand hardware. Taller banners (over 200cm) require special stand mechanisms.</p>
+
+<h3>4. Number of Sides</h3>
+<p>Single-sided banners are standard. Double-sided banners (visible from both directions) are popular at trade show entrances and event corridors — typically cost 60–80% more than single-sided equivalents.</p>
+
+<h3>5. Turnaround Time</h3>
+<p>Standard turnaround at Luna Graphics is 24–48 hours. Same-day printing is available for an express fee of KES 500–1,000. Artwork submitted before 10AM is typically ready the same afternoon for simple orders.</p>
+
+<h3>6. Quantity</h3>
+<p>Bulk discounts apply for 5+ identical banners. Ordering 10 banners typically saves 10–15% versus ordering individually.</p>
+
+<h2>Roll-Up Banner File Specifications</h2>
+<p>To get the best print quality, your artwork should be:</p>
+<ul>
+  <li>Resolution: minimum 100 DPI at full size (150 DPI preferred)</li>
+  <li>Colour mode: CMYK (not RGB)</li>
+  <li>Format: PDF (press-ready), AI, or high-resolution TIFF</li>
+  <li>Bleed: 5mm on all sides</li>
+  <li>Safety zone: keep important content 20mm from edges</li>
+</ul>
+<p>We also offer free artwork checking and can resize or reformat your files for a small design fee if needed.</p>
+
+<h2>Order Your Roll-Up Banners from Luna Graphics</h2>
+<p>Visit our Kweria Road, Nairobi CBD showroom to see samples of all our stand types, or WhatsApp us at +254 791 159 618 with your artwork and quantity. We will send you a precise quote within the hour.</p>
+    `,
+    author: { name: "Luna Graphics Team", role: "Display Solutions", avatar: "/assets/team-member-placeholder.jpg" },
+    category: "large-format",
+    tags: ["Roll-Up Banner Nairobi", "Retractable Banner Kenya", "Pull-Up Banner Nairobi", "Banner Printing Prices Kenya", "Display Banners Nairobi", "Trade Show Banners Kenya"],
+    featuredImage: "/assets/stands.jpg",
+    publishedAt: "2024-06-15T09:00:00Z",
+    updatedAt: "2024-06-15T09:00:00Z",
+    readTime: 7,
+    featured: false,
+    metaTitle: "Roll-Up Banner Printing Nairobi: Prices & Cost Guide 2024 | Luna Graphics",
+    metaDescription: "Roll-up banner prices in Nairobi 2024. Standard banner from KES 3,500 with stand. Covers size, material, stand quality, and turnaround time factors. Same-day printing available."
+  },
+
+  {
+    id: 205,
+    slug: 'exhibition-display-solutions-nairobi',
+    title: 'Exhibition & Trade Show Display Solutions in Nairobi: Banners, Stands & Branding',
+    excerpt: 'Planning an exhibition or trade show in Nairobi? This guide covers all the display solutions available — from pull-up banners and teardrop flags to pop-up stands and custom exhibition booths — with prices and lead times.',
+    content: `
+<h2>Exhibition Display Printing in Nairobi</h2>
+<p>Trade shows, exhibitions, and corporate events in Nairobi — from the KICC to the Sarit Centre and the Nairobi International Trade Fair — demand professional, eye-catching display solutions. At Luna Graphics, we are Nairobi's specialist in exhibition display printing, producing everything from individual pull-up banners to complete branded booth setups.</p>
+<p>Whether you're an NGO setting up a health outreach booth, a bank attending a financial services expo, or a startup launching at GITEX Africa, we have the display solutions to make your brand stand out.</p>
+
+<h2>Exhibition Display Products We Offer</h2>
+
+<h3>Pull-Up / Roll-Up Banners</h3>
+<p>The most versatile exhibition display. Compact for transport, quick to set up, and available in sizes from 60cm to 150cm wide. Print from KES 1,500; complete with stand from KES 3,500. Ideal for product information, brand messaging, and directional signage at any exhibition.</p>
+
+<h3>Teardrop & Feather Flags</h3>
+<p>Teardrop and feather flags create vertical movement that catches the eye at outdoor events and busy trade show floors. Available in 3m, 4m, and 5m heights. Popular for outdoor expos, brand activations, and roadside marketing. From KES 6,000 complete with base and ground spike.</p>
+
+<h3>X-Banners and L-Banners</h3>
+<p>Cost-effective display stands for indoor use. The X-banner stand uses fibre poles and is the most affordable option at KES 2,000–2,500 complete. L-banners offer a cleaner profile at KES 2,500–3,500.</p>
+
+<h3>Pop-Up Display Stands</h3>
+<p>Pop-up fabric or PVC displays create a full backdrop wall at your exhibition booth. Available in 2m, 3m, and 4m widths with seamless printed graphics. Professional and quick to assemble without tools. From KES 18,000 for a 2m pop-up system.</p>
+
+<h3>Fabric Tension Displays (SEG Systems)</h3>
+<p>Silicone Edge Graphic (SEG) fabric displays are the premium choice for modern exhibition stands. The fabric stretches over a lightweight aluminium frame for a seamless, wrinkle-free display that looks exceptional. Popular with banks, telecoms, and premium brands at Kenya's top exhibitions.</p>
+
+<h3>Exhibition Booth Branding</h3>
+<p>We produce all the print elements for a complete exhibition booth: backdrop, counter fascia graphics, table throws, product display panels, ceiling hang banners, floor graphics, and branded giveaways. We can quote the entire booth print package at once for consistency and cost efficiency.</p>
+
+<h3>Gazebos & Branded Tents</h3>
+<p>3×3m and 3×6m branded gazebos for outdoor events and field marketing. Full-colour printing on the canopy, valance, and side walls. From KES 25,000 for a branded 3×3m pop-up gazebo.</p>
+
+<h2>Exhibition Display Packages</h2>
+${createTable(
+  ['Package', 'Contents', 'Price (KES)'],
+  [
+    ['Starter Booth', '2× Roll-up banners + table throw', 'From 12,000'],
+    ['Standard Booth', '1× Pop-up 2m + 2× Roll-up + counter graphic', 'From 28,000'],
+    ['Premium Booth', 'Full SEG backdrop + counter + 4× flags + giveaways', 'From 65,000'],
+    ['Outdoor Event', 'Branded gazebo + 4× feather flags + 2× roll-up', 'From 40,000']
+  ]
+)}
+
+<h2>Lead Times for Exhibition Orders</h2>
+<p>Standard lead times depend on quantity and complexity:</p>
+<ul>
+  <li>Roll-up banners: 24–48 hours</li>
+  <li>Teardrop flags: 2–3 days</li>
+  <li>Pop-up systems: 3–5 days</li>
+  <li>Full booth packages: 5–7 days</li>
+  <li>Branded gazebos: 7–10 days</li>
+</ul>
+<p>Rush orders are available with prior arrangement. For exhibitions with less than 3 days notice, contact us immediately and we will assess feasibility.</p>
+
+<h2>Get Your Exhibition Display Quote</h2>
+<p>WhatsApp Luna Graphics at +254 791 159 618 with your event date, booth size, and the display items you need. We will send a comprehensive quote within the hour and can arrange delivery or collection from our Kweria Road, Nairobi CBD premises.</p>
+    `,
+    author: { name: "Luna Graphics Team", role: "Exhibition Solutions", avatar: "/assets/team-member-placeholder.jpg" },
+    category: "exhibition-events",
+    tags: ["Exhibition Display Nairobi", "Trade Show Banners Kenya", "Feather Flags Nairobi", "Pop-Up Stand Kenya", "Exhibition Branding Nairobi", "Teardrop Flags Kenya", "Booth Branding Nairobi"],
+    featuredImage: "/assets/exhibition.jpg",
+    publishedAt: "2024-06-20T09:00:00Z",
+    updatedAt: "2024-06-20T09:00:00Z",
+    readTime: 8,
+    featured: false,
+    metaTitle: "Exhibition Display Solutions Nairobi: Banners, Flags & Booth Branding | Luna Graphics",
+    metaDescription: "Complete exhibition display solutions in Nairobi. Pull-up banners from KES 3,500, teardrop flags from KES 6,000, pop-up stands from KES 18,000. Trade show printing specialists in Nairobi CBD."
+  }
 
 
 ];

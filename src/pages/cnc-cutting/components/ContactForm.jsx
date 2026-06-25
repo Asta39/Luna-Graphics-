@@ -341,11 +341,11 @@ const ContactForm = ({ serviceName }) => {
                   <span className="font-medium">+254 791 159 618</span>
                 </a>
                 <a
-                  href="mailto:info.lunagraphics@gmail.com"
+                  href="mailto:info@lunagraphics.co.ke"
                   className="flex items-center justify-center space-x-2 text-primary hover:text-primary-600 transition-colors duration-200"
                 >
                   <Icon name="Mail" size={16} />
-                  <span className="font-medium">info.lunagraphics@gmail.com</span>
+                  <span className="font-medium">info@lunagraphics.co.ke</span>
                 </a>
               </div>
             </div>

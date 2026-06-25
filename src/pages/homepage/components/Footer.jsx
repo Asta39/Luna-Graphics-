@@ -96,7 +96,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Icon name="Mail" size={16} color="var(--color-accent)" />
-                <span className="text-sm text-surface-300">info.lunagraphics@gmail.com</span>
+                <span className="text-sm text-surface-300">info@lunagraphics.co.ke</span>
               </div>
             </div>
 

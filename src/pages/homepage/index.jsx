@@ -28,7 +28,7 @@ const Homepage = () => {
     "logo": imageUrl,
     "image": imageUrl,
     "telephone": "+254-791-159-618",
-    "email": "info.lunagraphics@gmail.com",
+    "email": "info@lunagraphics.co.ke",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Kweria Road",

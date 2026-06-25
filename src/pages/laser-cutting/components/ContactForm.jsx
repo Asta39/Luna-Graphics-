@@ -314,7 +314,7 @@ const ContactForm = ({ serviceName }) => {
                   className="flex items-center justify-center space-x-2 text-primary hover:text-primary-600 transition-colors duration-200"
                 >
                   <Icon name="Mail" size={16} />
-                  <span className="font-medium">info.lunagraphics@gmail.com</span>
+                  <span className="font-medium">info@lunagraphics.co.ke</span>
                 </a>
               </div>
             </div>

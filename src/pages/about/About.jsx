@@ -60,7 +60,7 @@ const About = () => {
       "addressCountry": "KE"
     },
     "telephone": "+254791159618",
-    "email": "info.lunagraphics@gmail.com",
+    "email": "info@lunagraphics.co.ke",
     "sameAs": [
       "https://wa.me/254791159618"
     ],
@@ -621,7 +621,7 @@ const About = () => {
                   </div>
                   <div>
                     <h4 className="font-heading font-semibold text-gray-900">Email Us</h4>
-                    <p className="text-sm text-gray-600">info.lunagraphics@gmail.com</p>
+                    <p className="text-sm text-gray-600">info@lunagraphics.co.ke</p>
                   </div>
                 </div>
               </motion.div>

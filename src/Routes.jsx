@@ -25,6 +25,9 @@ const Shop = lazy(() => import("./pages/shop/Shop"));
 const ProductDetail = lazy(() => import("./pages/shop/ProductDetail"));
 const Cart = lazy(() => import("./pages/cart/Cart"));
 const ServiceDetail = lazy(() => import("./pages/shop/components/ServiceDetail"));
+const DTFPrintingPage = lazy(() => import("./pages/dtf-printing"));
+const SublimationPrintingPage = lazy(() => import("./pages/sublimation-printing"));
+const DigitalPrintingPage = lazy(() => import("./pages/digital-printing"));
 const BlogPage = lazy(() => import("pages/Blog"));
 const BlogPost = lazy(() => import("pages/BlogPost"));
 const FAQPage = lazy(() => import("pages/faq"));
@@ -54,6 +57,9 @@ const Routes = () => {
             <Route path="/services/cnc-cutting" element={<CNCCuttingServicesPage />} />
             <Route path="/services/laser-cutting" element={<LaserCuttingServicesPage />} />
             <Route path="/services/t-shirt-printing" element={<TShirtPrintingServicesPage />} />
+            <Route path="/services/dtf-printing" element={<DTFPrintingPage />} />
+            <Route path="/services/sublimation-printing" element={<SublimationPrintingPage />} />
+            <Route path="/services/digital-printing" element={<DigitalPrintingPage />} />
 
             <Route path="/team" element={<TeamPage />} />
             <Route path="/contact" element={<ContactPage />} />

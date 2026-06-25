@@ -156,7 +156,7 @@ const ContactForm = ({ serviceName }) => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Icon name="Mail" size={16} color="var(--color-accent)" />
-                  <span className="text-sm">info.lunagraphics@gmail.com</span>
+                  <span className="text-sm">info@lunagraphics.co.ke</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Icon name="MapPin" size={16} color="var(--color-accent)" />

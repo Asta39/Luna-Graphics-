@@ -31,12 +31,12 @@ const ContactInfo = () => {
     {
       icon: 'Mail',
       title: 'Email Us',
-      primary: 'info.lunagraphics@gmail.com',
+      primary: 'info@lunagraphics.co.ke',
       
       tertiary: 'Response within 2-4 hours',
       action: {
         label: 'Send Email',
-        onClick: () => window.open('mailto:info.lunagraphics@gmail.com', '_self')
+        onClick: () => window.open('mailto:info@lunagraphics.co.ke', '_self')
       }
     },
     {

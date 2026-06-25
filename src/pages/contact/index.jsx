@@ -41,9 +41,9 @@ const ContactPage = () => {
     {
       icon: 'Mail',
       title: 'Email',
-      subtitle: 'info.lunagraphics@gmail.com',
+      subtitle: 'info@lunagraphics.co.ke',
       description: 'Detailed project discussions',
-      action: () => window.open('mailto:info.lunagraphics@gmail.com', '_self'),
+      action: () => window.open('mailto:info@lunagraphics.co.ke', '_self'),
       color: 'bg-primary-100 text-primary'
     },
     {

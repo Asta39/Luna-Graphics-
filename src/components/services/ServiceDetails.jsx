@@ -102,7 +102,7 @@ const ServiceDetails = ({ service }) => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Icon name="Mail" size={16} color="var(--color-accent)" />
-                    <span className="text-sm font-medium">info.lunagraphics@gmail.com</span>
+                    <span className="text-sm font-medium">info@lunagraphics.co.ke</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Icon name="Clock" size={16} color="var(--color-accent)" />

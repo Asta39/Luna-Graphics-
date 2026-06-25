@@ -82,6 +82,14 @@ import tShirtGalleryBrackets from '../assets/t-shirt-gallery-brackets.jpg';
 import tShirtGalleryArt from '../assets/t-shirt-gallery-art.jpg';
 
 import offsetPrintingHeroImage from '../assets/offset-printer.jpg';
+import sublimationHeroImage from '../assets/heatpress.jpg';
+import dtfHeroImage from '../assets/t-shirt-hero-image.jpg';
+import dtfEquipmentImage from '../assets/dtf-printer.jpg';
+import digitalHeroImage from '../assets/uvbooks.jpg';
+import digitalEquipmentImage from '../assets/uvmagazines.jpg';
+import sublimationGalleryVests from '../assets/vests.jpg';
+import sublimationGalleryGifts from '../assets/giftbox.jpg';
+import digitalGallerySignages from '../assets/signages.jpg';
 
 // 2. DEFINE YOUR SERVICES
 export const services = 
@@ -1491,17 +1499,201 @@ export const services =
   },
 
    "offset-printing": {
-    id: 7, // Give it a unique ID
-    path: "/offset-printing", // A future path
+    id: 7,
+    path: "/offset-printing",
     title: "Offset Printing Services",
     category: "Commercial Printing",
     description: "High-volume commercial printing for books, brochures, packaging, and more with exceptional quality and color consistency.",
-    heroImage: offsetPrintingHeroImage, // <-- Using the new imported image
-    // You can leave these other properties as empty arrays for now
-    equipment: [], 
+    heroImage: offsetPrintingHeroImage,
+    equipment: [],
     gallery: [],
     pricing: [],
     related: []
+  },
+
+  "dtf-printing": {
+    id: 8,
+    path: "/services/dtf-printing",
+    title: "DTF Printing Services",
+    category: "Garment & Textile Printing",
+    description: "Professional Direct to Film (DTF) printing in Nairobi for vivid, durable transfers on any fabric. No minimum order, full-colour prints on cotton, polyester, and blended garments.",
+    detailedDescription: `DTF (Direct to Film) printing is the most versatile garment decoration technology available today. Unlike screen printing which requires separate setups per colour, DTF produces full-colour photographic prints in a single pass — making it ideal for short runs, complex designs, and on-demand printing.\n\nOur DTF process uses high-quality PET film, CMYK + white inks, and hot-melt adhesive powder to create transfers that bond permanently to virtually any fabric. The result is a soft, flexible print that won't crack, peel, or fade after washing.\n\nWe serve corporate clients needing branded uniforms, event organisers printing team shirts, political campaigns printing supporter merchandise, and retailers offering custom apparel — all with no minimum order and same-day turnaround for small quantities.`,
+    heroImage: dtfHeroImage,
+    startingPrice: 150,
+    turnaround: "Same day – 24 hours",
+    minimumOrder: "No minimum",
+    keyFeatures: [
+      "Full Colour, No Setup Fees",
+      "Any Fabric Type",
+      "No Minimum Order",
+      "Photographic Print Quality"
+    ],
+    specifications: [
+      { icon: "Palette", title: "Colour", description: "Unlimited colours including gradients, photos, and fine detail" },
+      { icon: "Layers", title: "Fabric Compatibility", description: "Cotton, polyester, nylon, blends, denim, canvas, and more" },
+      { icon: "Shield", title: "Wash Durability", description: "50+ machine washes without cracking, fading, or peeling" },
+      { icon: "Zap", title: "Turnaround", description: "Same-day ready for small quantities; bulk next-day" },
+      { icon: "Maximize", title: "Print Size", description: "Up to A3 (297mm × 420mm) per transfer" },
+      { icon: "Settings", title: "Finish", description: "Soft, matte finish that feels natural on the garment" }
+    ],
+    materials: ["100% Cotton", "100% Polyester", "Cotton/Polyester Blend", "Nylon", "Denim", "Canvas Tote Bags", "Caps & Hats", "Hoodies"],
+    applications: ["Corporate branded T-shirts", "Event merchandise", "Political campaign shirts", "Sports team uniforms", "Promotional gifts", "Custom hoodies and caps", "School uniforms", "NGO branded apparel"],
+    equipment: [
+      {
+        name: "DTF Printer (A3 Format)",
+        description: "Industrial-grade DTF printer with CMYK + White ink channels for full-colour, single-pass transfer production.",
+        image: dtfEquipmentImage,
+        specs: ["A3 print width", "CMYK + White inks", "High-speed production", "Water-based eco inks"]
+      }
+    ],
+    gallery: [
+      { image: tShirtGalleryFirm, title: "Corporate Uniform Printing", description: "Branded staff uniforms with full-colour DTF transfers" },
+      { image: tShirtGalleryDecorative, title: "Event T-Shirts", description: "Custom event merchandise printed same-day" },
+      { image: tShirtGalleryPrototypes, title: "Political Campaign Shirts", description: "Bulk campaign T-shirts with crisp logo prints" },
+      { image: tShirtGalleryFurniture, title: "Sports Team Kits", description: "Numbered and named sports kits" },
+      { image: tShirtGalleryDisplays, title: "Promotional Merchandise", description: "Branded hoodies, caps, and tote bags" },
+      { image: tShirtGalleryArt, title: "Custom Fashion Pieces", description: "Artistic and photographic prints on garments" }
+    ],
+    pricing: [
+      { name: "Single Transfer", description: "One-off custom transfer, A4 size", price: 150, unit: "per transfer" },
+      { name: "Small Batch (5–20 pcs)", description: "Full-colour transfers, any size up to A3", price: 120, unit: "per transfer" },
+      { name: "Medium Batch (21–100 pcs)", description: "Bulk rate with faster turnaround", price: 90, unit: "per transfer" },
+      { name: "Large Batch (100+ pcs)", description: "Volume pricing for campaigns and corporate orders", price: 70, unit: "per transfer" }
+    ],
+    faqs: [
+      { question: "What is the difference between DTF printing and screen printing?", answer: "DTF printing requires no screens or setup, supports unlimited colours, and is cost-effective for small quantities. Screen printing has lower per-unit cost for very large runs (500+ pieces) but requires setup fees per colour. DTF is better for detailed, photographic designs and short runs." },
+      { question: "Do I need to bring my own garments?", answer: "Yes, you can bring your own garments, or we can source quality blanks for you at competitive prices. We print on most fabric types." },
+      { question: "How long do DTF prints last?", answer: "Our DTF transfers are rated for 50+ machine washes at 40°C without cracking, peeling, or significant fading — when cared for according to our guidelines." },
+      { question: "Can you print small quantities like 1–5 shirts?", answer: "Yes. DTF has no minimum order, so you can order a single custom transfer. This makes it perfect for samples, prototypes, or personal gifts." }
+    ],
+    related: [
+      { key: "t-shirt-printing", title: "T-Shirt & Garment Printing", path: "/services/t-shirt-printing", image: tShirtHeroImage, description: "Full garment printing including sublimation and screen printing" },
+      { key: "large-format", title: "Large Format Printing", path: "/services/large-format", image: relatedLargeFormatImg, description: "Banners, posters, and event backdrops" },
+      { key: "uv-printing", title: "UV Printing", path: "/uv-printing", image: relatedUvPrintingImg, description: "Direct printing on rigid materials" }
+    ]
+  },
+
+  "sublimation-printing": {
+    id: 9,
+    path: "/services/sublimation-printing",
+    title: "Sublimation Printing Services",
+    category: "Garment & Promotional Printing",
+    description: "High-quality dye sublimation printing in Nairobi for vibrant, permanent full-colour prints on polyester garments, mugs, phone cases, and corporate promotional items.",
+    detailedDescription: `Dye sublimation is a heat-based printing process that converts solid ink into gas, permanently bonding colour into the fibres of polyester fabrics or the coating of hard substrates. The result is a print that won't crack, peel, or wash out — it becomes part of the material itself.\n\nAt Luna Graphics, we use sublimation for all-over garment printing (jerseys, sportswear, uniforms), promotional hard goods (mugs, phone cases, keyrings, coasters), and custom branded merchandise for corporate and events clients.\n\nSublimation produces the most vibrant colours possible on white or light-coloured polyester, making it the top choice for sports kits, hospitality uniforms, event merchandise, and photographic gifts. We handle everything from single-piece gifts to large corporate uniform runs.`,
+    heroImage: sublimationHeroImage,
+    startingPrice: 200,
+    turnaround: "1–2 days",
+    minimumOrder: "1 piece",
+    keyFeatures: [
+      "Permanent, Fade-Proof Colour",
+      "All-Over Garment Printing",
+      "Hard Goods & Soft Goods",
+      "Photographic Quality"
+    ],
+    specifications: [
+      { icon: "Palette", title: "Colour Quality", description: "Vibrant, photographic CMYK+ colour with no colour limits" },
+      { icon: "Layers", title: "Fabric Requirements", description: "Minimum 65% polyester content for garments; 100% polyester for best results" },
+      { icon: "Shield", title: "Durability", description: "Colour becomes part of the material — will not crack, peel, or fade" },
+      { icon: "Maximize", title: "Print Coverage", description: "All-over printing from collar to hem, seam to seam" },
+      { icon: "Zap", title: "Turnaround", description: "1–2 days for standard orders; same-day for mugs and small items" },
+      { icon: "Settings", title: "Substrates", description: "Polyester garments, mugs, phone cases, coasters, keyrings, photo panels" }
+    ],
+    materials: ["Polyester Jerseys", "Sports Kits", "Polo Shirts (65%+ polyester)", "Sublimation Mugs", "Phone Cases", "Ceramic Tiles", "Metal Photo Panels", "Coasters & Keyrings"],
+    applications: ["Sports team jerseys and kits", "Hospitality and hotel uniforms", "Corporate promotional mugs and gifts", "NGO branded apparel", "School sports kits", "Event merchandise", "Personalised photo gifts", "Branded workwear"],
+    equipment: [
+      {
+        name: "Heat Press & Sublimation System",
+        description: "Large-format sublimation printer paired with industrial heat press for consistent, permanent colour transfer on all substrates.",
+        image: sublimationHeroImage,
+        specs: ["Large-format sublimation print", "Industrial heat press", "Even pressure distribution", "Precise temperature control"]
+      }
+    ],
+    gallery: [
+      { image: sublimationGalleryVests, title: "Sports Vests & Jerseys", description: "All-over sublimation printed sports kits for teams and clubs" },
+      { image: sublimationGalleryGifts, title: "Corporate Gift Sets", description: "Branded mugs, coasters, and photo panels for corporate gifting" },
+      { image: tShirtGalleryFirm, title: "Hospitality Uniforms", description: "Hotel and restaurant sublimated polo shirts and aprons" },
+      { image: tShirtGalleryPrototypes, title: "NGO Branded Apparel", description: "Field uniforms and event T-shirts for NGOs and nonprofits" },
+      { image: tShirtGalleryDisplays, title: "Promotional Items", description: "Phone cases, keyrings, and photo panels" },
+      { image: tShirtGalleryArt, title: "Custom School Kits", description: "School sports team kits with name and number" }
+    ],
+    pricing: [
+      { name: "Sublimation Mug", description: "11oz ceramic mug, full wraparound print", price: 350, unit: "per mug" },
+      { name: "Sublimation Jersey", description: "All-over printed polyester jersey, custom design", price: 800, unit: "per piece" },
+      { name: "Photo Panel (A4)", description: "Aluminium photo panel, glossy sublimation print", price: 600, unit: "per panel" },
+      { name: "Corporate Bundle", description: "Custom pricing for 50+ pieces — mugs, shirts, panels", price: null, unit: "get a quote" }
+    ],
+    faqs: [
+      { question: "Can sublimation be done on cotton fabric?", answer: "No — sublimation only works on polyester (or polyester-coated hard goods). For cotton garments, DTF printing or screen printing is the better choice. We can advise on the best process for your specific garment and design." },
+      { question: "Can you print on dark-coloured shirts?", answer: "Sublimation only works on white or very light fabrics. On dark fabrics, we recommend DTF printing which uses a white underbase layer to ensure colours pop." },
+      { question: "How long does sublimation last?", answer: "Sublimation colour is permanent — it bonds into the fabric fibres, not onto the surface. It will not crack, peel, or wash out under normal care conditions." },
+      { question: "Do you supply the blanks (mugs, garments)?", answer: "Yes. We can supply sublimation-ready blanks (mugs, jerseys, phone cases, etc.) at competitive rates, or print on blanks you supply provided they meet the polyester/coating requirements." }
+    ],
+    related: [
+      { key: "dtf-printing", title: "DTF Printing", path: "/services/dtf-printing", image: dtfHeroImage, description: "Full-colour transfers on any fabric, no minimums" },
+      { key: "t-shirt-printing", title: "T-Shirt Printing", path: "/services/t-shirt-printing", image: tShirtHeroImage, description: "Bulk garment printing for teams and corporates" },
+      { key: "uv-printing", title: "UV Printing", path: "/uv-printing", image: relatedUvPrintingImg, description: "Direct printing on rigid promotional items" }
+    ]
+  },
+
+  "digital-printing": {
+    id: 10,
+    path: "/services/digital-printing",
+    title: "Digital Printing Services",
+    category: "Commercial Printing",
+    description: "Fast, affordable digital printing in Nairobi for business cards, flyers, brochures, catalogues, and stationery. Full-colour CMYK printing with same-day turnaround available.",
+    detailedDescription: `Digital printing is the foundation of modern commercial print — fast, flexible, and cost-effective from a single copy to thousands. Unlike offset printing, digital requires no printing plates, which means lower setup costs, faster turnaround, and the ability to personalise every single piece.\n\nAt Luna Graphics, our digital printing covers the full range of business stationery and marketing materials: business cards, letterheads, flyers, brochures, menus, catalogues, certificates, NCR forms, and more. We print on premium paper stocks from 90gsm bond to 400gsm board, with matte, gloss, and silk lamination finishes available.\n\nOur same-day digital printing service is popular with businesses that need urgent marketing collateral, event programmes, or last-minute stationery. We offer both standard sizes and custom formats, with full design support available.`,
+    heroImage: digitalHeroImage,
+    startingPrice: 50,
+    turnaround: "Same day – 48 hours",
+    minimumOrder: "1 copy",
+    keyFeatures: [
+      "Same-Day Printing Available",
+      "No Minimum Order",
+      "Premium Paper Stocks",
+      "Full Colour CMYK"
+    ],
+    specifications: [
+      { icon: "Palette", title: "Colour", description: "Full-colour CMYK printing with accurate colour reproduction" },
+      { icon: "Layers", title: "Paper Stocks", description: "90gsm to 400gsm; bond, art, matte, and speciality papers" },
+      { icon: "Maximize", title: "Print Sizes", description: "A6 to A0; custom sizes available on request" },
+      { icon: "Shield", title: "Finishes", description: "Gloss, matte, silk, velvet lamination; spot UV; foil on request" },
+      { icon: "Zap", title: "Turnaround", description: "Standard same-day for up to 500 copies; large runs in 48 hours" },
+      { icon: "Settings", title: "Variable Data", description: "Personalised printing with unique names, codes, or QR codes per copy" }
+    ],
+    materials: ["Gloss Art Paper (130–200gsm)", "Matte Art Paper", "Bond Paper (90–120gsm)", "Card Stock (250–400gsm)", "Recycled Paper", "Kraft Paper", "NCR Carbonless Forms"],
+    applications: ["Business cards and letterheads", "Flyers and leaflets", "Company brochures and catalogues", "Event programmes and invitations", "Restaurant and hotel menus", "Certificates and awards", "NCR order forms and receipts", "Company reports and booklets"],
+    equipment: [
+      {
+        name: "Digital Production Press",
+        description: "High-speed digital press for sharp, colour-accurate prints on a wide range of media types and weights.",
+        image: digitalEquipmentImage,
+        specs: ["Up to 300 A4 pages/min", "1200 DPI resolution", "Wide media range", "Consistent colour output"]
+      }
+    ],
+    gallery: [
+      { image: digitalGallerySignages, title: "Business Stationery", description: "Premium business cards, letterheads, and envelopes" },
+      { image: digitalHeroImage, title: "Brochures & Catalogues", description: "Full-colour product catalogues and company brochures" },
+      { image: sublimationGalleryGifts, title: "Branded Stationery Sets", description: "Corporate stationery packs for events and new offices" },
+      { image: tShirtGalleryFurniture, title: "Event Programmes", description: "Conference and event programme booklets" },
+      { image: digitalEquipmentImage, title: "Menus & Price Lists", description: "Restaurant menus and service price lists" },
+      { image: tShirtGalleryArt, title: "Marketing Flyers", description: "Short-run promotional flyers and leaflets" }
+    ],
+    pricing: [
+      { name: "Flyers (A5, 1-sided)", description: "Full colour on 130gsm gloss art, quantity 500", price: 3500, unit: "per 500 copies" },
+      { name: "Business Cards", description: "Full colour both sides, 350gsm, quantity 250", price: 1800, unit: "per 250 copies" },
+      { name: "A4 Brochure (folded)", description: "Full colour on 150gsm, folded to A5", price: 8000, unit: "per 500 copies" },
+      { name: "Custom Quote", description: "Catalogues, booklets, NCR forms, and large runs", price: null, unit: "get a quote" }
+    ],
+    faqs: [
+      { question: "What file formats do you accept for digital printing?", answer: "We accept PDF (preferred), AI, EPS, TIFF, and high-resolution PNG/JPEG. PDFs should be press-ready with 3mm bleed, CMYK colour mode, and fonts embedded." },
+      { question: "Can I get a proof before printing?", answer: "Yes. We can provide a digital PDF proof for approval before going to print, or a physical printed proof for an additional fee on large runs." },
+      { question: "Do you offer design services?", answer: "Yes. Our in-house designers can create or format your artwork for an additional design fee. Share your brief and we will quote accordingly." },
+      { question: "What is the minimum order for business cards?", answer: "We print from as few as 1 copy digitally — though minimum economic quantities are typically 50+ for business cards and 100+ for flyers." }
+    ],
+    related: [
+      { key: "large-format", title: "Large Format Printing", path: "/services/large-format", image: relatedLargeFormatImg, description: "Banners, posters, and event backdrops" },
+      { key: "uv-printing", title: "UV Printing", path: "/uv-printing", image: relatedUvPrintingImg, description: "Premium finishes on rigid substrates" },
+      { key: "t-shirt-printing", title: "T-Shirt Printing", path: "/services/t-shirt-printing", image: tShirtHeroImage, description: "Branded garments for teams and events" }
+    ]
   }
-  
 };

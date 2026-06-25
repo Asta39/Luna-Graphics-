@@ -116,7 +116,17 @@ const Blog = () => {
           placename: "Nairobi",
           position: "-1.2921;36.8219"
         }}
-        schemaData={generateBlogListingSchema()}
+        schemaData={[
+          generateBlogListingSchema(),
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lunagraphics.co.ke/" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://lunagraphics.co.ke/blog" }
+            ]
+          }
+        ]}
       />
       <Header />
       

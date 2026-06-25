@@ -431,8 +431,8 @@ const CorporateQuoteForm = () => {
             {
               icon: 'Mail',
               title: 'Email Us',
-              content: 'info.lunagraphics@gmail.com',
-              action: 'mailto:info.lunagraphics@gmail.com'
+              content: 'info@lunagraphics.co.ke',
+              action: 'mailto:info@lunagraphics.co.ke'
             },
             {
               icon: 'MessageCircle',

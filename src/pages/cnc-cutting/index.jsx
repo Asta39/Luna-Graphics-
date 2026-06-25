@@ -38,7 +38,7 @@ const CNCCuttingServicesPage = () => {
   // 5. Define SEO variables using the single `pageData` object.
   const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
   const pageDescription = pageData.description; // Using the description from your data
-  const pageUrl = `https://lunagraphics.co.ke ${pageData.path}`;
+  const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
   const imageUrl = pageData.heroImage;
   const brandName = "Luna Graphics";
   const twitterHandle = "@YourTwitterHandle";
@@ -93,7 +93,7 @@ const CNCCuttingServicesPage = () => {
         "@type": "ListItem",
         "position": 3,
         "name": pageData.title,
-        "item": pageUrl.replace(' ', '') // Remove space from URL
+        "item": pageUrl
       }
     ]
   };
@@ -117,7 +117,7 @@ const CNCCuttingServicesPage = () => {
   const handleWhatsAppChat = () => {
     const phoneNumber = '254791159618';
     const message = `Hello! I'm interested in ${pageData.title} services. Could you please provide more information?`;
-    const whatsappUrl = `https://wa.me/ ${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
   
@@ -128,7 +128,7 @@ const CNCCuttingServicesPage = () => {
       <SEO 
         title={pageTitle}
         description={pageDescription}
-        canonical={pageUrl.replace(' ', '')}
+        canonical={pageUrl}
         ogImage={imageUrl}
         type="business.business"
         keywords={`${pageData.title}, CNC cutting Nairobi, laser cutting Kenya, acrylic cutting, wood engraving, precision cutting, signage making Nairobi, custom fabrication Kenya`}
