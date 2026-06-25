@@ -72,9 +72,9 @@ const SampleGallery = ({ samples }) => {
         
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
-          {filteredSamples.map((sample) => (
+          {filteredSamples.map((sample, index) => (
             <div
-              key={sample.id}
+              key={sample.id ?? index}
               className="group relative aspect-square bg-surface-100 rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300"
               onClick={() => openModal(sample)}
             >

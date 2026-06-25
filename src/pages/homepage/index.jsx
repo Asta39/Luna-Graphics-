@@ -15,7 +15,7 @@ const Homepage = () => {
   const brandName = "Luna Graphics";
   const tagline = "Premier Print Shop in Nairobi | Quality Printing Services | Large Format, UV Printing, CNC Cutting, Laser Cutting, Political Campaign Materials, Election Printing 2027";
   // ===== ENHANCED SEO: Fixed spacing in URLs =====
-  const pageUrl = "https://lunagraphics.co.ke/";
+  const pageUrl = "https://lunagraphics.co.ke/home";
   const imageUrl = "https://lunagraphics.co.ke/social-sharing-image.jpg";
   const twitterHandle = "@LunaGraphicsKE";
 

@@ -47,9 +47,10 @@ const Routes = () => {
         <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <RouterRoutes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/homepage" element={<Navigate to="/" replace />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path="/" element={<Shop />} />
+            <Route path="/shop" element={<Navigate to="/" replace />} />
+            <Route path="/home" element={<Homepage />} />
+            <Route path="/homepage" element={<Navigate to="/home" replace />} />
 
             <Route path="/services/large-format" element={<LargeFormatServicesPage />} />
             <Route path="/services/plotting" element={<PlottingServicesPage />} />

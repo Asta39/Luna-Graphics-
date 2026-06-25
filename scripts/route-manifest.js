@@ -10,7 +10,7 @@ const DATA_DIR = path.join(SRC_DIR, 'data');
 
 const STATIC_ROUTES = [
   { url: '/', priority: '1.0', changefreq: 'daily', type: 'page' },
-  { url: '/shop', priority: '0.9', changefreq: 'weekly', type: 'page' },
+  { url: '/home', priority: '0.7', changefreq: 'monthly', type: 'page' },
   { url: '/services/large-format', priority: '0.85', changefreq: 'monthly', type: 'service-page' },
   { url: '/services/plotting', priority: '0.85', changefreq: 'monthly', type: 'service-page' },
   { url: '/services/uv-printing', priority: '0.85', changefreq: 'monthly', type: 'service-page' },

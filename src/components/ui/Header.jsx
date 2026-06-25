@@ -85,6 +85,9 @@ const Header = () => {
   };
 
   const toggleShop = () => {
+    if (!shopDropdownOpen) {
+      navigate('/');
+    }
     setShopDropdownOpen(prev => !prev);
     setServicesDropdownOpen(false);
     setCorporateDropdownOpen(false);
@@ -148,7 +151,7 @@ const handleSearch = (e) => {
       label: 'All Products',
       path: '/',
       icon: 'Grid',
-      description: 'Browse all printing products'
+      description: 'Browse all printing products & services'
     },
     {
       label: 'Banners & Displays',
