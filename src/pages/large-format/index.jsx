@@ -10,6 +10,7 @@ import EquipmentShowcase from '../../components/services/EquipmentShowcase';
 import SampleGallery from '../../components/services/SampleGallery';
 import PricingTable from '../../components/services/PricingTable';
 import RelatedServices from '../../components/services/RelatedServices';
+import RelatedBlogPosts from '../../components/services/RelatedBlogPosts';
 import ContactForm from '../../components/services/ContactForm';
 import Breadcrumb from '../../components/services/Breadcrumb';
 import logoImage from '../../assets/luna-logo2.png';
@@ -158,7 +159,7 @@ const ServiceDetailPage = () => {
         canonical={pageUrl}
         ogImage={imageUrl}
         type="business.business"
-        keywords={`${pageData.title}, large format printing services Nairobi, ${serviceKey} Kenya, professional printing, Luna Graphics Nairobi, custom printing services`}
+        keywords="large format printing Nairobi, banner printing Kenya, billboard printing Nairobi, wide format printing Kenya, PVC banner printing Nairobi, building wrap printing Kenya, event backdrop printing Nairobi, outdoor signage printing, vinyl banner Nairobi, large format printer Nairobi, Luna Graphics large format"
         schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{
@@ -179,6 +180,7 @@ const ServiceDetailPage = () => {
         <SampleGallery samples={pageData.gallery} />
         <PricingTable pricingPackages={pageData.pricing} />
         <RelatedServices relatedServices={pageData.related} />
+        <RelatedBlogPosts posts={pageData.relatedBlogPosts} />
         <ContactForm serviceName={pageData.title} />
       </main>
       

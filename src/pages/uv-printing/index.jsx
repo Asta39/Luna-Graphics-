@@ -10,6 +10,7 @@ import EquipmentShowcase from '../../components/services/EquipmentShowcase';
 import SampleGallery from '../../components/services/SampleGallery';
 import PricingTable from '../../components/services/PricingTable';
 import RelatedServices from '../../components/services/RelatedServices';
+import RelatedBlogPosts from '../../components/services/RelatedBlogPosts';
 import ContactForm from '../../components/services/ContactForm';
 import Breadcrumb from '../../components/services/Breadcrumb';
 import logoImage from '../../assets/luna-logo2.png';
@@ -177,6 +178,7 @@ const UVPrintingServicesPage = () => {
         <SampleGallery samples={pageData.gallery} />
         <PricingTable pricingPackages={pageData.pricing} />
         <RelatedServices relatedServices={pageData.related} />
+        <RelatedBlogPosts posts={pageData.relatedBlogPosts} />
         <ContactForm serviceName={pageData.title} />
       </main>
       <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={handleQuoteSubmit} quoteDetails={currentQuote} />

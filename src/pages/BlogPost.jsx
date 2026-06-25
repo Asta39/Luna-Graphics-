@@ -8,6 +8,69 @@ import Header from '../components/ui/Header';
 import { getPostBySlug, getRelatedPosts, blogCategories, generateBlogPostSchema } from '../data/blogData';
 import NotFound from './NotFound';
 
+const CATEGORY_SERVICES = {
+  'signage': [
+    { title: 'CNC Cutting Nairobi', path: '/services/cnc-cutting', icon: 'Scissors' },
+    { title: 'Laser Cutting Kenya', path: '/services/laser-cutting', icon: 'Zap' },
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+  ],
+  'merchandise': [
+    { title: 'T-Shirt & Garment Printing', path: '/services/t-shirt-printing', icon: 'Shirt' },
+    { title: 'Sublimation Printing', path: '/services/sublimation-printing', icon: 'Droplets' },
+    { title: 'DTF Printing', path: '/services/dtf-printing', icon: 'Layers' },
+  ],
+  'events': [
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'T-Shirt & Garment Printing', path: '/services/t-shirt-printing', icon: 'Shirt' },
+    { title: 'Corporate Branding Services', path: '/corporate-services', icon: 'Briefcase' },
+  ],
+  'exhibition': [
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'Corporate Branding Services', path: '/corporate-services', icon: 'Briefcase' },
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+  ],
+  'branding': [
+    { title: 'Corporate Branding Services', path: '/corporate-services', icon: 'Briefcase' },
+    { title: 'T-Shirt Printing', path: '/services/t-shirt-printing', icon: 'Shirt' },
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+  ],
+  'business': [
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+    { title: 'Corporate Branding', path: '/corporate-services', icon: 'Briefcase' },
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+  ],
+  'print': [
+    { title: 'Digital Printing Nairobi', path: '/services/digital-printing', icon: 'FileText' },
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'UV Printing', path: '/services/uv-printing', icon: 'Sun' },
+  ],
+  'printing-tips': [
+    { title: 'DTF Printing Nairobi', path: '/services/dtf-printing', icon: 'Layers' },
+    { title: 'T-Shirt & Garment Printing', path: '/services/t-shirt-printing', icon: 'Shirt' },
+    { title: 'Sublimation Printing', path: '/services/sublimation-printing', icon: 'Droplets' },
+  ],
+  'large-format': [
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+    { title: 'Corporate Branding', path: '/corporate-services', icon: 'Briefcase' },
+  ],
+  'corporate-branding': [
+    { title: 'Corporate Branding Services', path: '/corporate-services', icon: 'Briefcase' },
+    { title: 'Sublimation Printing', path: '/services/sublimation-printing', icon: 'Droplets' },
+    { title: 'T-Shirt Printing', path: '/services/t-shirt-printing', icon: 'Shirt' },
+  ],
+  'exhibition-events': [
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'Corporate Branding', path: '/corporate-services', icon: 'Briefcase' },
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+  ],
+  'political-campaigns': [
+    { title: 'T-Shirt & Garment Printing', path: '/services/t-shirt-printing', icon: 'Shirt' },
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+  ],
+};
+
 const BlogPost = () => {
   const { slug } = useParams();
   const post = getPostBySlug(slug);
@@ -150,6 +213,33 @@ const BlogPost = () => {
           </div>
         </div>
       </article>
+
+      {/* Related Services */}
+      {CATEGORY_SERVICES[post.category] && (
+        <section className="py-12 bg-white border-t border-gray-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <Icon name="Layers" size={20} className="text-primary" />
+              Related Services
+            </h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {CATEGORY_SERVICES[post.category].map((svc) => (
+                <Link
+                  key={svc.path + svc.title}
+                  to={svc.path}
+                  className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-primary hover:shadow-sm transition-all group"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <Icon name={svc.icon} size={18} className="text-primary" />
+                  </div>
+                  <span className="text-sm font-medium text-gray-800 group-hover:text-primary transition-colors leading-snug">{svc.title}</span>
+                  <Icon name="ArrowRight" size={14} className="text-gray-400 group-hover:text-primary ml-auto shrink-0 transition-colors" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (

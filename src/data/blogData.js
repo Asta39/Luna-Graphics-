@@ -27943,6 +27943,14 @@ ${createTable(
 <h2>How to Get a DTF Print Quote in Nairobi</h2>
 <p>Getting a quote from Luna Graphics is simple. WhatsApp us at +254 791 159 618 with your design file (PNG with transparent background preferred), the quantity you need, and the garment type. We will respond with pricing and turnaround time within the hour during business hours.</p>
 <p>Walk-in customers are welcome at our Kweria Road, Nairobi CBD office Monday–Friday 8AM–6PM and Saturday 9AM–2PM.</p>
+<div style="background:#f0f7ff;border-left:4px solid #2563eb;padding:16px 20px;border-radius:8px;margin:24px 0;">
+  <p style="margin:0 0 8px;font-weight:600;color:#1e40af;">Ready to print? Explore our services:</p>
+  <ul style="margin:0;padding-left:20px;color:#1e40af;">
+    <li><a href="/services/dtf-printing" style="color:#2563eb;text-decoration:underline;">DTF Printing Nairobi</a> — No minimum, same-day available</li>
+    <li><a href="/services/t-shirt-printing" style="color:#2563eb;text-decoration:underline;">T-Shirt &amp; Garment Printing</a> — Bulk &amp; corporate orders</li>
+    <li><a href="/services/sublimation-printing" style="color:#2563eb;text-decoration:underline;">Sublimation Printing</a> — For polyester &amp; all-over prints</li>
+  </ul>
+</div>
     `,
     author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.jpg" },
     category: "printing-tips",
@@ -28008,6 +28016,14 @@ ${createTable(
 
 <h2>Get a Sublimation Printing Quote</h2>
 <p>WhatsApp Luna Graphics at +254 791 159 618 or visit us on Kweria Road, Nairobi CBD. Share your design, the product type, and quantity — we will provide a quote within the hour.</p>
+<div style="background:#f0f7ff;border-left:4px solid #2563eb;padding:16px 20px;border-radius:8px;margin:24px 0;">
+  <p style="margin:0 0 8px;font-weight:600;color:#1e40af;">Explore our printing services:</p>
+  <ul style="margin:0;padding-left:20px;color:#1e40af;">
+    <li><a href="/services/sublimation-printing" style="color:#2563eb;text-decoration:underline;">Sublimation Printing Nairobi</a> — Mugs, jerseys, gifts &amp; more</li>
+    <li><a href="/services/dtf-printing" style="color:#2563eb;text-decoration:underline;">DTF Printing</a> — For cotton &amp; mixed-fabric garments</li>
+    <li><a href="/services/t-shirt-printing" style="color:#2563eb;text-decoration:underline;">T-Shirt &amp; Garment Printing</a> — All quantities welcome</li>
+  </ul>
+</div>
     `,
     author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.jpg" },
     category: "printing-tips",
@@ -28081,6 +28097,15 @@ ${createTable(
 <h2>How to Order Corporate Gifts from Luna Graphics</h2>
 <p>We make corporate gifting easy. Share your logo, the items you want, and your quantity — we will provide a full quote with printing costs, lead times, and packaging options within the same business day. For large orders (50+ pieces), we can arrange free delivery within Nairobi.</p>
 <p>Contact us on WhatsApp at +254 791 159 618 or visit our Kweria Road, CBD showroom to see samples.</p>
+<div style="background:#f0f7ff;border-left:4px solid #2563eb;padding:16px 20px;border-radius:8px;margin:24px 0;">
+  <p style="margin:0 0 8px;font-weight:600;color:#1e40af;">Services used in corporate gift orders:</p>
+  <ul style="margin:0;padding-left:20px;color:#1e40af;">
+    <li><a href="/services/sublimation-printing" style="color:#2563eb;text-decoration:underline;">Sublimation Printing</a> — Mugs, coasters, metal panels, keyrings</li>
+    <li><a href="/services/uv-printing" style="color:#2563eb;text-decoration:underline;">UV Printing</a> — Power banks, USB drives, premium hard goods</li>
+    <li><a href="/services/t-shirt-printing" style="color:#2563eb;text-decoration:underline;">T-Shirt &amp; Garment Printing</a> — Branded polo shirts &amp; caps</li>
+    <li><a href="/corporate-services" style="color:#2563eb;text-decoration:underline;">Corporate Branding Services</a> — Full gift set packages</li>
+  </ul>
+</div>
     `,
     author: { name: "Luna Graphics Team", role: "Corporate Solutions", avatar: "/assets/team-member-placeholder.jpg" },
     category: "corporate-branding",
@@ -28147,6 +28172,14 @@ ${createTable(
 
 <h2>Order Your Roll-Up Banners from Luna Graphics</h2>
 <p>Visit our Kweria Road, Nairobi CBD showroom to see samples of all our stand types, or WhatsApp us at +254 791 159 618 with your artwork and quantity. We will send you a precise quote within the hour.</p>
+<div style="background:#f0f7ff;border-left:4px solid #2563eb;padding:16px 20px;border-radius:8px;margin:24px 0;">
+  <p style="margin:0 0 8px;font-weight:600;color:#1e40af;">Related large format printing services:</p>
+  <ul style="margin:0;padding-left:20px;color:#1e40af;">
+    <li><a href="/services/large-format" style="color:#2563eb;text-decoration:underline;">Large Format Printing Nairobi</a> — Banners, billboards, backdrops &amp; more</li>
+    <li><a href="/services/digital-printing" style="color:#2563eb;text-decoration:underline;">Digital Printing</a> — Flyers, posters &amp; event collateral</li>
+    <li><a href="/corporate-services" style="color:#2563eb;text-decoration:underline;">Corporate Branding</a> — Full event branding packages</li>
+  </ul>
+</div>
     `,
     author: { name: "Luna Graphics Team", role: "Display Solutions", avatar: "/assets/team-member-placeholder.jpg" },
     category: "large-format",
@@ -28217,6 +28250,14 @@ ${createTable(
 
 <h2>Get Your Exhibition Display Quote</h2>
 <p>WhatsApp Luna Graphics at +254 791 159 618 with your event date, booth size, and the display items you need. We will send a comprehensive quote within the hour and can arrange delivery or collection from our Kweria Road, Nairobi CBD premises.</p>
+<div style="background:#f0f7ff;border-left:4px solid #2563eb;padding:16px 20px;border-radius:8px;margin:24px 0;">
+  <p style="margin:0 0 8px;font-weight:600;color:#1e40af;">Services for exhibitions &amp; events:</p>
+  <ul style="margin:0;padding-left:20px;color:#1e40af;">
+    <li><a href="/services/large-format" style="color:#2563eb;text-decoration:underline;">Large Format Printing</a> — Banners, backdrops, flags &amp; gazebos</li>
+    <li><a href="/services/t-shirt-printing" style="color:#2563eb;text-decoration:underline;">Staff Uniform Printing</a> — Branded T-shirts &amp; polo shirts for event teams</li>
+    <li><a href="/corporate-services" style="color:#2563eb;text-decoration:underline;">Corporate Branding Packages</a> — Full booth branding solutions</li>
+  </ul>
+</div>
     `,
     author: { name: "Luna Graphics Team", role: "Exhibition Solutions", avatar: "/assets/team-member-placeholder.jpg" },
     category: "exhibition-events",

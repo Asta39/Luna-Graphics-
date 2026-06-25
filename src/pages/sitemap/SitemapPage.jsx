@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
-import Header from '../components/ui/Header';
-import Icon from '../components/AppIcon';
+import SEO from '../../components/SEO';
+import Header from '../../components/ui/Header';
+import Icon from '../../components/AppIcon';
 
 const SitemapPage = () => {
   const sections = [

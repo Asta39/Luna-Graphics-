@@ -131,7 +131,7 @@ const CNCCuttingServicesPage = () => {
         canonical={pageUrl}
         ogImage={imageUrl}
         type="business.business"
-        keywords={`${pageData.title}, CNC cutting Nairobi, laser cutting Kenya, acrylic cutting, wood engraving, precision cutting, signage making Nairobi, custom fabrication Kenya`}
+        keywords="CNC cutting Nairobi, CNC router Kenya, acrylic cutting Nairobi, wood CNC cutting Kenya, foam cutting Nairobi, custom fabrication Kenya, CNC signage Nairobi, precision cutting Nairobi, CNC milling Kenya, acrylic letters Nairobi, custom shapes cutting, CNC cutting services Kenya, Luna Graphics CNC"
         schemaData={[structuredData, breadcrumbSchema]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{
@@ -162,6 +162,7 @@ const CNCCuttingServicesPage = () => {
         <PricingTable pricingPackages={pageData.pricing} />
         
         <RelatedServices relatedServices={pageData.related} />
+        <RelatedBlogPosts posts={pageData.relatedBlogPosts} />
         
         <ContactForm serviceName={pageData.title} />
       </main>

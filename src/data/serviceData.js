@@ -328,7 +328,30 @@ export const services =
       turnaround: "2-3 days",   
       features: ["Direct Material Printing", "Durable Finish", "Vibrant Colors"]
     }
- ]
+ ],
+    relatedBlogPosts: [
+      {
+        slug: "uv-vs-screen-printing-nairobi-guide",
+        title: "UV Printing vs Screen Printing in Nairobi: The Complete Guide",
+        excerpt: "Discover which printing method suits your project — cost, durability, and material comparisons.",
+        category: "Printing Tips",
+        image: "/images/blog/1.jfif"
+      },
+      {
+        slug: "exhibition-stand-design-trends-nairobi-2024",
+        title: "Exhibition Stand Design Trends in Nairobi 2024",
+        excerpt: "How to make your trade show booth stand out with cutting-edge display strategies.",
+        category: "Exhibition & Events",
+        image: "/images/blog/4.jfif"
+      },
+      {
+        slug: "large-format-printing-file-preparation-guide",
+        title: "Large Format Printing File Preparation: The Technical Guide",
+        excerpt: "Prepare print-ready files for CNC and large format projects — resolution, bleed, and formats.",
+        category: "Printing Tips",
+        image: "/images/blog/5.jfif"
+      }
+    ]
   },
 
 
@@ -569,7 +592,30 @@ export const services =
       turnaround: "2-3 days",
       features: ["Direct Material Printing", "Durable Finish", "Vibrant Colors"]
     }
- ]
+ ],
+    relatedBlogPosts: [
+      {
+        slug: "uv-vs-screen-printing-nairobi-guide",
+        title: "UV Printing vs Screen Printing in Nairobi: The Complete Guide",
+        excerpt: "Which method suits your project? Cost, durability, and material compatibility compared.",
+        category: "Printing Tips",
+        image: "/images/blog/1.jfif"
+      },
+      {
+        slug: "exhibition-stand-design-trends-nairobi-2024",
+        title: "Exhibition Stand Design Trends in Nairobi 2024",
+        excerpt: "Laser-cut display elements and signage are transforming trade show booths.",
+        category: "Exhibition & Events",
+        image: "/images/blog/4.jfif"
+      },
+      {
+        slug: "large-format-printing-file-preparation-guide",
+        title: "Large Format Printing File Preparation Guide",
+        excerpt: "Technical file specs for precision cutting and large format print projects.",
+        category: "Printing Tips",
+        image: "/images/blog/5.jfif"
+      }
+    ]
     },
 
     "plotting-services": {
@@ -803,7 +849,30 @@ export const services =
       turnaround: "3-5 days",
       features: ["Precision cutting", "Multiple materials", "Custom shapes"]
     }
- ]
+ ],
+    relatedBlogPosts: [
+      {
+        slug: "exhibition-display-solutions-nairobi",
+        title: "Exhibition & Trade Show Display Solutions in Nairobi",
+        excerpt: "Pull-up banners, teardrop flags, pop-up stands — complete display solutions with prices.",
+        category: "Exhibition & Events",
+        image: "/assets/exhibition.jpg"
+      },
+      {
+        slug: "roll-up-banner-printing-nairobi-cost",
+        title: "Roll-Up Banner Printing in Nairobi: Prices & What Affects the Cost",
+        excerpt: "Banner costs explained — size, material, stand quality, and turnaround time all factor in.",
+        category: "Large Format",
+        image: "/assets/stands.jpg"
+      },
+      {
+        slug: "large-format-printing-file-preparation-guide",
+        title: "Large Format Printing File Preparation: The Technical Guide",
+        excerpt: "Master resolution, colour mode, bleed, and file formats for perfect large format prints.",
+        category: "Printing Tips",
+        image: "/images/blog/5.jfif"
+      }
+    ]
   },
 
      "large-format":{
@@ -1033,7 +1102,30 @@ export const services =
       turnaround: "3-5 days",
       features: ["Precision Cutting", "Multiple Materials", "Custom Shapes"]
     }
- ]
+ ],
+    relatedBlogPosts: [
+      {
+        slug: "roll-up-banner-printing-nairobi-cost",
+        title: "Roll-Up Banner Printing in Nairobi: Prices & What Affects the Cost",
+        excerpt: "Size, material, stand type — everything that drives the price of a roll-up banner in Nairobi.",
+        category: "Large Format",
+        image: "/assets/stands.jpg"
+      },
+      {
+        slug: "exhibition-display-solutions-nairobi",
+        title: "Exhibition & Trade Show Display Solutions in Nairobi",
+        excerpt: "From pull-up banners to full branded booth packages — all options with prices.",
+        category: "Exhibition & Events",
+        image: "/assets/exhibition.jpg"
+      },
+      {
+        slug: "exhibition-stand-design-trends-nairobi-2024",
+        title: "Exhibition Stand Design Trends in Nairobi 2024",
+        excerpt: "The display and printing trends shaping Nairobi's top trade shows in 2024.",
+        category: "Exhibition & Events",
+        image: "/images/blog/4.jfif"
+      }
+    ]
 },
     "t-shirt-printing":{
     id: 6,
@@ -1264,7 +1356,30 @@ export const services =
       turnaround: "5-7 days",
       features: ["Brand Consistency", "Volume Discounts", "Account Management"]
     }
- ]
+ ],
+    relatedBlogPosts: [
+      {
+        slug: "dtf-printing-nairobi-guide",
+        title: "DTF Printing in Nairobi: The Complete Guide to Direct to Film Printing",
+        excerpt: "How DTF works, what fabrics it suits, pricing, and how it compares to screen printing.",
+        category: "Printing Tips",
+        image: "/assets/dtf-printer.jpg"
+      },
+      {
+        slug: "sublimation-printing-nairobi-guide",
+        title: "Sublimation Printing in Nairobi: Mugs, Jerseys & Corporate Gifts",
+        excerpt: "Dye sublimation explained — fabrics, hard goods, prices, and when to use it.",
+        category: "Printing Tips",
+        image: "/assets/heatpress.jpg"
+      },
+      {
+        slug: "corporate-gifts-printing-nairobi",
+        title: "Corporate Gifts Printing in Nairobi: 15 Branded Gift Ideas",
+        excerpt: "T-shirts, mugs, notebooks, plaques — 15 branded corporate gift ideas with KES prices.",
+        category: "Corporate Branding",
+        image: "/assets/giftbox.jpg"
+      }
+    ]
   },
 
   "uv-printing": {
@@ -1494,8 +1609,30 @@ export const services =
       startingPrice: 250,
       turnaround: "1-2 days",
       features: ["Precision Engraving", "Various Materials", "Custom Designs"]
-    } ]
-    
+    } ],
+    relatedBlogPosts: [
+      {
+        slug: "uv-vs-screen-printing-nairobi-guide",
+        title: "UV Printing vs Screen Printing in Nairobi: The Complete Guide",
+        excerpt: "In-depth comparison of UV printing and screen printing for Kenyan businesses.",
+        category: "Printing Tips",
+        image: "/images/blog/1.jfif"
+      },
+      {
+        slug: "corporate-gifts-printing-nairobi",
+        title: "Corporate Gifts Printing in Nairobi: 15 Branded Gift Ideas",
+        excerpt: "UV-printed power banks, plaques, and keyrings — premium corporate gift options.",
+        category: "Corporate Branding",
+        image: "/assets/giftbox.jpg"
+      },
+      {
+        slug: "exhibition-stand-design-trends-nairobi-2024",
+        title: "Exhibition Stand Design Trends in Nairobi 2024",
+        excerpt: "UV-printed panels and acrylic elements transforming exhibition displays.",
+        category: "Exhibition & Events",
+        image: "/images/blog/4.jfif"
+      }
+    ]
   },
 
    "offset-printing": {

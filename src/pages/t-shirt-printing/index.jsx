@@ -10,6 +10,7 @@ import EquipmentShowcase from '../../components/services/EquipmentShowcase';
 import SampleGallery from '../../components/services/SampleGallery';
 import PricingTable from '../../components/services/PricingTable';
 import RelatedServices from '../../components/services/RelatedServices';
+import RelatedBlogPosts from '../../components/services/RelatedBlogPosts';
 import ContactForm from '../../components/services/ContactForm';
 import Breadcrumb from '../../components/services/Breadcrumb';
 import logoImage from '../../assets/luna-logo2.png';
@@ -159,7 +160,7 @@ const TShirtPrintingServicesPage = () => {
         canonical={pageUrl}
         ogImage={imageUrl}
         type="business.business"
-        keywords="t-shirt printing Nairobi, custom t-shirts Kenya, screen printing Nairobi, DTG printing, embroidery services Kenya, branded t-shirts Nairobi, corporate t-shirts Kenya, promotional t-shirts, bulk t-shirt printing, Luna Graphics t-shirts"
+        keywords="t-shirt printing Nairobi, custom t-shirts Kenya, screen printing Nairobi, DTF printing Nairobi, sublimation printing Kenya, branded uniforms Nairobi, corporate t-shirts Kenya, bulk garment printing Kenya, polo shirt printing Nairobi, hoodie printing Kenya, sports kit printing Nairobi, promotional t-shirts, Luna Graphics garment printing"
         schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{
@@ -190,6 +191,7 @@ const TShirtPrintingServicesPage = () => {
         <PricingTable pricingPackages={pageData.pricing} />
         
         <RelatedServices relatedServices={pageData.related} />
+        <RelatedBlogPosts posts={pageData.relatedBlogPosts} />
         
         <ContactForm serviceName={pageData.title} />
       </main>

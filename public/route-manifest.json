@@ -1,5 +1,5 @@
 {
-  "count": 224,
+  "count": 233,
   "routes": [
     {
       "url": "/",
@@ -31,7 +31,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/acrylic-letter-signage-guide",
@@ -39,7 +39,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/ai-printing-branding-industry-kenya",
@@ -47,7 +47,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/airport-transport-branding-concepts",
@@ -55,7 +55,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/back-to-school-branding-campaign-ideas",
@@ -63,7 +63,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/bank-financial-institution-branding-kenya",
@@ -71,7 +71,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/billboard-design-strategy-kenya",
@@ -79,7 +79,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/brand-consistency-physical-touchpoints-kenya",
@@ -87,7 +87,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branded-hoodies-corporate-teams",
@@ -95,7 +95,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branded-merchandise-for-events",
@@ -103,7 +103,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branded-packaging-smes",
@@ -111,7 +111,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branded-power-banks-tech-accessories-kenya",
@@ -119,7 +119,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branding-for-corporate-award-ceremonies",
@@ -127,7 +127,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branding-for-government-events",
@@ -135,7 +135,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branding-for-product-launch-events",
@@ -143,7 +143,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/branding-roi-measurement-framework-kenya",
@@ -151,7 +151,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/building-fascia-signage-guide",
@@ -159,7 +159,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/cap-hat-printing-guide",
@@ -167,7 +167,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/church-event-branding-strategy",
@@ -175,7 +175,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/church-outdoor-signage-branding",
@@ -183,7 +183,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/construction-site-branding-boards",
@@ -191,7 +191,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/corporate-calendar-printing-strategy",
@@ -199,7 +199,15 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/corporate-gifts-printing-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/corporate-rebranding-strategy-kenya-2024",
@@ -207,7 +215,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/corporate-t-shirt-branding-strategy",
@@ -215,7 +223,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/custom-stamp-seal-branding-kenya",
@@ -223,7 +231,15 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/dtf-printing-nairobi-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/eco-friendly-promotional-merchandise",
@@ -231,7 +247,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/embossing-foiling-corporate-branding-kenya",
@@ -239,7 +255,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/employee-welcome-kit-branding-kenya",
@@ -247,7 +263,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/end-year-corporate-gift-branding-guide",
@@ -255,7 +271,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/event-branding-budget-guide",
@@ -263,7 +279,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/event-ticket-wristband-printing",
@@ -271,7 +287,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/executive-gift-branding-ideas",
@@ -279,7 +295,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/exhibition-booth-lighting-print-synergy",
@@ -287,7 +303,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/exhibition-branding-for-universities",
@@ -295,7 +311,15 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/exhibition-display-solutions-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/exhibition-fabric-printing-trends",
@@ -303,7 +327,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/exhibition-giveaway-strategy-kenya",
@@ -311,7 +335,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/exhibition-printing-timeline-planning",
@@ -319,7 +343,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/exhibition-stand-design-trends-nairobi-2024",
@@ -327,7 +351,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/fleet-branding-strategy-logistics-companies",
@@ -335,7 +359,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/future-trends-print-branding-kenya",
@@ -343,7 +367,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/government-building-signage-guide",
@@ -351,7 +375,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/government-tender-branding-requirements-kenya",
@@ -359,7 +383,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/high-traffic-location-branding-strategy",
@@ -367,7 +391,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/hospital-clinic-signage-branding",
@@ -375,7 +399,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/hotel-hospitality-signage-branding",
@@ -383,7 +407,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/how-to-price-corporate-merchandise-projects-kenya",
@@ -391,7 +415,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/illuminated-signage-vs-non-illuminated",
@@ -399,7 +423,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/industrial-park-signage-solutions",
@@ -407,7 +431,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/influencer-merchandise-printing-strategy-kenya",
@@ -415,7 +439,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/interior-office-signage-trends",
@@ -423,7 +447,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/lanyard-branding-for-conferences",
@@ -431,7 +455,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/large-format-printing-file-preparation-guide",
@@ -439,7 +463,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/led-signage-for-retail-stores",
@@ -447,7 +471,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/luxury-brand-print-finishing-kenya",
@@ -455,7 +479,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/mall-signage-branding-strategy",
@@ -463,7 +487,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/matatu-branding-strategy-kenya",
@@ -471,7 +495,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/microfinance-institution-branding-strategy-kenya",
@@ -479,7 +503,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/mug-drinkware-printing-corporate-gifts",
@@ -487,7 +511,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/ngo-event-branding-in-kenya",
@@ -495,7 +519,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/ngo-promotional-merchandise-strategy-kenya",
@@ -503,7 +527,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/outdoor-event-branding-nairobi-weather",
@@ -511,7 +535,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/outdoor-signage-guide-nairobi-businesses",
@@ -519,7 +543,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/packaging-design-trends-kenya",
@@ -527,7 +551,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/photo-booth-branding-ideas",
@@ -535,7 +559,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/political-billboard-placement-strategy",
@@ -543,7 +567,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/political-campaign-merchandise-bulk-planning-kenya",
@@ -551,7 +575,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/political-campaign-printing-kenya-2027-elections",
@@ -559,7 +583,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/political-youth-wing-merchandise-strategy-kenya",
@@ -567,7 +591,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/post-event-brand-visibility-strategy",
@@ -575,7 +599,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/printing-large-stage-backdrops",
@@ -583,7 +607,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/product-label-branding-fmcg-companies",
@@ -591,7 +615,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/qr-codes-event-print-materials",
@@ -599,7 +623,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/real-estate-developer-branding-kit-kenya",
@@ -607,7 +631,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/real-estate-directional-signage",
@@ -615,7 +639,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/real-estate-signboard-printing",
@@ -623,7 +647,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/reflective-signage-roadside-advertising",
@@ -631,7 +655,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/reflector-jacket-branding-field-staff",
@@ -639,7 +663,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/restaurant-menu-board-printing",
@@ -647,7 +671,15 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/roll-up-banner-printing-nairobi-cost",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/sacco-branding-guide-kenya",
@@ -655,7 +687,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/safety-sign-printing-standards-kenya",
@@ -663,7 +695,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/scale-printing-branding-business-kenya",
@@ -671,7 +703,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/school-signage-design-guide",
@@ -679,7 +711,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/shop-front-branding-ideas",
@@ -687,7 +719,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/signage-compliance-regulations-kenya",
@@ -695,7 +727,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/signage-maintenance-longevity",
@@ -703,7 +735,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/sme-branding-budget-kenya",
@@ -711,7 +743,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/sports-event-branding-solutions",
@@ -719,7 +751,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/startup-branding-checklist-kenya",
@@ -727,7 +759,15 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/sublimation-printing-nairobi-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/temporary-event-signage-solutions",
@@ -735,7 +775,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/transit-advertising-vehicle-wraps",
@@ -743,7 +783,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/uv-vs-screen-printing-nairobi-guide",
@@ -751,7 +791,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/vehicle-wrap-branding-guide-nairobi",
@@ -759,7 +799,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/wayfinding-signage-corporate-offices",
@@ -767,7 +807,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/wedding-event-branding-printing-guide-kenya",
@@ -775,7 +815,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/blog/window-frosting-branding-ideas",
@@ -783,7 +823,7 @@
       "changefreq": "monthly",
       "type": "blog-post",
       "source": "src/data/blogData.js",
-      "lastmod": "2026-03-31"
+      "lastmod": "2026-06-25"
     },
     {
       "url": "/contact",
@@ -938,6 +978,22 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/services/digital-printing",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/services/dtf-printing",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/services/large-format",
       "priority": "0.85",
       "changefreq": "monthly",
@@ -955,6 +1011,14 @@
     },
     {
       "url": "/services/plotting",
+      "priority": "0.85",
+      "changefreq": "monthly",
+      "type": "service-page",
+      "source": "static",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/services/sublimation-printing",
       "priority": "0.85",
       "changefreq": "monthly",
       "type": "service-page",
@@ -1775,6 +1839,14 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/sitemap",
+      "priority": "0.5",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
       "lastmod": "2026-06-25"
     },
     {

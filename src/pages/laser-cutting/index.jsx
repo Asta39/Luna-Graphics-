@@ -10,6 +10,7 @@ import EquipmentShowcase from './components/EquipmentShowcase';
 import SampleGallery from './components/SampleGallery';
 import PricingTable from './components/PricingTable';
 import RelatedServices from './components/RelatedServices';
+import RelatedBlogPosts from '../../components/services/RelatedBlogPosts';
 import ContactForm from './components/ContactForm';
 import Breadcrumb from './components/Breadcrumb';
 import logoImage from '../../assets/luna-logo2.png';
@@ -192,6 +193,7 @@ const LaserCuttingServicesPage = () => {
         <PricingTable pricingPackages={pageData.pricing} />
         
         <RelatedServices relatedServices={pageData.related} />
+        <RelatedBlogPosts posts={pageData.relatedBlogPosts} />
         
         <ContactForm serviceName={pageData.title} />
       </main>
