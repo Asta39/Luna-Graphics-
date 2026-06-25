@@ -225,6 +225,24 @@ const handleSearch = (e) => {
       path: '/services/uv-printing',
       icon: 'Palette',
       description: 'Acrylic wall art, Nameplates'
+    },
+    {
+      label: 'DTF Printing',
+      path: '/services/dtf-printing',
+      icon: 'Layers',
+      description: 'Direct to film, no minimum order'
+    },
+    {
+      label: 'Sublimation Printing',
+      path: '/services/sublimation-printing',
+      icon: 'Droplets',
+      description: 'Mugs, jerseys, corporate gifts'
+    },
+    {
+      label: 'Digital Printing',
+      path: '/services/digital-printing',
+      icon: 'FileText',
+      description: 'Flyers, brochures, business cards'
     }
   ];
 
