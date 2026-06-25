@@ -149,9 +149,9 @@ const PricingTable = ({ pricingPackages }) => { // onGetQuote prop is no longer 
                     </p>
                     <div className="flex items-baseline justify-center">
                       <span className="text-3xl font-bold text-primary">
-                        KES {pkg.price.toLocaleString()}
+                        {pkg.price != null ? `KES ${pkg.price.toLocaleString()}` : 'Contact us'}
                       </span>
-                      <span className="text-text-secondary ml-2">/{pkg.unit}</span>
+                      {pkg.unit && <span className="text-text-secondary ml-2">/{pkg.unit}</span>}
                     </div>
                     {pkg.originalPrice && (
                       <div className="text-center mt-2">
@@ -165,6 +165,7 @@ const PricingTable = ({ pricingPackages }) => { // onGetQuote prop is no longer 
                     )}
                   </div>
                   
+                  {(pkg.features || []).length > 0 && (
                   <div className="space-y-4 mb-8">
                     {pkg.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start space-x-3">
@@ -175,6 +176,7 @@ const PricingTable = ({ pricingPackages }) => { // onGetQuote prop is no longer 
                       </div>
                     ))}
                   </div>
+                  )}
                   
                   <div className="space-y-3">
                     <Button

@@ -59,19 +59,26 @@ const RelatedServices = ({ relatedServices }) => {
                   {service.description}
                 </p>
                 
+                {(service.turnaround || service.startingPrice != null) && (
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-4 text-sm text-text-muted">
+                    {service.turnaround && (
                     <div className="flex items-center space-x-1">
                       <Icon name="Clock" size={14} />
                       <span>{service.turnaround}</span>
                     </div>
+                    )}
+                    {service.startingPrice != null && (
                     <div className="flex items-center space-x-1">
                       <Icon name="DollarSign" size={14} />
                       <span>From KES {service.startingPrice.toLocaleString()}</span>
                     </div>
+                    )}
                   </div>
                 </div>
-                
+                )}
+
+                {(service.features || []).length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
                   {service.features.slice(0, 3).map((feature, featureIndex) => (
                     <span
@@ -87,6 +94,7 @@ const RelatedServices = ({ relatedServices }) => {
                     </span>
                   )}
                 </div>
+                )}
                 
                 <Button
                   variant="outline"

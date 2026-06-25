@@ -16,7 +16,9 @@ const EquipmentShowcase = ({ equipment }) => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {equipment.map((machine, index) => (
+          {(equipment || []).map((machine, index) => {
+            const items = machine.capabilities || machine.specs || [];
+            return (
             <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-video relative overflow-hidden">
                 <Image
@@ -24,13 +26,15 @@ const EquipmentShowcase = ({ equipment }) => {
                   alt={machine.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4">
-                  <div className="bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {machine.status}
+                {machine.status && (
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {machine.status}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-heading font-bold text-primary mb-2">
                   {machine.name}
@@ -38,28 +42,33 @@ const EquipmentShowcase = ({ equipment }) => {
                 <p className="text-text-secondary mb-4 text-sm leading-relaxed">
                   {machine.description}
                 </p>
-                
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-text-primary text-sm">Key Capabilities:</h4>
-                  <div className="grid grid-cols-1 gap-2">
-                    {machine.capabilities.map((capability, capIndex) => (
-                      <div key={capIndex} className="flex items-center space-x-2">
-                        <Icon name="Check" size={14} color="var(--color-accent)" />
-                        <span className="text-sm text-text-secondary">{capability}</span>
-                      </div>
-                    ))}
+
+                {items.length > 0 && (
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-text-primary text-sm">Key Capabilities:</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {items.map((capability, capIndex) => (
+                        <div key={capIndex} className="flex items-center space-x-2">
+                          <Icon name="Check" size={14} color="var(--color-accent)" />
+                          <span className="text-sm text-text-secondary">{capability}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                
-                <div className="mt-4 pt-4 border-t border-border">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-text-secondary">Max Size:</span>
-                    <span className="font-semibold text-text-primary">{machine.maxSize}</span>
+                )}
+
+                {machine.maxSize && (
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-text-secondary">Max Size:</span>
+                      <span className="font-semibold text-text-primary">{machine.maxSize}</span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
         
         <div className="mt-12 text-center">
