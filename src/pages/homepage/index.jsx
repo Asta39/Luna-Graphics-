@@ -8,7 +8,7 @@ import ServicesGrid from './components/ServicesGrid';
 import MachineShowcase from './components/MachineShowcase';
 import GoogleReviews from './components/GoogleReviews';
 import CorporateServices from './components/CorporateServices';
-import CookieBanner from '../../components/ui/CookieBanner';
+import ConsentNotice from '../../components/ui/ConsentNotice';
 import Footer from './components/Footer';
 
 const Homepage = () => {
@@ -192,7 +192,7 @@ const Homepage = () => {
           {/* Corporate Services */}
           <CorporateServices />
         </main>
-        <CookieBanner />
+        <ConsentNotice />
 
         {/* Footer */}
         <Footer />
