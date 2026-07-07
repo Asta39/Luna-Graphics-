@@ -2,57 +2,22 @@ import React, { useState } from 'react';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
-import { Helmet } from 'react-helmet-async';
 
 import { caseStudies } from '../../../data/caseStudiesData';
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '254791159618';
-    const message = 'Hello! I would like to inquire about your corporate and political projects.';
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-    const pageTitle = "Exhibition, Corporate & Election Printing Providers in Kenya | Luna Graphics";
-  const pageDescription = "Luna Graphics is a top provider of exhibition stands, corporate branding, and election campaign materials in Nairobi. See our case studies and get a quote today.";
-  const pageUrl = "https://lunagraphics.co.ke/corporate-services-page";
-  const imageUrl = "https://lunagraphics.co.ke/assets/images/corporate-hero-image.jpg"; // Use the actual imported image variable if available
-  const brandName = "Luna Graphics";
-  const twitterHandle = "@YourTwitterHandle";
+const handleWhatsAppClick = () => {
+  const phoneNumber = '254791159618';
+  const message = 'Hello! I would like to inquire about your corporate and political projects.';
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+};
 
 const CaseStudies = () => {
   const [activeCase, setActiveCase] = useState(0);
 
-
-
   return (
     <section className="py-20 bg-surface-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-        
-        {/* --- Keywords Tag --- */}
-        <meta name="keywords" content="exhibition providers kenya, corporate branding nairobi, election printing 2027, trade show stands, campaign materials, large format printing" />
-
-        {/* --- Open Graph / Facebook --- */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:site_name" content={brandName} />
-
-        {/* --- Twitter --- */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:site" content={twitterHandle} />
-      </Helmet>
-
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-heading font-bold text-primary mb-6">
