@@ -1,5 +1,5 @@
 // 1. Import the single placeholder image
-import teamMemberPlaceholder from '../assets/team-member-placeholder.png'; // <-- IMPORTANT: Use your actual filename
+import teamMemberPlaceholder from '../assets/team-member-placeholder.webp'; // <-- IMPORTANT: Use your actual filename
 
 export const leadershipTeam = [
     {
@@ -68,7 +68,7 @@ export const leadershipTeam = [
       whatsapp: "+254791159618",
       email: "info@lunagraphics.co.ke",
       briefDescription: "Expert in large format printing operations with extensive experience in Plotting technology.",
-      detailedBackground: `Gideon oversees all production operations at Halo Creatives, ensuring quality control and efficient workflow management. His expertise in large format and Plotting has been crucial in delivering high-quality results for our clients.\n\nWith 8 years of hands-on experience with industrial printing equipment, Gideon has mastered the technical aspects of various printing processes and maintains our high standards of quality and precision.`,
+      detailedBackground: `Gideon oversees all production operations at Luna Graphics, ensuring quality control and efficient workflow management. His expertise in large format and Plotting has been crucial in delivering high-quality results for our clients.\n\nWith 8 years of hands-on experience with industrial printing equipment, Gideon has mastered the technical aspects of various printing processes and maintains our high standards of quality and precision.`,
       skills: ["Large Format Printing", "Plotting", "Quality Control", "Equipment Maintenance", "Production Planning"],
       certifications: [
         "Certified Print Production Professional",

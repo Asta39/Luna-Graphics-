@@ -8,7 +8,7 @@ import Button from '../../../components/ui/Button';
 const heroSlides = [
   {
     id: 1,
-    image: '/products/9.jpg',
+    image: '/products/9.webp',
     title: 'Events & Exhibitions',
     subtitle: 'Event booths & exhibitions merch',
     price: 'Upon Inquiry',
@@ -17,7 +17,7 @@ const heroSlides = [
   },
   {
     id: 2,
-    image: '/products/34.jpg',
+    image: '/products/34.webp',
     title: 'Corporate Branding',
     subtitle: 'Business Cards, Stationery',
     price: 'Upon Inquiry',
@@ -26,7 +26,7 @@ const heroSlides = [
   },
   {
     id: 3,
-    image: '/products/85.jpg',
+    image: '/products/85.webp',
     title: 'Large Format Printing',
     subtitle: 'Posters, Billboards, Backdrops',
     price: 'From KES 700',
@@ -35,7 +35,7 @@ const heroSlides = [
   },
   {
     id: 4,
-    image: '/products/55.jpg',
+    image: '/products/55.webp',
     title: 'Custom Merchandise',
     subtitle: 'T-Shirts, Mugs, Gifts',
     price: 'From KES 600',
@@ -48,7 +48,7 @@ const heroSlides = [
 const sideBanners = [
   {
     id: 1,
-    image: '/products/78.jpg',
+    image: '/products/78.webp',
     title: '2027 Political campaign Materials',
     subtitle: 'Campaign merch, campaign posters, campaign signs',
     link: '/corporate-services',
@@ -56,7 +56,7 @@ const sideBanners = [
   },
   {
     id: 2,
-    image: '/products/31.jpg',
+    image: '/products/31.webp',
     title: 'Office Branding',
     subtitle: 'Wall Graphics & Signs',
     link: '/corporate/corporate-branding',

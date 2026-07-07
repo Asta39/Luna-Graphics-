@@ -1,95 +1,95 @@
 // --- General Service Card Images (for use in Related Services) ---
-import relatedLaserCuttingImg from '../assets/laser-hero-image.jpg';
-import relatedLargeFormatImg from '../assets/large-format-hero-image.jpg';
-import relatedUvPrintingImg from '../assets/uv-hero-image.jpg';
-import relatedCncCuttingImg from '../assets/cnc-hero-image.jpg';
-import relatedCorporateImg from '../assets/corporate-hero-image.jpg';
+import relatedLaserCuttingImg from '../assets/laser-hero-image.webp';
+import relatedLargeFormatImg from '../assets/large-format-hero-image.webp';
+import relatedUvPrintingImg from '../assets/uv-hero-image.webp';
+import relatedCncCuttingImg from '../assets/cnc-hero-image.webp';
+import relatedCorporateImg from '../assets/corporate-hero-image.webp';
 
 // 1. IMPORT YOUR IMAGES at the top of the file
-import cncHeroImage from '../assets/cnc-hero-image.jpg';  // <-- Replace with your actual filename
-import cncEquipmentRouter from '../assets/cncrouter.jpg';
+import cncHeroImage from '../assets/cnc-hero-image.webp';  // <-- Replace with your actual filename
+import cncEquipmentRouter from '../assets/cncrouter.webp';
 
-import cncGalleryPanels from '../assets/cnc-gallery-panels.jpg';
-import cncGallerySignage from '../assets/cnc-gallery-signage.jpg';
-import cncGalleryDecorative from '../assets/cnc-gallery-decorative.jpg';
-import cncGalleryPrototypes from '../assets/cnc-gallery-prototypes.jpg';
-import cncGalleryFurniture from '../assets/cnc-gallery-furniture.jpg';
-import cncGalleryDisplays from '../assets/cnc-gallery-displays.jpg';
-import cncGalleryBrackets from '../assets/cnc-gallery-brackets.jpg';
-import cncGalleryArt from '../assets/cnc-gallery-art.jpg';
-
-
-import laserHeroImage from '../assets/laser-hero-image.jpg';
-import laserEquipment from '../assets/lasercutter.jpg';
-
-import laserGalleryPanels from '../assets/laser-gallery-panels.jpg';
-import laserGallerySignage from '../assets/laser-gallery-signage.jpg';
-import laserGalleryDecorative from '../assets/laser-gallery-decorative.jpg';
-import laserGalleryPrototypes from '../assets/laser-gallery-prototypes.jpg';
-import laserGalleryFurniture from '../assets/laser-gallery-furniture.jpg';
-import laserGalleryDisplays from '../assets/laser-gallery-displays.jpg';
-import laserGalleryBrackets from '../assets/laser-gallery-brackets.jpg';
-import laserGalleryArt from '../assets/laser-gallery-art.jpg';
+import cncGalleryPanels from '../assets/cnc-gallery-panels.webp';
+import cncGallerySignage from '../assets/cnc-gallery-signage.webp';
+import cncGalleryDecorative from '../assets/cnc-gallery-decorative.webp';
+import cncGalleryPrototypes from '../assets/cnc-gallery-prototypes.webp';
+import cncGalleryFurniture from '../assets/cnc-gallery-furniture.webp';
+import cncGalleryDisplays from '../assets/cnc-gallery-displays.webp';
+import cncGalleryBrackets from '../assets/cnc-gallery-brackets.webp';
+import cncGalleryArt from '../assets/cnc-gallery-art.webp';
 
 
-import uvHeroImage from '../assets/uv-hero-image.jpg';
-import uvPrinterEquipment from '../assets/uvprinter.jpg';
+import laserHeroImage from '../assets/laser-hero-image.webp';
+import laserEquipment from '../assets/lasercutter.webp';
 
-import uvGallerySignage from '../assets/uv-gallery-signage.jpg';
-import uvGalleryDecorative from '../assets/uv-gallery-decorative.jpg';
-import uvGalleryPrototypes from '../assets/uv-gallery-prototypes.jpg';
-import uvGalleryFurniture from '../assets/uv-gallery-furniture.jpg';
-import uvGalleryDisplays from '../assets/uv-gallery-displays.jpg';
-import uvGalleryBrackets from '../assets/uv-gallery-brackets.jpg';
-import uvGalleryArt from '../assets/uv-gallery-art.jpg';
-
-import largeFormatHeroImage from '../assets/large-format-hero-image.jpg';
-import largeFormatEquipment from '../assets/largeformat.jpg';
-import largeEquipment from '../assets/largeprinter-01.jpg';
-
-import largeGallerySignage from '../assets/large-gallery-signage.jpg';
-import largeGalleryDecorative from '../assets/large-gallery-decorative.jpg';
-import largeGalleryPrototypes from '../assets/large-gallery-prototypes.jpg';
-import largeGalleryFurniture from '../assets/large-gallery-furniture.jpg';
-import largeGalleryDisplays from '../assets/large-gallery-displays.jpg';
-import largeGalleryBrackets from '../assets/large-gallery-brackets.jpg';
-import largeGalleryArt from '../assets/large-gallery-art.jpg';
+import laserGalleryPanels from '../assets/laser-gallery-panels.webp';
+import laserGallerySignage from '../assets/laser-gallery-signage.webp';
+import laserGalleryDecorative from '../assets/laser-gallery-decorative.webp';
+import laserGalleryPrototypes from '../assets/laser-gallery-prototypes.webp';
+import laserGalleryFurniture from '../assets/laser-gallery-furniture.webp';
+import laserGalleryDisplays from '../assets/laser-gallery-displays.webp';
+import laserGalleryBrackets from '../assets/laser-gallery-brackets.webp';
+import laserGalleryArt from '../assets/laser-gallery-art.webp';
 
 
-import plottingHeroImage from '../assets/plotting-hero-image.jpg';
-import plottingEquipment from '../assets/plotter.jpg';
+import uvHeroImage from '../assets/uv-hero-image.webp';
+import uvPrinterEquipment from '../assets/uvprinter.webp';
 
-import plottingGalleryPanels from '../assets/plotting-gallery-panels.jpg';
-import plottingGallerySignage from '../assets/plotting-gallery-signages.jpg';
-import plottingGalleryDecorative from '../assets/plotting-gallery-decorative.jpg';
-import plottingGalleryPrototypes from '../assets/plotting-gallery-prototypes.jpg';
-import plottingGalleryFurniture from '../assets/plotting-gallery-furniture.jpg';
-import plottingGalleryDisplays from '../assets/plotting-gallery-displays.jpg';
-import plottingGalleryBrackets from '../assets/plotting-gallery-brackets.jpg';
-import plottingGalleryArt from '../assets/plotting-gallery-art.jpg';
+import uvGallerySignage from '../assets/uv-gallery-signage.webp';
+import uvGalleryDecorative from '../assets/uv-gallery-decorative.webp';
+import uvGalleryPrototypes from '../assets/uv-gallery-prototypes.webp';
+import uvGalleryFurniture from '../assets/uv-gallery-furniture.webp';
+import uvGalleryDisplays from '../assets/uv-gallery-displays.webp';
+import uvGalleryBrackets from '../assets/uv-gallery-brackets.webp';
+import uvGalleryArt from '../assets/uv-gallery-art.webp';
+
+import largeFormatHeroImage from '../assets/large-format-hero-image.webp';
+import largeFormatEquipment from '../assets/largeformat.webp';
+import largeEquipment from '../assets/largeprinter-01.webp';
+
+import largeGallerySignage from '../assets/large-gallery-signage.webp';
+import largeGalleryDecorative from '../assets/large-gallery-decorative.webp';
+import largeGalleryPrototypes from '../assets/large-gallery-prototypes.webp';
+import largeGalleryFurniture from '../assets/large-gallery-furniture.webp';
+import largeGalleryDisplays from '../assets/large-gallery-displays.webp';
+import largeGalleryBrackets from '../assets/large-gallery-brackets.webp';
+import largeGalleryArt from '../assets/large-gallery-art.webp';
+
+
+import plottingHeroImage from '../assets/plotting-hero-image.webp';
+import plottingEquipment from '../assets/plotter.webp';
+
+import plottingGalleryPanels from '../assets/plotting-gallery-panels.webp';
+import plottingGallerySignage from '../assets/plotting-gallery-signages.webp';
+import plottingGalleryDecorative from '../assets/plotting-gallery-decorative.webp';
+import plottingGalleryPrototypes from '../assets/plotting-gallery-prototypes.webp';
+import plottingGalleryFurniture from '../assets/plotting-gallery-furniture.webp';
+import plottingGalleryDisplays from '../assets/plotting-gallery-displays.webp';
+import plottingGalleryBrackets from '../assets/plotting-gallery-brackets.webp';
+import plottingGalleryArt from '../assets/plotting-gallery-art.webp';
 
 
 
-import tShirtHeroImage from '../assets/t-shirt-hero-image.jpg';
-import tShirtEquipment from '../assets/dtf-printer.jpg';
+import tShirtHeroImage from '../assets/t-shirt-hero-image.webp';
+import tShirtEquipment from '../assets/dtf-printer.webp';
 
-import tShirtGalleryFirm from '../assets/t-shirt-gallery-firm.jpg';
-import tShirtGalleryDecorative from '../assets/t-shirt-gallery-decorative.jpg';
-import tShirtGalleryPrototypes from '../assets/t-shirt-gallery-prototypes.jpg';
-import tShirtGalleryFurniture from '../assets/t-shirt-gallery-furniture.jpg';
-import tShirtGalleryDisplays from '../assets/t-shirt-gallery-displays.jpg';
-import tShirtGalleryBrackets from '../assets/t-shirt-gallery-brackets.jpg';
-import tShirtGalleryArt from '../assets/t-shirt-gallery-art.jpg';
+import tShirtGalleryFirm from '../assets/t-shirt-gallery-firm.webp';
+import tShirtGalleryDecorative from '../assets/t-shirt-gallery-decorative.webp';
+import tShirtGalleryPrototypes from '../assets/t-shirt-gallery-prototypes.webp';
+import tShirtGalleryFurniture from '../assets/t-shirt-gallery-furniture.webp';
+import tShirtGalleryDisplays from '../assets/t-shirt-gallery-displays.webp';
+import tShirtGalleryBrackets from '../assets/t-shirt-gallery-brackets.webp';
+import tShirtGalleryArt from '../assets/t-shirt-gallery-art.webp';
 
-import offsetPrintingHeroImage from '../assets/offset-printer.jpg';
-import sublimationHeroImage from '../assets/heatpress.jpg';
-import dtfHeroImage from '../assets/t-shirt-hero-image.jpg';
-import dtfEquipmentImage from '../assets/dtf-printer.jpg';
-import digitalHeroImage from '../assets/uvbooks.jpg';
-import digitalEquipmentImage from '../assets/uvmagazines.jpg';
-import sublimationGalleryVests from '../assets/vests.jpg';
-import sublimationGalleryGifts from '../assets/giftbox.jpg';
-import digitalGallerySignages from '../assets/signages.jpg';
+import offsetPrintingHeroImage from '../assets/offset-printer.webp';
+import sublimationHeroImage from '../assets/heatpress.webp';
+import dtfHeroImage from '../assets/t-shirt-hero-image.webp';
+import dtfEquipmentImage from '../assets/dtf-printer.webp';
+import digitalHeroImage from '../assets/uvbooks.webp';
+import digitalEquipmentImage from '../assets/uvmagazines.webp';
+import sublimationGalleryVests from '../assets/vests.webp';
+import sublimationGalleryGifts from '../assets/giftbox.webp';
+import digitalGallerySignages from '../assets/signages.webp';
 
 // 2. DEFINE YOUR SERVICES
 export const services = 
@@ -856,14 +856,14 @@ export const services =
         title: "Exhibition & Trade Show Display Solutions in Nairobi",
         excerpt: "Pull-up banners, teardrop flags, pop-up stands — complete display solutions with prices.",
         category: "Exhibition & Events",
-        image: "/assets/exhibition.jpg"
+        image: "/assets/exhibition.webp"
       },
       {
         slug: "roll-up-banner-printing-nairobi-cost",
         title: "Roll-Up Banner Printing in Nairobi: Prices & What Affects the Cost",
         excerpt: "Banner costs explained — size, material, stand quality, and turnaround time all factor in.",
         category: "Large Format",
-        image: "/assets/stands.jpg"
+        image: "/assets/stands.webp"
       },
       {
         slug: "large-format-printing-file-preparation-guide",
@@ -1109,14 +1109,14 @@ export const services =
         title: "Roll-Up Banner Printing in Nairobi: Prices & What Affects the Cost",
         excerpt: "Size, material, stand type — everything that drives the price of a roll-up banner in Nairobi.",
         category: "Large Format",
-        image: "/assets/stands.jpg"
+        image: "/assets/stands.webp"
       },
       {
         slug: "exhibition-display-solutions-nairobi",
         title: "Exhibition & Trade Show Display Solutions in Nairobi",
         excerpt: "From pull-up banners to full branded booth packages — all options with prices.",
         category: "Exhibition & Events",
-        image: "/assets/exhibition.jpg"
+        image: "/assets/exhibition.webp"
       },
       {
         slug: "exhibition-stand-design-trends-nairobi-2024",
@@ -1363,21 +1363,21 @@ export const services =
         title: "DTF Printing in Nairobi: The Complete Guide to Direct to Film Printing",
         excerpt: "How DTF works, what fabrics it suits, pricing, and how it compares to screen printing.",
         category: "Printing Tips",
-        image: "/assets/dtf-printer.jpg"
+        image: "/assets/dtf-printer.webp"
       },
       {
         slug: "sublimation-printing-nairobi-guide",
         title: "Sublimation Printing in Nairobi: Mugs, Jerseys & Corporate Gifts",
         excerpt: "Dye sublimation explained — fabrics, hard goods, prices, and when to use it.",
         category: "Printing Tips",
-        image: "/assets/heatpress.jpg"
+        image: "/assets/heatpress.webp"
       },
       {
         slug: "corporate-gifts-printing-nairobi",
         title: "Corporate Gifts Printing in Nairobi: 15 Branded Gift Ideas",
         excerpt: "T-shirts, mugs, notebooks, plaques — 15 branded corporate gift ideas with KES prices.",
         category: "Corporate Branding",
-        image: "/assets/giftbox.jpg"
+        image: "/assets/giftbox.webp"
       }
     ]
   },
@@ -1623,7 +1623,7 @@ export const services =
         title: "Corporate Gifts Printing in Nairobi: 15 Branded Gift Ideas",
         excerpt: "UV-printed power banks, plaques, and keyrings — premium corporate gift options.",
         category: "Corporate Branding",
-        image: "/assets/giftbox.jpg"
+        image: "/assets/giftbox.webp"
       },
       {
         slug: "exhibition-stand-design-trends-nairobi-2024",

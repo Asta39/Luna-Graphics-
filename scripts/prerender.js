@@ -12,7 +12,7 @@ const BUILD_DIR = path.resolve(__dirname, '../build');
 const PORT = Number(process.env.PRERENDER_PORT || 3001);
 const CONCURRENCY = Number(process.env.PRERENDER_CONCURRENCY || 4);
 const RENDER_LIMIT = process.env.PRERENDER_LIMIT ? Number(process.env.PRERENDER_LIMIT) : Infinity;
-const CRITICAL_URLS = new Set(['/', '/shop', '/contact', '/services/large-format', '/blog']);
+const CRITICAL_URLS = new Set(['/', '/home', '/contact', '/services/large-format', '/blog']);
 
 function outputPathFor(urlPath) {
   if (urlPath === '/') return path.join(BUILD_DIR, 'index.html');

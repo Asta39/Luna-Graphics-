@@ -97,7 +97,7 @@ const LocationMap = () => {
             width="100%"
             height="100%"
             loading="lazy"
-            title="Halo Creatives Location"
+            title="Luna Graphics Location"
             referrerPolicy="no-referrer-when-downgrade"
             src={`https://www.google.com/maps?q=${businessLocation.coordinates.lat},${businessLocation.coordinates.lng}&z=16&output=embed`}
             onLoad={handleMapLoad}

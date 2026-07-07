@@ -48,7 +48,9 @@ function lastModifiedFor(filePath) {
 }
 
 function extractStringValues(content, key) {
-  const matches = [...content.matchAll(new RegExp(`${key}:\\s*['\"]([^'\"]+)['\"]`, 'g'))];
+  // Matches both JS-style (key: 'val') and JSON-style ("key": "val")
+  const pattern = new RegExp(`[\"']?${key}[\"']?:\\s*['\"]([^'\"]+)['\"]`, 'g');
+  const matches = [...content.matchAll(pattern)];
   return [...new Set(matches.map(match => match[1]).filter(Boolean))];
 }
 

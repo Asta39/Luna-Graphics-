@@ -63,8 +63,8 @@ const SEO = ({
         <>
           <meta name="geo.region" content={geo.region || 'KE-30'} />
           <meta name="geo.placename" content={geo.placename || 'Nairobi'} />
-          <meta name="geo.position" content={geo.position || '-1.2921;36.8219'} />
-          <meta name="ICBM" content={geo.position || '-1.2921;36.8219'} />
+          <meta name="geo.position" content={geo.position || '-1.280302;36.822639'} />
+          <meta name="ICBM" content={geo.position || '-1.280302;36.822639'} />
         </>
       )}
 

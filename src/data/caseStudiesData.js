@@ -1,6 +1,6 @@
 import politicalCampaignImage from '../assets/political.jpg';
 import corporateRebrandImage from '../assets/corporate.jpg';
-import tradeExhibitionImage from '../assets/exhibition.jpg';
+import tradeExhibitionImage from '../assets/exhibition.webp';
 
 // 2. Define and export your case studies data
 export const caseStudies = [

@@ -133,7 +133,7 @@ const Shop = () => {
         geo={{
           region: "KE-30",
           placename: "Nairobi",
-          position: "-1.2921;36.8219"
+          position: "-1.280302;36.822639"
         }}
         schemaData={[
           {
@@ -162,6 +162,8 @@ const Shop = () => {
       />
       
       <Header />
+
+      <h1 className="sr-only">Printing & Branding Shop in Nairobi | Luna Graphics</h1>
 
       <HeroBanner onSearch={handleHeroSearch} />
       

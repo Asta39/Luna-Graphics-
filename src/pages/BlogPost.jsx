@@ -69,6 +69,31 @@ const CATEGORY_SERVICES = {
     { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
     { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
   ],
+  'laser-cutting': [
+    { title: 'Laser Cutting & Engraving', path: '/services/laser-cutting', icon: 'Zap' },
+    { title: 'CNC Cutting Nairobi', path: '/services/cnc-cutting', icon: 'Scissors' },
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+  ],
+  'cnc-cutting': [
+    { title: 'CNC Cutting Nairobi', path: '/services/cnc-cutting', icon: 'Scissors' },
+    { title: 'Laser Cutting & Engraving', path: '/services/laser-cutting', icon: 'Zap' },
+    { title: 'UV Printing', path: '/services/uv-printing', icon: 'Sun' },
+  ],
+  'exhibitions': [
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'Corporate Branding Services', path: '/corporate-services', icon: 'Briefcase' },
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+  ],
+  'political-branding': [
+    { title: 'T-Shirt & Garment Printing', path: '/services/t-shirt-printing', icon: 'Shirt' },
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'Corporate Branding Services', path: '/corporate-services', icon: 'Briefcase' },
+  ],
+  'industry-news': [
+    { title: 'Large Format Printing', path: '/services/large-format', icon: 'Printer' },
+    { title: 'UV Printing', path: '/services/uv-printing', icon: 'Sun' },
+    { title: 'Digital Printing', path: '/services/digital-printing', icon: 'FileText' },
+  ],
 };
 
 const BlogPost = () => {

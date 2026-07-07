@@ -1,5 +1,5 @@
 {
-  "count": 233,
+  "count": 537,
   "routes": [
     {
       "url": "/",
@@ -7,7 +7,7 @@
       "changefreq": "daily",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/about",
@@ -15,7 +15,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/blog",
@@ -23,6 +23,14 @@
       "changefreq": "daily",
       "type": "page",
       "source": "static",
+      "lastmod": "2026-07-06"
+    },
+    {
+      "url": "/blog/3d-printing-corporate-branding-applications",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
       "lastmod": "2026-06-25"
     },
     {
@@ -58,7 +66,23 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/audit-brand-identity",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/back-to-school-branding-campaign-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/backlit-signage-printing-retail-kenya",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -74,6 +98,22 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/banner-printing-everything-you-need-to-know",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/benefits-uv-printing-businesses-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/billboard-design-strategy-kenya",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -82,7 +122,63 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/billboard-printing-specifications-best-practices",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/booklet-catalogue-printing-corporate-profiles",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/brand-authority-strategic-print-collateral",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/brand-consistency-physical-touchpoints-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/brand-guidelines-kenyan-companies-need",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/brand-positioning-strategies-competitive-markets",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/brand-storytelling-visual-design",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/branded-gazebos-outdoor-events",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -122,6 +218,14 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/branding-churches-faith-organizations",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/branding-for-corporate-award-ceremonies",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -146,7 +250,71 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/branding-law-firms-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/branding-mca-mp-governor-presidential-campaigns",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/branding-mistakes-kenyan-startups-make",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/branding-party-nominations-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/branding-real-estate-companies-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/branding-roi-measurement-framework-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/branding-schools-universities-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/branding-tech-startups-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/build-strong-political-visual-identity",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -162,7 +330,71 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/campaign-color-strategy-case-studies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/campaign-poster-design-trends-2027-elections",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/campaign-vehicle-branding-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/cap-hat-printing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/choose-best-cnc-cutting-company-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/choose-best-large-format-printing-company-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/choose-best-laser-cutting-company-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/choose-right-printing-partner-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/choose-right-uv-printing-company-kenya",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -186,7 +418,327 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/cnc-cutting-acrylic-plastic-sheets",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-aluminum-soft-metals",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-architectural-panels-screens",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-construction-joinery",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-corporate-branding-projects",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-custom-panels-partitions",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-detailed-complex-designs",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-event-decor-backdrops",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-exhibition-stands",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-furniture-manufacturing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-interior-fit-outs-decor",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-large-scale-custom-projects",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-mass-customization",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-outdoor-installations",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-plywood-furniture-interiors",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-product-prototyping",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-real-estate-property-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-retail-displays-pos-materials",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-reusable-event-structures",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-safety-standards-explained",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-services-kenya-complete-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-signage-3d-lettering",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-stage-design-set-construction",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-tolerances-precision-explained",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-trends-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-vs-laser-cutting-comparison",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-vs-printing-event-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-vs-waterjet-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-wedding-signage-monograms",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-wood-mdf-applications",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-cutting-worth-small-businesses",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cnc-routing-vs-cnc-milling-differences",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/color-accuracy-large-format-printing-explained",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/colors-influence-voters-psychology-political-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/common-mistakes-ordering-cnc-cutting-services",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/common-mistakes-ordering-large-format-prints",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/common-uv-printing-mistakes-avoid",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/consistent-brand-identity-print-digital",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/consistent-branding-increases-sales",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/construction-site-branding-boards",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/corporate-brand-refresh-vs-full-rebrand",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -202,7 +754,47 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/corporate-clients-prefer-uv-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/corporate-conference-branding-checklist",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/corporate-gift-branding-client-retention",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/corporate-gifts-printing-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/corporate-merchandise-employees-actually-use",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/corporate-rebranding-signs-refresh-brand",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -218,7 +810,95 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/corporate-stationery-printing-guide-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/corporate-t-shirt-branding-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cost-cnc-cutting-kenya-pricing-factors",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/cost-large-format-printing-kenya-pricing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/county-level-campaign-branding-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/creative-cnc-cutting-design-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/creative-uses-large-format-printing-events",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/creative-wedding-monograms-laser-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/creative-welcome-signs-uv-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/crisis-management-political-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/custom-event-props-uv-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/custom-photo-backdrops-events",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -234,6 +914,86 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/custom-wallpaper-printing-office-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/data-driven-campaign-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/design-corporate-signage-converts",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/design-for-large-format-printing-tips",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/design-high-impact-trade-show-stand",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/design-political-flyers-get-read",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/designing-campaign-banners-command-attention",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/designing-memorable-political-logos",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/digital-label-printing-kenyan-manufacturers",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/door-to-door-campaign-branding-materials",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/dtf-printing-nairobi-guide",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -242,7 +1002,31 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/eco-friendly-printing-nairobi-businesses",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/eco-friendly-promotional-merchandise",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/eco-solvent-vs-latex-printing-differences",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/edge-finishing-surface-treatments-cnc-cutting",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -274,7 +1058,39 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/ethical-considerations-political-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/event-backdrop-printing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/event-branding-budget-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/event-branding-corporate-conferences",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/event-stage-design-branding-strategy",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -290,7 +1106,23 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/event-wayfinding-signage-design",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/executive-gift-branding-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/exhibition-booth-branding-guide-kenyan-businesses",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -354,6 +1186,46 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/fabric-printing-events-kenya-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/faith-based-political-messaging-visual-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/file-preparation-checklist-large-format-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/file-preparation-laser-cutting-quality",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/file-preparation-tips-cnc-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/fleet-branding-strategy-logistics-companies",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -362,7 +1234,63 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/floor-graphics-printing-uses-benefits",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/foam-board-vs-pvc-board-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/future-cnc-cutting-manufacturing-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/future-corporate-branding-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/future-large-format-printing-advertising-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/future-laser-cutting-fabrication-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/future-trends-print-branding-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/future-uv-printing-branding-advertising",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -379,6 +1307,22 @@
     },
     {
       "url": "/blog/government-tender-branding-requirements-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/grassroots-campaign-branding-essentials",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/heat-transfer-printing-small-apparel-businesses",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -410,6 +1354,54 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/how-accurate-is-cnc-cutting-precision",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/how-accurate-is-laser-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/how-long-cnc-cut-products-last",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/how-long-large-format-printing-last-durability",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/how-long-laser-cut-products-last",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/how-long-uv-printing-last",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/how-to-price-corporate-merchandise-projects-kenya",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -419,6 +1411,14 @@
     },
     {
       "url": "/blog/illuminated-signage-vs-non-illuminated",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/indoor-vs-outdoor-large-format-printing-guide",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -450,7 +1450,63 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/internal-branding-employee-motivation",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/is-cnc-cutting-environmentally-friendly",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/is-laser-cutting-environmentally-friendly",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/lamination-options-long-lasting-prints",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/lanyard-branding-for-conferences",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-boosts-brand-visibility",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-enhances-event-experience",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-events-exhibitions",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -466,7 +1522,407 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/large-format-printing-finishing-options",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-nairobi-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-pvc-forex-board-materials",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-real-estate-advertising",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-restaurants-hotels",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-services-kenya-complete-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-small-businesses-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-stage-set-design",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-printing-supermarkets-malls",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-vs-digital-printing-key-differences",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/large-format-vs-uv-printing-comparison",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cut-acrylic-wedding-signs",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cut-logos-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cut-office-signage-wayfinding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-acrylic-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-architectural-models",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-cake-toppers",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-corporate-awards-trophies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-corporate-event-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-cost-kenya-pricing-factors",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-edge-finishing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-event-backdrops-props",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-interior-decor-wall-art",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-intricate-designs",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-lead-times-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-leather-fabric",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-mdf-wood-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-metal-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-mistakes-to-avoid",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-packaging-custom-boxes",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-product-prototyping",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-restaurant-menus-displays",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-retail-displays-pos",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-reusable-event-decor",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-safety-standards",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-services-kenya-complete-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-signage-lettering",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-small-business-worth-it",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-table-numbers-place-cards",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-thickness-limits",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-tolerances-precision",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-trends-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-vs-cnc-cutting-comparison",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-vs-die-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-vs-printing-event-signage",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-vs-waterjet-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/laser-cutting-wedding-signage-decor",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/launch-new-brand-kenya-successfully",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/led-backdrop-branding-night-events",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/led-signage-for-retail-stores",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/logo-placement-matters-corporate-design",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -482,6 +1938,62 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/luxury-branding-cnc-cut-elements",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/luxury-event-branding-laser-cut-elements",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/maintain-brand-consistency-political-campaigns",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/maintenance-care-uv-printed-products",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/maintenance-tips-cnc-cut-products",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/maintenance-tips-laser-cut-products",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/maintenance-tips-outdoor-large-format-prints",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/mall-signage-branding-strategy",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -490,7 +2002,71 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/manage-large-volume-political-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/matatu-branding-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/materials-cnc-cutting-capabilities",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/materials-laser-cutting-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/materials-printed-using-uv-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/matte-vs-glossy-finishes-brand-impact",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/memorable-trade-show-booth-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/mesh-banners-vs-solid-banners-comparison",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/messaging-hierarchy-campaign-design",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -530,6 +2106,46 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/office-branding-ideas-impress-clients",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/office-branding-large-format-printing-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/office-reception-branding-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/offset-vs-digital-printing-kenya-corporate",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/outdoor-event-branding-large-format",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/outdoor-event-branding-nairobi-weather",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -554,6 +2170,14 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/personal-branding-independent-candidates",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/photo-booth-branding-ideas",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -563,6 +2187,38 @@
     },
     {
       "url": "/blog/political-billboard-placement-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-billboards-kenya-cost-strategy",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-branding-budget-allocation-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-branding-mistakes-lose-elections",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-campaign-branding-strategy-kenya-2027",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -586,7 +2242,79 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/political-cap-reflector-jacket-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-event-tent-branding-ideas",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-manifesto-booklet-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-merchandise-wins-visibility",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-rally-branding-setup-checklist",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-social-media-print-integration",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-stage-branding-backdrops",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/political-t-shirt-printing-large-campaigns",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/political-youth-wing-merchandise-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/pos-displays-promotional-graphics-printing",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -602,6 +2330,38 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/power-packaging-corporate-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/premium-brand-perception-print",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/print-branding-builds-trust-digital-ads",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/printing-durable-campaign-materials-long-rallies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/printing-large-stage-backdrops",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -610,7 +2370,39 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/printing-mistakes-kenyan-businesses-money",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/printing-strategy-timeline-2027-elections",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/product-label-branding-fmcg-companies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/professional-branding-influences-voter-trust",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/psychology-color-kenyan-corporate-branding",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -666,6 +2458,14 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/resolution-dpi-large-format-printing-explained",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/restaurant-menu-board-printing",
       "priority": "0.65",
       "changefreq": "monthly",
@@ -674,7 +2474,55 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/retail-store-branding-large-format-prints",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/reusable-event-graphics-cost-savings",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/roi-investing-professional-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/role-print-media-digital-age",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/role-print-political-mobilization",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/roll-up-banner-printing-nairobi-cost",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/roll-up-vs-pop-up-banners-exhibitions",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -738,7 +2586,23 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/slogan-creation-political-campaigns",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/sme-branding-budget-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/sponsor-branding-placement-strategy",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -762,7 +2626,47 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/step-and-repeat-banners-design-printing-tips",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/sticker-printing-nairobi-materials-finishes",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/strong-branding-increases-company-valuation",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/sublimation-printing-nairobi-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/sublimation-vs-screen-printing-corporate-apparel",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/sustainability-large-format-printing",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -778,7 +2682,359 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/temporary-vs-permanent-event-signage",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/thickness-limits-cnc-cutting-explained",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/trade-show-exhibition-graphics-printing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/transit-advertising-vehicle-wraps",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/trends-large-format-printing-kenya-2026",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/turnaround-time-cnc-cutting-projects-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/types-materials-large-format-printing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/ultimate-guide-banner-printing-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printed-acrylic-signs-modern-events",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printed-logos-premium-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-acrylic-uses-benefits",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-business-cards-panels",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-cost-kenya-pricing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-custom-event-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-durability-finish-quality",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-elevates-event-decor",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-enhances-brand-perception",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-environmentally-friendly",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-event-backdrops-displays",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-exhibition-trade-show-displays",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-future-modern-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-glass-when-why-use",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-indoor-outdoor-applications",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-ink-explained-special",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-long-lasting-outdoor-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-luxury-weddings-perfect",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-metal-industrial-corporate",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-office-branding-interior-decor",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-office-signage-wayfinding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-packaging-premium-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-promotional-products",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-pvc-forex-board-materials",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-quality-perfect-finish",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-restaurant-menus-displays",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-retail-displays-pos",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-reusable-event-signage",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-services-nairobi-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-signage-complete-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-trends-kenya-industry",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-vs-eco-solvent-difference",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-vs-traditional-printing-comparison",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-vs-vinyl-wedding-signage",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-wedding-signage-elegant-durable",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-wood-creative-branding",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/uv-printing-worth-cost-small-business",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -794,7 +3050,47 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/vehicle-branding-large-format-printing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/vehicle-wrap-branding-guide-nairobi",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/vinyl-printing-branding-advertising-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/vinyl-printing-kenya-uses-durability-cost",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/visual-identity-systems-growing-companies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/wallpaper-wall-graphics-printing-guide",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -810,7 +3106,119 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/weather-resistance-large-format-prints",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/wedding-event-backdrops-printing-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/blog/wedding-event-branding-printing-guide-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/what-is-cnc-cutting-how-it-works",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/what-is-corporate-branding-kenyan-businesses",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/what-is-large-format-printing-how-it-works",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/what-is-laser-cutting-how-it-works",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/what-is-uv-printing-how-it-works",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/when-not-to-use-cnc-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/when-not-to-use-laser-cutting",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/when-not-use-uv-printing",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/why-businesses-choose-cnc-cutting-precision",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/why-businesses-choose-large-format-printing-advertising",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/why-businesses-choose-laser-cutting-precision",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/why-laser-cutting-ideal-custom-projects",
       "priority": "0.65",
       "changefreq": "monthly",
       "type": "blog-post",
@@ -826,12 +3234,36 @@
       "lastmod": "2026-06-25"
     },
     {
+      "url": "/blog/window-graphics-glass-branding-guide",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/women-candidate-branding-strategy-kenya",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
+      "url": "/blog/youth-focused-campaign-branding-strategies",
+      "priority": "0.65",
+      "changefreq": "monthly",
+      "type": "blog-post",
+      "source": "src/data/blogData.js",
+      "lastmod": "2026-06-25"
+    },
+    {
       "url": "/contact",
       "priority": "0.8",
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/corporate-services",
@@ -839,7 +3271,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/corporate-terms",
@@ -847,7 +3279,7 @@
       "changefreq": "yearly",
       "type": "legal",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/corporate/corporate-branding",
@@ -855,7 +3287,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/corporate/events-exhibitions",
@@ -863,7 +3295,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/faq",
@@ -871,7 +3303,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/gallery",
@@ -879,7 +3311,15 @@
       "changefreq": "weekly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
+    },
+    {
+      "url": "/home",
+      "priority": "0.7",
+      "changefreq": "monthly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/privacy-policy",
@@ -887,7 +3327,7 @@
       "changefreq": "yearly",
       "type": "legal",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/service/branding-consultation",
@@ -975,7 +3415,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/digital-printing",
@@ -983,7 +3423,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/dtf-printing",
@@ -991,7 +3431,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/large-format",
@@ -999,7 +3439,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/laser-cutting",
@@ -1007,7 +3447,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/plotting",
@@ -1015,7 +3455,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/sublimation-printing",
@@ -1023,7 +3463,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/t-shirt-printing",
@@ -1031,7 +3471,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/services/uv-printing",
@@ -1039,15 +3479,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-06-25"
-    },
-    {
-      "url": "/shop",
-      "priority": "0.9",
-      "changefreq": "weekly",
-      "type": "page",
-      "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/shop/product/3d-signage",
@@ -1847,7 +4279,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/team",
@@ -1855,7 +4287,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     },
     {
       "url": "/terms-of-service",
@@ -1863,7 +4295,7 @@
       "changefreq": "yearly",
       "type": "legal",
       "source": "static",
-      "lastmod": "2026-06-25"
+      "lastmod": "2026-07-06"
     }
   ]
 }

@@ -1,15 +1,15 @@
 // 1. Import all 12 of your custom gallery images
-import safaricomBrandingImg from '../assets/giftbox.jpg';
-import weddingSignageImg from '../assets/uvmagazines.jpg';
+import safaricomBrandingImg from '../assets/giftbox.webp';
+import weddingSignageImg from '../assets/uvmagazines.webp';
 import javaMenuBoardsImg from '../assets/tablenumbers.jpg';
 import schoolAwardsImg from '../assets/cutouts.jpg';
 import techTshirtsImg from '../assets/teadrops.jpg';
-import hospitalSignageImg from '../assets/signages.jpg';
-import retailGraphicsImg from '../assets/uvbooks.jpg';
+import hospitalSignageImg from '../assets/signages.webp';
+import retailGraphicsImg from '../assets/uvbooks.webp';
 import architecturalPlansImg from '../assets/broadbase.jpg';
 import eventBackdropImg from '../assets/lightbox.jpg';
-import metalSignageImg from '../assets/stands.jpg';
-import sportsJerseysImg from '../assets/vests.jpg';
+import metalSignageImg from '../assets/stands.webp';
+import sportsJerseysImg from '../assets/vests.webp';
 import hotelSignageImg from '../assets/lightsignage.jpg';
 
 // 2. Define and export the projects data

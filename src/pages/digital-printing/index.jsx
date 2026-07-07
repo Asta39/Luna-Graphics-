@@ -91,7 +91,7 @@ const DigitalPrintingPage = () => {
         keywords="digital printing Nairobi, flyer printing Nairobi, business card printing Kenya, brochure printing Nairobi, same day printing Nairobi, cheap printing Nairobi, stationery printing Kenya, catalogue printing Nairobi, Luna Graphics digital printing"
         schemaData={[structuredData, breadcrumbSchema, faqSchema]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-        geo={{ region: "KE-30", placename: "Nairobi", position: "-1.2921;36.8219" }}
+        geo={{ region: "KE-30", placename: "Nairobi", position: "-1.280302;36.822639" }}
       />
       <Header />
       <main className="pt-16">
@@ -120,7 +120,7 @@ const DigitalPrintingPage = () => {
               <h3 className="font-heading font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li><button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button></li>
-                <li><button onClick={() => navigate('/shop')} className="hover:text-white transition-colors">Shop</button></li>
+                <li><button onClick={() => navigate('/')} className="hover:text-white transition-colors">Shop</button></li>
                 <li><button onClick={() => navigate('/gallery')} className="hover:text-white transition-colors">Gallery</button></li>
                 <li><button onClick={() => navigate('/contact')} className="hover:text-white transition-colors">Contact</button></li>
               </ul>

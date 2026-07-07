@@ -37,8 +37,8 @@ const Homepage = () => {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "-1.2921",
-      "longitude": "36.8219"
+      "latitude": -1.280302,
+      "longitude": 36.822639
     },
     "openingHoursSpecification": [
       {
@@ -51,7 +51,7 @@ const Homepage = () => {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "Saturday",
         "opens": "09:00",
-        "closes": "14:00"
+        "closes": "16:00"
       }
     ],
     "priceRange": "$$",
@@ -68,7 +68,7 @@ const Homepage = () => {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://lunagraphics.co.ke/search?q={search_term_string}"
+        "urlTemplate": "https://lunagraphics.co.ke/?search={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -167,7 +167,7 @@ const Homepage = () => {
         geo={{
           region: "KE-30",
           placename: "Nairobi",
-          position: "-1.2921;36.8219"
+          position: "-1.280302;36.822639"
         }}
       />
 

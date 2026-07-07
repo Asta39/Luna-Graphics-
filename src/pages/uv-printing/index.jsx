@@ -15,16 +15,9 @@ import ContactForm from '../../components/services/ContactForm';
 import Breadcrumb from '../../components/services/Breadcrumb';
 import logoImage from '../../assets/luna-logo2.png';
 
-// === MODAL COMPONENT ===
-const QuoteModal = ({ isOpen, onClose, onSubmit, quoteDetails }) => {
-  // ... (Modal code remains the same, it's correct)
-};
-
 // === MAIN PAGE COMPONENT ===
 const UVPrintingServicesPage = () => {
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentQuote, setCurrentQuote] = useState(null);
 
   const pageData = services["uv-printing"];
 
@@ -127,22 +120,7 @@ const UVPrintingServicesPage = () => {
 
   const breadcrumbItems = [ { label: "Home", path: "/" }, { label: "Services", path: "/services" }, { label: pageData.title, path: null } ];
 
-  const handleGetQuote = (packageData = null) => {
-    setCurrentQuote({ service: pageData.title, package: packageData?.name });
-    setIsModalOpen(true);
-  };
-
-  const handleQuoteSubmit = (formData) => {
-    const phoneNumber = '254791159618';
-    const { name, email, phone } = formData;
-    let message = `*New Quote Request*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Service Requested:* ${currentQuote.service}`;
-    if (currentQuote.package) message += `\n*Package:* ${currentQuote.package}`;
-    message += `\n\nPlease provide a quote. Thank you!`;
-    // ===== ENHANCED SEO: Fixed spacing in WhatsApp URL =====
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    setTimeout(() => { setIsModalOpen(false); }, 500);
-  };
+  const handleGetQuote = () => navigate('/contact', { state: { service: pageData.title } });
 
   const handleWhatsAppChat = () => {
     const phoneNumber = '254791159618';
@@ -166,7 +144,7 @@ const UVPrintingServicesPage = () => {
         geo={{
           region: "KE-30",
           placename: "Nairobi",
-          position: "-1.2921;36.8219"
+          position: "-1.280302;36.822639"
         }}
       />
       <Header />
@@ -181,7 +159,6 @@ const UVPrintingServicesPage = () => {
         <RelatedBlogPosts posts={pageData.relatedBlogPosts} />
         <ContactForm serviceName={pageData.title} />
       </main>
-      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={handleQuoteSubmit} quoteDetails={currentQuote} />
       <footer className="bg-primary text-white py-12">{/* ... footer JSX ... */}
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

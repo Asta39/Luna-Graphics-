@@ -10,7 +10,7 @@ export const products = [
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/1.jpg',
+      '/products/1.webp',
       
     ],
     badge: 'Best Seller',
@@ -73,7 +73,7 @@ Store in the provided carry bag when not in use. Clean the banner with a damp cl
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/2.jpg',
+      '/products/2.webp',
       
     ],
     badge: 'Popular',
@@ -126,7 +126,7 @@ With the extra width, consider using split designs or panoramic images for maxim
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/3.jpg',
+      '/products/3.webp',
       
     ],
     badge: 'New',
@@ -185,7 +185,7 @@ Store in carry case when not in use. Clean banner with soft, damp cloth. Avoid a
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/4.jpg',
+      '/products/4.webp',
       
     ],
     badge: 'Budget Friendly',
@@ -239,7 +239,7 @@ Note: X-banners are best for indoor use and short-term displays. For heavy-duty 
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/5.jpg',
+      '/products/5.webp',
       
     ],
     badge: 'Premium',
@@ -297,7 +297,7 @@ The curved shape works best with flowing designs and vertical elements. Our desi
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/6.jpg',
+      '/products/6.webp',
       
     ],
     badge: 'Hot',
@@ -357,7 +357,7 @@ Pro Tip: The curved design creates a more engaging presence than flat backdrops.
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/7.jpg',
+      '/products/7.webp',
       
     ],
     badge: 'Premium',
@@ -408,7 +408,7 @@ Transport Note: Due to size, this requires a larger vehicle for transport. We of
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/8.jpg',
+      '/products/8.webp',
       
     ],
     badge: 'Compact',
@@ -463,7 +463,7 @@ Fits in a compact carry case that can be transported by one person. Perfect for 
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/9.jpg',
+      '/products/9.webp',
       
     ],
     badge: 'Popular',
@@ -519,7 +519,7 @@ This size is perfect for portrait-oriented designs and vertical branding element
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/10.jpg',
+      '/products/10.webp',
       
     ],
     badge: 'New',
@@ -577,7 +577,7 @@ Designed with rubberized feet and padding to prevent damage to door frames. Ensu
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/11.jpg',
+      '/products/11.webp',
       
     ],
     badge: 'New',
@@ -636,7 +636,7 @@ Machine wash cold on gentle cycle. Tumble dry low or air dry. Do not iron. The f
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/12.jpg',
+      '/products/12.webp',
       
     ],
     rating: 4.6,
@@ -670,7 +670,7 @@ Machine wash cold on gentle cycle. Tumble dry low or air dry. Do not iron. The f
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/13.jpg',
+      '/products/13.webp',
       
     ],
     badge: 'Outdoor',
@@ -725,7 +725,7 @@ Wind Rating: Tested to withstand winds up to 40km/h with proper base.`,
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/14.jpg',
+      '/products/14.webp',
       
     ],
     badge: 'Outdoor',
@@ -777,7 +777,7 @@ Taller banners catch more wind. Always use appropriate base weight and consider 
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/15.jpg',
+      '/products/15.webp',
       
     ],
     badge: 'Outdoor',
@@ -835,7 +835,7 @@ The rectangular shape is ideal for vertical text and logos. Consider using bold,
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/16.jpg',
+      '/products/16.webp',
       
     ],
     badge: 'Outdoor',
@@ -889,7 +889,7 @@ Always ensure proper base weight (minimum 15kg water/sand) and monitor during hi
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/17.jpg',
+      '/products/17.webp',
       
     ],
     badge: 'Adjustable',
@@ -944,7 +944,7 @@ Height can be adjusted in 10cm increments. Width adjustments available on select
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/18.jpg',
+      '/products/18.webp',
       
     ],
     badge: 'Adjustable',
@@ -996,7 +996,7 @@ When extended to 4m, ensure adequate base weight and avoid use in winds above 30
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/19.jpg',
+      '/products/19.webp',
       
     ],
     badge: 'Premium',
@@ -1056,7 +1056,7 @@ Water-resistant canopy and walls. Not recommended for use in winds above 40km/h 
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/20.jpg',
+      '/products/20.webp',
       
     ],
     badge: 'Premium',
@@ -1112,7 +1112,7 @@ Requires truck or large SUV for transport. We offer delivery and setup services 
     priceUnit: 'sq ft',
     minOrder: 1,
     images: [
-      '/products/21.jpg',
+      '/products/21.webp',
       
     ],
     badge: 'Popular',
@@ -1168,7 +1168,7 @@ White ink printing on clear acrylic creates an elegant frosted effect. Consider 
     priceUnit: 'sq ft',
     minOrder: 2,
     images: [
-      '/products/22.jpg',
+      '/products/22.webp',
       
     ],
     badge: 'Premium',
@@ -1211,11 +1211,11 @@ The extra weight requires more robust mounting. We include heavy-duty standoffs 
     name: '3D Signage Channel Letters',
     category: 'signage',
     subcategory: '3D Signs',
-    price: 'iinquire',
+    price: 'inquire',
     priceUnit: 'linear ft',
     minOrder: 3,
     images: [
-      '/products/23.jpg',
+      '/products/23.webp',
       
     ],
     badge: 'Premium',
@@ -1271,7 +1271,7 @@ Available as non-illuminated, front-lit, back-lit (halo), or combination lit for
     priceUnit: 'sq ft',
     minOrder: 1,
     images: [
-      '/products/24.jpg',
+      '/products/24.webp',
      
     ],
     badge: 'Premium',
@@ -1325,7 +1325,7 @@ Uses only 15-25 watts per square foot - less than a standard light bulb.`,
     priceUnit: 'sq ft',
     minOrder: 1,
     images: [
-      '/products/25.jpg',
+      '/products/25.webp',
       
     ],
     badge: 'Premium',
@@ -1382,7 +1382,7 @@ Can be wall-mounted, suspended, or freestanding. Includes all mounting hardware.
     priceUnit: 'sq ft',
     minOrder: 1,
     images: [
-      '/products/26.jpg',
+      '/products/26.webp',
      
     ],
     rating: 4.7,
@@ -1429,7 +1429,7 @@ Powder-coated finish resists weather, UV, and corrosion. Suitable for outdoor us
     priceUnit: 'linear ft',
     minOrder: 3,
     images: [
-      '/products/27.jpg',
+      '/products/27.webp',
      
     ],
     badge: 'Trending',
@@ -1482,7 +1482,7 @@ Any color, any design. We can recreate your logo in neon or create custom letter
     priceUnit: 'sq ft',
     minOrder: 2,
     images: [
-      '/products/28.jpg',
+      '/products/28.webp',
       
     ],
     badge: 'Safety',
@@ -1536,7 +1536,7 @@ Weather-resistant with 7+ year outdoor lifespan. Resists fading, cracking, and p
     priceUnit: 'sign',
     minOrder: 5,
     images: [
-      '/products/29.jpg',
+      '/products/29.webp',
       
     ],
     badge: 'OSHA Compliant',
@@ -1590,7 +1590,7 @@ Meets NFPA 101, IBC, and OSHA requirements for exit signage. UL 924 listed.`,
     priceUnit: 'sign',
     minOrder: 5,
     images: [
-      '/products/30.jpg',
+      '/products/30.webp',
      
     ],
     rating: 4.6,
@@ -1644,7 +1644,7 @@ Standoffs for dimensional look, adhesive for flush mount, or wall brackets for e
     priceUnit: 'sign',
     minOrder: 5,
     images: [
-      '/products/31.jpg',
+      '/products/31.webp',
      
     ],
     rating: 4.6,
@@ -1699,7 +1699,7 @@ The modular insert system allows you to change room names or directions without 
     priceUnit: 'sign',
     minOrder: 10,
     images: [
-      '/products/32.jpg',
+      '/products/32.webp',
       
     ],
     badge: 'OSHA Compliant',
@@ -1752,7 +1752,7 @@ Photoluminescent: Glows for 6+ hours after light exposure`,
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/33.jpg',
+      '/products/33.webp',
       
     ],
     badge: 'Best Seller',
@@ -1809,7 +1809,7 @@ Free basic design with orders over 500 cards. Professional design services avail
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/34.jpg',
+      '/products/34.webp',
       
     ],
     badge: 'Premium',
@@ -1856,7 +1856,7 @@ Recommended For:
     priceUnit: '500 pcs',
     minOrder: 500,
     images: [
-      '/products/35.jpg',
+      '/products/35.webp',
      
     ],
     rating: 4.7,
@@ -1904,7 +1904,7 @@ Security Features:
     priceUnit: '500 pcs',
     minOrder: 500,
     images: [
-      '/products/36.jpg',
+      '/products/36.webp',
     ],
     rating: 4.6,
     reviews: 234,
@@ -1944,7 +1944,7 @@ Uses:
     priceUnit: '500 pcs',
     minOrder: 500,
     images: [
-      '/products/37.jpg',
+      '/products/37.webp',
      
     ],
     badge: 'Popular',
@@ -1995,7 +1995,7 @@ Uses:
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/38.jpg',
+      '/products/38.webp',
       
     ],
     badge: 'Popular',
@@ -2051,7 +2051,7 @@ Finishing:
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/39.jpg',
+      '/products/39.webp',
       
     ],
     badge: 'Premium',
@@ -2108,7 +2108,7 @@ Paper Options:
     priceUnit: '500 pcs',
     minOrder: 500,
     images: [
-      '/products/40.jpg',
+      '/products/40.webp',
      
     ],
     rating: 4.8,
@@ -2162,7 +2162,7 @@ We can handle mailing and distribution directly to your subscriber list.`,
     priceUnit: '1000 pcs',
     minOrder: 1000,
     images: [
-      '/products/41.jpg',
+      '/products/41.webp',
       
     ],
     badge: 'Best Value',
@@ -2211,7 +2211,7 @@ Distribution Tips:
     priceUnit: '500 pcs',
     minOrder: 500,
     images: [
-      '/products/42.jpg',
+      '/products/42.webp',
       
     ],
     rating: 4.6,
@@ -2267,7 +2267,7 @@ We offer door-to-door distribution services in select areas, or you can handle d
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/43.jpg',
+      '/products/43.webp',
       
     ],
     rating: 4.8,
@@ -2318,7 +2318,7 @@ Uses:
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/44.jpg',
+      '/products/44.webp',
       
     ],
     rating: 4.9,
@@ -2369,7 +2369,7 @@ Uses:
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/45.jpg',
+      '/products/45.webp',
       
     ],
     badge: 'New',
@@ -2423,7 +2423,7 @@ Customization:
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/46.jpg',
+      '/products/46.webp',
      
     ],
     badge: 'New',
@@ -2478,7 +2478,7 @@ Available for rent in Nairobi area - contact us for pricing.`,
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/47.jpg',
+      '/products/47.webp',
       
     ],
     badge: 'Media Favorite',
@@ -2530,7 +2530,7 @@ Applications:
     priceUnit: 'each',
     minOrder: 5,
     images: [
-      '/products/48.jpg',
+      '/products/48.webp',
      
     ],
     rating: 4.6,
@@ -2582,7 +2582,7 @@ Applications:
     priceUnit: 'each',
     minOrder: 3,
     images: [
-      '/products/49.jpg',
+      '/products/49.webp',
      
     ],
     rating: 4.7,
@@ -2632,7 +2632,7 @@ Substrate Options:
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/50.jpg',
+      '/products/50.webp',
       
     ],
     rating: 4.6,
@@ -2682,7 +2682,7 @@ Applications:
     priceUnit: '50 pcs',
     minOrder: 50,
     images: [
-      '/products/51.jpg',
+      '/products/51.webp',
       
     ],
     rating: 4.5,
@@ -2785,7 +2785,7 @@ Applications:
     priceUnit: '100 pcs',
     minOrder: 100,
     images: [
-      '/products/52.jpg',
+      '/products/52.webp',
       
     ],
     rating: 4.5,
@@ -2833,7 +2833,7 @@ All lanyards include safety breakaway clasp that releases under pressure - essen
     priceUnit: '500 pcs',
     minOrder: 500,
     images: [
-      '/products/53.jpg',
+      '/products/53.webp',
       
     ],
     badge: 'Security',
@@ -2886,7 +2886,7 @@ Uses:
     priceUnit: 'each',
     minOrder: 1,
     images: [
-      '/products/54.jpg',
+      '/products/54.webp',
       
     ],
     badge: 'VIP',
@@ -2935,7 +2935,7 @@ We offer rental service in Nairobi area with delivery and pickup. Contact us for
     priceUnit: 'each',
     minOrder: 10,
     images: [
-      '/products/56.jpg',
+      '/products/56.webp',
     
     ],
     badge: 'Popular',
@@ -2987,7 +2987,7 @@ Machine wash warm, tumble dry low. Embroidery lasts the lifetime of the garment.
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/55.jpg',
+      '/products/55.webp',
       
     ],
     badge: 'Best Value',
@@ -3033,7 +3033,7 @@ Popular Uses:
     priceUnit: 'each',
     minOrder: 15,
     images: [
-      '/products/57.jpg',
+      '/products/57.webp',
       
     ],
     badge: 'New',
@@ -3081,7 +3081,7 @@ Pre-shrunk fabrics, reinforced seams, and colorfast printing ensure your shirts 
     priceUnit: 'each',
     minOrder: 10,
     images: [
-      '/products/58.jpg',
+      '/products/58.webp',
       
     ],
     badge: 'Premium',
@@ -3129,7 +3129,7 @@ Embroidery recommended for longevity on fleece. Large back prints available for 
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/59.jpg',
+      '/products/59.webp',
       
     ],
     badge: 'Best Value',
@@ -3178,7 +3178,7 @@ Embroidery is the standard for caps, providing durability and a premium look. 3D
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/60.jpg',
+      '/products/60.webp',
       
     ],
     badge: 'Safety',
@@ -3229,7 +3229,7 @@ Screen printing or heat transfer logo on front and/or back. Reflective logo opti
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/61.jpg',
+      '/products/61.webp',
       
     ],
     badge: 'Safety',
@@ -3280,7 +3280,7 @@ Large back print and left chest logo standard. Reflective ink options for nightt
     priceUnit: 'each',
     minOrder: 10,
     images: [
-      '/products/62.jpg',
+      '/products/62.webp',
       
     ],
     rating: 4.5,
@@ -3333,7 +3333,7 @@ Embroidery recommended for durability. Large back prints available for overalls.
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/63.jpg',
+      '/products/63.webp',
      
     ],
     badge: 'Safety',
@@ -3384,7 +3384,7 @@ Durable pad printing or vinyl decals on front, sides, or back. Reflective decal 
     priceUnit: 'each',
     minOrder: 12,
     images: [
-      '/products/64.jpg',
+      '/products/64.webp',
       
     ],
     badge: 'Hot',
@@ -3440,7 +3440,7 @@ Uses:
     priceUnit: 'each',
     minOrder: 12,
     images: [
-      '/products/65.jpg',
+      '/products/65.webp',
       
     ],
     rating: 4.7,
@@ -3489,7 +3489,7 @@ Full-color, edge-to-edge printing with photographic quality. Complex designs, ph
     priceUnit: 'each',
     minOrder: 12,
     images: [
-      '/products/66.jpg',
+      '/products/66.webp',
       
     ],
     badge: 'Fun',
@@ -3539,7 +3539,7 @@ Design Tips:
     priceUnit: 'each',
     minOrder: 12,
     images: [
-      '/products/67.jpg',
+      '/products/67.webp',
       
     ],
     rating: 4.7,
@@ -3589,7 +3589,7 @@ Laser engraving for permanent, elegant marking. Full-color printing also availab
     priceUnit: 'each',
     minOrder: 12,
     images: [
-      '/products/68.jpg',
+      '/products/68.webp',
       
     ],
     rating: 4.7,
@@ -3636,7 +3636,7 @@ Laser engraving for permanent, elegant logo. Full-color printing also available.
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/69.jpg',
+      '/products/69.webp',
       
     ],
     badge: 'Eco-Friendly',
@@ -3684,7 +3684,7 @@ Features:
     priceUnit: 'each',
     minOrder: 25,
     images: [
-      '/products/70.jpg',
+      '/products/70.webp',
      
     ],
     badge: 'New',
@@ -3733,7 +3733,7 @@ Screen printing, pad printing, or laser engraving depending on material.`,
     priceUnit: 'each',
     minOrder: 50,
     images: [
-      '/products/71.jpg',
+      '/products/71.webp',
       
     ],
     rating: 4.5,
@@ -3778,7 +3778,7 @@ Laser engraving creates a permanent, elegant silver finish on colored pens. Scre
     priceUnit: 'each',
     minOrder: 25,
     images: [
-      '/products/72.jpg',
+      '/products/72.webp',
       
     ],
     rating: 4.7,
@@ -3826,7 +3826,7 @@ Debossing (pressed logo) creates an elegant, subtle impression. Foil stamping or
     priceUnit: 'each',
     minOrder: 50,
     images: [
-      '/products/73.jpg',
+      '/products/73.webp',
       
     ],
     rating: 4.6,
@@ -3880,7 +3880,7 @@ Sturdy chipboard with your branding printed on the back cover.`,
     priceUnit: 'each',
     minOrder: 25,
     images: [
-      '/products/74.jpg',
+      '/products/74.webp',
       
     ],
     badge: 'New',
@@ -3935,7 +3935,7 @@ Customization:
     priceUnit: 'each',
     minOrder: 25,
     images: [
-      '/products/75.jpg',
+      '/products/75.webp',
      
     ],
     rating: 4.6,
@@ -3987,7 +3987,7 @@ Styles:
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/76.jpg',
+      '/products/76.webp',
       
     ],
     rating: 4.8,
@@ -4037,7 +4037,7 @@ CE, FCC, and RoHS certified with overcharge protection.`,
     priceUnit: 'each',
     minOrder: 50,
     images: [
-      '/products/77.jpg',
+      '/products/77.webp',
      
     ],
     rating: 4.5,
@@ -4087,7 +4087,7 @@ Sizes:
     priceUnit: 'each',
     minOrder: 12,
     images: [
-      '/products/78.jpg',
+      '/products/78.webp',
       
     ],
     badge: 'Premium',
@@ -4139,7 +4139,7 @@ Branding:
     priceUnit: 'each',
     minOrder: 20,
     images: [
-      '/products/79.jpg',
+      '/products/79.webp',
       
     ],
     rating: 4.6,
@@ -4190,7 +4190,7 @@ Materials:
     priceUnit: 'each',
     minOrder: 50,
     images: [
-      '/products/80.jpg',
+      '/products/80.webp',
      
     ],
     rating: 4.5,
@@ -4243,7 +4243,7 @@ Individual names, titles, and company branding. QR code integration for digital 
     priceUnit: 'each',
     minOrder: 50,
     images: [
-      '/products/81.jpg',
+      '/products/81.webp',
       
     ],
     rating: 4.6,
@@ -4296,7 +4296,7 @@ Security:
     priceUnit: 'each',
     minOrder: 100,
     images: [
-      '/products/82.jpg',
+      '/products/82.webp',
       
     ],
     rating: 4.5,
@@ -4351,7 +4351,7 @@ Finishing:
     priceUnit: 'each',
     minOrder: 10,
     images: [
-      '/products/83.jpg',
+      '/products/83.webp',
       
     ],
     rating: 4.6,
@@ -4401,7 +4401,7 @@ Applications:
     priceUnit: 'sq meter',
     minOrder: 5,
     images: [
-      '/products/84.jpg',
+      '/products/84.webp',
       
     ],
     badge: 'Best Value',
@@ -4461,7 +4461,7 @@ Uses:
     priceUnit: 'sq meter',
     minOrder: 5,
     images: [
-      '/products/85.jpg',
+      '/products/85.webp',
      
     ],
     badge: 'Best Value',
@@ -4516,7 +4516,7 @@ Finishing:
     priceUnit: 'sq ft',
     minOrder: 4,
     images: [
-      '/products/86.jpg',
+      '/products/86.webp',
       
     ],
     rating: 4.5,
@@ -4565,7 +4565,7 @@ Easily mounted with double-sided tape, Velcro, or easel stands. Can be drilled f
     priceUnit: 'sq ft',
     minOrder: 10,
     images: [
-      '/products/87.jpg',
+      '/products/87.webp',
      
     ],
     badge: 'Outdoor',
@@ -4618,7 +4618,7 @@ Applications:
     priceUnit: 'vehicle',
     minOrder: 1,
     images: [
-      '/products/89.jpg',
+      '/products/89.webp',
      
     ],
     badge: 'Premium',
@@ -4673,7 +4673,7 @@ Professional installation recommended. We offer installation services or can ref
     priceUnit: 'sq ft',
     minOrder: 10,
     images: [
-      '/products/90.jpg',
+      '/products/90.webp',
       
     ],
     badge: 'New',
@@ -4727,7 +4727,7 @@ Applications:
     priceUnit: 'sq ft',
     minOrder: 10,
     images: [
-      '/products/91.jpg',
+      '/products/91.webp',
       
     ],
     badge: 'New',
@@ -4785,7 +4785,7 @@ Outdoor: 3-6 months (short-term promotions)`,
     priceUnit: 'set',
     minOrder: 1,
     images: [
-      '/products/92.jpg',
+      '/products/92.webp',
       
     ],
     badge: 'New',
@@ -4840,7 +4840,7 @@ Applications:
     priceUnit: 'each',
     minOrder: 10,
     images: [
-      '/products/93.jpg',
+      '/products/93.webp',
       
     ],
     rating: 4.7,

@@ -6,7 +6,7 @@ import Icon from '../../../components/AppIcon'; // Added Icon import for consist
 
 // 1. IMPORT YOUR NEW HERO IMAGE
 // The path goes up three levels to get from this component's folder back to 'src'
-import heroSectionImage from '../../../assets/homepage-hero (2).png'; // <-- IMPORTANT: Replace with your actual filename
+import heroSectionImage from '../../../assets/homepage-hero.webp';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -117,6 +117,10 @@ const HeroSection = () => {
                 src={heroSectionImage}
                 alt="Professional printing equipment and services at Luna Graphics"
                 className="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl"
+                loading="eager"
+                fetchpriority="high"
+                width="1600"
+                height="1581"
               />
               
               {/* Floating Cards */}

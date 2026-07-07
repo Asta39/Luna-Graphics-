@@ -14,7 +14,7 @@ const ContactInfo = () => {
       tertiary: 'Near Khoja Stage',
       action: {
         label: 'Get Directions',
-        onClick: () => window.open('https://maps.google.com/?q=-1.2864,36.8172', '_blank')
+        onClick: () => window.open('https://maps.google.com/?q=-1.280302,36.822639', '_blank')
       }
     },
     {

@@ -257,7 +257,7 @@ const ContactPage = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-primary-100 mb-6">
-            Join hundreds of satisfied customers who trust Halo Creatives for their printing needs.
+            Join hundreds of satisfied customers who trust Luna Graphics for their printing needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

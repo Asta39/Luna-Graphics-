@@ -27743,7 +27743,7 @@ ${createTable(
   },
   {
   "id": 400,
-  "slug": "future-corporate-branding-kenya",
+  "slug": "future-corporate-branding-kenya-trends-technology-transformation",
   "title": "The Future of Corporate Branding in Kenya: Trends, Technology & Transformation",
   "excerpt": "Discover how Kenyan corporate branding is evolving through digital innovation, sustainability imperatives, and cultural authenticity. Explore emerging strategies reshaping brand identity, customer engagement, and market positioning in East Africa's dynamic business landscape.",
   "content": `
@@ -27952,10 +27952,10 @@ ${createTable(
   </ul>
 </div>
     `,
-    author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.jpg" },
+    author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.webp" },
     category: "printing-tips",
     tags: ["DTF Printing Nairobi", "Direct to Film Kenya", "T-shirt Printing Nairobi", "Garment Printing Kenya", "Custom T-shirts Nairobi", "DTF vs Screen Printing"],
-    featuredImage: "/assets/dtf-printer.jpg",
+    featuredImage: "/assets/dtf-printer.webp",
     publishedAt: "2024-06-01T09:00:00Z",
     updatedAt: "2024-06-01T09:00:00Z",
     readTime: 8,
@@ -28025,10 +28025,10 @@ ${createTable(
   </ul>
 </div>
     `,
-    author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.jpg" },
+    author: { name: "Luna Graphics Team", role: "Print Specialists", avatar: "/assets/team-member-placeholder.webp" },
     category: "printing-tips",
     tags: ["Sublimation Printing Nairobi", "Dye Sublimation Kenya", "Mug Printing Nairobi", "Sports Jersey Printing Kenya", "Corporate Gifts Nairobi", "Sublimation Gifts Kenya"],
-    featuredImage: "/assets/heatpress.jpg",
+    featuredImage: "/assets/heatpress.webp",
     publishedAt: "2024-06-05T09:00:00Z",
     updatedAt: "2024-06-05T09:00:00Z",
     readTime: 7,
@@ -28107,10 +28107,10 @@ ${createTable(
   </ul>
 </div>
     `,
-    author: { name: "Luna Graphics Team", role: "Corporate Solutions", avatar: "/assets/team-member-placeholder.jpg" },
+    author: { name: "Luna Graphics Team", role: "Corporate Solutions", avatar: "/assets/team-member-placeholder.webp" },
     category: "corporate-branding",
     tags: ["Corporate Gifts Nairobi", "Branded Gifts Kenya", "Corporate Printing Kenya", "Promotional Items Nairobi", "Branded Merchandise Kenya", "Corporate Gifting Nairobi"],
-    featuredImage: "/assets/giftbox.jpg",
+    featuredImage: "/assets/giftbox.webp",
     publishedAt: "2024-06-10T09:00:00Z",
     updatedAt: "2024-06-10T09:00:00Z",
     readTime: 9,
@@ -28181,10 +28181,10 @@ ${createTable(
   </ul>
 </div>
     `,
-    author: { name: "Luna Graphics Team", role: "Display Solutions", avatar: "/assets/team-member-placeholder.jpg" },
+    author: { name: "Luna Graphics Team", role: "Display Solutions", avatar: "/assets/team-member-placeholder.webp" },
     category: "large-format",
     tags: ["Roll-Up Banner Nairobi", "Retractable Banner Kenya", "Pull-Up Banner Nairobi", "Banner Printing Prices Kenya", "Display Banners Nairobi", "Trade Show Banners Kenya"],
-    featuredImage: "/assets/stands.jpg",
+    featuredImage: "/assets/stands.webp",
     publishedAt: "2024-06-15T09:00:00Z",
     updatedAt: "2024-06-15T09:00:00Z",
     readTime: 7,
@@ -28259,10 +28259,10 @@ ${createTable(
   </ul>
 </div>
     `,
-    author: { name: "Luna Graphics Team", role: "Exhibition Solutions", avatar: "/assets/team-member-placeholder.jpg" },
+    author: { name: "Luna Graphics Team", role: "Exhibition Solutions", avatar: "/assets/team-member-placeholder.webp" },
     category: "exhibition-events",
     tags: ["Exhibition Display Nairobi", "Trade Show Banners Kenya", "Feather Flags Nairobi", "Pop-Up Stand Kenya", "Exhibition Branding Nairobi", "Teardrop Flags Kenya", "Booth Branding Nairobi"],
-    featuredImage: "/assets/exhibition.jpg",
+    featuredImage: "/assets/exhibition.webp",
     publishedAt: "2024-06-20T09:00:00Z",
     updatedAt: "2024-06-20T09:00:00Z",
     readTime: 8,

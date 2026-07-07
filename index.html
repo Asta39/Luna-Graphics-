@@ -95,7 +95,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organisation",
+      "@type": "LocalBusiness",
       "name": "Luna Graphics",
       "image": "https://lunagraphics.co.ke/social-sharing-image.jpg",
       "url": "https://lunagraphics.co.ke",
@@ -105,12 +105,14 @@
         "@type": "PostalAddress",
         "streetAddress": "Kweria Road",
         "addressLocality": "Nairobi",
+        "addressRegion": "Nairobi County",
+        "postalCode": "00100",
         "addressCountry": "KE"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "-1.2921",
-        "longitude": "36.8219"
+        "latitude": -1.280302,
+        "longitude": 36.822639
       },
       "openingHoursSpecification": [
         {
@@ -123,7 +125,7 @@
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Saturday",
           "opens": "09:00",
-          "closes": "14:00"
+          "closes": "16:00"
         }
       ],
       "priceRange": "$$",
@@ -146,7 +148,7 @@
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://lunagraphics.co.ke/search?q={search_term_string}"
+          "urlTemplate": "https://lunagraphics.co.ke/?search={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
@@ -162,7 +164,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="/social-sharing-image.jpg" as="image">
     
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XK78CKXKG2"></script>

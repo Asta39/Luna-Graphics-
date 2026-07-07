@@ -51,7 +51,7 @@ const CorporateBranding = () => {
         geo={{
           region: "KE-30",
           placename: "Nairobi",
-          position: "-1.2921;36.8219"
+          position: "-1.280302;36.822639"
         }}
         schemaData={structuredData}
       />

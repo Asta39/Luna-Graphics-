@@ -152,7 +152,7 @@ const ProductDetail = () => {
         geo={{
           region: "KE-30",
           placename: "Nairobi",
-          position: "-1.2921;36.8219"
+          position: "-1.280302;36.822639"
         }}
         schemaData={{
           "@context": "https://schema.org/",
@@ -161,26 +161,23 @@ const ProductDetail = () => {
           "image": [
             product.image,
             ...(product.images || [])
-          ].filter(Boolean),
+          ].filter(Boolean).map((img) => img.startsWith('http') ? img : `https://lunagraphics.co.ke${img}`),
           "description": product.description,
           "sku": product.id,
           "brand": {
             "@type": "Brand",
             "name": "Luna Graphics"
           },
-          "offers": {
-            "@type": "Offer",
-            "url": `https://lunagraphics.co.ke/shop/product/${product.id}`,
-            "priceCurrency": "KES",
-            "price": product.price,
-            "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-            "itemCondition": "https://schema.org/NewCondition"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": product.rating || "4.8",
-            "reviewCount": product.reviews || "24"
-          }
+          ...(hasValidPrice(product.price) ? {
+            "offers": {
+              "@type": "Offer",
+              "url": `https://lunagraphics.co.ke/shop/product/${product.id}`,
+              "priceCurrency": "KES",
+              "price": product.price,
+              "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          } : {})
         }}
       />
       <Header/>
@@ -191,7 +188,7 @@ const ProductDetail = () => {
           <nav className="flex items-center text-sm text-gray-500">
             <button onClick={() => navigate('/')} className="hover:text-emerald-600 transition-colors">Home</button>
             <Icon name="ChevronRight" size={16} className="mx-2" />
-            <button onClick={() => navigate('/shop')} className="hover:text-emerald-600 transition-colors">Shop</button>
+            <button onClick={() => navigate('/')} className="hover:text-emerald-600 transition-colors">Shop</button>
             <Icon name="ChevronRight" size={16} className="mx-2" />
             <button 
               onClick={() => navigate(`/shop?category=${product.category}`)} 
@@ -582,7 +579,7 @@ const ProductDetail = () => {
                 <h2 className="text-2xl font-bold text-gray-900">Related Products</h2>
                 <p className="text-gray-500 mt-1">You might also be interested in</p>
               </div>
-              <Button variant="outline" onClick={() => navigate('/shop')}>
+              <Button variant="outline" onClick={() => navigate('/')}>
                 View All
               </Button>
             </div>

@@ -26,7 +26,7 @@ Whether you need indoor displays or weather-resistant outdoor signage, our large
     ],
     materials: ['PVC Vinyl (440gsm)', 'Canvas', 'Backlit Film', 'Mesh Banner', 'Photo Paper', 'Fabric'],
     turnaround: '24-48 hours',
-    image: '/services/large-format.jpg',
+    image: '/services/large-format.webp',
     icon: 'Printer'
   },
   {
@@ -54,7 +54,7 @@ Our flatbed UV printer handles materials up to 50mm thick, opening endless possi
     ],
     materials: ['Acrylic', 'Wood', 'Glass', 'Metal', 'PVC', 'Leather', 'Ceramic'],
     turnaround: '2-3 days',
-    image: '/services/uv-printing.jpg',
+    image: '/services/uv-printing.webp',
     icon: 'Sun'
   },
   {
@@ -82,7 +82,7 @@ Perfect for small to medium runs where offset printing would be uneconomical, di
     ],
     materials: ['Gloss Art Paper', 'Matte Paper', 'Bond Paper', 'Card Stock', 'Recycled Paper', 'Specialty Papers'],
     turnaround: 'Same day - 2 days',
-    image: '/services/digital-printing.jpg',
+    image: '/services/digital-printing.webp',
     icon: 'FileText'
   },
   {
@@ -110,7 +110,7 @@ The process uses heat to convert dye into gas, which bonds with the material fib
     ],
     materials: ['Polyester Fabric', 'Ceramic Mugs', 'Aluminum Panels', 'Phone Cases', 'Mouse Pads', 'Keychains'],
     turnaround: '24-48 hours',
-    image: '/services/sublimation.jpg',
+    image: '/services/sublimation.webp',
     icon: 'Thermometer'
   },
   {
@@ -138,7 +138,7 @@ Ideal for bulk orders of t-shirts, tote bags, and promotional items where longev
     ],
     materials: ['Cotton', 'Polyester', 'Canvas', 'Paper', 'Cardboard', 'Plastic'],
     turnaround: '5-7 days',
-    image: '/services/screen-printing.jpg',
+    image: '/services/screen-printing.webp',
     icon: 'Layers'
   },
   {
@@ -166,7 +166,7 @@ With thread colors to match any brand guidelines, we can reproduce logos, text, 
     ],
     materials: ['Cotton', 'Polyester', 'Denim', 'Fleece', 'Twill', 'Pique'],
     turnaround: '5-7 days',
-    image: '/services/embroidery.jpg',
+    image: '/services/embroidery.webp',
     icon: 'Scissors'
   },
   {
@@ -194,7 +194,7 @@ The non-contact process ensures clean results without material distortion, and t
     ],
     materials: ['Wood', 'Acrylic', 'Metal', 'Glass', 'Leather', 'Paper', 'Fabric'],
     turnaround: '2-3 days',
-    image: '/services/laser.jpg',
+    image: '/services/laser.webp',
     icon: 'Zap'
   },
   {
@@ -222,7 +222,7 @@ From simple door logos to full color changes, our certified installers ensure bu
     ],
     materials: ['Cast Vinyl (3M/Avery)', 'Calendered Vinyl', 'Perforated Window Film', 'Reflective Vinyl'],
     turnaround: '2-5 days',
-    image: '/services/vehicle.jpg',
+    image: '/services/vehicle.webp',
     icon: 'Truck'
   },
   {
@@ -250,7 +250,7 @@ Our team handles permits, structural calculations, and installation, providing a
     ],
     materials: ['Acrylic', 'Metal', 'PVC', 'LED Components', 'Vinyl', 'Aluminum Composite'],
     turnaround: '5-10 days',
-    image: '/services/signage.jpg',
+    image: '/services/signage.webp',
     icon: 'MapPin'
   },
   {
@@ -278,7 +278,7 @@ From color psychology to material selection, our expertise ensures your branded 
     ],
     materials: ['Consultation Report', 'Sample Materials', 'Mood Boards', 'Cost Analysis'],
     turnaround: 'By appointment',
-    image: '/services/consultation.jpg',
+    image: '/services/consultation.webp',
     icon: 'Users'
   }
 ];

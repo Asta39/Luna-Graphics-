@@ -142,7 +142,7 @@ const Cart = () => {
         geo={{
           region: "KE-30",
           placename: "Nairobi",
-          position: "-1.2921;36.8219"
+          position: "-1.280302;36.822639"
         }}
       />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,7 +158,7 @@ const Cart = () => {
             <p className="text-gray-500 mb-6">Looks like you have not added any products yet.</p>
             <Button 
               variant="primary" 
-              onClick={() => navigate('/shop')}
+              onClick={() => navigate('/')}
               className="bg-emerald-600 hover:bg-emerald-700"
             >
               Continue Shopping
@@ -180,7 +180,7 @@ const Cart = () => {
         geo={{
           region: "KE-30",
           placename: "Nairobi",
-          position: "-1.2921;36.8219"
+          position: "-1.280302;36.822639"
         }}
       />
       <Header />
@@ -347,7 +347,7 @@ const Cart = () => {
                   variant="ghost"
                   size="sm"
                   className="w-full"
-                  onClick={() => navigate('/shop')}
+                  onClick={() => navigate('/')}
                 >
                   Continue Shopping
                 </Button>

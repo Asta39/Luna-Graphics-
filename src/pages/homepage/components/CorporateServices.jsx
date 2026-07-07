@@ -9,11 +9,11 @@ const CorporateServices = () => {
   const navigate = useNavigate();
 
   const handleLearnMore = () => {
-    navigate('/corporate-services-page');
+    navigate('/corporate-services');
   };
 
   const handleGetQuote = () => {
-    navigate('/corporate-services-page');
+    navigate('/corporate-services');
   };
 
   const electionServices = [

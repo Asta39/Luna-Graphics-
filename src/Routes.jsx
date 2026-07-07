@@ -61,6 +61,9 @@ const Routes = () => {
             <Route path="/services/dtf-printing" element={<DTFPrintingPage />} />
             <Route path="/services/sublimation-printing" element={<SublimationPrintingPage />} />
             <Route path="/services/digital-printing" element={<DigitalPrintingPage />} />
+            <Route path="/dtf-printing" element={<Navigate to="/services/dtf-printing" replace />} />
+            <Route path="/sublimation-printing" element={<Navigate to="/services/sublimation-printing" replace />} />
+            <Route path="/digital-printing" element={<Navigate to="/services/digital-printing" replace />} />
 
             <Route path="/team" element={<TeamPage />} />
             <Route path="/contact" element={<ContactPage />} />
