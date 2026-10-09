@@ -129,7 +129,7 @@ const Shop = () => {
       <SEO 
         title={searchQuery ? `Search: ${searchQuery} | Luna Graphics` : activeCategory !== 'all' ? `${categories.find(c => c.id === activeCategory)?.name || 'Products'} | Luna Graphics` : "Shop Premium Printing & Branding Services | Luna Graphics"}
         description={searchQuery ? `Looking for ${searchQuery}? Browse our selection of professional printing and branding products at Luna Graphics Nairobi.` : "Browse professional banners, signage, corporate materials, and branded merchandise. High-quality offset and digital printing in Nairobi, Kenya."}
-        canonical={activeCategory === 'all' && !searchQuery ? "https://lunagraphics.co.ke/" : `https://lunagraphics.co.ke/?category=${activeCategory}${searchQuery ? `&search=${searchQuery}` : ''}`}
+        canonical="https://lunagraphics.co.ke/"
         type="website"
         keywords="print shop Nairobi, business cards Nairobi, banner printing Kenya, brand identity, marketing materials, corporate gifts Nairobi, offset printing, digital printing Kenya"
         robots="index, follow"
@@ -139,6 +139,49 @@ const Shop = () => {
           position: "-1.280302;36.822639"
         }}
         schemaData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Luna Graphics",
+            "url": "https://lunagraphics.co.ke/",
+            "logo": "https://lunagraphics.co.ke/apple-icon-180x180.png",
+            "image": "https://lunagraphics.co.ke/social-sharing-image.jpg",
+            "telephone": "+254-791-159-618",
+            "email": "info@lunagraphics.co.ke",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kweria Road",
+              "addressLocality": "Nairobi",
+              "addressCountry": "KE"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -1.280302,
+              "longitude": 36.822639
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "16:00"
+              }
+            ],
+            "priceRange": "$$",
+            "description": "Premier print shop in Nairobi offering UV printing, large format banners, CNC cutting, laser cutting, and corporate branding services."
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://lunagraphics.co.ke/",
+            "name": "Luna Graphics"
+          },
           {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
@@ -167,7 +210,7 @@ const Shop = () => {
       <Header />
 
       {/* Trust / Identity Strip */}
-      <section className="bg-emerald-900 text-white py-3">
+      <section className="bg-emerald-900 text-white py-3 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
           <h1 className="font-semibold text-center sm:text-left">
             Luna Graphics — Printing &amp; Branding Company in Nairobi, Kenya

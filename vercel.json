@@ -1,0 +1,47 @@
+{
+  "outputDirectory": "build",
+  "redirects": [
+    { "source": "/shop", "destination": "/", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/homepage", "destination": "/", "permanent": true },
+    { "source": "/large-format", "destination": "/services/large-format", "permanent": true },
+    { "source": "/uv-printing", "destination": "/services/uv-printing", "permanent": true },
+    { "source": "/cnc-cutting", "destination": "/services/cnc-cutting", "permanent": true },
+    { "source": "/laser-cutting", "destination": "/services/laser-cutting", "permanent": true },
+    { "source": "/t-shirt-printing", "destination": "/services/t-shirt-printing", "permanent": true },
+    { "source": "/plotting", "destination": "/services/plotting", "permanent": true },
+    { "source": "/offset-printing", "destination": "/services/digital-printing", "permanent": true },
+    { "source": "/services", "destination": "/corporate-services", "permanent": true },
+    { "source": "/dtf-printing", "destination": "/services/dtf-printing", "permanent": true },
+    { "source": "/sublimation-printing", "destination": "/services/sublimation-printing", "permanent": true },
+    { "source": "/digital-printing", "destination": "/services/digital-printing", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/sitemap-(.*).xml",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    }
+  ]
+}

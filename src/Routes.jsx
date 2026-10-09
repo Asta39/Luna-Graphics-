@@ -3,7 +3,6 @@ import { BrowserRouter, Routes as RouterRoutes, Route, Navigate } from "react-ro
 import ScrollToTop from "components/ScrollToTop";
 import ErrorBoundary from "components/ErrorBoundary";
 
-const Homepage = lazy(() => import("pages/homepage"));
 const TeamPage = lazy(() => import("pages/team"));
 const ContactPage = lazy(() => import("pages/contact"));
 const GalleryPage = lazy(() => import("pages/gallery"));
@@ -30,6 +29,7 @@ const SublimationPrintingPage = lazy(() => import("./pages/sublimation-printing"
 const DigitalPrintingPage = lazy(() => import("./pages/digital-printing"));
 const BlogPage = lazy(() => import("pages/Blog"));
 const BlogPost = lazy(() => import("pages/BlogPost"));
+const CareersPage = lazy(() => import("./pages/careers"));
 const FAQPage = lazy(() => import("pages/faq"));
 const SitemapPage = lazy(() => import("pages/sitemap/SitemapPage"));
 const NotFound = lazy(() => import("pages/NotFound"));
@@ -49,9 +49,10 @@ const Routes = () => {
           <RouterRoutes>
             <Route path="/" element={<Shop />} />
             <Route path="/shop" element={<Navigate to="/" replace />} />
-            <Route path="/home" element={<Homepage />} />
-            <Route path="/homepage" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Navigate to="/" replace />} />
+            <Route path="/homepage" element={<Navigate to="/" replace />} />
 
+            <Route path="/services" element={<Navigate to="/corporate-services" replace />} />
             <Route path="/services/large-format" element={<LargeFormatServicesPage />} />
             <Route path="/services/plotting" element={<PlottingServicesPage />} />
             <Route path="/services/uv-printing" element={<UVPrintingServicesPage />} />
@@ -84,6 +85,7 @@ const Routes = () => {
 
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/careers" element={<CareersPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/sitemap" element={<SitemapPage />} />
 

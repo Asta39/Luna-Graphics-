@@ -8,6 +8,11 @@ import { getIndexableRoutes } from './route-manifest.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+if (process.env.VERCEL) {
+  console.log('⏭️  Vercel environment detected — skipping prerender (no Chrome available).');
+  process.exit(0);
+}
+
 const BUILD_DIR = path.resolve(__dirname, '../build');
 const PORT = Number(process.env.PRERENDER_PORT || 3001);
 const CONCURRENCY = Number(process.env.PRERENDER_CONCURRENCY || 4);

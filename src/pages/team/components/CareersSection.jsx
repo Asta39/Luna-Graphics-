@@ -1,15 +1,11 @@
 import React from 'react';
-// useNavigate is no longer needed in this component, so it has been removed.
+import { useNavigate } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
 const CareersSection = () => {
-  
-  // --- THIS IS THE UPDATED FUNCTION ---
-  const handleApplyClick = () => {
-    // This now opens your external careers page in a new tab.
-    window.open('https://lunaaccounts.co.ke', '_blank');
-  };
+  const navigate = useNavigate();
+  const handleApplyClick = () => navigate('/careers');
 
   const workBenefits = [
     {

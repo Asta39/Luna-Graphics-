@@ -48,7 +48,7 @@ const About = () => {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "name": "Luna Graphics",
     "url": "https://lunagraphics.co.ke",
     "logo": "https://lunagraphics.co.ke/logo.png",
@@ -79,7 +79,7 @@ const About = () => {
       <SEO 
         title="About Us | Professional Printing & Branding Solutions | Luna Graphics Kenya"
         description="Luna Graphics is a leading printing and branding company in Nairobi, Kenya. We specialize in large format printing, UV printing, laser cutting, CNC cutting, and custom signage."
-        canonical="/about"
+        canonical="https://lunagraphics.co.ke/about"
         keywords="printing company Nairobi, large format printing Kenya, UV printing Nairobi, laser cutting Kenya, CNC cutting Nairobi, custom signage Kenya, corporate branding Nairobi"
         type="website"
         robots="index, follow"

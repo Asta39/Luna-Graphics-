@@ -37,13 +37,11 @@ const CNCCuttingServicesPage = () => {
   }
 
   // 5. Define SEO variables using the single `pageData` object.
-  const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
+  const pageTitle = `CNC Cutting Nairobi | Acrylic, Wood & Foam Cutting | Luna Graphics`;
   const pageDescription = pageData.description; // Using the description from your data
   const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
   const imageUrl = pageData.heroImage;
   const brandName = "Luna Graphics";
-  const twitterHandle = "@YourTwitterHandle";
-
   // ===== ENHANCED SEO: Structured Data for LocalBusiness + Service =====
   const structuredData = {
     "@context": "https://schema.org",
@@ -131,8 +129,8 @@ const CNCCuttingServicesPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={imageUrl}
-        type="business.business"
-        keywords="CNC cutting Nairobi, CNC router Kenya, acrylic cutting Nairobi, wood CNC cutting Kenya, foam cutting Nairobi, custom fabrication Kenya, CNC signage Nairobi, precision cutting Nairobi, CNC milling Kenya, acrylic letters Nairobi, custom shapes cutting, CNC cutting services Kenya, Luna Graphics CNC"
+        type="website"
+        keywords="CNC cutting Nairobi, CNC router Kenya, acrylic cutting Nairobi, wood CNC cutting Kenya, foam cutting Nairobi, custom fabrication Kenya, CNC signage Nairobi, precision cutting Nairobi, CNC milling Kenya, acrylic letters Nairobi, custom shapes cutting, CNC cutting services Kenya, foam board cutting Nairobi, PVC cutting Kenya, CNC cutting prices Nairobi, acrylic fabrication Nairobi, signage fabrication Kenya, 3D letters Nairobi, channel letters Kenya, Luna Graphics CNC"
         schemaData={[structuredData, breadcrumbSchema]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{

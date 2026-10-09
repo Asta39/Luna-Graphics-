@@ -4,64 +4,35 @@ import { useNavigate } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
-// Demo images for the carousel (replace with your actual images)
 const heroSlides = [
   {
     id: 1,
-    image: '/products/9.webp',
-    title: 'Events & Exhibitions',
-    subtitle: 'Event booths & exhibitions merch',
-    price: 'Upon Inquiry',
-    badge: 'Featured',
-    link: '/corporate/events-exhibitions' // Editable link
+    image: '/banners/banner-large-format.webp',
+    link: '/services/large-format',
   },
   {
     id: 2,
-    image: '/products/34.webp',
-    title: 'Corporate Branding',
-    subtitle: 'Business Cards, Stationery',
-    price: 'Upon Inquiry',
-    badge: 'Popular',
-    link: '/corporate-services' // Editable link
+    image: '/banners/banner-october.webp',
+    link: '/shop',
   },
   {
     id: 3,
-    image: '/products/85.webp',
-    title: 'Large Format Printing',
-    subtitle: 'Posters, Billboards, Backdrops',
-    price: 'From KES 700',
-    badge: 'Best Seller',
-    link: '/services/large-format' // Editable link
+    image: '/banners/banner-customer-service.webp',
+    link: '/contact',
   },
-  {
-    id: 4,
-    image: '/products/55.webp',
-    title: 'Custom Merchandise',
-    subtitle: 'T-Shirts, Mugs, Gifts',
-    price: 'From KES 600',
-    badge: 'Trending',
-    link: '/shop?search=merch' // Editable link
-  }
 ];
 
-// Side banner images - now with editable links too
 const sideBanners = [
   {
     id: 1,
-    image: '/products/78.webp',
-    title: '2027 Political campaign Materials',
-    subtitle: 'Campaign merch, campaign posters, campaign signs',
-    link: '/corporate-services',
-    badge: 'Featured'
+    image: '/banners/banner-large-format.webp',
+    link: '/services/large-format',
   },
   {
     id: 2,
-    image: '/products/31.webp',
-    title: 'Office Branding',
-    subtitle: 'Wall Graphics & Signs',
-    link: '/corporate/corporate-branding',
-    badge: 'Hot'
-  }
+    image: '/banners/banner-customer-service.webp',
+    link: '/contact',
+  },
 ];
 
 const HeroBanner = ({ onSearch }) => {
@@ -70,16 +41,18 @@ const HeroBanner = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-advance carousel
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
+  // Auto-advance carousel — longer on mobile so banners are readable
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, isMobile ? 10000 : 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, isMobile]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -113,7 +86,7 @@ const HeroBanner = ({ onSearch }) => {
   };
 
   return (
-    <section className="relative bg-gray-50 pt-0 mt-20">
+    <section className="relative bg-gray-50 pt-0">
       {/* Mobile-Only Search Bar */}
       <div className="lg:hidden bg-white border-b border-gray-200 px-4 py-3 sticky top-16 z-40">
         <form onSubmit={handleSearch} className="relative">
@@ -140,152 +113,74 @@ const HeroBanner = ({ onSearch }) => {
 
       {/* Main Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
-        {/* Desktop: All same height | Mobile: Compact */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-4">
-          
-          {/* Main Carousel - Same height as side banners on desktop */}
-          <div 
-            className="lg:col-span-2 relative rounded-xl lg:rounded-2xl overflow-hidden group cursor-pointer h-[300px] sm:h-[280px] lg:h-[400px]"
+        <div className="lg:max-w-3xl lg:mx-auto grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-4">
+
+          {/* Main slot — carousel on mobile, static on desktop */}
+          <div
+            className="lg:col-span-2 relative rounded-xl lg:rounded-2xl overflow-hidden group cursor-pointer w-full"
+            style={{ aspectRatio: '1 / 1' }}
             onClick={handleMainSlideClick}
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0"
-              >
-                {/* Background Image */}
-                <img 
-                  src={currentHero.image} 
-                  alt={currentHero.title}
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent lg:from-black/70 lg:via-black/40" />
-                
-                {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-center p-4 sm:p-6 lg:p-10">
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    {/* Badge */}
-                    <span className="inline-block px-2 py-0.5 lg:px-3 lg:py-1 bg-emerald-500 text-white text-[10px] lg:text-xs font-bold rounded-full mb-2 lg:mb-4 uppercase tracking-wide">
-                      {currentHero.badge}
-                    </span>
-                    
-                    {/* Title */}
-                    <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-white mb-1 lg:mb-2 leading-tight">
-                      {currentHero.title}
-                    </h2>
-                    
-                    {/* Subtitle */}
-                    <p className="hidden sm:block text-sm lg:text-lg text-gray-200 mb-2 lg:mb-4">
-                      {currentHero.subtitle}
-                    </p>
-                    
-                    {/* Price */}
-                    <p className="text-lg lg:text-2xl font-bold text-emerald-400 mb-3 lg:mb-6">
-                      {currentHero.price}
-                    </p>
-                    
-                    {/* CTA Buttons */}
-                    <div className="flex flex-wrap gap-2 lg:gap-3">
-                      <Button 
-                        variant="primary" 
-                        size="sm"
-                        className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs lg:text-base px-3 lg:px-6"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate(currentHero.link || '/shop');
-                        }}
-                      >
-                        Shop Now
-                      </Button>
-                      <Button 
-                        variant="secondary" 
-                        size="sm"
-                        className="border-white text-white hover:bg-white hover:text-gray-900 text-xs lg:text-base px-3 lg:px-6 hidden sm:inline-flex"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate('/contact');
-                        }}
-                      >
-                        Get Quote
-                      </Button>
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+            {/* Mobile: animated carousel */}
+            <div className="lg:hidden absolute inset-0">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <img
+                    src={currentHero.image}
+                    alt="Luna Graphics promotion"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-              className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur rounded-full items-center justify-center text-white hover:bg-white/30 transition-colors opacity-0 group-hover:opacity-100"
-            >
-              <Icon name="ChevronLeft" size={24} />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-              className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur rounded-full items-center justify-center text-white hover:bg-white/30 transition-colors opacity-0 group-hover:opacity-100"
-            >
-              <Icon name="ChevronRight" size={24} />
-            </button>
-
-            {/* Dots Indicator */}
-            <div className="absolute bottom-2 lg:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 lg:gap-2">
-              {heroSlides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={(e) => { e.stopPropagation(); goToSlide(index); }}
-                  className={`h-1.5 lg:h-2 rounded-full transition-all ${
-                    index === currentSlide 
-                      ? 'bg-emerald-500 w-4 lg:w-6' 
-                      : 'bg-white/50 hover:bg-white/80 w-1.5 lg:w-2'
-                  }`}
-                />
-              ))}
+              {/* Dots — mobile only */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                {heroSlides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={(e) => { e.stopPropagation(); goToSlide(index); }}
+                    className={`h-1.5 rounded-full transition-all ${
+                      index === currentSlide
+                        ? 'bg-emerald-500 w-4'
+                        : 'bg-white/50 hover:bg-white/80 w-1.5'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
+
+            {/* Desktop: static first banner */}
+            <img
+              src={heroSlides[0].image}
+              alt="Luna Graphics promotion"
+              className="hidden lg:block w-full h-full object-cover"
+            />
           </div>
 
           {/* Side Banners - Same height as main carousel */}
-          <div className="hidden lg:flex flex-col gap-4 h-[400px]">
+          <div className="hidden lg:flex flex-col gap-4">
             {sideBanners.map((banner, index) => (
               <motion.div
                 key={banner.id}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="relative flex-1 rounded-2xl overflow-hidden group cursor-pointer"
+                className="relative rounded-2xl overflow-hidden group cursor-pointer w-full"
+                style={{ aspectRatio: '1 / 1' }}
                 onClick={() => navigate(banner.link)}
               >
-                <img 
-                  src={banner.image} 
-                  alt={banner.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                <img
+                  src={banner.image}
+                  alt="Luna Graphics promotion"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="text-emerald-400 text-xs font-bold uppercase tracking-wide mb-1 block">
-                    {banner.badge}
-                  </span>
-                  <h3 className="text-xl font-bold text-white mb-1">
-                    {banner.title}
-                  </h3>
-                  <p className="text-sm text-gray-300 mb-3">
-                    {banner.subtitle}
-                  </p>
-                  <span className="inline-flex items-center text-sm text-white font-medium group-hover:text-emerald-400 transition-colors">
-                    Shop Now
-                    <Icon name="ArrowRight" size={16} className="ml-1" />
-                  </span>
-                </div>
               </motion.div>
             ))}
           </div>

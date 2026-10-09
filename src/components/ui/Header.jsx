@@ -294,10 +294,9 @@ const handleSearch = (e) => {
     },
     {
       label: 'Jobs',
-      path: 'https://lunaaccounts.co.ke  ',
+      path: '/careers',
       icon: 'Briefcase',
-      description: 'Join our team',
-      isExternal: true
+      description: 'Join our team'
     }
   ];
 
