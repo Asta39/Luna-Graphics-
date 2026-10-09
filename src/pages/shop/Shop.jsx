@@ -15,6 +15,7 @@ import Pagination from '../../components/ui/Pagination';
 import ServicesCarousel from './components/ServicesCarousel';
 import GoogleReviews from '../homepage/components/GoogleReviews';
 import CaseStudies from '../corporate-services/components/CaseStudies';
+import Footer from '../homepage/components/Footer';
 
 const Shop = () => {
   const navigate = useNavigate();
@@ -486,10 +487,12 @@ const Shop = () => {
         </div>
       </section>
 
+      <Footer />
+
       {/* Inquiry Modal */}
-      <InquiryModal 
-        isOpen={isInquiryOpen} 
-        onClose={() => setIsInquiryOpen(false)} 
+      <InquiryModal
+        isOpen={isInquiryOpen}
+        onClose={() => setIsInquiryOpen(false)}
         product={selectedProduct}
       />
     </div>

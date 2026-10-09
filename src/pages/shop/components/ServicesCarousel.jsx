@@ -1,258 +1,176 @@
-// src/shop/components/ServicesCarousel.jsx
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { services, getWhatsAppLink } from '../../../data/services.js';
 
-const ServicesCarousel = () => {
+const SERVICE_ROUTES = {
+  'large-format-printing': '/services/large-format',
+  'uv-printing': '/services/uv-printing',
+  'digital-printing': '/services/digital-printing',
+  'sublimation-printing': '/services/sublimation-printing',
+  'screen-printing': '/services/t-shirt-printing',
+  'embroidery': '/services/t-shirt-printing',
+  'laser-engraving': '/services/laser-cutting',
+  'vehicle-branding': '/corporate-services',
+  'signage-solutions': '/services/cnc-cutting',
+  'branding-consultation': '/corporate-services',
+};
+
+// hero = large-format (index 0), medium = indices 1-4
+// second large = signage-solutions (index 8), fills left of bottom 2x2
+// small = embroidery(5), laser(6), vehicle-branding(7), branding-consultation(9)
+const hero = services[0];
+const medium = services.slice(1, 5);
+const secondLarge = services[8]; // signage-solutions
+const small = [services[5], services[6], services[7], services[9]];
+
+const ServicesGrid = () => {
   const navigate = useNavigate();
-  const scrollRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
 
-  // Double the services array for seamless infinite scroll
-  const duplicatedServices = [...services, ...services];
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    // Auto-scroll animation
-    let animationId;
-    let scrollSpeed = 0.5; // pixels per frame - slow and smooth
-
-    const autoScroll = () => {
-      if (!isDragging && scrollContainer) {
-        scrollContainer.scrollLeft += scrollSpeed;
-        
-        // Reset to beginning when reaching the duplicated section
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0;
-        }
-        
-        updateArrowVisibility();
-      }
-      animationId = requestAnimationFrame(autoScroll);
-    };
-
-    animationId = requestAnimationFrame(autoScroll);
-
-    return () => cancelAnimationFrame(animationId);
-  }, [isDragging]);
-
-  const updateArrowVisibility = () => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-    
-    setShowLeftArrow(scrollContainer.scrollLeft > 100);
-    setShowRightArrow(
-      scrollContainer.scrollLeft < (scrollContainer.scrollWidth - scrollContainer.clientWidth - 100)
-    );
-  };
-
-  // Mouse drag handlers
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-    scrollRef.current.style.cursor = 'grabbing';
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    if (scrollRef.current) {
-      scrollRef.current.style.cursor = 'grab';
-    }
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-    updateArrowVisibility();
-  };
-
-  const handleMouseLeave = () => {
-    if (isDragging) {
-      setIsDragging(false);
-      if (scrollRef.current) {
-        scrollRef.current.style.cursor = 'grab';
-      }
-    }
-  };
-
-  // Touch handlers for mobile
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-    updateArrowVisibility();
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
-  const scroll = (direction) => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-    
-    const scrollAmount = 400; // Width of card + gap
-    scrollContainer.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth'
-    });
-    
-    setTimeout(updateArrowVisibility, 300);
-  };
-
-  const SERVICE_ROUTES = {
-    'large-format-printing': '/services/large-format',
-    'uv-printing': '/services/uv-printing',
-    'digital-printing': '/services/digital-printing',
-    'sublimation-printing': '/services/sublimation-printing',
-    'screen-printing': '/services/t-shirt-printing',
-    'embroidery': '/services/t-shirt-printing',
-    'laser-engraving': '/services/laser-cutting',
-    'vehicle-branding': '/corporate-services',
-    'signage-solutions': '/services/cnc-cutting',
-    'branding-consultation': '/corporate-services',
-  };
-
-  const handleServiceClick = (serviceId) => {
-    navigate(SERVICE_ROUTES[serviceId] || '/corporate-services');
-  };
-
-  const handleWhatsAppClick = (e, service) => {
-    e.stopPropagation();
-    window.open(getWhatsAppLink(service.name), '_blank');
-  };
+  const go = (id) => navigate(SERVICE_ROUTES[id] || '/corporate-services');
+  const wa = (e, service) => { e.stopPropagation(); window.open(getWhatsAppLink(service.name), '_blank'); };
 
   return (
-    <section className="py-16 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900">Our Services</h2>
-            <p className="mt-2 text-gray-600">Professional printing and branding solutions for your business</p>
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={() => scroll('left')}
-              className={`p-2 rounded-full border border-gray-300 hover:border-green-600 hover:text-green-600 transition-colors ${
-                showLeftArrow ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => scroll('right')}
-              className={`p-2 rounded-full border border-gray-300 hover:border-green-600 hover:text-green-600 transition-colors ${
-                showRightArrow ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      </div>
+    <section className="py-16 bg-gray-50">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
 
-      {/* Carousel Container */}
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-hidden cursor-grab select-none"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        {duplicatedServices.map((service, index) => (
-          <div
-            key={`${service.id}-${index}`}
-            onClick={() => handleServiceClick(service.id)}
-            className="flex-shrink-0 w-80 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group"
-          >
-            {/* Card Header with Image */}
-            <div className="h-48 rounded-t-lg overflow-hidden relative">
+        {/* Header */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">Our Services</h2>
+          <p className="mt-1 text-gray-500">Professional printing and branding solutions for your business</p>
+        </div>
+
+        {/* Mosaic grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 auto-rows-[220px] lg:auto-rows-[260px]">
+
+          {/* MEDIUM cards first in DOM so hero can be placed top-right via col-start */}
+          {medium.map((service) => (
+            <div
+              key={service.id}
+              onClick={() => go(service.id)}
+              className="relative rounded-2xl overflow-hidden cursor-pointer group"
+            >
               <img
                 src={service.image}
                 alt={service.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                draggable="false"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              {/* Subtle overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            
-            {/* Card Content */}
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                {service.name}
-              </h3>
-              <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                {service.shortDescription}
-              </p>
-              
-              {/* Features Preview */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {service.features.slice(0, 2).map((feature, idx) => (
-                  <span 
-                    key={idx}
-                    className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded"
-                  >
-                    {feature.split(' ').slice(0, 3).join(' ')}...
-                  </span>
-                ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-4">
+                <h3 className="text-sm lg:text-base font-bold text-white leading-tight mb-1">{service.name}</h3>
+                <p className="text-xs text-gray-300 line-clamp-1 hidden lg:block">{service.shortDescription}</p>
+                <button
+                  onClick={(e) => wa(e, service)}
+                  className="mt-2 self-start px-3 py-1.5 bg-emerald-500/90 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200"
+                >
+                  Inquire
+                </button>
               </div>
-              
-              {/* Action Buttons */}
+            </div>
+          ))}
+
+          {/* HERO card — top-right (col 3-4, rows 1-2), diagonal to second large */}
+          <div
+            onClick={() => go(hero.id)}
+            className="col-span-2 row-span-2 lg:col-start-3 lg:row-start-1 relative rounded-2xl overflow-hidden cursor-pointer group"
+          >
+            <img
+              src={hero.image}
+              alt={hero.name}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
+              <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Featured</span>
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">{hero.name}</h3>
+              <p className="text-sm text-gray-300 mb-4 line-clamp-2 max-w-xs">{hero.shortDescription}</p>
               <div className="flex gap-3">
                 <button
-                  onClick={(e) => handleWhatsAppClick(e, service)}
-                  className="flex-1 bg-green-600 text-white text-sm font-medium py-2 px-4 rounded hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+                  onClick={(e) => wa(e, hero)}
+                  className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold rounded-xl transition-colors"
                 >
-                  <span>Inquire</span>
+                  Get Quote
                 </button>
                 <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleServiceClick(service.id);
-                  }}
-                  className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded hover:border-green-600 hover:text-green-600 transition-colors"
+                  onClick={(e) => { e.stopPropagation(); go(hero.id); }}
+                  className="px-5 py-2.5 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-sm font-semibold rounded-xl border border-white/30 transition-colors"
                 >
-                  Details
+                  Learn More
                 </button>
               </div>
             </div>
           </div>
-        ))}
-      </div>
 
-      {/* Gradient Overlays for smooth fade effect */}
-      <div className="relative max-w-7xl mx-auto">
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
+          {/* SECOND LARGE card — signage-solutions, bottom-left (diagonal to hero) */}
+          <div
+            onClick={() => go(secondLarge.id)}
+            className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden cursor-pointer group"
+          >
+            <img
+              src={secondLarge.image}
+              alt={secondLarge.name}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">{secondLarge.name}</h3>
+              <p className="text-sm text-gray-300 mb-4 line-clamp-2 max-w-xs">{secondLarge.shortDescription}</p>
+              <div className="flex gap-3">
+                <button
+                  onClick={(e) => wa(e, secondLarge)}
+                  className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold rounded-xl transition-colors"
+                >
+                  Get Quote
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); go(secondLarge.id); }}
+                  className="px-5 py-2.5 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-sm font-semibold rounded-xl border border-white/30 transition-colors"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* SMALL cards — 4 cards fill right side of second large (2×2) */}
+          {small.map((service) => (
+            <div
+              key={service.id}
+              onClick={() => go(service.id)}
+              className="relative rounded-2xl overflow-hidden cursor-pointer group"
+            >
+              <img
+                src={service.image}
+                alt={service.name}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-4">
+                <h3 className="text-sm font-bold text-white leading-tight">{service.name}</h3>
+                <button
+                  onClick={(e) => wa(e, service)}
+                  className="mt-1.5 self-start px-3 py-1 bg-emerald-500/90 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200"
+                >
+                  Inquire
+                </button>
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => navigate('/corporate-services')}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors text-sm"
+          >
+            View All Services
+          </button>
+        </div>
+
       </div>
     </section>
   );
 };
 
-export default ServicesCarousel;
+export default ServicesGrid;
