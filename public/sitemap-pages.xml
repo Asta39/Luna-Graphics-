@@ -2,146 +2,116 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lunagraphics.co.ke/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/about</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/blog</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/contact</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/corporate-services</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/corporate-terms</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://lunagraphics.co.ke/corporate/corporate-branding</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/corporate/events-exhibitions</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/faq</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/gallery</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/home</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lunagraphics.co.ke/privacy-policy</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>https://lunagraphics.co.ke/services/cnc-cutting</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/digital-printing</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/dtf-printing</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/large-format</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/laser-cutting</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/plotting</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/sublimation-printing</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/t-shirt-printing</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lunagraphics.co.ke/services/uv-printing</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://lunagraphics.co.ke/sitemap</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://lunagraphics.co.ke/team</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lunagraphics.co.ke/terms-of-service</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>

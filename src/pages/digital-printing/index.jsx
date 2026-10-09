@@ -87,7 +87,7 @@ const DigitalPrintingPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={pageData.heroImage}
-        type="business.business"
+        type="website"
         keywords="digital printing Nairobi, flyer printing Nairobi, business card printing Kenya, brochure printing Nairobi, same day printing Nairobi, cheap printing Nairobi, stationery printing Kenya, catalogue printing Nairobi, Luna Graphics digital printing"
         schemaData={[structuredData, breadcrumbSchema, faqSchema]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"

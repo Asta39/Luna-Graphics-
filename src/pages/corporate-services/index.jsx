@@ -112,19 +112,25 @@ const breadcrumbSchema = {
 // ===== ENHANCED SEO: Organization Schema =====
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   "name": brandName,
-  "url": "https://lunagraphics.co.ke",
-  "logo": `https://lunagraphics.co.ke${logoImage}`,
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+254-791-159-618",
-    "contactType": "sales",
-    "areaServed": "KE",
-    "availableLanguage": ["English", "Swahili"]
+  "url": "https://lunagraphics.co.ke/",
+  "logo": "https://lunagraphics.co.ke/apple-icon-180x180.png",
+  "telephone": "+254-791-159-618",
+  "email": "info@lunagraphics.co.ke",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kweria Road",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -1.280302,
+    "longitude": 36.822639
   },
   "sameAs": [
-    "https://instagram.com/lunagraphics", // Add your actual social links
+    "https://instagram.com/lunagraphics",
     "https://twitter.com/LunaGraphicsKE"
   ]
 };
@@ -137,7 +143,7 @@ const CorporateServicesPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={imageUrl}
-        type="business.business"
+        type="website"
         keywords="corporate printing Nairobi, political campaign printing Kenya, election materials, corporate branding Nairobi, large format printing, commercial printing services, branded merchandise Kenya, campaign posters Kenya, corporate gifts Nairobi"
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{

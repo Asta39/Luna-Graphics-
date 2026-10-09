@@ -15,7 +15,7 @@ import Pagination from '../../components/ui/Pagination';
 import ServicesCarousel from './components/ServicesCarousel';
 import GoogleReviews from '../homepage/components/GoogleReviews';
 import CaseStudies from '../corporate-services/components/CaseStudies';
-import { reviewStats } from '../../data/reviewsData';
+const reviewStats = { averageRating: 4.9, totalReviews: 150 };
 
 const Shop = () => {
   const navigate = useNavigate();

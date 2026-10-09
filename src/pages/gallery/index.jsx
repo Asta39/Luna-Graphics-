@@ -51,8 +51,8 @@ const GalleryPage = () => {
     
     // Simulate loading
     setTimeout(() => {
-      setProjects(mockProjects);
-      setFilteredProjects(mockProjects.slice(0, projectsPerPage));
+      setProjects(galleryProjects);
+      setFilteredProjects(galleryProjects.slice(0, projectsPerPage));
       setLoading(false);
     }, 1000);
 
@@ -128,7 +128,7 @@ const GalleryPage = () => {
     // Simulate loading delay
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    let filtered = [...mockProjects];
+    let filtered = [...galleryProjects];
 
     // Apply current filters and search
     if (activeFilters.length > 0) {
@@ -243,10 +243,29 @@ const GalleryPage = () => {
     <div className="min-h-screen bg-background">
 
             {/* 3. ADD THE HELMET COMPONENT RIGHT AT THE TOP */}
-      <SEO 
-        title="Project Gallery | Printing Portfolio"
-        description="Explore our portfolio of completed printing and branding projects in Nairobi. From large format banners to corporate signage and custom merchandise."
-        canonical="/gallery"
+      <SEO
+        title="Printing Portfolio & Project Gallery | Luna Graphics Nairobi"
+        description="Browse Luna Graphics' portfolio of completed printing projects in Nairobi — large format banners, vehicle wraps, corporate signage, UV prints, CNC cutting, exhibition displays, and branded merchandise. Real work, real quality."
+        canonical="https://lunagraphics.co.ke/gallery"
+        keywords="printing portfolio Nairobi, print work gallery Kenya, banner printing examples, signage portfolio Nairobi, corporate branding work Kenya, vehicle wrap portfolio, UV printing samples, Luna Graphics gallery"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.280302;36.822639"
+        }}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Printing Portfolio & Project Gallery",
+          "description": "Portfolio of completed printing, signage, and branding projects by Luna Graphics in Nairobi, Kenya.",
+          "url": "https://lunagraphics.co.ke/gallery",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Luna Graphics",
+            "url": "https://lunagraphics.co.ke/"
+          }
+        }}
       />
       <Header />
       

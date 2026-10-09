@@ -21,7 +21,7 @@ const PlottingServicesPage = () => {
 
   if (!pageData) return <div>Service data for 'plotting-services' not found.</div>;
 
-  const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
+  const pageTitle = `Plotting Services Nairobi | A0 A1 Architectural & CAD Drawing Printing | Luna Graphics`;
   const pageDescription = pageData.description;
   // ===== ENHANCED SEO: Fixed spacing in URL =====
   const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
@@ -139,8 +139,8 @@ const PlottingServicesPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={imageUrl}
-        type="business.business"
-        keywords="plotting services Nairobi, large format printing Kenya, architectural plotting, CAD printing Nairobi, blueprint printing, construction plans printing, technical drawing printing, poster printing Nairobi, banner plotting, Luna Graphics plotting"
+        type="website"
+        keywords="plotting services Nairobi, large format plotting Kenya, architectural plotting Nairobi, CAD printing Nairobi, blueprint printing Kenya, construction plans printing Nairobi, technical drawing printing Kenya, A0 plotting Nairobi, A1 printing Kenya, engineering drawing printing Nairobi, plot printing near me, architectural plans printing Nairobi, plotting prices Kenya, same day plotting Nairobi, DWG printing Kenya, Luna Graphics plotting"
         schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{

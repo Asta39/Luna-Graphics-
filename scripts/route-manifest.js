@@ -10,7 +10,6 @@ const DATA_DIR = path.join(SRC_DIR, 'data');
 
 const STATIC_ROUTES = [
   { url: '/', priority: '1.0', changefreq: 'daily', type: 'page' },
-  { url: '/home', priority: '0.7', changefreq: 'monthly', type: 'page' },
   { url: '/services/large-format', priority: '0.85', changefreq: 'monthly', type: 'service-page' },
   { url: '/services/plotting', priority: '0.85', changefreq: 'monthly', type: 'service-page' },
   { url: '/services/uv-printing', priority: '0.85', changefreq: 'monthly', type: 'service-page' },
@@ -29,10 +28,7 @@ const STATIC_ROUTES = [
   { url: '/gallery', priority: '0.75', changefreq: 'weekly', type: 'page' },
   { url: '/blog', priority: '0.8', changefreq: 'daily', type: 'page' },
   { url: '/faq', priority: '0.65', changefreq: 'monthly', type: 'page' },
-  { url: '/sitemap', priority: '0.5', changefreq: 'monthly', type: 'page' },
-  { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly', type: 'legal' },
-  { url: '/terms-of-service', priority: '0.3', changefreq: 'yearly', type: 'legal' },
-  { url: '/corporate-terms', priority: '0.3', changefreq: 'yearly', type: 'legal' },
+  // noindex pages omitted: /sitemap, /privacy-policy, /terms-of-service, /corporate-terms, /home
 ];
 
 function readIfExists(filePath) {
@@ -70,13 +66,23 @@ function extractProductIds() {
 function extractBlogSlugs() {
   const filePath = path.join(DATA_DIR, 'blogData.js');
   const content = readIfExists(filePath);
+  const fileLastmod = lastModifiedFor(filePath);
+
+  // Extract slug + updatedAt/publishedAt pairs by scanning post blocks
+  const postPattern = /slug['":\s]+['"]([^'"]+)['"][\s\S]{0,500}?(?:updatedAt|publishedAt)['":\s]+['"]([^'"]+)['"]/g;
+  const postMap = new Map();
+  let m;
+  while ((m = postPattern.exec(content)) !== null) {
+    if (!postMap.has(m[1])) postMap.set(m[1], m[2].split('T')[0]);
+  }
+
   return extractStringValues(content, 'slug').map(slug => ({
     url: `/blog/${slug}`,
     priority: '0.65',
     changefreq: 'monthly',
     type: 'blog-post',
     source: 'src/data/blogData.js',
-    lastmod: lastModifiedFor(filePath),
+    lastmod: postMap.get(slug) || fileLastmod,
   }));
 }
 

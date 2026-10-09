@@ -29,7 +29,7 @@ const TeamPage = () => {
       <SEO 
         title="Meet Our Expert Printing & Design Team | Luna Graphics Nairobi"
         description="Meet the creative minds and technical specialists leading Nairobi's premier printing and branding company. Expert designers and printing technicians dedicated to your vision."
-        canonical="/team"
+        canonical="https://lunagraphics.co.ke/team"
         ogImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop"
         type="website"
         keywords="printing team Nairobi, graphic designers Kenya, printing technicians, professional branding experts, Luna Graphics staff, expert printers Nairobi"

@@ -11,8 +11,8 @@ const EventsExhibitions = () => {
   const navigate = useNavigate();
 
   const brandName = "Luna Graphics";
-  const pageTitle = `Event & Exhibition Printing Services Kenya | Trade Show Solutions ${brandName}`;
-  const pageDescription = "Professional event and exhibition printing services in Nairobi, Kenya. Custom trade show displays, exhibition booths, event banners, and conference materials. End-to-end event branding solutions.";
+  const pageTitle = `Exhibition Printing Nairobi | Trade Show & Event Display Services | Luna Graphics`;
+  const pageDescription = "Exhibition printing services in Nairobi — trade show displays, booth graphics, pop-up banners, tension fabric stands, and event branding. Fast turnaround for KICC, Sarit Centre & all Kenya venues. Get a quote from Luna Graphics.";
   const pageUrl = "https://lunagraphics.co.ke/corporate/events-exhibitions";
 
   const fadeInUp = {
@@ -28,14 +28,75 @@ const EventsExhibitions = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Event and Exhibition Printing Services",
+    "name": "Exhibition Printing & Trade Show Display Services Nairobi",
+    "serviceType": "Exhibition Printing",
     "provider": {
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": "Luna Graphics",
-      "url": "https://lunagraphics.co.ke"
+      "url": "https://lunagraphics.co.ke",
+      "telephone": "+254-791-159-618",
+      "email": "info@lunagraphics.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kweria Road",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      }
     },
-    "description": "Professional exhibition printing, trade show materials, and event branding solutions in Nairobi, Kenya",
-    "areaServed": { "@type": "Country", "name": "Kenya" }
+    "description": "Professional exhibition printing, trade show displays, pop-up stands, tension fabric backdrops, and event branding in Nairobi, Kenya",
+    "areaServed": [
+      { "@type": "City", "name": "Nairobi" },
+      { "@type": "Country", "name": "Kenya" }
+    ]
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lunagraphics.co.ke/" },
+      { "@type": "ListItem", "position": 2, "name": "Corporate Services", "item": "https://lunagraphics.co.ke/corporate-services" },
+      { "@type": "ListItem", "position": 3, "name": "Events & Exhibitions", "item": "https://lunagraphics.co.ke/corporate/events-exhibitions" }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What exhibition printing services do you offer in Nairobi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Luna Graphics offers a full range of exhibition printing services in Nairobi including pop-up banners, roll-up stands, tension fabric displays, shell scheme graphics, exhibition booth wraps, backdrops, floor graphics, hanging banners, and branded merchandise. We serve trade shows at KICC, Sarit Centre, Westlands, and all major Nairobi venues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you produce exhibition materials for an event in Nairobi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard turnaround for exhibition printing is 2–5 business days. For urgent orders we offer 24–48 hour rush production. We recommend placing orders at least one week before your event to allow time for proofing, production, and delivery to your Nairobi venue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you print for KICC and Sarit Centre exhibitions in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Luna Graphics regularly supplies exhibition printing for events at KICC (Kenyatta International Convention Centre), Sarit Centre, the Nairobi Centre, and other major exhibition venues in Kenya. We are familiar with the shell scheme specifications and installation requirements at all major Nairobi conference centres."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does exhibition printing cost in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Exhibition printing costs vary by product: roll-up banners from KES 3,500, pop-up displays from KES 15,000, tension fabric backdrops from KES 8,000 per sqm, and shell scheme graphics from KES 1,200 per panel. Contact Luna Graphics for a detailed quote based on your specific event requirements."
+        }
+      }
+    ]
   };
 
   return (
@@ -44,7 +105,7 @@ const EventsExhibitions = () => {
         title={pageTitle}
         description={pageDescription}
         canonical={pageUrl}
-        keywords="exhibition printing Kenya, trade show materials Nairobi, event banners Kenya, exhibition booth design, conference printing Kenya, trade show displays Nairobi, event branding Kenya, exhibition graphics, corporate event materials Kenya"
+        keywords="exhibition printing Nairobi, exhibition printing Kenya, trade show displays Nairobi, trade show printing Kenya, exhibition booth design Nairobi, pop-up banner printing Kenya, roll-up stand printing Nairobi, tension fabric display Kenya, KICC exhibition printing, Sarit Centre exhibition, conference materials Nairobi, event branding Kenya, shell scheme graphics Nairobi, exhibition backdrop printing Kenya"
         type="website"
         robots="index, follow"
         geo={{
@@ -52,7 +113,7 @@ const EventsExhibitions = () => {
           placename: "Nairobi",
           position: "-1.280302;36.822639"
         }}
-        schemaData={structuredData}
+        schemaData={[structuredData, breadcrumbSchema, faqSchema]}
       />
             <Header/>
 

@@ -87,7 +87,7 @@ const DTFPrintingPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={pageData.heroImage}
-        type="business.business"
+        type="website"
         keywords="DTF printing Nairobi, Direct to Film printing Kenya, custom T-shirt printing Nairobi, garment printing Kenya, no minimum T-shirt printing, bulk shirt printing Nairobi, corporate uniform printing Kenya, Luna Graphics DTF"
         schemaData={[structuredData, breadcrumbSchema, faqSchema]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"

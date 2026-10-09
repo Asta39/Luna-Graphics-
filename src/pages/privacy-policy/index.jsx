@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
         canonical={pageUrl}
         type="website"
         keywords="privacy policy, data protection Kenya, Luna Graphics privacy, printing services Nairobi"
-        robots="index, follow"
+        robots="noindex, follow"
         geo={{
           region: "KE-30",
           placename: "Nairobi",

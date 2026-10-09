@@ -36,7 +36,7 @@ const LaserCuttingServicesPage = () => {
   }
 
   // 5. Define SEO variables using the single `pageData` object.
-  const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
+  const pageTitle = `Laser Cutting Nairobi | Acrylic, Wood & MDF Laser Engraving | Luna Graphics`;
   const pageDescription = pageData.description;
   // ===== ENHANCED SEO: Fixed spacing in URL =====
   const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
@@ -161,8 +161,8 @@ const LaserCuttingServicesPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={imageUrl}
-        type="business.business"
-        keywords="laser cutting Nairobi, laser engraving Kenya, acrylic laser cutting, wood laser engraving, precision laser cutting Nairobi, custom laser cutting, laser cut signage, leather engraving, MDF laser cutting, Luna Graphics laser services"
+        type="website"
+        keywords="laser cutting Nairobi, laser engraving Kenya, acrylic laser cutting Nairobi, wood laser engraving Kenya, precision laser cutting Nairobi, custom laser cutting, laser cut signage Nairobi, leather engraving Kenya, MDF laser cutting, laser cutting prices Kenya, laser cut awards Nairobi, laser cut trophies Kenya, personalized gifts laser engraving, laser cutting company Nairobi, laser cut acrylic letters, Luna Graphics laser services"
         schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{

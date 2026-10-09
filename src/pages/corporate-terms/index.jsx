@@ -18,7 +18,7 @@ const CorporateTerms = () => {
         canonical={pageUrl}
         keywords="corporate terms and conditions Kenya, bulk printing agreement Nairobi, B2B printing services, political campaign printing contract, commercial printing terms, government contract printing Nairobi, corporate printing policies Kenya"
         type="website"
-        robots="index, follow"
+        robots="noindex, follow"
         geo={{
           region: "KE-30",
           placename: "Nairobi",

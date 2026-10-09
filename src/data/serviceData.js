@@ -97,9 +97,9 @@ export const services =
     "cnc-cutting":{
         id: 2,
     path: "/services/cnc-cutting",
-    title: "CNC Cutting Services",
+    title: "CNC Cutting Nairobi",
     category: "Precision Fabrication",
-    description: "Professional CNC cutting services for precise fabrication of various materials including wood, acrylic, metal, and foam with custom design capabilities.",
+    description: "CNC cutting services in Nairobi — precision cutting of acrylic, wood, MDF, foam, and metal for signage, furniture, displays, and prototypes. Custom shapes, fast turnaround. Get a quote from Luna Graphics.",
     detailedDescription: `Our CNC cutting services demonstrate precision cutting capabilities for various materials to serve clients requiring accurate fabrication and custom manufacturing solutions. Using state-of-the-art CNC technology, we deliver exceptional precision and repeatability for your projects.\n\nWhether you need prototypes, architectural elements, signage, or custom parts, our advanced CNC machines handle complex geometries with tight tolerances. From intricate decorative panels to functional components, we transform your digital designs into physical reality with unmatched accuracy.\n\nOur experienced technicians work closely with you to optimize your designs for CNC cutting, ensuring the best possible results while meeting your specifications, timeline, and budget requirements.`,
     heroImage: cncHeroImage,
     startingPrice: 800,
@@ -325,10 +325,28 @@ export const services =
       description: "Direct UV printing on various materials including glass, metal, and plastics.",
       image: relatedUvPrintingImg,
       startingPrice: 1000,
-      turnaround: "2-3 days",   
+      turnaround: "2-3 days",
       features: ["Direct Material Printing", "Durable Finish", "Vibrant Colors"]
     }
  ],
+    faqs: [
+      {
+        question: "How much does CNC cutting cost in Nairobi?",
+        answer: "CNC cutting prices in Nairobi start from KES 800 per piece for simple shapes in standard materials. Complex designs, larger sizes, and premium materials such as thick acrylic or metal cost more. Luna Graphics provides free quotes — send us your design file and material requirements."
+      },
+      {
+        question: "What materials can you CNC cut in Kenya?",
+        answer: "Luna Graphics CNC cuts wood (plywood, MDF, solid timber), acrylic, aluminium, mild steel, foam, PVC, and composite panels. Our cutting bed handles sheets up to 2.5m x 1.5m with up to 200mm thickness depending on material."
+      },
+      {
+        question: "How long does CNC cutting take in Nairobi?",
+        answer: "Standard turnaround is 2–5 business days depending on complexity and quantity. Rush orders can be accommodated. We deliver across Nairobi — Industrial Area, Westlands, Karen — and Kenya-wide."
+      },
+      {
+        question: "Can you cut acrylic letters and signage with CNC in Nairobi?",
+        answer: "Yes. Luna Graphics specialises in CNC-cut acrylic letters, 3D signage, logo cutouts, and custom display stands. We cut, route, and engrave acrylic in any colour and thickness — popular for office signage, retail displays, and event props."
+      }
+    ],
     relatedBlogPosts: [
       {
         slug: "uv-vs-screen-printing-nairobi-guide",
@@ -358,9 +376,9 @@ export const services =
   "laser-cutting":{
     id: 3,
     path: "/services/laser-cutting",
-    title: "Laser Cutting Services",
+    title: "Laser Cutting Nairobi",
     category: "Precision Laser Technology",
-    description: "Professional laser cutting services for intricate designs and detailed fabrication on various materials including wood, acrylic, leather, and fabric with precision and design complexity capabilities.",
+    description: "Laser cutting and engraving services in Nairobi — wood, acrylic, leather, MDF, and glass. Intricate designs, personalised gifts, signage letters, and trophies. Fast turnaround. Luna Graphics Kenya.r, and fabric with precision and design complexity capabilities.",
     detailedDescription: `Our Laser Cutting Services highlight precision laser cutting technology for intricate designs and detailed fabrication to attract clients requiring high-accuracy cutting solutions. Using advanced laser technology, we deliver exceptional precision and detail for your most demanding projects.\n\nWhether you need prototypes, decorative elements, signage, or custom parts, our laser cutting machines handle the most intricate patterns and precise cuts with minimal material waste. From delicate jewelry components to architectural details, we transform your vector designs into reality with unmatched accuracy.\n\nOur experienced technicians work closely with you to optimize your designs for laser cutting, ensuring the best possible results while maintaining design integrity, meeting your timeline and budget requirements.`,
     heroImage: laserHeroImage,
     startingPrice: 600,
@@ -621,9 +639,9 @@ export const services =
     "plotting-services": {
          id: 2,
     path: "/services/plotting",     
-    title: "Plotting Services",
+    title: "Plotting Services Nairobi",
     category: "Technical Drawing",
-    description: "Professional plotting services for technical drawings, architectural plans, engineering drawings, and CAD documentation with precision and clarity.",
+    description: "Large format plotting in Nairobi for architectural plans, engineering drawings, CAD files, and technical documents. A0/A1/A2 sizes, fast turnaround, colour and monochrome. Luna Graphics Kenya. clarity.",
     detailedDescription: `Our plotting services provide high-quality technical drawing reproduction for engineering, architectural, and construction professionals. Using advanced large format plotters, we deliver crisp, accurate plots from A4 to A0 sizes.\n\nWhether you need architectural blueprints, engineering schematics, construction drawings, or CAD documentation, our plotting service ensures every line and detail is reproduced with precision. We work with various file formats and provide fast turnaround times for urgent projects.\n\nOur experienced team understands the critical nature of technical documentation and maintains strict quality control to ensure your plots meet professional standards and specifications.`,
     heroImage: plottingHeroImage,
     startingPrice: 200,
@@ -850,6 +868,24 @@ export const services =
       features: ["Precision cutting", "Multiple materials", "Custom shapes"]
     }
  ],
+    faqs: [
+      {
+        question: "What is plotting and how is it different from regular printing?",
+        answer: "Plotting refers to large-format technical printing using a plotter machine, designed specifically for architectural drawings, engineering plans, CAD files, and construction documents. Unlike regular printing, plotters handle A0, A1, and A2 paper sizes at very high resolution, preserving fine lines, dimensions, and annotations critical for technical use."
+      },
+      {
+        question: "How much does A1 and A0 plotting cost in Nairobi?",
+        answer: "Luna Graphics offers A1 plotting from KES 200 per copy and A0 from KES 350 per copy for standard monochrome technical drawings. Colour plots and premium media cost more. Bulk orders of 10+ sheets get discounted rates. Contact us for project-specific pricing."
+      },
+      {
+        question: "What file formats do you accept for plotting?",
+        answer: "We accept DWG, DXF (AutoCAD), PDF, TIFF, PNG, and most common CAD and image formats. Send files via WhatsApp, email, or USB drive. Our team checks files before plotting and alerts you to any issues with resolution or scale."
+      },
+      {
+        question: "How fast is your plotting turnaround in Nairobi?",
+        answer: "Standard turnaround is 2–4 hours for urgent project sets. Same-day plotting available for orders placed before 2PM. For large bulk orders (construction project sets), allow 24 hours. We also offer delivery to construction sites across Nairobi."
+      }
+    ],
     relatedBlogPosts: [
       {
         slug: "exhibition-display-solutions-nairobi",
@@ -878,9 +914,9 @@ export const services =
      "large-format":{
     id: 1,
     path: "/services/large-format",
-    title: "Large Format Printing",
+    title: "Large Format Printing Nairobi",
     category: "Digital Printing",
-    description: "Professional large format printing services for banners, posters, signage, and displays with vibrant colors and exceptional quality.",
+    description: "Premium large format printing in Nairobi — banners, billboards, building wraps, exhibition displays, and outdoor signage. High-resolution prints, weather-resistant materials, fast turnaround. Call Luna Graphics for a quote.",
     detailedDescription: `Our large format printing service delivers stunning visual impact for your marketing campaigns, events, and business signage. Using state-of-the-art digital printing technology, we produce high-resolution prints on a wide variety of materials.\n\nWhether you need indoor or outdoor applications, our weather-resistant inks and premium substrates ensure your prints maintain their vibrancy and durability. From small promotional posters to massive building wraps, we handle projects of all sizes with precision and attention to detail.\n\nOur experienced team works closely with you to optimize your designs for large format printing, ensuring the best possible results while meeting your timeline and budget requirements.`,
     heroImage: largeFormatHeroImage,
     startingPrice: 500,
@@ -1103,6 +1139,28 @@ export const services =
       features: ["Precision Cutting", "Multiple Materials", "Custom Shapes"]
     }
  ],
+    faqs: [
+      {
+        question: "How much does large format printing cost in Nairobi?",
+        answer: "Large format printing prices in Nairobi start from KES 800 per square metre for standard PVC banners, rising to KES 2,500+ for premium substrates like canvas, mesh, or backlit film. The final cost depends on material, size, quantity, and finishing (eyelets, hemming, lamination). Contact Luna Graphics for a free quote tailored to your project."
+      },
+      {
+        question: "What is the largest size you can print?",
+        answer: "Luna Graphics can print banners and signage up to 5 metres wide and virtually unlimited length on our wide-format printers. For building wraps and billboards, we tile and seam panels seamlessly to cover any size. We have delivered prints for building facades exceeding 20 metres in height."
+      },
+      {
+        question: "How long does large format printing take in Nairobi?",
+        answer: "Standard turnaround is 24–72 hours for most banner and signage orders. Rush same-day printing is available for urgent jobs. Large orders such as building wraps or event backdrops typically take 3–5 business days. We serve clients across Nairobi, Westlands, CBD, Karen, and deliver Kenya-wide."
+      },
+      {
+        question: "What materials do you print on for outdoor use?",
+        answer: "For outdoor large format printing we use UV-resistant, weatherproof materials including PVC flex banners, mesh vinyl (for wind-resistant applications), blockout banners, canvas, polyester fabric, and aluminium composite panels. All outdoor inks are UV-cured or solvent-based for lasting vibrancy in Nairobi's climate."
+      },
+      {
+        question: "Can you print building wraps and billboard skins in Kenya?",
+        answer: "Yes. Luna Graphics specialises in large-scale building wraps, hoarding graphics, and billboard skins for both indoor and outdoor use across Kenya. We handle design, printing, and can coordinate installation. We have completed projects for major brands, government agencies, and real estate developers in Nairobi."
+      }
+    ],
     relatedBlogPosts: [
       {
         slug: "roll-up-banner-printing-nairobi-cost",
@@ -1130,9 +1188,9 @@ export const services =
     "t-shirt-printing":{
     id: 6,
     path: "/services/t-shirt-printing",
-    title: "T-shirt Printing Services",
+    title: "T-Shirt Printing Nairobi",
     category: "Custom Apparel",
-    description: "Professional custom t-shirt printing services targeting businesses, events, and personal branding needs with comprehensive printing method options and bulk pricing in KES currency.",
+    description: "Custom t-shirt and garment printing in Nairobi — screen printing, DTF, and sublimation for corporates, schools, events, and sports teams. No minimum order. Bulk discounts. Fast delivery Kenya-wide. Luna Graphics.",
     detailedDescription: `Our T-shirt Printing Services showcase custom apparel printing capabilities for businesses, events, and personal branding with various printing methods and competitive bulk pricing. Using mobile-first responsive approach, we deliver high-quality custom t-shirts with vibrant designs and exceptional durability.\n\nWhether you need promotional apparel for corporate events, branded merchandise for your business, or custom designs for personal use, our comprehensive printing methods include screen printing, heat transfer, vinyl cutting, and direct-to-garment printing. Each method is carefully selected based on your design requirements, quantity, and budget.\n\nOur experienced team provides design consultation, artwork requirements guidance, and color matching capabilities to ensure your vision becomes reality. With quick turnaround times and competitive KES pricing, we make custom apparel accessible for projects of all sizes.`,
     heroImage: tShirtHeroImage,
     startingPrice: 600,
@@ -1357,6 +1415,24 @@ export const services =
       features: ["Brand Consistency", "Volume Discounts", "Account Management"]
     }
  ],
+    faqs: [
+      {
+        question: "How much does t-shirt printing cost in Nairobi?",
+        answer: "T-shirt printing prices in Nairobi start from KES 350 per shirt for bulk screen printing orders of 50+. DTF and sublimation printing for smaller quantities start from KES 600 per shirt. Prices include printing — shirts supplied separately or by Luna Graphics. Contact us for a bulk quote."
+      },
+      {
+        question: "What is the minimum order for t-shirt printing in Nairobi?",
+        answer: "Luna Graphics has no minimum order for DTF printing — we print single pieces. For screen printing, the minimum is typically 12 shirts per design for cost-effectiveness. Sublimation printing requires white or light polyester fabric with no minimum."
+      },
+      {
+        question: "How long does t-shirt printing take in Nairobi?",
+        answer: "Standard turnaround for garment printing is 3–5 business days. Rush 24–48 hour printing is available for urgent orders such as events, sports teams, and corporate functions. We deliver across Nairobi and Kenya-wide."
+      },
+      {
+        question: "Can you print on uniforms and corporate shirts in Kenya?",
+        answer: "Yes. Luna Graphics handles bulk corporate uniform printing for companies, schools, hospitals, and NGOs across Kenya. We print logos and branding on polo shirts, T-shirts, jackets, caps, and overalls using screen printing, embroidery, or DTF depending on the fabric and design."
+      }
+    ],
     relatedBlogPosts: [
       {
         slug: "dtf-printing-nairobi-guide",
@@ -1386,9 +1462,9 @@ export const services =
     
     id: 3,
     path: "/services/uv-printing",
-    title: "UV Printing Services",
+    title: "UV Printing Nairobi",
     category: "Specialty Printing",
-    description: "Advanced UV printing services for premium materials and custom applications offering exceptional durability, vibrant colors, and versatile substrate compatibility.",
+    description: "UV flatbed printing in Nairobi — direct printing on acrylic, glass, wood, metal, leather, and rigid substrates. Scratch-resistant, vibrant, no plate costs. Same-day available. Luna Graphics Nairobi.trate compatibility.",
     detailedDescription: `Our UV printing services showcase cutting-edge technology that delivers superior print quality on an extensive range of materials. Unlike traditional printing methods, UV printing cures ink instantly using ultraviolet light, resulting in scratch-resistant, waterproof, and fade-resistant prints.\n\nWe specialize in direct-to-substrate printing on glass, metal, wood, acrylic, ceramics, and various rigid materials. This technology opens up unlimited creative possibilities for promotional items, signage, decorative panels, and custom applications that traditional printing cannot achieve.\n\nOur UV printing process is environmentally friendly, using eco-solvent inks with no volatile organic compounds (VOCs), making it safe for indoor applications and reducing environmental impact while maintaining exceptional print quality and durability.`,
     heroImage: uvHeroImage,
     startingPrice: 800,
@@ -1610,6 +1686,24 @@ export const services =
       turnaround: "1-2 days",
       features: ["Precision Engraving", "Various Materials", "Custom Designs"]
     } ],
+    faqs: [
+      {
+        question: "What is UV printing and how does it work in Nairobi?",
+        answer: "UV flatbed printing uses ultraviolet light to instantly cure ink directly onto rigid and flexible substrates — no heat, no drying time. Luna Graphics in Nairobi prints on acrylic, glass, wood, metal, ceramic, leather, and PVC. The result is scratch-resistant, vibrant, and suitable for indoor and outdoor use."
+      },
+      {
+        question: "How much does UV printing cost in Kenya?",
+        answer: "UV printing prices in Nairobi depend on substrate, size, and quantity. Prices start from KES 1,000 for small items like phone cases or plaques, rising to KES 5,000+ per sqm for large rigid panels. Contact Luna Graphics for a free quote."
+      },
+      {
+        question: "Can you UV print on acrylic and glass in Nairobi?",
+        answer: "Yes. UV flatbed printing on acrylic and glass is one of Luna Graphics' most popular services. We print logos, artwork, and full-colour designs on acrylic sheets for signage, awards, and interior décor, and on glass for office partitions, doors, and gifts."
+      },
+      {
+        question: "What is the difference between UV printing and normal printing?",
+        answer: "Normal printing (inkjet/offset) uses water-based inks that soak into paper. UV printing uses inks cured instantly by UV light on almost any surface — rigid boards, glass, metal, wood. The result is waterproof, fade-resistant, and far more durable, making it ideal for Nairobi's outdoor conditions."
+      }
+    ],
     relatedBlogPosts: [
       {
         slug: "uv-vs-screen-printing-nairobi-guide",
@@ -1651,7 +1745,7 @@ export const services =
   "dtf-printing": {
     id: 8,
     path: "/services/dtf-printing",
-    title: "DTF Printing Services",
+    title: "DTF Printing Nairobi",
     category: "Garment & Textile Printing",
     description: "Professional Direct to Film (DTF) printing in Nairobi for vivid, durable transfers on any fabric. No minimum order, full-colour prints on cotton, polyester, and blended garments.",
     detailedDescription: `DTF (Direct to Film) printing is the most versatile garment decoration technology available today. Unlike screen printing which requires separate setups per colour, DTF produces full-colour photographic prints in a single pass — making it ideal for short runs, complex designs, and on-demand printing.\n\nOur DTF process uses high-quality PET film, CMYK + white inks, and hot-melt adhesive powder to create transfers that bond permanently to virtually any fabric. The result is a soft, flexible print that won't crack, peel, or fade after washing.\n\nWe serve corporate clients needing branded uniforms, event organisers printing team shirts, political campaigns printing supporter merchandise, and retailers offering custom apparel — all with no minimum order and same-day turnaround for small quantities.`,
@@ -1713,7 +1807,7 @@ export const services =
   "sublimation-printing": {
     id: 9,
     path: "/services/sublimation-printing",
-    title: "Sublimation Printing Services",
+    title: "Sublimation Printing Nairobi",
     category: "Garment & Promotional Printing",
     description: "High-quality dye sublimation printing in Nairobi for vibrant, permanent full-colour prints on polyester garments, mugs, phone cases, and corporate promotional items.",
     detailedDescription: `Dye sublimation is a heat-based printing process that converts solid ink into gas, permanently bonding colour into the fibres of polyester fabrics or the coating of hard substrates. The result is a print that won't crack, peel, or wash out — it becomes part of the material itself.\n\nAt Luna Graphics, we use sublimation for all-over garment printing (jerseys, sportswear, uniforms), promotional hard goods (mugs, phone cases, keyrings, coasters), and custom branded merchandise for corporate and events clients.\n\nSublimation produces the most vibrant colours possible on white or light-coloured polyester, making it the top choice for sports kits, hospitality uniforms, event merchandise, and photographic gifts. We handle everything from single-piece gifts to large corporate uniform runs.`,
@@ -1775,7 +1869,7 @@ export const services =
   "digital-printing": {
     id: 10,
     path: "/services/digital-printing",
-    title: "Digital Printing Services",
+    title: "Digital Printing Nairobi",
     category: "Commercial Printing",
     description: "Fast, affordable digital printing in Nairobi for business cards, flyers, brochures, catalogues, and stationery. Full-colour CMYK printing with same-day turnaround available.",
     detailedDescription: `Digital printing is the foundation of modern commercial print — fast, flexible, and cost-effective from a single copy to thousands. Unlike offset printing, digital requires no printing plates, which means lower setup costs, faster turnaround, and the ability to personalise every single piece.\n\nAt Luna Graphics, our digital printing covers the full range of business stationery and marketing materials: business cards, letterheads, flyers, brochures, menus, catalogues, certificates, NCR forms, and more. We print on premium paper stocks from 90gsm bond to 400gsm board, with matte, gloss, and silk lamination finishes available.\n\nOur same-day digital printing service is popular with businesses that need urgent marketing collateral, event programmes, or last-minute stationery. We offer both standard sizes and custom formats, with full design support available.`,

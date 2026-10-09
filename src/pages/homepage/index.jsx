@@ -13,9 +13,8 @@ import Footer from './components/Footer';
 
 const Homepage = () => {
   const brandName = "Luna Graphics";
-  const tagline = "Premier Print Shop in Nairobi | Quality Printing Services | Large Format, UV Printing, CNC Cutting, Laser Cutting, Political Campaign Materials, Election Printing 2027";
-  // ===== ENHANCED SEO: Fixed spacing in URLs =====
-  const pageUrl = "https://lunagraphics.co.ke/home";
+  const tagline = "Premier Print Shop in Nairobi";
+  const pageUrl = "https://lunagraphics.co.ke/";
   const imageUrl = "https://lunagraphics.co.ke/social-sharing-image.jpg";
   const twitterHandle = "@LunaGraphicsKE";
 
@@ -24,8 +23,8 @@ const Homepage = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": brandName,
-    "url": pageUrl,
-    "logo": imageUrl,
+    "url": "https://lunagraphics.co.ke/",
+    "logo": "https://lunagraphics.co.ke/apple-icon-180x180.png",
     "image": imageUrl,
     "telephone": "+254-791-159-618",
     "email": "info@lunagraphics.co.ke",
@@ -62,16 +61,8 @@ const Homepage = () => {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": pageUrl,
-    "name": brandName,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://lunagraphics.co.ke/?search={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "url": "https://lunagraphics.co.ke/",
+    "name": brandName
   };
 
   // ===== ENHANCED SEO: Service Area Schema =====

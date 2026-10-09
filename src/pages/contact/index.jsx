@@ -58,11 +58,17 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-surface-50">
-      <SEO 
-        title="Contact Us | Get a Printing Quote"
-        description="Get in touch with Luna Graphics for professional printing services in Nairobi. Call +254 791 159 618, WhatsApp, or visit our CBD location for quotes and consultations."
-        canonical="/contact"
-        keywords="contact luna graphics, printing services nairobi, print shop contact, nairobi printing company, professional printing quotes"
+      <SEO
+        title="Contact Us | Get a Printing Quote in Nairobi | Luna Graphics"
+        description="Get in touch with Luna Graphics for professional printing services in Nairobi. Call +254 791 159 618, WhatsApp, or visit our Kweria Road location for quotes and consultations."
+        canonical="https://lunagraphics.co.ke/contact"
+        keywords="contact luna graphics, printing services nairobi, print shop contact, nairobi printing company, professional printing quotes, printing quote nairobi, luna graphics phone number"
+        robots="index, follow"
+        geo={{
+          region: "KE-30",
+          placename: "Nairobi",
+          position: "-1.280302;36.822639"
+        }}
       />
 
       <Header />

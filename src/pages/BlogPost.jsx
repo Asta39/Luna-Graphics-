@@ -130,6 +130,7 @@ const BlogPost = () => {
           modifiedTime: post.updatedAt,
           section: category?.name,
           tags: post.tags,
+          author: post.author?.name || 'Luna Graphics',
         }}
         schemaData={generateBlogPostSchema(post)}
       />

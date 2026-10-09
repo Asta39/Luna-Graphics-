@@ -146,7 +146,7 @@ const ProductDetail = () => {
         description={product.description || `Buy ${product.name} at Luna Graphics. Professional printing and branding solutions in Nairobi.`}
         canonical={`/shop/product/${product.id}`}
         ogImage={product.image || (product.images && product.images[0])}
-        type="product"
+        type="website"
         keywords={`${product.name}, ${product.subcategory}, ${product.category}, printing Kenya, branding Nairobi, custom printing Nairobi, Luna Graphics shop`}
         robots="index, follow"
         geo={{

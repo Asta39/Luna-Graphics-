@@ -31,9 +31,17 @@ const CorporateBranding = () => {
     "@type": "Service",
     "name": "Corporate Branding Services",
     "provider": {
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": "Luna Graphics",
-      "url": "https://lunagraphics.co.ke"
+      "url": "https://lunagraphics.co.ke/",
+      "telephone": "+254-791-159-618",
+      "email": "info@lunagraphics.co.ke",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kweria Road",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      }
     },
     "description": "Professional corporate branding, business printing, and company rebranding solutions in Nairobi, Kenya",
     "areaServed": { "@type": "Country", "name": "Kenya" }

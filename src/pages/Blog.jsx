@@ -105,12 +105,12 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gray-50 pt-18">
       <SEO 
-        title="Blog | Printing Tips & Branding Insights | Luna Graphics Kenya"
+        title={currentPage > 1 ? `Blog | Page ${currentPage} | Luna Graphics Kenya` : "Blog | Printing Tips & Branding Insights | Luna Graphics Kenya"}
         description="Expert printing tips, political campaign guides, corporate branding insights, and large format printing advice from Kenya's leading printing company."
-        canonical="/blog"
+        canonical="https://lunagraphics.co.ke/blog"
         keywords="printing tips Kenya, branding insights Nairobi, political campaign printing, large format printing advice, graphic design blog Kenya, Luna Graphics blog"
         type="website"
-        robots="index, follow"
+        robots={currentPage > 1 ? "noindex, follow" : "index, follow"}
         geo={{
           region: "KE-30",
           placename: "Nairobi",

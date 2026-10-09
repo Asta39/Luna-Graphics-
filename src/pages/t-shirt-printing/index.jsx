@@ -34,7 +34,7 @@ const TShirtPrintingServicesPage = () => {
   }
 
   // 4. Define SEO variables using the single `pageData` object.
-  const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
+  const pageTitle = `T-Shirt Printing Nairobi | Custom Uniforms & Branded Garments | Luna Graphics`;
   const pageDescription = pageData.description;
   // ===== ENHANCED SEO: Fixed spacing in URL =====
   const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
@@ -159,8 +159,8 @@ const TShirtPrintingServicesPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={imageUrl}
-        type="business.business"
-        keywords="t-shirt printing Nairobi, custom t-shirts Kenya, screen printing Nairobi, DTF printing Nairobi, sublimation printing Kenya, branded uniforms Nairobi, corporate t-shirts Kenya, bulk garment printing Kenya, polo shirt printing Nairobi, hoodie printing Kenya, sports kit printing Nairobi, promotional t-shirts, Luna Graphics garment printing"
+        type="website"
+        keywords="t-shirt printing Nairobi, custom t-shirts Kenya, screen printing Nairobi, DTF printing Nairobi, sublimation printing Kenya, branded uniforms Nairobi, corporate t-shirts Kenya, bulk garment printing Kenya, polo shirt printing Nairobi, hoodie printing Kenya, sports kit printing Nairobi, promotional t-shirts, school uniform printing Nairobi, event t-shirts Kenya, t-shirt printing prices Nairobi, minimum order t-shirt printing Kenya, same day t-shirt printing Nairobi, company uniform printing Kenya, Luna Graphics garment printing"
         schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{

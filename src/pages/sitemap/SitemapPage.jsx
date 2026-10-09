@@ -48,8 +48,8 @@ const SitemapPage = () => {
       <SEO 
         title="Sitemap | Luna Graphics Kenya"
         description="Browse all pages on the Luna Graphics website. Find printing services, products, blog posts, and company information."
-        canonical="/sitemap"
-        robots="index, follow"
+        canonical="https://lunagraphics.co.ke/sitemap"
+        robots="noindex, follow"
       />
       <Header />
 

@@ -3,6 +3,7 @@ import SEO from '../../components/SEO';
 import Header from '../../components/ui/Header';
 import FAQ from '../../components/ui/FAQ';
 import Button from '../../components/ui/Button';
+import { generateFAQSchema } from '../../data/faqData';
 
 const FAQPage = () => {
   const pageTitle = "FAQ | Printing Services Questions | Luna Graphics Nairobi";
@@ -22,30 +23,7 @@ const FAQPage = () => {
           placename: "Nairobi",
           position: "-1.280302;36.822639"
         }}
-        schemaData={[
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What are your printing turnaround times?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Turnaround times vary by service. Small orders are often ready same-day, while large format and bulk orders typically take 2-3 business days."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you offer delivery in Nairobi?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we offer reliable delivery services across Nairobi and surrounding areas for all our printing and branding projects."
-                }
-              }
-            ]
-          }
-        ]}
+        schemaData={[generateFAQSchema()]}
       />
 
       <Header />

@@ -24,7 +24,7 @@ Hours: Mon–Fri 8:00–18:00, Sat 9:00–16:00
 
 ## Company
 
-- [About](https://lunagraphics.co.ke/home): Company overview and value proposition.
+- [About](https://lunagraphics.co.ke/about): Company overview and value proposition.
 - [Team](https://lunagraphics.co.ke/team): Leadership, creative, and production specialists.
 - [Contact](https://lunagraphics.co.ke/contact): Location, hours, phone, directions.
 - [FAQ](https://lunagraphics.co.ke/faq): Common questions on pricing, turnaround, and ordering.

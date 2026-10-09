@@ -18,7 +18,7 @@ const TermsOfService = () => {
         canonical={pageUrl}
         type="website"
         keywords="terms of service, printing agreement, service policies, Luna Graphics terms, business printing Nairobi"
-        robots="index, follow"
+        robots="noindex, follow"
         geo={{
           region: "KE-30",
           placename: "Nairobi",

@@ -1,5 +1,5 @@
 {
-  "count": 538,
+  "count": 533,
   "routes": [
     {
       "url": "/",
@@ -7,7 +7,7 @@
       "changefreq": "daily",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/about",
@@ -15,7 +15,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/blog",
@@ -23,7 +23,7 @@
       "changefreq": "daily",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/blog/3d-printing-corporate-branding-applications",
@@ -3271,7 +3271,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/corporate-services",
@@ -3279,15 +3279,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/corporate-terms",
-      "priority": "0.3",
-      "changefreq": "yearly",
-      "type": "legal",
-      "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/corporate/corporate-branding",
@@ -3295,7 +3287,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/corporate/events-exhibitions",
@@ -3303,7 +3295,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/faq",
@@ -3311,7 +3303,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/gallery",
@@ -3319,23 +3311,7 @@
       "changefreq": "weekly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/home",
-      "priority": "0.7",
-      "changefreq": "monthly",
-      "type": "page",
-      "source": "static",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/privacy-policy",
-      "priority": "0.3",
-      "changefreq": "yearly",
-      "type": "legal",
-      "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/service/branding-consultation",
@@ -3423,7 +3399,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/digital-printing",
@@ -3431,7 +3407,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/dtf-printing",
@@ -3439,7 +3415,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/large-format",
@@ -3447,7 +3423,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/laser-cutting",
@@ -3455,7 +3431,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/plotting",
@@ -3463,7 +3439,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/sublimation-printing",
@@ -3471,7 +3447,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/t-shirt-printing",
@@ -3479,7 +3455,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/services/uv-printing",
@@ -3487,7 +3463,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     },
     {
       "url": "/shop/product/3d-signage",
@@ -4282,28 +4258,12 @@
       "lastmod": "2026-07-07"
     },
     {
-      "url": "/sitemap",
-      "priority": "0.5",
-      "changefreq": "monthly",
-      "type": "page",
-      "source": "static",
-      "lastmod": "2026-07-07"
-    },
-    {
       "url": "/team",
       "priority": "0.7",
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/terms-of-service",
-      "priority": "0.3",
-      "changefreq": "yearly",
-      "type": "legal",
-      "source": "static",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-09-03"
     }
   ]
 }

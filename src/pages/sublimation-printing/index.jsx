@@ -87,7 +87,7 @@ const SublimationPrintingPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={pageData.heroImage}
-        type="business.business"
+        type="website"
         keywords="sublimation printing Nairobi, dye sublimation Kenya, custom mug printing Nairobi, sports jersey printing Kenya, all-over print Nairobi, polyester printing Kenya, sublimation gifts Nairobi, branded merchandise Kenya, Luna Graphics sublimation"
         schemaData={[structuredData, breadcrumbSchema, faqSchema]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"

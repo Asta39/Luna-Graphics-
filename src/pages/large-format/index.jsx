@@ -39,7 +39,7 @@ const ServiceDetailPage = () => {
   }
 
   // 5. Setup SEO variables using the dynamically loaded pageData
-  const pageTitle = `${pageData.title} | Luna Graphics`;
+  const pageTitle = `Large Format Printing Nairobi | Banners, Billboards & Signage | Luna Graphics`;
   const pageDescription = pageData.description;
   // ===== ENHANCED SEO: Fixed spacing in URL =====
   const pageUrl = `https://lunagraphics.co.ke${pageData.path || ''}`;
@@ -158,8 +158,8 @@ const ServiceDetailPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={imageUrl}
-        type="business.business"
-        keywords="large format printing Nairobi, banner printing Kenya, billboard printing Nairobi, wide format printing Kenya, PVC banner printing Nairobi, building wrap printing Kenya, event backdrop printing Nairobi, outdoor signage printing, vinyl banner Nairobi, large format printer Nairobi, Luna Graphics large format"
+        type="website"
+        keywords="large format printing Nairobi, large format printing Kenya, banner printing Nairobi, billboard printing Nairobi, wide format printing Kenya, PVC banner printing Nairobi, building wrap printing Kenya, flex banner Nairobi, event backdrop printing Nairobi, outdoor signage Nairobi, vinyl banner Nairobi, large format printing prices Kenya, banner printing near me Nairobi, printing company Nairobi, hoarding graphics Kenya, mesh banner printing Nairobi"
         schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{

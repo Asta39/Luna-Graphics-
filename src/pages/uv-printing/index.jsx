@@ -23,7 +23,7 @@ const UVPrintingServicesPage = () => {
 
   if (!pageData) return <div>Service data for "uv-printing" not found.</div>;
 
-  const pageTitle = `${pageData.title} in Nairobi | Luna Graphics`;
+  const pageTitle = `UV Printing Nairobi | Acrylic, Glass & Rigid Surface Printing | Luna Graphics`;
   const pageDescription = pageData.description;
   // ===== ENHANCED SEO: Fixed spacing in URL =====
   const pageUrl = `https://lunagraphics.co.ke${pageData.path}`;
@@ -137,8 +137,8 @@ const UVPrintingServicesPage = () => {
         description={pageDescription}
         canonical={pageUrl}
         ogImage={imageUrl}
-        type="business.business"
-        keywords="UV printing Nairobi, UV flatbed printing Kenya, direct to substrate printing, rigid material printing Nairobi, acrylic UV printing, glass printing Kenya, metal printing, wood UV printing, promotional items printing, Luna Graphics UV services"
+        type="website"
+        keywords="UV printing Nairobi, UV flatbed printing Kenya, direct to substrate printing, rigid material printing Nairobi, acrylic UV printing, glass printing Kenya, metal printing Nairobi, wood UV printing, promotional items printing Nairobi, UV printing prices Kenya, ceramic printing Nairobi, phone case printing Kenya, corporate gifts printing Nairobi, branded merchandise Kenya, UV printing company Nairobi, Luna Graphics UV services"
         schemaData={[structuredData, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])]}
         robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         geo={{
