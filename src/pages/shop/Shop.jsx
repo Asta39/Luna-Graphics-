@@ -211,7 +211,7 @@ const Shop = () => {
 
       {/* Trust / Identity Strip */}
       <section className="bg-emerald-900 text-white py-3 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
           <h1 className="font-semibold text-center sm:text-left">
             Luna Graphics — Printing &amp; Branding Company in Nairobi, Kenya
           </h1>
@@ -236,7 +236,7 @@ const Shop = () => {
       
       {/* Category Navigation */}
       <section className="py-4 lg:py-6 bg-white border-b border-gray-200 sticky top-16 lg:top-0 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Active Search Indicator */}
           {searchQuery && (
             <div className="mb-4 flex items-center gap-2 text-sm animate-fade-in">
@@ -295,7 +295,7 @@ const Shop = () => {
       {/* Deals Section */}
       {!searchQuery && activeCategory === 'all' && deals.length > 0 && (
         <section className="py-8 lg:py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
@@ -351,7 +351,7 @@ const Shop = () => {
 
       {/* Main Products Grid */}
       <section id="products-grid" className="py-8 lg:py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
             <div>
@@ -459,7 +459,7 @@ const Shop = () => {
       {/* New Arrivals */}
       {!searchQuery && activeCategory === 'all' && (
         <section className="py-8 lg:py-12 bg-white border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h2 className="text-xl lg:text-2xl font-bold text-gray-900">New Arrivals</h2>

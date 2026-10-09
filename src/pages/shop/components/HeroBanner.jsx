@@ -25,8 +25,8 @@ const heroSlides = [
 const sideBanners = [
   {
     id: 1,
-    image: '/banners/banner-large-format.webp',
-    link: '/services/large-format',
+    image: '/banners/banner-october.webp',
+    link: '/shop',
   },
   {
     id: 2,
@@ -112,8 +112,8 @@ const HeroBanner = ({ onSearch }) => {
       </div>
 
       {/* Main Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
-        <div className="lg:max-w-3xl lg:mx-auto grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-4">
 
           {/* Main slot — carousel on mobile, static on desktop */}
           <div
