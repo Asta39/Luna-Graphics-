@@ -13,6 +13,7 @@ const Header = () => {
   const [corporateDropdownOpen, setCorporateDropdownOpen] = useState(false);
   const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
   const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -40,12 +41,13 @@ const Header = () => {
   const careersDropdownRef = useRef(null);
   const mobileMenuButtonRef = useRef(null);
   const mobileMenuContainerRef = useRef(null);
+  const megaMenuRef = useRef(null);
 
   // Close dropdowns when clicking outside (desktop only)
   useClickOutside([servicesDropdownRef], () => {
     if (window.innerWidth >= 1024) setServicesDropdownOpen(false);
   });
-  
+
   useClickOutside([shopDropdownRef], () => {
     if (window.innerWidth >= 1024) setShopDropdownOpen(false);
   });
@@ -62,6 +64,10 @@ const Header = () => {
     if (window.innerWidth >= 1024) setCareersDropdownOpen(false);
   });
 
+  useClickOutside([megaMenuRef], () => {
+    if (window.innerWidth >= 1024) setMegaMenuOpen(false);
+  });
+
   // Close mobile menu when clicking outside
   useClickOutside([mobileMenuButtonRef, mobileMenuContainerRef], () => {
     if (mobileMenuOpen) setMobileMenuOpen(false);
@@ -74,6 +80,7 @@ const Header = () => {
     setCorporateDropdownOpen(false);
     setResourcesDropdownOpen(false);
     setCareersDropdownOpen(false);
+    setMegaMenuOpen(false);
   };
 
   const toggleServices = () => {
@@ -426,361 +433,178 @@ const handleSearch = (e) => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-4">
-              {/* Home */}
+            <nav className="hidden lg:flex items-center space-x-1" ref={megaMenuRef}>
               <button
                 className={`px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                  isActivePath('/')
-                    ? 'text-emerald-600 border-b-2 border-emerald-600' 
-                    : 'text-gray-600 hover:text-emerald-600'
+                  isActivePath('/') ? 'text-emerald-600 border-b-2 border-emerald-600' : 'text-gray-600 hover:text-emerald-600'
                 }`}
                 onClick={() => handleNavigation('/')}
               >
                 Home
               </button>
 
-              {/* Shop Dropdown */}
-              <div className="relative" ref={shopDropdownRef}>
-                <button
-                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                    isShopActive()
-                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
-                      : 'text-gray-600 hover:text-emerald-600'
-                  }`}
-                  onClick={toggleShop}
-                  onMouseEnter={() => {
-                    if (window.innerWidth >= 1024) {
-                      closeAllDropdowns();
-                      setShopDropdownOpen(true);
-                    }
-                  }}
-                >
-                  <span>Shop</span>
-                  <Icon 
-                    name="ChevronDown" 
-                    size={16} 
-                    className={`transition-transform duration-200 ${
-                      shopDropdownOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
+              {/* Single mega menu trigger */}
+              <button
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
+                  megaMenuOpen ? 'text-emerald-600' : 'text-gray-600 hover:text-emerald-600'
+                }`}
+                onClick={() => setMegaMenuOpen(o => !o)}
+              >
+                <span>Explore</span>
+                <Icon name="ChevronDown" size={16} className={`transition-transform duration-200 ${megaMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
 
-                {shopDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
-                    style={{ zIndex: 9999 }}
-                    onMouseLeave={() => setShopDropdownOpen(false)}
-                  >
-                    <div className="p-2">
-                      {shopCategories.map((item, index) => (
-                        <button
-                          key={item.label}
-                          className={`flex items-start space-x-3 w-full p-3 rounded-lg transition-all duration-200 text-left group hover:bg-emerald-50 ${
-                            index !== shopCategories.length - 1 ? 'mb-1' : ''
-                          }`}
-                          onClick={() => handleNavigation(item.path)}
-                        >
-                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
-                            <Icon name={item.icon} size={18} className="text-emerald-600" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm font-semibold text-gray-900">
-                                {item.label}
-                              </span>
-                            </div>
-                            <div className="text-xs text-gray-500 mt-1">{item.description}</div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Services Dropdown */}
-              <div className="relative" ref={servicesDropdownRef}>
-                <button
-                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                    location.pathname.includes('/services') 
-                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
-                      : 'text-gray-600 hover:text-emerald-600'
-                  }`}
-                  onClick={toggleServices}
-                  onMouseEnter={() => {
-                    if (window.innerWidth >= 1024) {
-                      closeAllDropdowns();
-                      setServicesDropdownOpen(true);
-                    }
-                  }}
-                >
-                  <span>Services</span>
-                  <Icon 
-                    name="ChevronDown" 
-                    size={16} 
-                    className={`transition-transform duration-200 ${
-                      servicesDropdownOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {servicesDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
-                    style={{ zIndex: 9999 }}
-                    onMouseLeave={() => setServicesDropdownOpen(false)}
-                  >
-                    <div className="p-2">
-                      {servicesItems.map((item, index) => (
-                        <button
-                          key={item.label}
-                          className={`flex items-start space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 text-left ${
-                            index !== servicesItems.length - 1 ? 'mb-1' : ''
-                          }`}
-                          onClick={() => handleNavigation(item.path)}
-                        >
-                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                            <Icon name={item.icon} size={18} className="text-emerald-600" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="text-sm font-semibold text-gray-900">
-                              {item.label}
-                            </div>
-                            <div className="text-xs text-gray-500 mt-1">
-                              {item.description}
-                            </div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Corporate Branding Dropdown */}
-              <div className="relative" ref={corporateDropdownRef}>
-                <button
-                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                    isCorporateActive()
-                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
-                      : 'text-gray-600 hover:text-emerald-600'
-                  }`}
-                  onClick={toggleCorporate}
-                  onMouseEnter={() => {
-                    if (window.innerWidth >= 1024) {
-                      closeAllDropdowns();
-                      setCorporateDropdownOpen(true);
-                    }
-                  }}
-                >
-                  <span>Corporate</span>
-                  <Icon 
-                    name="ChevronDown" 
-                    size={16} 
-                    className={`transition-transform duration-200 ${
-                      corporateDropdownOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {corporateDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
-                    style={{ zIndex: 9999 }}
-                    onMouseLeave={() => setCorporateDropdownOpen(false)}
-                  >
-                    <div className="p-2">
-                      {corporateItems.map((item, index) => (
-                        <button
-                          key={item.label}
-                          className={`flex items-start space-x-3 w-full p-3 rounded-lg transition-all duration-200 text-left group hover:bg-gray-50 ${
-                            index !== corporateItems.length - 1 ? 'mb-1' : ''
-                          }`}
-                          onClick={() => {
-                            if (item.isExternal) {
-                              trackEvent('external_link', { category: 'Corporate', label: item.label });
-                              handleNavigation(item.path, true);
-                            } else {
-                              handleNavigation(item.path);
-                            }
-                          }}
-                        >
-                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
-                            <Icon name={item.icon} size={18} className="text-emerald-600" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm font-semibold text-gray-900">
-                                {item.label}
-                              </span>
-                              {item.isExternal && (
-                                <Icon name="ExternalLink" size={14} className="text-gray-400" />
-                              )}
-                            </div>
-                            <div className="text-xs text-gray-500 mt-1">{item.description}</div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Careers Dropdown */}
-              <div className="relative" ref={careersDropdownRef}>
-                <button
-                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                    isCareersActive()
-                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
-                      : 'text-gray-600 hover:text-emerald-600'
-                  }`}
-                  onClick={toggleCareers}
-                  onMouseEnter={() => {
-                    if (window.innerWidth >= 1024) {
-                      closeAllDropdowns();
-                      setCareersDropdownOpen(true);
-                    }
-                  }}
-                >
-                  <span>Careers</span>
-                  <Icon 
-                    name="ChevronDown" 
-                    size={16} 
-                    className={`transition-transform duration-200 ${
-                      careersDropdownOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {careersDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
-                    style={{ zIndex: 9999 }}
-                    onMouseLeave={() => setCareersDropdownOpen(false)}
-                  >
-                    <div className="p-2">
-                      {careersItems.map((item, index) => (
-                        <button
-                          key={item.label}
-                          className={`flex items-start space-x-3 w-full p-3 rounded-lg transition-all duration-200 text-left group hover:bg-gray-50 ${
-                            index !== careersItems.length - 1 ? 'mb-1' : ''
-                          }`}
-                          onClick={() => {
-                            if (item.isExternal) {
-                              trackEvent('external_link', { category: 'Careers', label: 'Jobs' });
-                              handleNavigation(item.path, true);
-                            } else {
-                              handleNavigation(item.path);
-                            }
-                          }}
-                        >
-                          <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
-                            <Icon name={item.icon} size={18} className="text-emerald-600" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm font-semibold text-gray-900">
-                                {item.label}
-                              </span>
-                              {item.isExternal && (
-                                <Icon name="ExternalLink" size={14} className="text-gray-400" />
-                              )}
-                            </div>
-                            <div className="text-xs text-gray-500 mt-1">{item.description}</div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Resources Dropdown */}
-              <div className="relative" ref={resourcesDropdownRef}>
-                <button
-                  className={`flex items-center space-x-1 px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                    ['/blog', '/faq'].some(path => location.pathname === path)
-                      ? 'text-emerald-600 border-b-2 border-emerald-600' 
-                      : 'text-gray-600 hover:text-emerald-600'
-                  }`}
-                  onClick={toggleResources}
-                  onMouseEnter={() => {
-                    if (window.innerWidth >= 1024) {
-                      closeAllDropdowns();
-                      setResourcesDropdownOpen(true);
-                    }
-                  }}
-                >
-                  <span>Resources</span>
-                  <Icon 
-                    name="ChevronDown" 
-                    size={16} 
-                    className={`transition-transform duration-200 ${
-                      resourcesDropdownOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {resourcesDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in"
-                    style={{ zIndex: 9999 }}
-                    onMouseLeave={() => setResourcesDropdownOpen(false)}
-                  >
-                    <div className="p-2">
-                      {resourcesItems.map((item, index) => (
-                        <button
-                          key={item.label}
-                          className={`flex items-start space-x-3 w-full p-3 rounded-lg transition-all duration-200 text-left group ${
-                            item.isDownload ? 'hover:bg-green-50' : 'hover:bg-gray-50'
-                          } ${index !== resourcesItems.length - 1 ? 'mb-1' : ''}`}
-                          onClick={() => {
-                            if (item.isDownload) {
-                              trackEvent('download', { category: 'Resources', label: 'Company Profile PDF' });
-                              window.open(item.path, '_blank');
-                              setResourcesDropdownOpen(false);
-                            } else {
-                              handleNavigation(item.path);
-                            }
-                          }}
-                        >
-                          <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
-                            item.isDownload ? 'bg-green-100 group-hover:bg-green-200' : 'bg-emerald-100 group-hover:bg-emerald-200'
-                          }`}>
-                            <Icon name={item.icon} size={18} className={item.isDownload ? 'text-green-600' : 'text-emerald-600'} />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between">
-                              <span className={`text-sm font-semibold ${item.isDownload ? 'text-green-700' : 'text-gray-900'}`}>
-                                {item.label}
-                              </span>
-                              {item.isDownload && (
-                                <span className="flex items-center text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
-                                  <Icon name="Download" size={12} className="mr-1" />
-                                  PDF
-                                </span>
-                              )}
-                            </div>
-                            <div className="text-xs text-gray-500 mt-1">{item.description}</div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Contact */}
               <button
                 className={`px-3 py-2 text-sm font-semibold transition-colors duration-200 ${
-                  isActivePath('/contact')
-                    ? 'text-emerald-600 border-b-2 border-emerald-600' 
-                    : 'text-gray-600 hover:text-emerald-600'
+                  isActivePath('/contact') ? 'text-emerald-600 border-b-2 border-emerald-600' : 'text-gray-600 hover:text-emerald-600'
                 }`}
                 onClick={() => handleNavigation('/contact')}
               >
                 Contact
               </button>
+
+              {/* Mega Menu Panel */}
+              {megaMenuOpen && (
+                <div
+                  className="fixed left-0 right-0 top-16 bg-white shadow-2xl border-t border-gray-100 z-50"
+                  onMouseLeave={() => setMegaMenuOpen(false)}
+                >
+                  <div className="max-w-screen-2xl mx-auto px-8 py-8 grid grid-cols-5 gap-8">
+
+                    {/* Shop */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name="ShoppingBag" size={14} className="text-emerald-600" />
+                        </div>
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Shop</span>
+                      </div>
+                      <div className="space-y-1">
+                        {shopCategories.map(item => (
+                          <button key={item.label} onClick={() => handleNavigation(item.path)}
+                            className="flex items-center gap-2.5 w-full p-2 rounded-lg hover:bg-emerald-50 text-left group transition-colors">
+                            <Icon name={item.icon} size={15} className="text-emerald-500 flex-shrink-0" />
+                            <div>
+                              <div className="text-sm font-medium text-gray-800 group-hover:text-emerald-700">{item.label}</div>
+                              <div className="text-xs text-gray-400 leading-tight">{item.description}</div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Services */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name="Settings" size={14} className="text-emerald-600" />
+                        </div>
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Services</span>
+                      </div>
+                      <div className="space-y-1">
+                        {servicesItems.map(item => (
+                          <button key={item.label} onClick={() => handleNavigation(item.path)}
+                            className="flex items-center gap-2.5 w-full p-2 rounded-lg hover:bg-emerald-50 text-left group transition-colors">
+                            <Icon name={item.icon} size={15} className="text-emerald-500 flex-shrink-0" />
+                            <div>
+                              <div className="text-sm font-medium text-gray-800 group-hover:text-emerald-700">{item.label}</div>
+                              <div className="text-xs text-gray-400 leading-tight">{item.description}</div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Corporate */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name="Building2" size={14} className="text-emerald-600" />
+                        </div>
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Corporate</span>
+                      </div>
+                      <div className="space-y-1">
+                        {corporateItems.map(item => (
+                          <button key={item.label} onClick={() => handleNavigation(item.path, item.isExternal)}
+                            className="flex items-center gap-2.5 w-full p-2 rounded-lg hover:bg-emerald-50 text-left group transition-colors">
+                            <Icon name={item.icon} size={15} className="text-emerald-500 flex-shrink-0" />
+                            <div className="flex-1">
+                              <div className="flex items-center gap-1">
+                                <span className="text-sm font-medium text-gray-800 group-hover:text-emerald-700">{item.label}</span>
+                                {item.isExternal && <Icon name="ExternalLink" size={11} className="text-gray-400" />}
+                              </div>
+                              <div className="text-xs text-gray-400 leading-tight">{item.description}</div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Company */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name="Users" size={14} className="text-emerald-600" />
+                        </div>
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Company</span>
+                      </div>
+                      <div className="space-y-1">
+                        {careersItems.map(item => (
+                          <button key={item.label} onClick={() => handleNavigation(item.path, item.isExternal)}
+                            className="flex items-center gap-2.5 w-full p-2 rounded-lg hover:bg-emerald-50 text-left group transition-colors">
+                            <Icon name={item.icon} size={15} className="text-emerald-500 flex-shrink-0" />
+                            <div>
+                              <div className="text-sm font-medium text-gray-800 group-hover:text-emerald-700">{item.label}</div>
+                              <div className="text-xs text-gray-400 leading-tight">{item.description}</div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Resources + CTA */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Icon name="BookOpen" size={14} className="text-emerald-600" />
+                        </div>
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Resources</span>
+                      </div>
+                      <div className="space-y-1 mb-6">
+                        {resourcesItems.map(item => (
+                          <button key={item.label}
+                            onClick={() => {
+                              if (item.isDownload) { window.open(item.path, '_blank'); setMegaMenuOpen(false); }
+                              else handleNavigation(item.path);
+                            }}
+                            className="flex items-center gap-2.5 w-full p-2 rounded-lg hover:bg-emerald-50 text-left group transition-colors">
+                            <Icon name={item.icon} size={15} className="text-emerald-500 flex-shrink-0" />
+                            <div className="flex-1">
+                              <div className="flex items-center gap-1">
+                                <span className="text-sm font-medium text-gray-800 group-hover:text-emerald-700">{item.label}</span>
+                                {item.isDownload && <Icon name="Download" size={11} className="text-gray-400" />}
+                              </div>
+                              <div className="text-xs text-gray-400 leading-tight">{item.description}</div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                      {/* CTA */}
+                      <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                        <p className="text-xs font-semibold text-emerald-800 mb-1">Need a quote?</p>
+                        <p className="text-xs text-emerald-600 mb-3">Get a custom print quote in minutes.</p>
+                        <button
+                          onClick={() => handleNavigation('/contact')}
+                          className="w-full py-2 bg-emerald-600 text-white text-xs font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
+                        >
+                          Get a Quote
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              )}
             </nav>
 
             {/* Search Bar - Desktop */}
