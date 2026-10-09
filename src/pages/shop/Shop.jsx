@@ -15,7 +15,6 @@ import Pagination from '../../components/ui/Pagination';
 import ServicesCarousel from './components/ServicesCarousel';
 import GoogleReviews from '../homepage/components/GoogleReviews';
 import CaseStudies from '../corporate-services/components/CaseStudies';
-const reviewStats = { averageRating: 4.9, totalReviews: 150 };
 
 const Shop = () => {
   const navigate = useNavigate();
@@ -209,30 +208,9 @@ const Shop = () => {
       
       <Header />
 
-      {/* Trust / Identity Strip */}
-      <section className="bg-emerald-900 text-white py-3 mt-20">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
-          <h1 className="font-semibold text-center sm:text-left">
-            Luna Graphics — Printing &amp; Branding Company in Nairobi, Kenya
-          </h1>
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-emerald-100">
-            <a href="tel:+254791159618" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Icon name="Phone" size={14} />
-              +254 791 159 618
-            </a>
-            <span className="flex items-center gap-1.5">
-              <Icon name="MapPin" size={14} />
-              Kweria Road, Nairobi CBD
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Icon name="Star" size={14} className="text-yellow-400" />
-              {reviewStats.averageRating} rating · {reviewStats.totalReviews}+ reviews
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <HeroBanner onSearch={handleHeroSearch} />
+      <div className="mt-20">
+        <HeroBanner onSearch={handleHeroSearch} />
+      </div>
       
       {/* Category Navigation */}
       <section className="py-4 lg:py-6 bg-white border-b border-gray-200 sticky top-16 lg:top-0 z-30">
