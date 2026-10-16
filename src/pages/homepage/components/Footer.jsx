@@ -275,12 +275,12 @@ const Footer = () => {
             <div className="flex items-center space-x-2 text-sm text-surface-300">
               <span>Crafted by</span>
               <a 
-                href="https://evoqcreative.co.ke" 
+                href="https://evoqstudioke.com"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent-600 transition-colors duration-200"
               >
-                EVOQ TECH
+                EVOQ STUDIO
               </a>
             </div>
           </div>
