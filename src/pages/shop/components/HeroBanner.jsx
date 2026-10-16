@@ -17,8 +17,8 @@ const heroSlides = [
   },
   {
     id: 3,
-    image: '/banners/banner-customer-service.webp',
-    link: '/contact',
+    image: '/banners/banner-hiring.webp',
+    link: '/careers',
   },
 ];
 
@@ -30,8 +30,8 @@ const sideBanners = [
   },
   {
     id: 2,
-    image: '/banners/banner-customer-service.webp',
-    link: '/contact',
+    image: '/banners/banner-hiring.webp',
+    link: '/careers',
   },
 ];
 
