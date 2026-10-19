@@ -28,6 +28,15 @@ const CookieBanner = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const open = () => {
+      setShowPreferences(true);
+      setIsVisible(true);
+    };
+    window.addEventListener('luna:cookie-settings', open);
+    return () => window.removeEventListener('luna:cookie-settings', open);
+  }, []);
+
   const applyPreferences = (prefs) => {
     // Apply Google Analytics only if analytics is true
     if (prefs.analytics) {

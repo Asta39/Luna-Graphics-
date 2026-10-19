@@ -10,45 +10,45 @@
 @layer base {
   :root {
     /* Primary Colors */
-    --color-primary: #1B4332; /* deep forest green */
-    --color-primary-50: #F0F7F4; /* very light green */
-    --color-primary-100: #D1E7DD; /* light green */
-    --color-primary-200: #A3CFBB; /* medium light green */
-    --color-primary-300: #75B798; /* medium green */
-    --color-primary-400: #479F76; /* medium dark green */
-    --color-primary-500: #2D5A3D; /* dark green */
-    --color-primary-600: #1B4332; /* deep forest green */
-    --color-primary-700: #143529; /* darker green */
-    --color-primary-800: #0D2720; /* very dark green */
-    --color-primary-900: #061916; /* darkest green */
+    --color-primary: #05433a;
+    --color-primary-50: #eef6f3;
+    --color-primary-100: #d5ebe4;
+    --color-primary-200: #aad6c9;
+    --color-primary-300: #74b9a6;
+    --color-primary-400: #3d927f;
+    --color-primary-500: #156e5d;
+    --color-primary-600: #05433a;
+    --color-primary-700: #043a32;
+    --color-primary-800: #032f29;
+    --color-primary-900: #022420;
     --color-primary-foreground: #FFFFFF; /* white */
 
     /* Secondary Colors */
-    --color-secondary: #D4AF37; /* rich gold */
-    --color-secondary-50: #FEFCF0; /* very light gold */
-    --color-secondary-100: #FDF5D7; /* light gold */
-    --color-secondary-200: #FAEBAF; /* medium light gold */
-    --color-secondary-300: #F7E187; /* medium gold */
-    --color-secondary-400: #F4D75F; /* medium dark gold */
-    --color-secondary-500: #E6C547; /* dark gold */
-    --color-secondary-600: #D4AF37; /* rich gold */
-    --color-secondary-700: #B8962F; /* darker gold */
-    --color-secondary-800: #9C7D27; /* very dark gold */
-    --color-secondary-900: #80641F; /* darkest gold */
+    --color-secondary: #bf9b5f;
+    --color-secondary-50: #fbf7f0;
+    --color-secondary-100: #f4ead8;
+    --color-secondary-200: #e9d5b1;
+    --color-secondary-300: #dcbf8a;
+    --color-secondary-400: #cdab70;
+    --color-secondary-500: #bf9b5f;
+    --color-secondary-600: #bf9b5f;
+    --color-secondary-700: #a4824a;
+    --color-secondary-800: #86693b;
+    --color-secondary-900: #6b532f;
     --color-secondary-foreground: #FFFFFF; /* white */
 
     /* Accent Colors */
-    --color-accent: #52B788; /* vibrant green */
-    --color-accent-50: #F0FBF4; /* very light accent */
-    --color-accent-100: #D4F4DD; /* light accent */
-    --color-accent-200: #A9E9BB; /* medium light accent */
-    --color-accent-300: #7EDE99; /* medium accent */
-    --color-accent-400: #52B788; /* vibrant green */
-    --color-accent-500: #4A9F7A; /* dark accent */
-    --color-accent-600: #42876C; /* darker accent */
-    --color-accent-700: #3A6F5E; /* very dark accent */
-    --color-accent-800: #325750; /* darkest accent */
-    --color-accent-900: #2A3F42; /* deepest accent */
+    --color-accent: #05433a;
+    --color-accent-50: #eef6f3;
+    --color-accent-100: #d5ebe4;
+    --color-accent-200: #aad6c9;
+    --color-accent-300: #74b9a6;
+    --color-accent-400: #3d927f;
+    --color-accent-500: #156e5d;
+    --color-accent-600: #05433a;
+    --color-accent-700: #043a32;
+    --color-accent-800: #032f29;
+    --color-accent-900: #022420;
     --color-accent-foreground: #FFFFFF; /* white */
 
     /* Background Colors */

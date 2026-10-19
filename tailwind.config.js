@@ -7,46 +7,49 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Brand: logo green #05433a sits at 600, logo gold #bf9b5f at 500/600
+        'emerald': { 50: '#eef6f3', 100: '#d5ebe4', 200: '#aad6c9', 300: '#74b9a6', 400: '#3d927f', 500: '#156e5d', 600: '#05433a', 700: '#043a32', 800: '#032f29', 900: '#022420' },
+        'green': { 50: '#eef6f3', 100: '#d5ebe4', 200: '#aad6c9', 300: '#74b9a6', 400: '#3d927f', 500: '#156e5d', 600: '#05433a', 700: '#043a32', 800: '#032f29', 900: '#022420' },
         // Primary Colors
-        'primary': '#1B4332', // deep forest green
-        'primary-50': '#F0F7F4', // very light green
-        'primary-100': '#D1E7DD', // light green
-        'primary-200': '#A3CFBB', // medium light green
-        'primary-300': '#75B798', // medium green
-        'primary-400': '#479F76', // medium dark green
-        'primary-500': '#2D5A3D', // dark green
-        'primary-600': '#1B4332', // deep forest green
-        'primary-700': '#143529', // darker green
-        'primary-800': '#0D2720', // very dark green
-        'primary-900': '#061916', // darkest green
+        'primary': '#05433a', // deep forest green
+        'primary-50': '#eef6f3', // very light green
+        'primary-100': '#d5ebe4', // light green
+        'primary-200': '#aad6c9', // medium light green
+        'primary-300': '#74b9a6', // medium green
+        'primary-400': '#3d927f', // medium dark green
+        'primary-500': '#156e5d', // dark green
+        'primary-600': '#05433a', // deep forest green
+        'primary-700': '#043a32', // darker green
+        'primary-800': '#032f29', // very dark green
+        'primary-900': '#022420', // darkest green
         'primary-foreground': '#FFFFFF', // white
 
         // Secondary Colors
-        'secondary': '#D4AF37', // rich gold
-        'secondary-50': '#FEFCF0', // very light gold
-        'secondary-100': '#FDF5D7', // light gold
-        'secondary-200': '#FAEBAF', // medium light gold
-        'secondary-300': '#F7E187', // medium gold
-        'secondary-400': '#F4D75F', // medium dark gold
-        'secondary-500': '#E6C547', // dark gold
-        'secondary-600': '#D4AF37', // rich gold
-        'secondary-700': '#B8962F', // darker gold
-        'secondary-800': '#9C7D27', // very dark gold
-        'secondary-900': '#80641F', // darkest gold
+        'secondary': '#bf9b5f', // rich gold
+        'secondary-50': '#fbf7f0', // very light gold
+        'secondary-100': '#f4ead8', // light gold
+        'secondary-200': '#e9d5b1', // medium light gold
+        'secondary-300': '#dcbf8a', // medium gold
+        'secondary-400': '#cdab70', // medium dark gold
+        'secondary-500': '#bf9b5f', // dark gold
+        'secondary-600': '#bf9b5f', // rich gold
+        'secondary-700': '#a4824a', // darker gold
+        'secondary-800': '#86693b', // very dark gold
+        'secondary-900': '#6b532f', // darkest gold
         'secondary-foreground': '#FFFFFF', // white
 
         // Accent Colors
-        'accent': '#52B788', // vibrant green
-        'accent-50': '#F0FBF4', // very light accent
-        'accent-100': '#D4F4DD', // light accent
-        'accent-200': '#A9E9BB', // medium light accent
-        'accent-300': '#7EDE99', // medium accent
-        'accent-400': '#52B788', // vibrant green
-        'accent-500': '#4A9F7A', // dark accent
-        'accent-600': '#42876C', // darker accent
-        'accent-700': '#3A6F5E', // very dark accent
-        'accent-800': '#325750', // darkest accent
-        'accent-900': '#2A3F42', // deepest accent
+        'accent': '#05433a', // vibrant green
+        'accent-50': '#eef6f3', // very light accent
+        'accent-100': '#d5ebe4', // light accent
+        'accent-200': '#aad6c9', // medium light accent
+        'accent-300': '#74b9a6', // medium accent
+        'accent-400': '#3d927f', // vibrant green
+        'accent-500': '#156e5d', // dark accent
+        'accent-600': '#05433a', // darker accent
+        'accent-700': '#043a32', // very dark accent
+        'accent-800': '#032f29', // darkest accent
+        'accent-900': '#022420', // deepest accent
         'accent-foreground': '#FFFFFF', // white
 
         // Background Colors
@@ -148,12 +151,12 @@ module.exports = {
       },
       borderRadius: {
         'sm': '0.25rem',
-        'DEFAULT': '0.5rem',
-        'md': '0.75rem',
-        'lg': '1rem',
-        'xl': '1.5rem',
-        '2xl': '2rem',
-        '3xl': '3rem',
+        'DEFAULT': '0.375rem',
+        'md': '0.5rem',
+        'lg': '0.625rem',
+        'xl': '0.75rem',
+        '2xl': '1rem',
+        '3xl': '1.25rem',
       },
       transitionDuration: {
         '200': '200ms',

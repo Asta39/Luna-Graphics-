@@ -1,6 +1,6 @@
 // src/components/ui/WhatsAppChat.jsx
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, X, Send, Clock } from 'lucide-react';
+import { X, Send, Clock } from 'lucide-react';
 import logo from '../../assets/luna-logo.png';
 
 
@@ -104,31 +104,15 @@ const WhatsAppChat = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? 'Close chat' : 'Chat with Luna Graphics on WhatsApp'}
           aria-expanded={isOpen}
-          className={`press relative flex items-center justify-center gap-3 text-white h-14 min-w-14 rounded-full shadow-[0_12px_28px_-8px_rgba(5,150,105,0.55)] ${isOpen ? 'bg-gray-800 hover:bg-gray-900 w-14' : 'bg-emerald-600 hover:bg-emerald-700 sm:pl-2 sm:pr-2'}`}
+          className={`press relative w-14 h-14 rounded-full flex items-center justify-center text-white shadow-[0_12px_28px_-8px_rgba(5,67,58,0.6)] ring-2 ring-white ${isOpen ? 'bg-gray-800 hover:bg-gray-900' : 'bg-[#05433a]'}`}
         >
-          {/* Compact View when closed */}
           {!isOpen && (
             <>
-              <div className="hidden sm:flex items-center gap-2">
-                <div className="relative">
-                  <img 
-  src={logo} 
-  alt="Luna Graphics" 
-  className="w-8 h-8 rounded-full object-cover"
-/>
-                  <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-300 border-2 border-emerald-500 rounded-full"></div>
-                </div>
-                <div className="flex flex-col items-start">
-                  <span className="text-xs font-medium text-emerald-100">Luna Graphics</span>
-                  <span className="text-sm font-semibold">Need help? Chat with us</span>
-                </div>
-              </div>
-              <div className="w-14 h-14 sm:w-10 sm:h-10 sm:bg-white/20 rounded-full flex items-center justify-center">
-                <MessageCircle size={22} className="fill-current" />
-              </div>
+              <img src={logo} alt="" className="w-full h-full rounded-full object-cover" />
+              <span className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 bg-emerald-600 border-2 border-white rounded-full" aria-hidden="true" />
             </>
           )}
-          
+
           {/* Icon when open */}
           {isOpen && (
             <X size={24} />

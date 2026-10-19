@@ -129,7 +129,6 @@ With the extra width, consider using split designs or panoramic images for maxim
       '/products/3.webp',
       
     ],
-    badge: 'New',
     rating: 4.7,
     reviews: 56,
     description: 'Versatile pull-up banner stand with premium retractable mechanism. Quick setup and portable design for events and displays.',
@@ -522,7 +521,6 @@ This size is perfect for portrait-oriented designs and vertical branding element
       '/products/10.webp',
       
     ],
-    badge: 'New',
     rating: 4.6,
     reviews: 34,
     description: 'Innovative door stand frame for vertical displays in doorways. Perfect for retail and event entrances.',
@@ -580,7 +578,6 @@ Designed with rubberized feet and padding to prevent damage to door frames. Ensu
       '/products/11.webp',
       
     ],
-    badge: 'New',
     rating: 4.7,
     reviews: 67,
     description: 'Wrinkle-free tension fabric backdrop with aluminum tube frame. Machine washable and perfect for repeated use.',
@@ -2372,7 +2369,6 @@ Uses:
       '/products/45.webp',
       
     ],
-    badge: 'New',
     rating: 4.7,
     reviews: 156,
     description: 'Custom 2026 wall calendars with your branding. 250gsm art paper with spiral binding.',
@@ -2426,7 +2422,6 @@ Customization:
       '/products/46.webp',
      
     ],
-    badge: 'New',
     rating: 4.7,
     reviews: 89,
     description: 'Wrinkle-free fabric backdrop for events and photo booths. Includes aluminum frame and carry bag.',
@@ -3036,7 +3031,6 @@ Popular Uses:
       '/products/57.webp',
       
     ],
-    badge: 'New',
     rating: 4.7,
     reviews: 234,
     description: 'Premium custom t-shirts with advanced printing techniques. Photo-quality prints and specialty inks.',
@@ -3687,7 +3681,6 @@ Features:
       '/products/70.webp',
      
     ],
-    badge: 'New',
     rating: 4.5,
     reviews: 123,
     description: 'Custom branded water bottles in various materials and styles. Perfect for sports, corporate, and promotional use.',
@@ -3883,7 +3876,6 @@ Sturdy chipboard with your branding printed on the back cover.`,
       '/products/74.webp',
       
     ],
-    badge: 'New',
     rating: 4.8,
     reviews: 234,
     description: '2026 dated diaries with your company branding. A5 size, week-to-view layout.',
@@ -4676,7 +4668,6 @@ Professional installation recommended. We offer installation services or can ref
       '/products/90.webp',
       
     ],
-    badge: 'New',
     rating: 4.7,
     reviews: 178,
     description: 'Frosted, clear, and opaque window graphics for retail and office branding.',
@@ -4730,7 +4721,6 @@ Applications:
       '/products/91.webp',
       
     ],
-    badge: 'New',
     rating: 4.6,
     reviews: 89,
     description: 'Slip-resistant floor graphics for retail, events, and wayfinding. Durable laminated vinyl.',
@@ -4788,7 +4778,6 @@ Outdoor: 3-6 months (short-term promotions)`,
       '/products/92.webp',
       
     ],
-    badge: 'New',
     rating: 4.5,
     reviews: 45,
     description: 'Custom branded wheel covers for promotional vehicles and displays. Set of 4.',
@@ -4904,9 +4893,6 @@ export const getProductsByCategory = (category) =>
 
 export const getPopularProducts = () => 
   products.filter(p => p.badge === 'Best Seller' || p.badge === 'Hot').slice(0, 4);
-
-export const getNewArrivals = () => 
-  products.filter(p => p.badge === 'New').slice(0, 4);
 
 export const getDeals = () => 
   products.filter(p => p.discount).slice(0, 2);

@@ -45,7 +45,7 @@ import uvGalleryArt from '../assets/uv-gallery-art.webp';
 
 import largeFormatHeroImage from '../assets/large-format-hero-image.webp';
 import largeFormatEquipment from '../assets/largeformat.webp';
-import largeEquipment from '../assets/largeprinter-01.webp';
+import witColor3308 from '../assets/wit-color-3308.webp';
 
 import largeGallerySignage from '../assets/large-gallery-signage.webp';
 import largeGalleryDecorative from '../assets/large-gallery-decorative.webp';
@@ -83,8 +83,8 @@ import tShirtGalleryArt from '../assets/t-shirt-gallery-art.webp';
 
 import offsetPrintingHeroImage from '../assets/offset-printer.webp';
 import sublimationHeroImage from '../assets/heatpress.webp';
-import dtfHeroImage from '../assets/t-shirt-hero-image.webp';
-import dtfEquipmentImage from '../assets/dtf-printer.webp';
+import dtfHeroImage from '../assets/wit-color-dtf-0602.webp';
+import dtfEquipmentImage from '../assets/wit-color-dtf-0602.webp';
 import digitalHeroImage from '../assets/uvbooks.webp';
 import digitalEquipmentImage from '../assets/uvmagazines.webp';
 import sublimationGalleryVests from '../assets/vests.webp';
@@ -989,16 +989,17 @@ export const services =
       ]
     },
     {
-      name: "Roland VersaCAMM VS-640i",
-      description: "Integrated print and cut solution for precision graphics and signage production.",
-      image: largeEquipment,
+      name: "Wit-Color Epson 3308 (3.2m)",
+      description: "Our newest industrial eco-solvent printer: 3.2m wide, Epson i3200 heads and photo-level 2400 dpi output for banners, billboards and backlit displays.",
+      image: witColor3308,
       status: "Active",
-      maxSize: "1.6m x 25m",
+      maxSize: "3.2m wide, roll to roll",
       capabilities: [
-        "Print and cut in one pass",
-        "Eco-solvent inks",
-        "Contour cutting",
-        "Kiss cut and through cut"
+        "Up to 2400 dpi photo-level output with Epson i3200 heads",
+        "Up to 488 m² per hour on fast runs, 160 m² per hour at 3-pass quality",
+        "Roll-to-roll with automatic feeding and take-up",
+        "Pre and post-media heating for fast drying",
+        "Prints flex banner, vehicle sticker, backlit film and PP"
       ]
     }
     /*
@@ -1771,10 +1772,17 @@ export const services =
     applications: ["Corporate branded T-shirts", "Event merchandise", "Political campaign shirts", "Sports team uniforms", "Promotional gifts", "Custom hoodies and caps", "School uniforms", "NGO branded apparel"],
     equipment: [
       {
-        name: "DTF Printer (A3 Format)",
-        description: "Industrial-grade DTF printer with CMYK + White ink channels for full-colour, single-pass transfer production.",
+        name: "Wit-Color Ultra i3200 0602 DTF (60cm)",
+        description: "60cm pigment DTF printer with an automatic powder shaker, printing CMYK + white transfers on PET film at up to 2400 dpi.",
         image: dtfEquipmentImage,
-        specs: ["A3 print width", "CMYK + White inks", "High-speed production", "Water-based eco inks"]
+        specs: [
+          "60cm print width on PET film",
+          "2 × Epson i3200 printheads, up to 2400 dpi",
+          "CMYK + white pigment inks, 1.5–21 pl variable droplets",
+          "10 m² per hour at 4-pass, 4 m² per hour at 8-pass for finest detail",
+          "Automatic powder shaking, media feeding and take-up",
+          "Automatic head cleaning and anti-clogging system"
+        ]
       }
     ],
     gallery: [

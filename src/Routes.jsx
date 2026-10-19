@@ -17,6 +17,7 @@ const PrivacyPolicy = lazy(() => import("pages/privacy-policy"));
 const TermsOfService = lazy(() => import("pages/terms-of-service"));
 const CorporateTerms = lazy(() => import("pages/corporate-terms"));
 const WhatsAppChat = lazy(() => import("./components/ui/WhatsAppChat"));
+const ConsentNotice = lazy(() => import("./components/ui/ConsentNotice"));
 const About = lazy(() => import("./pages/about/About"));
 const EventsExhibitions = lazy(() => import("./pages/corporate/EventsExhibitions"));
 const CorporateBranding = lazy(() => import("./pages/corporate/CorporateBranding"));
@@ -92,6 +93,7 @@ const Routes = () => {
             <Route path="*" element={<NotFound />} />
           </RouterRoutes>
           <WhatsAppChat />
+          <ConsentNotice />
         </Suspense>
       </ErrorBoundary>
     </BrowserRouter>

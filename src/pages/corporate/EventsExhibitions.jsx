@@ -221,7 +221,7 @@ const EventsExhibitions = () => {
               </motion.div>
 
               {/* Luna Graphics */}
-              <motion.div variants={fadeInUp} className="bg-emerald-800 p-8 rounded-2xl shadow-lg text-white">
+              <motion.div variants={fadeInUp} className="bg-emerald-600 p-8 rounded-2xl shadow-lg text-white">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                     <Icon name="Check" size={20} className="text-white" />
@@ -284,7 +284,7 @@ const EventsExhibitions = () => {
         </section>
 
         {/* Industries We Serve */}
-        <section className="py-16 lg:py-24 bg-emerald-900 text-white">
+        <section className="py-16 lg:py-24 bg-emerald-600 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-16">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-heading font-bold mb-6">

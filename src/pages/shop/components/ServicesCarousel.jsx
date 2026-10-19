@@ -60,7 +60,7 @@ const ServicesGrid = () => {
                 <p className="text-xs text-gray-300 line-clamp-1 hidden lg:block">{service.shortDescription}</p>
                 <button
                   onClick={(e) => wa(e, service)}
-                  className="mt-2 self-start px-3 py-1.5 bg-emerald-500/90 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200"
+                  className="mt-2 self-start px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition-colors opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200"
                 >
                   Inquire
                 </button>
@@ -86,7 +86,7 @@ const ServicesGrid = () => {
               <div className="flex gap-3">
                 <button
                   onClick={(e) => wa(e, hero)}
-                  className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold rounded-xl transition-colors"
+                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition-colors"
                 >
                   Get Quote
                 </button>
@@ -117,7 +117,7 @@ const ServicesGrid = () => {
               <div className="flex gap-3">
                 <button
                   onClick={(e) => wa(e, secondLarge)}
-                  className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold rounded-xl transition-colors"
+                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition-colors"
                 >
                   Get Quote
                 </button>
@@ -148,7 +148,7 @@ const ServicesGrid = () => {
                 <h3 className="text-sm font-bold text-white leading-tight">{service.name}</h3>
                 <button
                   onClick={(e) => wa(e, service)}
-                  className="mt-1.5 self-start px-3 py-1 bg-emerald-500/90 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200"
+                  className="mt-1.5 self-start px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200"
                 >
                   Inquire
                 </button>

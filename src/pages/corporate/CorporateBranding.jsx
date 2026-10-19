@@ -239,7 +239,7 @@ const CorporateBranding = () => {
         </section>
 
         {/* Industries */}
-        <section className="py-16 lg:py-24 bg-emerald-900 text-white">
+        <section className="py-16 lg:py-24 bg-emerald-600 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-16">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-heading font-bold mb-6">

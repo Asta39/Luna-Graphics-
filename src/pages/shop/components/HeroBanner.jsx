@@ -148,7 +148,7 @@ const HeroBanner = ({ onSearch }) => {
                     onClick={(e) => { e.stopPropagation(); goToSlide(index); }}
                     className={`h-1.5 rounded-full transition-all ${
                       index === currentSlide
-                        ? 'bg-emerald-500 w-4'
+                        ? 'bg-emerald-600 w-4'
                         : 'bg-white/50 hover:bg-white/80 w-1.5'
                     }`}
                   />

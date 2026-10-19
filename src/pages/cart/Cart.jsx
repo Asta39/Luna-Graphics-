@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
@@ -7,12 +7,25 @@ import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import { useCart } from '../../context/CartContext';
 import Header from '../../components/ui/Header';
+import Footer from '../homepage/components/Footer';
 import { getProductById } from '../../data/products';
 import CartInquiryModal from '../../components/ui/CartInquiryModal';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const { items, removeItem, updateQuantity, clearCart, getCartTotal } = useCart();
+  const { items, addItem, removeItem, updateQuantity, clearCart, getCartTotal } = useCart();
+  const [lastRemoved, setLastRemoved] = useState(null);
+
+  useEffect(() => {
+    if (!lastRemoved) return;
+    const t = setTimeout(() => setLastRemoved(null), 5000);
+    return () => clearTimeout(t);
+  }, [lastRemoved]);
+
+  useEffect(() => {
+    document.body.dataset.buyBar = '';
+    return () => { delete document.body.dataset.buyBar; };
+  }, []);
   const formRef = useRef();
   
   const [isCheckingOut, setIsCheckingOut] = useState(false);
@@ -130,253 +143,257 @@ const Cart = () => {
     }));
   };
 
+  const total = getCartTotal();
+  const unitCount = items.reduce((sum, item) => sum + item.quantity, 0);
+  const freeDelivery = total >= 5000;
+
+  const undoRemove = () => {
+    if (!lastRemoved) return;
+    lastRemoved.forEach((item) => {
+      const product = getProductById(item.id);
+      if (product) addItem(product, item.quantity);
+    });
+    setLastRemoved(null);
+  };
+
+  const removeWithUndo = (item) => {
+    removeItem(item.cartId);
+    setLastRemoved([item]);
+  };
+
+  const clearWithUndo = () => {
+    setLastRemoved(items.map((i) => ({ ...i })));
+    clearCart();
+  };
+
+  const openCheckout = (method) => {
+    setCheckoutMethod(method);
+    setIsCheckingOut(true);
+  };
+
+  const undoBar = lastRemoved && (
+    <div className={`materialize-up fixed left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 whitespace-nowrap rounded-full bg-gray-900 text-white pl-5 pr-2 py-2 shadow-lg ${
+      items.length ? 'bottom-[calc(6.5rem+env(safe-area-inset-bottom))] sm:bottom-8' : 'bottom-[max(1.5rem,env(safe-area-inset-bottom))]'
+    }`}>
+      <span className="text-sm">
+        {lastRemoved.length === 1 ? 'Item removed' : `${lastRemoved.length} items removed`}
+      </span>
+      <button onClick={undoRemove} className="press h-9 px-4 rounded-full bg-white/15 hover:bg-white/25 text-sm font-semibold">
+        Undo
+      </button>
+    </div>
+  );
+
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-24 pb-12">
-      <SEO 
-        title="Shopping Cart | Luna Graphics Kenya"
-        description="Review your selected printing and branding products. Secure checkout available for all custom orders in Nairobi."
+      <div className="min-h-screen bg-gray-50 pt-16">
+      <SEO
+        title={items.length ? `Shopping Cart (${items.length}) | Luna Graphics Kenya` : 'Shopping Cart | Luna Graphics Kenya'}
+        description="Review your selected printing and branding products and send your order on WhatsApp or by email."
         keywords="printing shopping cart, checkout Nairobi, custom order summary, Luna Graphics checkout"
         type="website"
         robots="noindex, follow"
-        geo={{
-          region: "KE-30",
-          placename: "Nairobi",
-          position: "-1.280302;36.822639"
-        }}
+        geo={{ region: "KE-30", placename: "Nairobi", position: "-1.280302;36.822639" }}
       />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl shadow-sm border border-gray-200 p-12 text-center"
-          >
-            <div className="w-24 h-24 mx-auto rounded-full flex items-center justify-center mb-6">
-              <Icon name="ShoppingCart" size={40} className="text-gray-400" />
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Your Cart is Empty</h2>
-            <p className="text-gray-500 mb-6">Looks like you have not added any products yet.</p>
-            <Button 
-              variant="primary" 
+        <Header />
+        <main className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+          <div className="max-w-md mx-auto text-center">
+            <Icon name="ShoppingCart" size={48} className="mx-auto text-gray-300" />
+            <h1 className="mt-6 text-2xl sm:text-3xl font-semibold text-gray-900">Your cart is empty</h1>
+            <p className="mt-2 text-gray-500">Banners, signage, apparel and more, printed in Nairobi.</p>
+            <button
               onClick={() => navigate('/')}
-              className="bg-emerald-600 hover:bg-emerald-700"
+              className="press mt-8 h-12 px-8 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
             >
-              Continue Shopping
-            </Button>
-          </motion.div>
-        </div>
+              Browse products
+            </button>
+          </div>
+        </main>
+        {undoBar}
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-12">
-      <SEO 
-        title={`Shopping Cart (${items.length}) | Luna Graphics Kenya`}
-        description={`You have ${items.length} items in your cart. Complete your printing and branding order with Luna Graphics Nairobi.`}
+    <div className="min-h-screen bg-gray-50 pt-16">
+      <SEO
+        title={items.length ? `Shopping Cart (${items.length}) | Luna Graphics Kenya` : 'Shopping Cart | Luna Graphics Kenya'}
+        description="Review your selected printing and branding products and send your order on WhatsApp or by email."
         keywords="printing shopping cart, checkout Nairobi, custom order summary, Luna Graphics checkout"
         type="website"
         robots="noindex, follow"
-        geo={{
-          region: "KE-30",
-          placename: "Nairobi",
-          position: "-1.280302;36.822639"
-        }}
+        geo={{ region: "KE-30", placename: "Nairobi", position: "-1.280302;36.822639" }}
       />
       <Header />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
+      <main className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-40 sm:pb-16">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900">Your cart</h1>
+            <p className="mt-1 text-gray-500">{items.length} {items.length === 1 ? 'product' : 'products'} · {formatPrice(total)}</p>
+          </div>
+          <button onClick={() => navigate('/')} className="text-sm font-medium text-emerald-700 hover:text-emerald-800 whitespace-nowrap">
+            Keep shopping
+          </button>
+        </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Cart Items */}
-          <div className="lg:col-span-2 space-y-4">
-            <AnimatePresence>
-              {items.map((item) => (
-                <motion.div
-                  key={item.cartId}
-                  layout
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="bg-white rounded-xl border border-gray-200 p-4 flex gap-4 hover:shadow-md transition-shadow"
-                >
-                  {/* Product Image */}
-                  <div 
-                    className="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer"
-                    onClick={() => navigate(`/shop/product/${item.id}`)}
+        <div className="mt-8 grid lg:grid-cols-[1fr_380px] gap-8 items-start">
+          {/* Items as one grouped list */}
+          <div>
+            <ul className="bg-white card-surface rounded-3xl divide-y divide-black/[0.06]">
+              <AnimatePresence initial={false}>
+                {items.map((item) => (
+                  <motion.li
+                    key={item.cartId}
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ type: 'spring', bounce: 0, duration: 0.35 }}
+                    className="flex gap-4 p-4 sm:p-5 overflow-hidden"
                   >
-                    <img 
-                      src={getCartItemImage(item)} 
-                      alt={item.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform"
-                      onError={(e) => {
-                        e.target.src = '/images/placeholder-product.jpg';
-                      }}
-                    />
-                  </div>
+                    <button
+                      onClick={() => navigate(`/shop/product/${item.id}`)}
+                      className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-50"
+                      aria-label={`View ${item.name}`}
+                    >
+                      <img
+                        src={getCartItemImage(item)}
+                        alt=""
+                        className="w-full h-full object-cover"
+                        onError={(e) => { e.target.src = '/images/placeholder-product.jpg'; }}
+                      />
+                    </button>
 
-                  {/* Product Details */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <h3 
-                          className="font-semibold text-gray-900 hover:text-emerald-600 transition-colors cursor-pointer line-clamp-2"
+                    <div className="flex-1 min-w-0 flex flex-col">
+                      <div className="flex items-start justify-between gap-3">
+                        <button
                           onClick={() => navigate(`/shop/product/${item.id}`)}
+                          className="text-left font-semibold text-gray-900 leading-snug line-clamp-2 hover:text-emerald-700"
                         >
                           {item.name}
-                        </h3>
-                        <p className="text-sm text-gray-500 mt-1">{item.category}</p>
-                      </div>
-                      <button
-                        onClick={() => removeItem(item.cartId)}
-                        className="p-2 text-gray-400 hover:text-red-500 transition-colors"
-                        aria-label="Remove item"
-                      >
-                        <Icon name="Trash2" size={18} />
-                      </button>
-                    </div>
-
-                    <div className="flex items-center justify-between mt-4">
-                      <div className="flex items-center border border-gray-300 rounded-lg">
-                        <button
-                          onClick={() => handleQuantityChange(item.cartId, item.quantity - 1, item.minOrder)}
-                          className="px-3 py-1.5 hover:bg-gray-100 transition-colors disabled:opacity-50"
-                          disabled={item.quantity <= item.minOrder}
-                        >
-                          <Icon name="Minus" size={14} />
                         </button>
-                        <span className="px-3 py-1.5 font-medium min-w-[3rem] text-center text-sm">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() => handleQuantityChange(item.cartId, item.quantity + 1, item.minOrder)}
-                          className="px-3 py-1.5 hover:bg-gray-100 transition-colors"
-                        >
-                          <Icon name="Plus" size={14} />
-                        </button>
+                        <p className="font-semibold text-gray-900 tabular-nums whitespace-nowrap">{formatPrice(item.price * item.quantity)}</p>
                       </div>
+                      <p className="mt-0.5 text-xs text-gray-500">
+                        {formatPrice(item.price)} {item.priceUnit === 'each' ? 'each' : `per ${item.priceUnit}`}
+                      </p>
 
-                      <div className="text-right">
-                        <p className="font-bold text-emerald-600">
-                          {formatPrice(item.price * item.quantity)}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          {formatPrice(item.price)}/{item.priceUnit}
-                        </p>
+                      <div className="mt-auto pt-3 flex items-center justify-between">
+                        <div className="flex items-center rounded-full bg-gray-100 p-0.5">
+                          <button
+                            onClick={() => handleQuantityChange(item.cartId, item.quantity - 1, item.minOrder)}
+                            disabled={item.quantity <= item.minOrder}
+                            aria-label={`Decrease quantity of ${item.name}`}
+                            className="press w-10 h-10 rounded-full flex items-center justify-center text-gray-900 hover:bg-white disabled:text-gray-300 disabled:hover:bg-transparent"
+                          >
+                            <Icon name="Minus" size={16} />
+                          </button>
+                          <span className="w-9 text-center text-sm font-semibold tabular-nums" aria-live="polite">{item.quantity}</span>
+                          <button
+                            onClick={() => handleQuantityChange(item.cartId, item.quantity + 1, item.minOrder)}
+                            aria-label={`Increase quantity of ${item.name}`}
+                            className="press w-10 h-10 rounded-full flex items-center justify-center text-gray-900 hover:bg-white"
+                          >
+                            <Icon name="Plus" size={16} />
+                          </button>
+                        </div>
+                        <button
+                          onClick={() => removeWithUndo(item)}
+                          className="text-sm font-medium text-gray-500 hover:text-red-600 px-2 py-2"
+                        >
+                          Remove
+                        </button>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                  </motion.li>
+                ))}
+              </AnimatePresence>
+            </ul>
 
-            <button
-              onClick={clearCart}
-              className="text-sm text-red-500 hover:text-red-600 font-medium flex items-center gap-1"
-            >
-              <Icon name="Trash2" size={14} />
-              Clear Cart
+            <button onClick={clearWithUndo} className="mt-4 text-sm font-medium text-gray-500 hover:text-red-600">
+              Remove all
             </button>
           </div>
 
-          {/* Order Summary */}
-          <div className="lg:col-span-1 space-y-4">
-            <div className="bg-white rounded-xl border border-gray-200 p-6 sticky top-24">
-              <h2 className="text-lg font-bold text-gray-900 mb-4">Order Summary</h2>
-              
-              <div className="space-y-3 mb-4">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Items ({items.length})</span>
-                  <span className="font-medium">{formatPrice(getCartTotal())}</span>
+          {/* Summary */}
+          <aside className="lg:sticky lg:top-24">
+            <div className="bg-white card-surface rounded-3xl p-6">
+              <h2 className="text-lg font-semibold text-gray-900">Summary</h2>
+              <dl className="mt-4 space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <dt className="text-gray-500">Subtotal ({unitCount} {unitCount === 1 ? 'unit' : 'units'})</dt>
+                  <dd className="text-gray-900 tabular-nums">{formatPrice(total)}</dd>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Delivery</span>
-                  <span className="text-emerald-600 font-medium">Free (Nairobi)</span>
+                <div className="flex justify-between gap-4">
+                  <dt className="text-gray-500">Delivery</dt>
+                  <dd className="text-gray-900 text-right">
+                    {freeDelivery ? 'Free in Nairobi CBD' : 'Confirmed with your order'}
+                  </dd>
                 </div>
+              </dl>
+              {!freeDelivery && (
+                <p className="mt-2 text-xs text-gray-500">
+                  Add {formatPrice(5000 - total)} more for free delivery in Nairobi CBD.
+                </p>
+              )}
+              <div className="mt-5 pt-5 border-t border-black/[0.06] flex items-baseline justify-between">
+                <span className="font-semibold text-gray-900">Total</span>
+                <span className="text-2xl font-semibold tracking-tight text-gray-900 tabular-nums">{formatPrice(total)}</span>
               </div>
 
-              <div className="border-t border-gray-200 pt-4 mb-6">
-                <div className="flex justify-between items-center">
-                  <span className="font-bold text-gray-900">Total</span>
-                  <span className="text-2xl font-bold text-emerald-600">
-                    {formatPrice(getCartTotal())}
-                  </span>
-                </div>
+              <div className="mt-6 hidden sm:flex flex-col gap-3">
+                <button
+                  onClick={() => openCheckout('whatsapp')}
+                  className="press h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold flex items-center justify-center gap-2"
+                >
+                  <Icon name="MessageCircle" size={20} />
+                  Send order on WhatsApp
+                </button>
+                <button
+                  onClick={() => openCheckout('email')}
+                  className="press h-14 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold flex items-center justify-center gap-2"
+                >
+                  <Icon name="Mail" size={20} />
+                  Send by email
+                </button>
               </div>
-
-              <div className="space-y-3">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="w-full bg-emerald-600 hover:bg-emerald-700"
-                  onClick={() => {
-                    setCheckoutMethod('whatsapp');
-                    setIsCheckingOut(true);
-                  }}
-                >
-                  <Icon name="MessageCircle" size={20} className="mr-2" />
-                  Checkout via WhatsApp
-                </Button>
-                
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full border-emerald-600 text-emerald-600 hover:bg-emerald-50"
-                  onClick={() => {
-                    setCheckoutMethod('email');
-                    setIsCheckingOut(true);
-                  }}
-                >
-                  <Icon name="Mail" size={20} className="mr-2" />
-                  Checkout via Email
-                </Button>
-
-                {/* NEW: Request Quote Button */}
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full border-amber-500 text-amber-600 hover:bg-amber-50"
-                  onClick={() => setIsInquiryOpen(true)}
-                >
-                  <Icon name="FileText" size={20} className="mr-2" />
-                  Request Custom Quote
-                </Button>
-                
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="w-full"
-                  onClick={() => navigate('/')}
-                >
-                  Continue Shopping
-                </Button>
-              </div>
+              <p className="mt-4 text-xs text-gray-500 leading-relaxed">
+                Nothing is charged here. We confirm price, artwork and delivery with you before printing.
+              </p>
             </div>
 
-            {/* NEW: Bulk Inquiry Card */}
-            <div className="bg-white card-surface rounded-xl p-6">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Icon name="HelpCircle" size={20} className="text-emerald-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-emerald-900 mb-1">Need a custom quote?</h3>
-                  <p className="text-sm text-emerald-700 mb-3">
-                    Have special requirements or bulk order? Get a personalized quote.
-                  </p>
-                  <button
-                    onClick={() => setIsInquiryOpen(true)}
-                    className="text-sm font-medium text-emerald-600 hover:text-emerald-800 underline"
-                  >
-                    Request Quote →
-                  </button>
-                </div>
-              </div>
-            </div>
+            <button
+              onClick={() => setIsInquiryOpen(true)}
+              className="mt-4 w-full text-center text-sm font-medium text-emerald-700 hover:text-emerald-800"
+            >
+              Need a custom size or bulk price? Request a quote
+            </button>
+          </aside>
+        </div>
+      </main>
+
+      <Footer />
+
+      {/* Phone checkout bar */}
+      <div className="sm:hidden fixed bottom-0 inset-x-0 z-40 material-bar border-t border-black/[0.06] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div className="flex items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="text-lg font-semibold text-gray-900 leading-tight tabular-nums">{formatPrice(total)}</p>
+            <button onClick={() => openCheckout('email')} className="text-xs font-medium text-emerald-700">Send by email instead</button>
           </div>
+          <button
+            onClick={() => openCheckout('whatsapp')}
+            className="press h-12 px-5 flex-shrink-0 rounded-full bg-emerald-600 text-white font-semibold flex items-center gap-2"
+          >
+            <Icon name="MessageCircle" size={18} />
+            Send order
+          </button>
         </div>
       </div>
+
+      {undoBar}
 
       {/* Checkout Modal */}
       {isCheckingOut && (

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import Header from '../../components/ui/Header';
-import { products, categories, getPopularProducts, getNewArrivals, getDeals, getPaginatedProducts } from '../../data/products';
+import { products, categories, getPopularProducts, getDeals, getPaginatedProducts } from '../../data/products';
 
 // Components
 import HeroBanner from './components/HeroBanner';
@@ -69,7 +69,6 @@ const Shop = () => {
   }, [currentPage, activeCategory, searchQuery]);
 
   const popularProducts = getPopularProducts();
-  const newArrivals = getNewArrivals();
   const deals = getDeals();
 
   const handleCategoryChange = (categoryId) => {
@@ -435,54 +434,25 @@ const Shop = () => {
       {/* Corporate & Political Case Studies */}
       <CaseStudies />
 
-      {/* New Arrivals */}
-      {!searchQuery && activeCategory === 'all' && (
-        <section className="py-8 lg:py-12 bg-white border-t border-gray-200">
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-xl lg:text-2xl font-bold text-gray-900">New Arrivals</h2>
-                <p className="text-gray-500 text-sm">Check out our latest products</p>
-              </div>
-              <Button variant="outline" size="sm">View All</Button>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {newArrivals.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onInquire={openInquiry}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Bottom CTA */}
-      <section className="py-12 lg:py-16 bg-emerald-800">
+      <section className="py-12 lg:py-16 bg-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Can't Find What You Need?</h2>
           <p className="text-emerald-100 mb-6 text-base lg:text-lg">Get a custom quote for your specific printing requirements</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button 
-              variant="primary" 
-              size="lg"
-              className="bg-emerald-100 text-emerald-600 hover:bg-emerald-50"
+            <button
               onClick={() => window.open('https://wa.me/254791159618', '_blank')}
+              className="press h-12 px-7 rounded-full bg-white text-[#05433a] font-semibold inline-flex items-center justify-center gap-2 hover:bg-white/90"
             >
-              <Icon name="MessageCircle" size={20} className="mr-2" />
-              WhatsApp Us
-            </Button>
-            <Button 
-              variant="secondary" 
-              size="lg"
-              className="border-white text-white hover:bg-white/10"
+              <Icon name="MessageCircle" size={20} />
+              WhatsApp us
+            </button>
+            <button
               onClick={() => navigate('/contact')}
+              className="press h-12 px-7 rounded-full bg-white/10 text-white font-semibold inline-flex items-center justify-center hover:bg-white/15"
             >
-              Request Custom Quote
-            </Button>
+              Request a custom quote
+            </button>
           </div>
         </div>
       </section>

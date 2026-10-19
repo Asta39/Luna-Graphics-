@@ -188,9 +188,9 @@ const AppleCard = ({ children, className = '' }) => (
 const AppleButton = ({ children, variant = 'primary', onClick, disabled, loading, className = '', type = 'button' }) => {
   const base = 'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
   const variants = {
-    primary: 'bg-[#1B4332] text-white hover:bg-[#2D5A3D] focus-visible:ring-[#1B4332] px-6 py-3 text-sm',
+    primary: 'bg-[#05433a] text-white hover:bg-[#043a32] focus-visible:ring-[#05433a] px-6 py-3 text-sm',
     secondary: 'bg-[#f5f5f7] text-[#1d1d1f] hover:bg-[#e8e8ed] focus-visible:ring-[#6e6e73] px-6 py-3 text-sm',
-    ghost: 'text-[#1B4332] hover:text-[#004499] px-4 py-2 text-sm',
+    ghost: 'text-[#05433a] hover:text-[#004499] px-4 py-2 text-sm',
     danger: 'bg-red-600 text-white hover:bg-red-700 px-6 py-3 text-sm',
   };
   return (
@@ -203,7 +203,7 @@ const AppleButton = ({ children, variant = 'primary', onClick, disabled, loading
 const AppleInput = ({ label, error, description, required, ...props }) => (
   <div>
     {label && <label className="block text-sm font-medium text-[#1d1d1f] mb-1.5">{label}{required && <span className="text-red-500 ml-0.5">*</span>}</label>}
-    <input className={`w-full rounded-xl border px-4 py-3 text-sm text-[#1d1d1f] bg-[#f5f5f7] placeholder-[#86868b] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1B4332] focus:border-transparent ${error ? 'border-red-400' : 'border-[#d2d2d7]'}`} {...props} />
+    <input className={`w-full rounded-xl border px-4 py-3 text-sm text-[#1d1d1f] bg-[#f5f5f7] placeholder-[#86868b] transition-colors focus:outline-none focus:ring-2 focus:ring-[#05433a] focus:border-transparent ${error ? 'border-red-400' : 'border-[#d2d2d7]'}`} {...props} />
     {description && <p className="mt-1 text-xs text-[#86868b]">{description}</p>}
     {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
   </div>
@@ -212,7 +212,7 @@ const AppleInput = ({ label, error, description, required, ...props }) => (
 const AppleSelect = ({ label, options, value, onChange, error, placeholder, required }) => (
   <div>
     {label && <label className="block text-sm font-medium text-[#1d1d1f] mb-1.5">{label}{required && <span className="text-red-500 ml-0.5">*</span>}</label>}
-    <select value={value} onChange={(e) => onChange(e.target.value)} className={`w-full rounded-xl border px-4 py-3 text-sm text-[#1d1d1f] bg-[#f5f5f7] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1B4332] focus:border-transparent ${error ? 'border-red-400' : 'border-[#d2d2d7]'} ${!value ? 'text-[#86868b]' : ''}`}>
+    <select value={value} onChange={(e) => onChange(e.target.value)} className={`w-full rounded-xl border px-4 py-3 text-sm text-[#1d1d1f] bg-[#f5f5f7] transition-colors focus:outline-none focus:ring-2 focus:ring-[#05433a] focus:border-transparent ${error ? 'border-red-400' : 'border-[#d2d2d7]'} ${!value ? 'text-[#86868b]' : ''}`}>
       <option value="" disabled>{placeholder}</option>
       {options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
     </select>
@@ -225,11 +225,11 @@ const AppleSelect = ({ label, options, value, onChange, error, placeholder, requ
 const Hero = ({ onViewPositions }) => (
   <section className="relative bg-[#f5f5f7] overflow-hidden pt-24 pb-20">
     <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-[#1B4332]/8 to-transparent blur-3xl" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-[#05433a]/8 to-transparent blur-3xl" />
     </div>
     <div className="relative max-w-4xl mx-auto px-6 text-center">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <p className="text-sm font-semibold tracking-wider text-[#1B4332] uppercase mb-4">Now Hiring</p>
+        <p className="text-sm font-semibold tracking-wider text-[#05433a] uppercase mb-4">Now Hiring</p>
         <h1 className="text-5xl md:text-7xl font-bold text-[#1d1d1f] mb-6 tracking-tight leading-[1.05]">
           Join Nairobi's<br />Premier Print Shop
         </h1>
@@ -304,7 +304,7 @@ const OpenPositions = ({ onApply }) => {
 
                   {days > 0 && (
                     <div className="mb-4">
-                      <span className="text-xs font-medium text-[#1B4332] bg-[#1B4332]/8 px-2.5 py-1 rounded-full">{days} days left</span>
+                      <span className="text-xs font-medium text-[#05433a] bg-[#05433a]/8 px-2.5 py-1 rounded-full">{days} days left</span>
                     </div>
                   )}
 
@@ -335,7 +335,7 @@ const OpenPositions = ({ onApply }) => {
                     <button
                       onClick={(e) => { e.stopPropagation(); if (days > 0) onApply(pos); }}
                       disabled={days === 0}
-                      className={`w-full py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${days > 0 ? 'bg-[#1B4332] text-white hover:bg-[#2D5A3D]' : 'bg-[#f5f5f7] text-[#86868b] cursor-not-allowed'}`}
+                      className={`w-full py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${days > 0 ? 'bg-[#05433a] text-white hover:bg-[#043a32]' : 'bg-[#f5f5f7] text-[#86868b] cursor-not-allowed'}`}
                     >
                       {days > 0 ? 'Apply Now' : 'Closed'}
                     </button>
@@ -377,7 +377,7 @@ const CompanyValues = () => {
         <div className="grid lg:grid-cols-3 gap-6">
           <div className="space-y-2">
             {VALUES.map((v, i) => (
-              <button key={v.id} onClick={() => setActive(i)} className={`w-full text-left p-4 rounded-2xl transition-all duration-200 ${active === i ? 'bg-[#1B4332] text-white shadow-md' : 'bg-white/80 text-[#1d1d1f] hover:bg-white'}`}>
+              <button key={v.id} onClick={() => setActive(i)} className={`w-full text-left p-4 rounded-2xl transition-all duration-200 ${active === i ? 'bg-[#05433a] text-white shadow-md' : 'bg-white/80 text-[#1d1d1f] hover:bg-white'}`}>
                 <div className="flex items-center gap-3">
                   <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${active === i ? 'bg-white/20' : 'bg-[#f5f5f7]'}`}>
                     <v.Icon size={18} className={active === i ? 'text-white' : 'text-[#1d1d1f]'} />
@@ -453,7 +453,7 @@ const Requirements = () => {
             <p className="text-xs font-semibold text-[#86868b] uppercase tracking-wide mb-3 px-1">Select Role</p>
             <div className="space-y-1">
               {reqKeys.map(k => (
-                <button key={k} onClick={() => setActive(k)} className={`w-full text-left px-3 py-2.5 rounded-xl text-sm transition-all duration-150 ${active === k ? 'bg-[#1B4332] text-white font-medium' : 'text-[#1d1d1f] hover:bg-[#f5f5f7]'}`}>
+                <button key={k} onClick={() => setActive(k)} className={`w-full text-left px-3 py-2.5 rounded-xl text-sm transition-all duration-150 ${active === k ? 'bg-[#05433a] text-white font-medium' : 'text-[#1d1d1f] hover:bg-[#f5f5f7]'}`}>
                   {labels[k]}
                 </button>
               ))}
@@ -516,7 +516,7 @@ const Requirements = () => {
                           <ul className="space-y-1.5">
                             {req.skills.technical.map((s, i) => (
                               <li key={i} className="flex items-start gap-2 text-xs text-[#6e6e73]">
-                                <Code size={12} className="text-[#1B4332] flex-shrink-0 mt-0.5" />{s}
+                                <Code size={12} className="text-[#05433a] flex-shrink-0 mt-0.5" />{s}
                               </li>
                             ))}
                           </ul>
@@ -699,8 +699,8 @@ const ApplicationForm = ({ selectedPosition, onClose, onSuccess }) => {
           <div className="flex items-center gap-1.5">
             {[1, 2, 3].map(s => (
               <React.Fragment key={s}>
-                <div className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold transition-all ${s <= step ? 'bg-[#1B4332] text-white' : 'bg-[#f5f5f7] text-[#86868b]'}`}>{s < step ? <Check size={12} /> : s}</div>
-                {s < 3 && <div className={`flex-1 h-0.5 rounded transition-all ${s < step ? 'bg-[#1B4332]' : 'bg-[#f5f5f7]'}`} />}
+                <div className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold transition-all ${s <= step ? 'bg-[#05433a] text-white' : 'bg-[#f5f5f7] text-[#86868b]'}`}>{s < step ? <Check size={12} /> : s}</div>
+                {s < 3 && <div className={`flex-1 h-0.5 rounded transition-all ${s < step ? 'bg-[#05433a]' : 'bg-[#f5f5f7]'}`} />}
               </React.Fragment>
             ))}
           </div>
@@ -743,7 +743,7 @@ const ApplicationForm = ({ selectedPosition, onClose, onSuccess }) => {
               ].map(({ field, label, icon: I, accept, hint, required }) => (
                 <div key={field}>
                   <label className="block text-sm font-medium text-[#1d1d1f] mb-1.5">{label}{required && <span className="text-red-500 ml-0.5">*</span>}</label>
-                  <label htmlFor={`${field}-upload`} className={`flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-6 text-center transition-colors ${uploading[field] ? 'opacity-60 cursor-not-allowed border-[#d2d2d7]' : 'cursor-pointer border-[#d2d2d7] hover:border-[#1B4332] hover:bg-[#1B4332]/4'}`}>
+                  <label htmlFor={`${field}-upload`} className={`flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-6 text-center transition-colors ${uploading[field] ? 'opacity-60 cursor-not-allowed border-[#d2d2d7]' : 'cursor-pointer border-[#d2d2d7] hover:border-[#05433a] hover:bg-[#05433a]/4'}`}>
                     <I size={24} className="text-[#86868b] mb-2" />
                     <p className="text-sm text-[#6e6e73]">{uploading[field] ? 'Uploading…' : fileNames[field] || `Upload ${label}`}</p>
                     <p className="text-xs text-[#86868b] mt-0.5">{hint}</p>
@@ -759,7 +759,7 @@ const ApplicationForm = ({ selectedPosition, onClose, onSuccess }) => {
                   ['agreePrivacy', 'I agree to the privacy policy and data processing'],
                 ].map(([field, lbl]) => (
                   <label key={field} className="flex items-start gap-3 cursor-pointer">
-                    <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 border transition-colors ${formData[field] ? 'bg-[#1B4332] border-[#1B4332]' : 'border-[#d2d2d7]'}`} onClick={() => set(field, !formData[field])}>
+                    <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 border transition-colors ${formData[field] ? 'bg-[#05433a] border-[#05433a]' : 'border-[#d2d2d7]'}`} onClick={() => set(field, !formData[field])}>
                       {formData[field] && <Check size={12} className="text-white" />}
                     </div>
                     <span className="text-sm text-[#6e6e73]">{lbl}</span>
@@ -847,8 +847,8 @@ const SuccessModal = ({ data, onClose }) => {
               ))}
             </div>
           </div>
-          <div className="flex items-start gap-3 bg-[#1B4332]/8 rounded-2xl p-4">
-            <Info size={16} className="text-[#1B4332] flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-3 bg-[#05433a]/8 rounded-2xl p-4">
+            <Info size={16} className="text-[#05433a] flex-shrink-0 mt-0.5" />
             <p className="text-xs text-[#1d1d1f]">Save your reference number <strong>{referenceNumber}</strong> for future correspondence. A confirmation email has been sent to {email}.</p>
           </div>
         </div>
@@ -918,7 +918,7 @@ const CareersPage = () => {
         <Requirements />
       </main>
 
-      <footer className="bg-[#1B4332] text-white py-12">
+      <footer className="bg-[#05433a] text-white py-12">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
