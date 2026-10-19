@@ -55,7 +55,7 @@ const HeroSection = () => {
                 { icon: 'Users', text: 'Dedicated Support' }
               ].map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-secondary/20 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center">
                     <Icon name={feature.icon} size={16} color="var(--color-secondary)" />
                   </div>
                   <span className="text-primary-100 font-medium">{feature.text}</span>
@@ -113,7 +113,7 @@ const HeroSection = () => {
                 { number: '24/7', label: 'Support Available', icon: 'Headphones' }
               ].map((stat, index) => (
                 <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                  <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                     <Icon name={stat.icon} size={24} color="var(--color-secondary)" />
                   </div>
                   <div className="text-3xl font-heading font-bold text-white mb-2">{stat.number}</div>

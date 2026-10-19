@@ -36,8 +36,8 @@ const TeamMemberCard = ({ member, isLeadership = false }) => {
               />
             </div>
             {/* Verified Badge */}
-            <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-background">
-              <Icon name="CheckCircle" size={16} color="white" />
+            <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
+              <Icon name="BadgeCheck" size={18} className="text-emerald-600" />
             </div>
           </div>
 

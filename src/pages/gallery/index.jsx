@@ -274,8 +274,8 @@ const GalleryPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                <Icon name="Image" size={24} color="white" />
+              <div className="w-12 h-12 flex items-center justify-center">
+                <Icon name="Image" size={28} className="text-primary" />
               </div>
               <h1 className="text-3xl md:text-4xl font-heading font-bold text-text-primary">
                 Project Gallery

@@ -248,7 +248,7 @@ ${formData.message || 'No additional message'}`;
           <div className="flex-1 overflow-y-auto p-8">
             {submitStatus === 'success' ? (
               <div className="text-center py-12">
-                <div className="w-20 h-20 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-6">
+                <div className="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
                   <Icon name="CheckCircle" size={40} className="text-emerald-600" />
                 </div>
                 <h3 className="font-serif italic text-2xl text-emerald-900 mb-3">Inquiry Sent!</h3>

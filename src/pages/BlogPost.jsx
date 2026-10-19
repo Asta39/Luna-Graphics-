@@ -255,7 +255,7 @@ const BlogPost = () => {
                   to={svc.path}
                   className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:border-primary hover:shadow-sm transition-all group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0">
                     <Icon name={svc.icon} size={18} className="text-primary" />
                   </div>
                   <span className="text-sm font-medium text-gray-800 group-hover:text-primary transition-colors leading-snug">{svc.title}</span>

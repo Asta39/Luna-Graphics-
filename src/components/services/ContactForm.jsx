@@ -111,7 +111,7 @@ const ContactForm = ({ serviceName }) => {
             
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center">
                   <Icon name="Clock" size={20} color="var(--color-primary)" />
                 </div>
                 <div>
@@ -123,7 +123,7 @@ const ContactForm = ({ serviceName }) => {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center">
                   <Icon name="Calculator" size={20} color="var(--color-accent)" />
                 </div>
                 <div>
@@ -135,7 +135,7 @@ const ContactForm = ({ serviceName }) => {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center">
                   <Icon name="Users" size={20} color="var(--color-secondary)" />
                 </div>
                 <div>

@@ -54,7 +54,7 @@ const CareersSection = () => {
               <div className="space-y-6">
                 {workBenefits.map((benefit) => (
                   <div key={benefit.title} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center">
                       <Icon name={benefit.icon} size={24} color="var(--color-primary)" />
                     </div>
                     <div>

@@ -201,7 +201,7 @@ const HeroBanner = ({ onSearch }) => {
               transition={{ delay: 0.5 + index * 0.1 }}
               className="flex items-center gap-2 lg:gap-3 p-3 lg:p-4 bg-white rounded-lg lg:rounded-xl shadow-sm flex-shrink-0 min-w-[140px] lg:min-w-0"
             >
-              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Icon name={item.icon} size={16} className="lg:w-5 lg:h-5 text-emerald-600" />
               </div>
               <div className="min-w-0">

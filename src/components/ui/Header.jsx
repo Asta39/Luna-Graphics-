@@ -480,7 +480,7 @@ const handleSearch = (e) => {
                     {/* Shop */}
                     <div>
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center">
                           <Icon name="ShoppingBag" size={14} className="text-emerald-600" />
                         </div>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Shop</span>
@@ -502,7 +502,7 @@ const handleSearch = (e) => {
                     {/* Services */}
                     <div>
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center">
                           <Icon name="Settings" size={14} className="text-emerald-600" />
                         </div>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Services</span>
@@ -524,7 +524,7 @@ const handleSearch = (e) => {
                     {/* Corporate */}
                     <div>
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center">
                           <Icon name="Building2" size={14} className="text-emerald-600" />
                         </div>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Corporate</span>
@@ -549,7 +549,7 @@ const handleSearch = (e) => {
                     {/* Company */}
                     <div>
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center">
                           <Icon name="Users" size={14} className="text-emerald-600" />
                         </div>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Company</span>
@@ -571,7 +571,7 @@ const handleSearch = (e) => {
                     {/* Resources + CTA */}
                     <div>
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center">
                           <Icon name="BookOpen" size={14} className="text-emerald-600" />
                         </div>
                         <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Resources</span>
@@ -728,8 +728,8 @@ const handleSearch = (e) => {
                 className="press flex items-center justify-between w-full p-4 rounded-2xl bg-white card-surface mb-4"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
-                    <Icon name="ShoppingCart" size={20} className="text-white" />
+                  <div className="w-10 h-10 flex items-center justify-center">
+                    <Icon name="ShoppingCart" size={24} className="text-emerald-600" />
                   </div>
                   <div className="text-left">
                     <span className="font-semibold text-gray-900">Shopping Cart</span>
@@ -781,7 +781,7 @@ const handleSearch = (e) => {
                         className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-emerald-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path)}
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center">
                           <Icon name={item.icon} size={16} className="text-emerald-600" />
                         </div>
                         <div className="flex-1">
@@ -820,7 +820,7 @@ const handleSearch = (e) => {
                         className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path)}
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center">
                           <Icon name={item.icon} size={16} className="text-emerald-600" />
                         </div>
                         <div className="flex-1">
@@ -859,7 +859,7 @@ const handleSearch = (e) => {
                         className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path, item.isExternal)}
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center">
                           <Icon name={item.icon} size={16} className="text-emerald-600" />
                         </div>
                         <div className="flex-1">
@@ -901,7 +901,7 @@ const handleSearch = (e) => {
                         className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path, item.isExternal)}
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center">
                           <Icon name={item.icon} size={16} className="text-emerald-600" />
                         </div>
                         <div className="flex-1">
@@ -952,9 +952,7 @@ const handleSearch = (e) => {
                           }
                         }}
                       >
-                        <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
-                          item.isDownload ? 'bg-green-100' : 'bg-emerald-100'
-                        }`}>
+                        <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
                           <Icon name={item.icon} size={16} className={item.isDownload ? 'text-green-600' : 'text-emerald-600'} />
                         </div>
                         <div className="flex-1">

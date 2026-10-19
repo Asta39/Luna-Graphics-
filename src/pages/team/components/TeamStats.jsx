@@ -44,7 +44,7 @@ const TeamStats = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon name={stat.icon} size={32} color="white" />
               </div>
               <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>

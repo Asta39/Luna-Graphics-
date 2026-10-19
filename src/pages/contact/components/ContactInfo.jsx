@@ -121,7 +121,7 @@ const socialLinks = [
         <div className="space-y-6">
           {contactDetails.map((contact, index) => (
             <div key={index} className="flex items-start space-x-4 p-4 rounded-lg hover:bg-surface-50 transition-colors duration-200">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center">
                 <Icon name={contact.icon} size={24} color="var(--color-primary)" />
               </div>
               
@@ -197,7 +197,7 @@ const socialLinks = [
         <div className="space-y-4">
           {emergencyServices.map((service, index) => (
             <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-surface-50">
-              <div className="flex-shrink-0 w-8 h-8 bg-secondary-100 rounded-md flex items-center justify-center">
+              <div className="flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center">
                 <Icon name={service.icon} size={16} color="var(--color-secondary)" />
               </div>
               

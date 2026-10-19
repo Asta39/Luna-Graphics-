@@ -198,7 +198,7 @@ const About = () => {
                     { icon: 'Cpu', title: 'CNC Cutting & Routing', desc: 'Panels, lettering, architectural elements, and large-scale projects' }
                   ].map((capability, index) => (
                     <div key={index} className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm">
-                      <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">
                         <Icon name={capability.icon} size={20} className="text-green-600" />
                       </div>
                       <div>
@@ -417,7 +417,7 @@ const About = () => {
                   variants={fadeInUp}
                   className="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors"
                 >
-                  <div className="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                     <Icon name={industry.icon} size={24} className="text-green-400" />
                   </div>
                   <h3 className="font-heading font-semibold mb-2">{industry.title}</h3>
@@ -469,7 +469,7 @@ const About = () => {
                         >
                           {/* Replace with actual logo images */}
                           <div className="text-center">
-                            <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-2 flex items-center justify-center">
+                            <div className="w-16 h-16 rounded-full mx-auto mb-2 flex items-center justify-center">
                               <Icon name="Image" size={24} className="text-gray-500" />
                             </div>
                             <span className="text-xs text-gray-500 font-medium">{client.name}</span>
@@ -598,7 +598,7 @@ const About = () => {
               
               <motion.div variants={fadeInUp} className="mt-12 grid md:grid-cols-3 gap-6 text-left">
                 <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="MapPin" size={20} className="text-green-600" />
                   </div>
                   <div>
@@ -607,7 +607,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="Phone" size={20} className="text-green-600" />
                   </div>
                   <div>
@@ -616,7 +616,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="Mail" size={20} className="text-green-600" />
                   </div>
                   <div>

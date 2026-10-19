@@ -28,7 +28,7 @@ const ServiceDetails = ({ service }) => {
                 {service.specifications.map((spec, index) => (
                   <div key={index} className="bg-white card-surface rounded-xl p-6">
                     <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">
                         <Icon name={spec.icon} size={20} color="var(--color-primary)" />
                       </div>
                       <div className="flex-1">

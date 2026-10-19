@@ -277,7 +277,7 @@ const Shop = () => {
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center">
                   <Icon name="Zap" size={20} className="text-red-600" />
                 </div>
                 <div>
@@ -294,7 +294,7 @@ const Shop = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-r from-gray-50 to-white rounded-2xl border border-gray-200 p-4 flex gap-4 hover:shadow-lg transition-shadow cursor-pointer"
+                  className="bg-white card-surface rounded-2xl p-4 flex gap-4 hover:shadow-lg transition-shadow cursor-pointer"
                   onClick={() => navigate(`/shop/product/${product.id}`)}
                 >
                   <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 bg-white rounded-xl overflow-hidden border border-gray-100">
@@ -402,7 +402,7 @@ const Shop = () => {
             </>
           ) : (
             <div className="text-center py-16 bg-white rounded-2xl border border-gray-200">
-              <div className="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
                 <Icon name="Search" size={28} className="text-gray-400" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">No products found</h3>

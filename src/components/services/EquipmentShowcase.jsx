@@ -75,7 +75,7 @@ const EquipmentShowcase = ({ equipment }) => {
           <div className="bg-white rounded-lg p-8 shadow-md max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Award" size={24} color="var(--color-primary)" />
                 </div>
                 <h3 className="font-heading font-bold text-primary mb-2">ISO Certified</h3>
@@ -83,7 +83,7 @@ const EquipmentShowcase = ({ equipment }) => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Shield" size={24} color="var(--color-accent)" />
                 </div>
                 <h3 className="font-heading font-bold text-primary mb-2">Quality Assured</h3>
@@ -91,7 +91,7 @@ const EquipmentShowcase = ({ equipment }) => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Clock" size={24} color="var(--color-secondary)" />
                 </div>
                 <h3 className="font-heading font-bold text-primary mb-2">Fast Turnaround</h3>

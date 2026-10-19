@@ -53,7 +53,7 @@ const ProjectGrid = ({
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
-          <div className="w-24 h-24 bg-surface-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
             <Icon name="Search" size={32} color="var(--color-text-secondary)" />
           </div>
           <h3 className="text-xl font-heading font-semibold text-text-primary mb-2">

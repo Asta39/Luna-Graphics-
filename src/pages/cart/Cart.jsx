@@ -151,7 +151,7 @@ const Cart = () => {
             animate={{ opacity: 1, y: 0 }}
             className="bg-white rounded-2xl shadow-sm border border-gray-200 p-12 text-center"
           >
-            <div className="w-24 h-24 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-6">
+            <div className="w-24 h-24 mx-auto rounded-full flex items-center justify-center mb-6">
               <Icon name="ShoppingCart" size={40} className="text-gray-400" />
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Your Cart is Empty</h2>
@@ -355,9 +355,9 @@ const Cart = () => {
             </div>
 
             {/* NEW: Bulk Inquiry Card */}
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-100 p-6">
+            <div className="bg-white card-surface rounded-xl p-6">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                   <Icon name="HelpCircle" size={20} className="text-emerald-600" />
                 </div>
                 <div>

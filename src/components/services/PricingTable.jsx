@@ -169,7 +169,7 @@ const PricingTable = ({ pricingPackages }) => { // onGetQuote prop is no longer 
                   <div className="space-y-4 mb-8">
                     {pkg.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-5 h-5 bg-accent-100 rounded-full flex items-center justify-center mt-0.5">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5">
                           <Icon name="Check" size={12} color="var(--color-accent)" />
                         </div>
                         <span className="text-sm text-text-secondary">{feature}</span>

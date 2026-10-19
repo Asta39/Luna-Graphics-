@@ -89,7 +89,7 @@ const ProjectModal = ({
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border bg-surface-50">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center">
               <Icon name={getServiceIcon(project.serviceType)} size={16} color="var(--color-primary)" />
             </div>
             <div>
@@ -176,7 +176,7 @@ const ProjectModal = ({
                 <div className="space-y-3">
                   {specifications.map((spec, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-surface-100 rounded-md flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 rounded-md flex items-center justify-center flex-shrink-0">
                         <Icon name={spec.icon} size={14} color="var(--color-text-secondary)" />
                       </div>
                       <div className="flex-1">
@@ -197,7 +197,7 @@ const ProjectModal = ({
                     Client
                   </h3>
                   <div className="flex items-center space-x-3 p-3 bg-surface-50 rounded-md">
-                    <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center">
                       <Icon name="Building2" size={16} color="var(--color-primary)" />
                     </div>
                     <div>

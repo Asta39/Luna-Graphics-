@@ -59,7 +59,7 @@ const HeroSection = () => {
                 { icon: 'Shield', text: '100% Satisfaction Guarantee' }
               ].map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center">
                     {/* Using AppIcon for consistency */}
                     <Icon name={feature.icon} size={16} color="var(--color-primary)" />
                   </div>

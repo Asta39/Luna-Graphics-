@@ -131,8 +131,8 @@ const CaseStudies = () => {
                         "{caseStudies[activeCase].testimonial}"
                       </p>
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                          <Icon name="User" size={20} color="white" />
+                        <div className="w-10 h-10 flex items-center justify-center">
+                          <Icon name="UserCircle" size={32} className="text-gray-400" />
                         </div>
                         <div>
                           <div className="font-semibold text-text-primary">

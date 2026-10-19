@@ -117,7 +117,7 @@ const ProjectCard = ({ project, onClick, index }) => {
         {project.client && (
           <div className="mt-3 pt-3 border-t border-border">
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+              <div className="w-6 h-6 rounded-full flex items-center justify-center">
                 <Icon name="Building2" size={12} color="var(--color-primary)" />
               </div>
               <span className="text-xs font-medium text-text-primary">{project.client}</span>

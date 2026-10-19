@@ -138,7 +138,7 @@ const CorporateQuoteForm = () => {
           {/* Form Header */}
           <div className="bg-gradient-to-r from-primary to-primary-700 p-8 text-white">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center">
                 <Icon name="FileText" size={24} color="white" />
               </div>
               <div>
@@ -442,7 +442,7 @@ const CorporateQuoteForm = () => {
             }
           ].map((contact, index) => (
             <div key={index} className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Icon name={contact.icon} size={24} color="var(--color-primary)" />
               </div>
               <h4 className="font-semibold text-text-primary mb-2">{contact.title}</h4>

@@ -8,6 +8,8 @@ import Button from '../../components/ui/Button';
 import { getProductById, products } from '../../data/products';
 import { useCart } from '../../context/CartContext';
 import Header from '../../components/ui/Header';
+import Footer from '../homepage/components/Footer';
+import ProductCard from './components/ProductCard';
 import NotFound from '../NotFound';
 
 // EmailJS Configuration - REPLACE WITH YOUR CREDENTIALS
@@ -78,7 +80,6 @@ const ProductDetail = () => {
   const product = getProductById(productId);
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState('description');
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
 
@@ -89,6 +90,11 @@ const ProductDetail = () => {
     }
     window.scrollTo(0, 0);
   }, [productId, product]);
+
+  useEffect(() => {
+    document.body.dataset.buyBar = '';
+    return () => { delete document.body.dataset.buyBar; };
+  }, []);
 
   if (!product) {
     return (
@@ -130,17 +136,11 @@ const ProductDetail = () => {
     }
   };
 
-  const tabs = [
-    { id: 'description', label: 'Description' },
-    { id: 'specifications', label: 'Specifications' },
-    { id: 'features', label: 'Features' },
-    { id: 'shipping', label: 'Shipping & Returns' }
-  ];
 
   const productImages = product.images || [product.image];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50 pt-16">
       <SEO 
         title={`${product.name} | Luna Graphics Kenya`}
         description={product.description || `Buy ${product.name} at Luna Graphics. Professional printing and branding solutions in Nairobi.`}
@@ -182,457 +182,294 @@ const ProductDetail = () => {
       />
       <Header/>
 
-      {/* Breadcrumb */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center text-sm text-gray-500">
-            <button onClick={() => navigate('/')} className="hover:text-emerald-600 transition-colors">Home</button>
-            <Icon name="ChevronRight" size={16} className="mx-2" />
-            <button onClick={() => navigate('/')} className="hover:text-emerald-600 transition-colors">Shop</button>
-            <Icon name="ChevronRight" size={16} className="mx-2" />
-            <button 
-              onClick={() => navigate(`/shop?category=${product.category}`)} 
-              className="hover:text-emerald-600 transition-colors capitalize"
-            >
-              {product.category}
-            </button>
-            <Icon name="ChevronRight" size={16} className="mx-2" />
-            <span className="text-gray-900 font-medium truncate max-w-xs">{product.name}</span>
-          </nav>
-        </div>
-      </div>
+      <main className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 lg:pb-16">
+        {/* Back link: where am I, how do I get out */}
+        <nav aria-label="Breadcrumb" className="py-4 flex items-center gap-1.5 text-sm text-gray-500 min-w-0">
+          <button onClick={() => navigate('/')} className="press inline-flex items-center gap-1 text-emerald-700 font-medium hover:text-emerald-800">
+            <Icon name="ChevronLeft" size={16} />
+            Shop
+          </button>
+          <span aria-hidden="true">/</span>
+          <button
+            onClick={() => navigate(`/shop?category=${product.category}`)}
+            className="hover:text-gray-900 capitalize truncate"
+          >
+            {product.subcategory || product.category}
+          </button>
+        </nav>
 
-      {/* Main Product Section */}
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Image Gallery */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="space-y-4"
-            >
-              <div className="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden border border-gray-200">
-                <img 
-                  src={productImages[selectedImage]} 
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-start">
+          {/* Gallery */}
+          <div className="lg:sticky lg:top-24">
+            <div className="relative bg-white card-surface rounded-3xl overflow-hidden" style={{ aspectRatio: '1 / 1' }}>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.img
+                  key={selectedImage}
+                  src={productImages[selectedImage]}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => { e.target.src = '/images/placeholder-product.jpg'; }}
                 />
-                {product.discount && hasPrice && (
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-red-500 text-white font-bold rounded-full">
-                    {product.discount} OFF
-                  </div>
-                )}
-                {isInquireOnly && (
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-amber-500 text-white font-bold rounded-full">
-                    Inquire for Price
-                  </div>
-                )}
-                {product.badge && !product.discount && !isInquireOnly && (
-                  <div className={`absolute top-4 left-4 px-3 py-1 text-white font-bold rounded-full ${
-                    product.badge === 'Hot' ? 'bg-red-500' :
-                    product.badge === 'New' ? 'bg-blue-500' :
-                    product.badge === 'Premium' ? 'bg-purple-500' :
-                    'bg-emerald-500'
-                  }`}>
-                    {product.badge}
-                  </div>
-                )}
-                <button className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors">
-                  <Icon name="Heart" size={20} />
-                </button>
-              </div>
-              
-              {productImages.length > 1 && (
-                <div className="grid grid-cols-4 gap-3">
-                  {productImages.map((img, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setSelectedImage(idx)}
-                      className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                        selectedImage === idx ? 'border-emerald-600 ring-2 ring-emerald-100' : 'border-gray-200 hover:border-emerald-300'
-                      }`}
-                    >
-                      <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
-                    </button>
-                  ))}
-                </div>
+              </AnimatePresence>
+              {(hasPrice ? (product.discount ? `${product.discount} off` : product.badge) : null) && (
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/85 backdrop-blur-md text-xs font-semibold text-gray-900 shadow-sm">
+                  {product.discount ? `${product.discount} off` : product.badge}
+                </span>
               )}
-            </motion.div>
+            </div>
 
-            {/* Product Info */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="space-y-6"
-            >
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full">
-                    {product.subcategory}
-                  </span>
-                  <div className="flex items-center text-amber-400">
-                    <Icon name="Star" size={16} className="fill-current" />
-                    <span className="ml-1 text-sm text-gray-600">{product.rating} ({product.reviews} reviews)</span>
-                  </div>
-                </div>
-                
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
-                
-                <p className="text-gray-600 text-lg leading-relaxed">{product.description}</p>
-              </div>
-
-              {/* Price Section - FIXED for inquire products */}
-              <div className="flex items-baseline gap-4 py-4 border-y border-gray-100">
-                {hasPrice ? (
-                  <>
-                    <span className="text-4xl font-bold text-emerald-600">{formatPrice(product.price)}</span>
-                    {product.oldPrice && (
-                      <span className="text-2xl text-gray-400 line-through">{formatPrice(product.oldPrice)}</span>
-                    )}
-                    <span className="text-gray-500">per {product.priceUnit}</span>
-                  </>
-                ) : (
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl font-bold text-amber-600">Inquire for Price</span>
-                    <span className="text-sm text-gray-500">Contact us for pricing</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Key Info */}
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="flex items-center gap-2 text-gray-600">
-                  <Icon name="Package" size={18} className="text-emerald-600" />
-                  <span>Min Order: <strong>{product.minOrder} {product.priceUnit}</strong></span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <Icon name="Clock" size={18} className="text-emerald-600" />
-                  <span>Turnaround: <strong>{product.turnaround}</strong></span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <Icon name="CheckCircle" size={18} className="text-emerald-600" />
-                  <span>Stock: <strong className={product.stock < 10 ? 'text-red-500' : 'text-emerald-600'}>
-                    {product.stock < 10 ? `Only ${product.stock} left` : 'Available'}
-                  </strong></span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
-                  <Icon name="Truck" size={18} className="text-emerald-600" />
-                  <span>Free Nairobi Delivery</span>
-                </div>
-              </div>
-
-              {/* Quantity Selector - Only show if has price */}
-              {hasPrice && (
-                <div className="flex items-center gap-4">
-                  <span className="font-medium text-gray-700">Quantity:</span>
-                  <div className="flex items-center border border-gray-300 rounded-lg">
-                    <button 
-                      onClick={() => setQuantity(Math.max(product.minOrder || 1, quantity - 1))}
-                      className="px-4 py-2 hover:bg-gray-100 transition-colors"
-                    >
-                      <Icon name="Minus" size={16} />
-                    </button>
-                    <span className="px-4 py-2 font-semibold min-w-[3rem] text-center">{quantity}</span>
-                    <button 
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="px-4 py-2 hover:bg-gray-100 transition-colors"
-                    >
-                      <Icon name="Plus" size={16} />
-                    </button>
-                  </div>
-                  <span className="text-sm text-gray-500">{product.priceUnit}</span>
-                </div>
-              )}
-
-              {/* Total Price - Only show if has price */}
-              {hasPrice && (
-                <div className="bg-white card-surface rounded-xl p-4 flex items-center justify-between">
-                  <span className="text-gray-700 font-medium">Total Estimate:</span>
-                  <span className="text-2xl font-bold text-emerald-600">{formatPrice(product.price * quantity)}</span>
-                </div>
-              )}
-
-              {/* Action Buttons - FIXED for inquire products */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button 
-                  variant="primary" 
-                  size="lg" 
-                  className={`flex-1 text-lg ${hasPrice ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-amber-500 hover:bg-amber-600'}`}
-                  onClick={() => setIsInquiryOpen(true)}
-                >
-                  <Icon name="Send" size={20} className="mr-2" />
-                  {hasPrice ? 'Send Inquiry' : 'Request Quote'}
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="flex-1 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
-                  onClick={handleWhatsApp}
-                >
-                  <Icon name="MessageCircle" size={20} className="mr-2" />
-                  WhatsApp
-                </Button>
-              </div>
-
-              {/* Add to Cart Button - FIXED for inquire products */}
-              <div className="pt-4 border-t border-gray-100">
-                {hasPrice ? (
-                  <Button 
-                    variant="primary" 
-                    size="lg"
-                    className={`w-full sm:w-auto mx-auto block px-12 py-4 text-lg font-semibold transition-all ${
-                      addedToCart 
-                        ? 'bg-green-500 hover:bg-green-600' 
-                        : 'bg-gray-900 hover:bg-gray-800'
+            {productImages.length > 1 && (
+              <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+                {productImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedImage(idx)}
+                    aria-label={`Show photo ${idx + 1}`}
+                    aria-current={selectedImage === idx}
+                    className={`press flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden bg-white transition-shadow ${
+                      selectedImage === idx ? 'shadow-[0_0_0_2px_#111827]' : 'shadow-[inset_0_0_0_0.5px_rgba(16,24,40,0.12)] opacity-70 hover:opacity-100'
                     }`}
-                    onClick={handleAddToCart}
                   >
-                    {addedToCart ? (
-                      <span className="flex items-center">
-                        <Icon name="Check" size={20} className="mr-2" />
-                        Added to Cart!
-                      </span>
-                    ) : (
-                      <span className="flex items-center">
-                        <Icon name="ShoppingCart" size={20} className="mr-2" />
-                        Add to Cart
-                      </span>
-                    )}
-                  </Button>
-                ) : (
-                  <div className="text-center">
-                    <p className="text-amber-600 font-medium mb-2">This product requires a custom quote</p>
-                    <Button 
-                      variant="primary" 
-                      size="lg"
-                      className="w-full sm:w-auto px-12 py-4 text-lg font-semibold bg-amber-500 hover:bg-amber-600"
-                      onClick={() => setIsInquiryOpen(true)}
-                    >
-                      <Icon name="Mail" size={20} className="mr-2" />
-                      Request Quote
-                    </Button>
-                  </div>
-                )}
-                <p className="text-center text-sm text-gray-500 mt-2">
-                  {hasPrice ? `Free delivery in Nairobi • ${product.turnaround} turnaround` : 'Custom pricing available • Contact us for details'}
-                </p>
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </button>
+                ))}
               </div>
-
-              {/* Trust Badges */}
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
-                <div className="text-center">
-                  <Icon name="ShieldCheck" size={24} className="mx-auto text-emerald-600 mb-1" />
-                  <span className="text-xs text-gray-600">Quality Guaranteed</span>
-                </div>
-                <div className="text-center">
-                  <Icon name="RefreshCw" size={24} className="mx-auto text-emerald-600 mb-1" />
-                  <span className="text-xs text-gray-600">7-Day Returns</span>
-                </div>
-                <div className="text-center">
-                  <Icon name="HeadphonesIcon" size={24} className="mx-auto text-emerald-600 mb-1" />
-                  <span className="text-xs text-gray-600">24/7 Support</span>
-                </div>
-              </div>
-            </motion.div>
+            )}
           </div>
-        </div>
-      </section>
 
-      {/* Tabs Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-            <div className="flex border-b border-gray-200 overflow-x-auto">
-              {tabs.map(tab => (
+          {/* Buy column */}
+          <div className="lg:sticky lg:top-24">
+            <p className="text-sm text-gray-500">{product.subcategory}</p>
+            <h1 className="mt-1 text-3xl sm:text-4xl font-semibold text-gray-900">{product.name}</h1>
+            <p className="mt-3 text-[17px] leading-relaxed text-gray-600">{product.description}</p>
+
+            <div className="mt-6">
+              {hasPrice ? (
+                <div className="flex items-baseline gap-3 flex-wrap">
+                  <span className="text-3xl font-semibold tracking-tight text-gray-900">{formatPrice(product.price)}</span>
+                  {product.oldPrice && (
+                    <span className="text-lg text-gray-400 line-through">{formatPrice(product.oldPrice)}</span>
+                  )}
+                  <span className="text-sm text-gray-500">{product.priceUnit === 'each' ? 'each' : `per ${product.priceUnit}`}</span>
+                </div>
+              ) : (
+                <div>
+                  <p className="text-2xl font-semibold text-gray-900">Price on request</p>
+                  <p className="mt-1 text-sm text-gray-500">Priced to your size, material and quantity. We usually reply within minutes.</p>
+                </div>
+              )}
+            </div>
+
+            {hasPrice && (
+              <div className="mt-6 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium text-gray-900">Quantity</p>
+                  {product.minOrder > 1 && (
+                    <p className="text-xs text-gray-500">Minimum {product.minOrder}</p>
+                  )}
+                </div>
+                <div className="flex items-center rounded-full bg-gray-100 p-1">
+                  <button
+                    onClick={() => setQuantity(Math.max(product.minOrder || 1, quantity - 1))}
+                    disabled={quantity <= (product.minOrder || 1)}
+                    aria-label="Decrease quantity"
+                    className="press w-11 h-11 rounded-full flex items-center justify-center text-gray-900 hover:bg-white disabled:text-gray-300 disabled:hover:bg-transparent"
+                  >
+                    <Icon name="Minus" size={18} />
+                  </button>
+                  <span className="w-12 text-center text-base font-semibold tabular-nums" aria-live="polite">{quantity}</span>
+                  <button
+                    onClick={() => setQuantity(quantity + 1)}
+                    aria-label="Increase quantity"
+                    className="press w-11 h-11 rounded-full flex items-center justify-center text-gray-900 hover:bg-white"
+                  >
+                    <Icon name="Plus" size={18} />
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Actions (desktop and tablet; phones use the bar at the bottom) */}
+            <div className="mt-6 hidden sm:flex flex-col gap-3">
+              {hasPrice ? (
                 <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-4 font-medium text-sm whitespace-nowrap transition-colors relative ${
-                    activeTab === tab.id ? 'text-emerald-600' : 'text-gray-600 hover:text-gray-900'
+                  onClick={handleAddToCart}
+                  className={`press h-14 rounded-full font-semibold text-white flex items-center justify-center gap-2 ${
+                    addedToCart ? 'bg-gray-900' : 'bg-emerald-600 hover:bg-emerald-700'
                   }`}
                 >
-                  {tab.label}
-                  {activeTab === tab.id && (
-                    <motion.div 
-                      layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600" 
-                    />
-                  )}
+                  <Icon name={addedToCart ? 'Check' : 'ShoppingCart'} size={20} />
+                  {addedToCart ? 'Added to cart' : `Add to cart · ${formatPrice(product.price * quantity)}`}
                 </button>
-              ))}
-            </div>
-
-            <div className="p-6 md:p-8">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
+              ) : (
+                <button
+                  onClick={() => setIsInquiryOpen(true)}
+                  className="press h-14 rounded-full font-semibold text-white bg-emerald-600 hover:bg-emerald-700 flex items-center justify-center gap-2"
                 >
-                  {activeTab === 'description' && (
-                    <div className="prose max-w-none text-gray-600 leading-relaxed">
-                      <div className="whitespace-pre-line text-lg">
-                        {product.longDescription || product.description}
-                      </div>
-                    </div>
-                  )}
-
-                  {activeTab === 'specifications' && (
-                    <div className="overflow-hidden rounded-lg border border-gray-200">
-                      <table className="w-full text-left">
-                        <tbody className="divide-y divide-gray-200">
-                          {Object.entries(product.specifications || {}).map(([key, value], idx) => (
-                            <tr key={key} className={idx % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                              <td className="px-6 py-4 font-medium text-gray-900 w-1/3">{key}</td>
-                              <td className="px-6 py-4 text-gray-600">{value}</td>
-                            </tr>
-                          ))}
-                          <tr className="bg-white">
-                            <td className="px-6 py-4 font-medium text-gray-900">Turnaround Time</td>
-                            <td className="px-6 py-4 text-gray-600">{product.turnaround}</td>
-                          </tr>
-                          <tr className="bg-gray-50">
-                            <td className="px-6 py-4 font-medium text-gray-900">Minimum Order</td>
-                            <td className="px-6 py-4 text-gray-600">{product.minOrder} {product.priceUnit}</td>
-                          </tr>
-                          <tr className="bg-white">
-                            <td className="px-6 py-4 font-medium text-gray-900">Pricing</td>
-                            <td className="px-6 py-4 text-gray-600">
-                              {hasPrice ? formatPrice(product.price) : 'Contact for quote'}
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  )}
-
-                  {activeTab === 'features' && (
-                    <ul className="space-y-3">
-                      {product.features?.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Icon name="Check" size={14} className="text-emerald-600" />
-                          </div>
-                          <span className="text-gray-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {activeTab === 'shipping' && (
-                    <div className="space-y-6 text-gray-600">
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Delivery Options</h4>
-                        <ul className="space-y-2">
-                          <li className="flex items-center gap-2">
-                            <Icon name="Truck" size={18} className="text-emerald-600" />
-                            <span><strong>Free Delivery</strong> within Nairobi CBD for orders over KES 5,000</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <Icon name="MapPin" size={18} className="text-emerald-600" />
-                            <span><strong>Same-day delivery</strong> available for urgent orders (additional fee)</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <Icon name="Package" size={18} className="text-emerald-600" />
-                            <span><strong>Nationwide shipping</strong> via trusted courier partners</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Return Policy</h4>
-                        <p>We stand behind our quality. If there are any defects in printing or materials, contact us within 7 days for a free reprint or refund. Custom designs cannot be returned unless defective.</p>
-                      </div>
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
+                  <Icon name="Send" size={20} />
+                  Request a quote
+                </button>
+              )}
+              <button
+                onClick={handleWhatsApp}
+                className="press h-14 rounded-full font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 flex items-center justify-center gap-2"
+              >
+                <Icon name="MessageCircle" size={20} />
+                Ask on WhatsApp
+              </button>
             </div>
+
+            {hasPrice && (
+              <button
+                onClick={() => setIsInquiryOpen(true)}
+                className="mt-4 text-sm font-medium text-emerald-700 hover:text-emerald-800"
+              >
+                Need a custom size or bulk price? Send a request
+              </button>
+            )}
+
+            {/* Key facts */}
+            <ul className="mt-8 bg-white card-surface rounded-2xl divide-y divide-black/[0.06]">
+              <li className="flex items-center gap-3 px-4 py-3.5">
+                <Icon name="Clock" size={20} className="text-gray-400" />
+                <span className="text-sm text-gray-600">Ready in</span>
+                <span className="ml-auto text-sm font-medium text-gray-900">{product.turnaround}</span>
+              </li>
+              <li className="flex items-center gap-3 px-4 py-3.5">
+                <Icon name="Truck" size={20} className="text-gray-400" />
+                <span className="text-sm text-gray-600">Delivery</span>
+                <span className="ml-auto text-sm font-medium text-gray-900 text-right">Free in Nairobi CBD over KES 5,000</span>
+              </li>
+              {typeof product.stock === 'number' && (
+                <li className="flex items-center gap-3 px-4 py-3.5">
+                  <Icon name="Package" size={20} className="text-gray-400" />
+                  <span className="text-sm text-gray-600">Availability</span>
+                  <span className={`ml-auto text-sm font-medium ${product.stock < 10 ? 'text-amber-700' : 'text-gray-900'}`}>
+                    {product.stock < 10 ? `Only ${product.stock} left` : 'In stock'}
+                  </span>
+                </li>
+              )}
+            </ul>
           </div>
         </div>
-      </section>
 
-      {/* Quick Inquiry Form Section - Simplified */}
-      <section className="py-12 bg-white border-t border-gray-200">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Have Questions?</h2>
-          <p className="text-gray-600 mb-6">Click the button below to send us a detailed inquiry about this product.</p>
-          <Button 
-            variant="primary" 
-            size="lg"
-            className={`${hasPrice ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-amber-500 hover:bg-amber-600'}`}
-            onClick={() => setIsInquiryOpen(true)}
-          >
-            <Icon name="Send" size={20} className="mr-2" />
-            {hasPrice ? 'Open Inquiry Form' : 'Request Quote'}
-          </Button>
-        </div>
-      </section>
-
-      {/* Related Products - FIXED to handle inquire prices */}
-      {relatedProducts.length > 0 && (
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">Related Products</h2>
-                <p className="text-gray-500 mt-1">You might also be interested in</p>
+        {/* Details: heading on top, two cards side by side on wide screens */}
+        <section className="mt-14 lg:mt-20">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">Details</h2>
+          <div className="mt-6 grid lg:grid-cols-2 gap-6 items-start">
+            <div className="bg-white card-surface rounded-3xl divide-y divide-black/[0.06]">
+            {(product.longDescription || product.description) && (
+              <div className="p-6 sm:p-8">
+                <h3 className="text-lg font-semibold text-gray-900">Overview</h3>
+                <p className="mt-3 text-gray-600 leading-relaxed whitespace-pre-line">{product.longDescription || product.description}</p>
               </div>
-              <Button variant="outline" onClick={() => navigate('/')}>
-                View All
-              </Button>
+            )}
+
+            {product.features?.length > 0 && (
+              <div className="p-6 sm:p-8">
+                <h3 className="text-lg font-semibold text-gray-900">Highlights</h3>
+                <ul className="mt-4 space-y-3">
+                  {product.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-gray-600">
+                      <Icon name="Check" size={18} className="mt-0.5 flex-shrink-0 text-emerald-600" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            </div>
+            <div className="bg-white card-surface rounded-3xl divide-y divide-black/[0.06]">
+            <div className="p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-gray-900">Specifications</h3>
+              <dl className="mt-4 divide-y divide-black/[0.06]">
+                {[
+                  ...Object.entries(product.specifications || {}),
+                  ['Turnaround', product.turnaround],
+                  ['Minimum order', `${product.minOrder} ${product.priceUnit}`],
+                  ['Pricing', hasPrice ? `${formatPrice(product.price)} ${product.priceUnit === 'each' ? 'each' : `per ${product.priceUnit}`}` : 'On request'],
+                ].map(([key, value]) => (
+                  <div key={key} className="py-3 grid grid-cols-[40%_1fr] gap-4 text-sm">
+                    <dt className="text-gray-500">{key}</dt>
+                    <dd className="text-gray-900">{value}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-              {relatedProducts.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer flex flex-col"
-                  onClick={() => navigate(`/shop/product/${item.id}`)}
-                >
-                  <div className="relative h-40 bg-gray-100 overflow-hidden flex-shrink-0">
-                    <img 
-                      src={item.image || (item.images && item.images[0])} 
-                      alt={item.name}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.target.src = '/images/placeholder-product.jpg';
-                      }}
-                    />
-                    {item.discount && hasValidPrice(item.price) && (
-                      <div className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
-                        {item.discount}
-                      </div>
-                    )}
-                    {isInquireProduct(item.price) && (
-                      <div className="absolute top-3 left-3 px-2 py-1 bg-amber-500 text-white text-xs font-bold rounded">
-                        Inquire
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-4 flex flex-col flex-grow">
-                    <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors text-sm leading-snug min-h-[40px]">
-                      {item.name}
-                    </h3>
-                    <div className="flex items-center justify-between mt-auto">
-                      <span className={`text-lg font-bold ${hasValidPrice(item.price) ? 'text-emerald-600' : 'text-amber-600'}`}>
-                        {formatPrice(item.price)}
-                      </span>
-                      <span className="text-xs text-gray-500">/{item.priceUnit}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-gray-900">Delivery and returns</h3>
+              <ul className="mt-4 space-y-2 text-gray-600">
+                <li>Free delivery within Nairobi CBD on orders over KES 5,000.</li>
+                <li>Same-day delivery for urgent orders, for an extra fee.</li>
+                <li>Nationwide shipping through trusted couriers.</li>
+              </ul>
+              <p className="mt-4 text-gray-600">
+                If there's a printing or material defect, tell us within 7 days for a free reprint or refund. Custom designs can't be returned unless they're defective.
+              </p>
+            </div>
             </div>
           </div>
         </section>
-      )}
+
+        {relatedProducts.length > 0 && (
+          <section className="mt-14 lg:mt-20">
+            <div className="flex items-end justify-between mb-6">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">You might also like</h2>
+              <button onClick={() => navigate('/')} className="text-sm font-medium text-emerald-700 hover:text-emerald-800">
+                See all
+              </button>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {relatedProducts.map((item) => (
+                <ProductCard
+                  key={item.id}
+                  product={item}
+                  onInquire={(p) => navigate(`/shop/product/${p.id}`)}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+      </main>
+
+      <Footer />
+
+      {/* Phone buy bar: the main action stays in reach */}
+      <div className="sm:hidden fixed bottom-0 inset-x-0 z-40 material-bar border-t border-black/[0.06] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div className="flex items-center gap-3">
+          <div className="min-w-0 flex-1">
+            {hasPrice ? (
+              <>
+                <p className="text-lg font-semibold text-gray-900 leading-tight tabular-nums">{formatPrice(product.price * quantity)}</p>
+                <p className="text-xs text-gray-500">{quantity} × {formatPrice(product.price)}</p>
+              </>
+            ) : (
+              <p className="text-sm font-semibold text-gray-900">Price on request</p>
+            )}
+          </div>
+          <button
+            onClick={handleWhatsApp}
+            aria-label="Ask on WhatsApp"
+            className="press w-12 h-12 flex-shrink-0 rounded-full bg-gray-100 flex items-center justify-center text-gray-900"
+          >
+            <Icon name="MessageCircle" size={22} />
+          </button>
+          <button
+            onClick={hasPrice ? handleAddToCart : () => setIsInquiryOpen(true)}
+            className={`press h-12 px-6 flex-shrink-0 rounded-full font-semibold text-white ${
+              addedToCart ? 'bg-gray-900' : 'bg-emerald-600'
+            }`}
+          >
+            {hasPrice ? (addedToCart ? 'Added' : 'Add to cart') : 'Get a quote'}
+          </button>
+        </div>
+      </div>
 
       {/* Modern Inquiry Modal - FIXED EmailJS & WhatsApp */}
       <InquiryModal 
@@ -810,7 +647,7 @@ Message: ${formData.message || 'No additional message'}`;
           <div className="p-6">
             {submitStatus === 'success' ? (
               <div className="text-center py-8">
-                <div className="w-16 h-16 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
                   <Icon name="CheckCircle" size={32} className="text-emerald-600" />
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Inquiry Sent!</h4>

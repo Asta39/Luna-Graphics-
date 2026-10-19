@@ -153,9 +153,9 @@ const ComplianceSection = () => {
           {/* Logistics Overview */}
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             {deliveryLogistics.map((area, index) => (
-              <div key={index} className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Icon name={area.icon} size={28} color="white" />
+              <div key={index} className="bg-white card-surface rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Icon name={area.icon} size={36} className="text-primary" />
                 </div>
                 <h4 className="text-xl font-heading font-bold text-primary mb-2">
                   {area.area}
@@ -196,7 +196,7 @@ const ComplianceSection = () => {
                 { icon: 'Phone', title: '24/7 Support', desc: 'Round-the-clock customer service' }
               ].map((feature, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Icon name={feature.icon} size={24} color="white" />
                   </div>
                   <h5 className="font-semibold mb-2">{feature.title}</h5>

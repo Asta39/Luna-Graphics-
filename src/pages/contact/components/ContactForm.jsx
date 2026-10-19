@@ -180,7 +180,7 @@ ${formData.message}
   if (submitSuccess) {
     return (
       <div className="bg-background rounded-lg shadow-lg p-8 text-center">
-        <div className="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
           <Icon name="CheckCircle" size={32} color="var(--color-success)" />
         </div>
         <h3 className="text-xl font-heading font-semibold text-text-primary mb-2">

@@ -123,7 +123,7 @@ const pageData = services['t-shirt-printing'];
               { metric: '24/7', label: 'Production capability', icon: 'Clock' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name={stat.icon} size={28} color="white" />
                 </div>
                 <div className="text-3xl font-heading font-bold mb-2">{stat.metric}</div>

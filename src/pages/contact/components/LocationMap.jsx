@@ -199,7 +199,7 @@ const LocationMap = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {nearbyServices.map((place, index) => (
               <div key={index} className="p-3 bg-surface-50 rounded-lg text-center">
-                <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <Icon name={place.icon} size={16} color="var(--color-primary)" />
                 </div>
                 <p className="text-sm font-medium text-text-primary">

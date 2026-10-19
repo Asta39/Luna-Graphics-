@@ -119,7 +119,7 @@ const CorporateBranding = () => {
                 { icon: 'MapPin', title: 'Disconnected Experience', desc: 'Your office doesn\'t reflect your brand promise. Visitors feel a disconnect between your marketing and reality.' }
               ].map((item, idx) => (
                 <motion.div key={idx} variants={fadeInUp} className="text-center p-6">
-                  <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Icon name={item.icon} size={28} className="text-red-500" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
@@ -143,7 +143,7 @@ const CorporateBranding = () => {
               {/* Typical Approach */}
               <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                     <Icon name="Users" size={20} className="text-gray-500" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-700">The Typical Approach</h3>
@@ -174,7 +174,7 @@ const CorporateBranding = () => {
               {/* Luna Approach */}
               <motion.div variants={fadeInUp} className="bg-emerald-600 p-8 rounded-2xl shadow-lg text-white">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                     <Icon name="CheckCircle" size={20} className="text-white" />
                   </div>
                   <h3 className="text-xl font-bold">The Luna Graphics Partnership</h3>
@@ -227,7 +227,7 @@ const CorporateBranding = () => {
                 { icon: 'Truck', title: 'Vehicle Branding', desc: 'Fleet wraps and vehicle graphics that turn your company cars into mobile billboards.' }
               ].map((service, idx) => (
                 <motion.div key={idx} variants={fadeInUp} className="group p-6 rounded-xl hover:bg-emerald-50 transition-colors duration-300 border border-transparent hover:border-emerald-100">
-                  <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-200 transition-colors">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-colors">
                     <Icon name={service.icon} size={24} className="text-emerald-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
@@ -392,7 +392,7 @@ const CorporateBranding = () => {
                 { icon: 'Headphones', title: 'Dedicated Support', desc: 'A single account manager who knows your brand and coordinates all your needs.' }
               ].map((item, idx) => (
                 <motion.div key={idx} variants={fadeInUp} className="text-center">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <Icon name={item.icon} size={28} className="text-emerald-600" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>

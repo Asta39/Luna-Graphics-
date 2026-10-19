@@ -10,7 +10,7 @@ const RelatedBlogPosts = ({ posts }) => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 mb-10">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center">
             <Icon name="BookOpen" size={20} className="text-primary" />
           </div>
           <div>
