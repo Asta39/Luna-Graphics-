@@ -39,7 +39,7 @@ const EquipmentShowcase = ({ equipment }) => {
                   {machine.description}
                 </p>
                 
-                <div className="bg-primary-50 rounded-lg p-4 mb-4">
+                <div className="rounded-lg p-4 mb-4 border border-black/[0.06]">
                   <div className="flex items-center space-x-2 mb-2">
                     <Icon name="Maximize" size={16} color="var(--color-primary)" />
                     <span className="text-sm font-medium text-primary">Max Size:</span>

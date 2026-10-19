@@ -12,8 +12,8 @@ const heroSlides = [
   },
   {
     id: 2,
-    image: '/banners/banner-october.webp',
-    link: '/shop',
+    image: '/banners/banner-dtf.webp',
+    link: '/services/dtf-printing',
   },
   {
     id: 3,
@@ -25,8 +25,8 @@ const heroSlides = [
 const sideBanners = [
   {
     id: 1,
-    image: '/banners/banner-october.webp',
-    link: '/shop',
+    image: '/banners/banner-dtf.webp',
+    link: '/services/dtf-printing',
   },
   {
     id: 2,

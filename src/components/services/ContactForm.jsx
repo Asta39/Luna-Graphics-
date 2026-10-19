@@ -167,7 +167,7 @@ const ContactForm = ({ serviceName }) => {
           </div>
           
           {/* Contact Form */}
-          <div className="bg-surface-50 rounded-xl p-8">
+          <div className="bg-white card-surface rounded-xl p-8">
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-success-50 border border-success-200 rounded-lg">
                 <div className="flex items-center space-x-2">

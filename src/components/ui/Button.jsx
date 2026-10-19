@@ -20,7 +20,7 @@ const Button = React.forwardRef(({
     ...rest
 }, ref) => {
     // Base classes
-    const baseClasses = 'inline-flex items-center justify-center transition-all duration-200 font-medium focus:ring-2 focus:outline-none';
+    const baseClasses = 'press inline-flex items-center justify-center font-medium focus-visible:ring-2 focus:outline-none';
 
     // Size classes
     const sizeClasses = {
@@ -35,7 +35,7 @@ const Button = React.forwardRef(({
 
     // Shape classes
     const shapeClasses = {
-        rounded: 'rounded',
+        rounded: 'rounded-lg',
         square: 'rounded-none',
         pill: 'rounded-full',
         circle: 'rounded-full aspect-square',

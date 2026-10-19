@@ -347,7 +347,7 @@ const ProductDetail = () => {
 
               {/* Total Price - Only show if has price */}
               {hasPrice && (
-                <div className="bg-emerald-50 rounded-xl p-4 flex items-center justify-between">
+                <div className="bg-white card-surface rounded-xl p-4 flex items-center justify-between">
                   <span className="text-gray-700 font-medium">Total Estimate:</span>
                   <span className="text-2xl font-bold text-emerald-600">{formatPrice(product.price * quantity)}</span>
                 </div>

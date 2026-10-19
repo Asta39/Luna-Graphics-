@@ -26,7 +26,7 @@ const ServiceDetails = ({ service }) => {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {service.specifications.map((spec, index) => (
-                  <div key={index} className="bg-surface-50 rounded-lg p-6 border border-border">
+                  <div key={index} className="bg-white card-surface rounded-xl p-6">
                     <div className="flex items-start space-x-3">
                       <div className="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
                         <Icon name={spec.icon} size={20} color="var(--color-primary)" />
@@ -63,7 +63,7 @@ const ServiceDetails = ({ service }) => {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-8">
               {/* Quick Info */}
-              <div className="bg-primary-50 rounded-lg p-6 border border-primary-200">
+              <div className="bg-white card-surface rounded-xl p-6">
                 <h3 className="text-lg font-heading font-bold text-primary mb-4">
                   Quick Information
                 </h3>

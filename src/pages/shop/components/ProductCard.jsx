@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
-import Button from '../../../components/ui/Button';
 import { useCart } from '../../../context/CartContext';
 
 const ProductCard = ({ product, onInquire, viewMode = 'grid' }) => {
@@ -23,11 +22,19 @@ const ProductCard = ({ product, onInquire, viewMode = 'grid' }) => {
     onInquire(product);
   };
 
+  const [added, setAdded] = useState(false);
+  useEffect(() => {
+    if (!added) return;
+    const t = setTimeout(() => setAdded(false), 1400);
+    return () => clearTimeout(t);
+  }, [added]);
+
   const handleAddToCart = (e) => {
     e.stopPropagation();
     const success = addItem(product, product.minOrder);
-    if (!success) {
-      // If add to cart failed (inquire product), open inquiry modal instead
+    if (success) {
+      setAdded(true);
+    } else {
       onInquire(product);
     }
   };
@@ -37,99 +44,77 @@ const ProductCard = ({ product, onInquire, viewMode = 'grid' }) => {
   const displayPrice = formatPrice(product.price);
 
   if (viewMode === 'list') {
+    const listBadge = hasPrice ? (product.discount || product.badge) : null;
     return (
-      <motion.div 
+      <motion.div
         layout
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row cursor-pointer"
+        whileTap={{ scale: 0.99 }}
+        transition={{ type: 'spring', bounce: 0, duration: 0.35 }}
+        className="group relative bg-white rounded-2xl overflow-hidden cursor-pointer flex items-stretch"
         onClick={handleCardClick}
       >
-        {/* Fixed size image container */}
-        <div className="relative w-full sm:w-48 h-48 flex-shrink-0 bg-gray-100 overflow-hidden">
-          <img 
-            src={productImage} 
+        <div className="relative w-28 sm:w-40 flex-shrink-0 self-stretch bg-gray-50 overflow-hidden" style={{ minHeight: '7rem' }}>
+          <img
+            src={productImage}
             alt={product.name}
             loading="lazy"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
             onError={(e) => {
               e.target.src = '/images/placeholder-product.jpg';
             }}
           />
-          {product.discount && hasPrice && (
-            <div className="absolute top-2 left-2 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
-              {product.discount}
-            </div>
-          )}
-          {!hasPrice && (
-            <div className="absolute top-2 left-2 px-2 py-1 bg-amber-500 text-white text-xs font-bold rounded">
-              Inquire
-            </div>
+          {listBadge && (
+            <span className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-white/85 backdrop-blur-md text-[10px] font-semibold text-gray-900 shadow-sm">
+              {listBadge}
+            </span>
           )}
         </div>
-        
-        <div className="flex-1 p-4 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-emerald-600 font-semibold uppercase">{product.subcategory}</span>
-              <div className="flex items-center text-amber-400">
-                <Icon name="Star" size={14} className="fill-current" />
-                <span className="text-xs ml-1 text-gray-600">{product.rating}</span>
-              </div>
-            </div>
-            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors">
-              {product.name}
-            </h3>
-            <p className="text-sm text-gray-500 line-clamp-2 mb-2">{product.description}</p>
-          </div>
-          
-          <div className="flex items-center justify-between mt-4">
-            <div>
+
+        <div className="flex-1 min-w-0 p-3 sm:p-4 flex flex-col">
+          <p className="text-xs text-gray-500 truncate">{product.subcategory}</p>
+          <h3 className="mt-0.5 text-sm sm:text-base font-semibold text-gray-900 leading-snug line-clamp-2">
+            {product.name}
+          </h3>
+          <div className="hidden sm:block mt-1"><p className="text-sm text-gray-500 line-clamp-2">{product.description}</p></div>
+
+          <div className="mt-auto pt-3 flex items-end justify-between gap-3">
+            <div className="min-w-0">
               {hasPrice ? (
                 <>
-                  <span className="text-xl font-bold text-emerald-600">{displayPrice}</span>
-                  {product.oldPrice && (
-                    <span className="text-sm text-gray-400 line-through ml-2">{formatPrice(product.oldPrice)}</span>
-                  )}
-                  <span className="text-xs text-gray-500 block">/{product.priceUnit}</span>
+                  <p className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight leading-none">{displayPrice}</p>
+                  <p className="mt-1 text-[11px] text-gray-500 truncate">
+                    {product.oldPrice ? <span className="line-through mr-1">{formatPrice(product.oldPrice)}</span> : null}
+                    {product.priceUnit === 'each' ? 'each' : product.priceUnit ? `per ${product.priceUnit}` : ''}
+                  </p>
                 </>
               ) : (
-                <span className="text-xl font-bold text-amber-600">Inquire</span>
+                <p className="text-sm font-medium text-gray-500">Price on request</p>
               )}
             </div>
-            <div className="flex gap-2">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  navigate(`/shop/product/${product.id}`);
-                }}
+            {hasPrice ? (
+              <button
+                type="button"
+                onClick={handleAddToCart}
+                aria-label={added ? `${product.name} added to cart` : `Add ${product.name} to cart`}
+                className={`press flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-white ${
+                  added ? 'bg-gray-900' : 'bg-emerald-600 hover:bg-emerald-700'
+                }`}
               >
-                View
-              </Button>
-              {hasPrice ? (
-                <Button 
-                  variant="primary" 
-                  size="sm" 
-                  className="bg-emerald-600 hover:bg-emerald-700"
-                  onClick={handleAddToCart}
-                >
-                  <Icon name="Plus" size={16} className="mr-1" />
-                  Add
-                </Button>
-              ) : (
-                <Button 
-                  variant="primary" 
-                  size="sm" 
-                  className="bg-amber-500 hover:bg-amber-600"
-                  onClick={handleInquireClick}
-                >
-                  Inquire
-                </Button>
-              )}
-            </div>
+                <Icon name={added ? 'Check' : 'Plus'} size={20} />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={handleInquireClick}
+                aria-label={`Ask for a quote on ${product.name}`}
+                className="press flex-shrink-0 h-11 px-4 rounded-full flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-semibold"
+              >
+                Quote
+              </button>
+            )}
           </div>
         </div>
       </motion.div>
@@ -137,155 +122,81 @@ const ProductCard = ({ product, onInquire, viewMode = 'grid' }) => {
   }
 
   // GRID VIEW
+  const badgeText = hasPrice ? (product.discount || product.badge) : null;
+
   return (
-    <motion.div 
+    <motion.div
       layout
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: 'spring', bounce: 0, duration: 0.35 }}
+      className="group relative bg-white rounded-2xl overflow-hidden cursor-pointer flex flex-col h-full"
       onClick={handleCardClick}
-      style={{ height: '420px' }}
     >
-      {/* Image container */}
-      <div className="relative h-48 bg-gray-100 overflow-hidden flex-shrink-0">
-        <img 
-          src={productImage} 
+      <div className="relative flex-shrink-0 bg-gray-50 overflow-hidden" style={{ aspectRatio: '1 / 1' }}>
+        <img
+          src={productImage}
           alt={product.name}
           loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
           onError={(e) => {
             e.target.src = '/images/placeholder-product.jpg';
           }}
         />
-        
-        {/* Badges */}
-        {product.discount && hasPrice && (
-          <div className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">
-            {product.discount}
-          </div>
-        )}
-        
-        {!hasPrice && (
-          <div className="absolute top-3 left-3 px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full">
-            Inquire
-          </div>
-        )}
-
-        {product.badge && hasPrice && !product.discount && (
-          <div className={`absolute top-3 left-3 px-3 py-1 text-white text-xs font-bold rounded-full ${
-            product.badge === 'Hot' ? 'bg-red-500' :
-            product.badge === 'New' ? 'bg-blue-500' :
-            product.badge === 'Deal' ? 'bg-amber-500' :
-            product.badge === 'Premium' ? 'bg-purple-500' :
-            'bg-emerald-500'
-          }`}>
-            {product.badge}
-          </div>
-        )}
-
-        {/* Quick action buttons */}
-        <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <button 
-            className="w-9 h-9 bg-white rounded-full shadow-md flex items-center justify-center text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 transition-colors"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Icon name="Heart" size={16} />
-          </button>
-        </div>
-
-        {/* Quick action buttons on hover */}
-        <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex gap-2">
-          {hasPrice ? (
-            <Button 
-              variant="primary" 
-              size="sm" 
-              className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white"
-              onClick={handleAddToCart}
-            >
-              <Icon name="ShoppingCart" size={16} className="mr-1" />
-              Add
-            </Button>
-          ) : (
-            <Button 
-              variant="primary" 
-              size="sm" 
-              className="flex-1 bg-amber-500 hover:bg-amber-600 text-white"
-              onClick={handleInquireClick}
-            >
-              Inquire
-            </Button>
-          )}
-          <Button 
-            variant="outline" 
-            size="sm"
-            className="bg-white border-white text-gray-900 hover:bg-gray-100"
-            onClick={handleInquireClick}
-          >
-            Details
-          </Button>
-        </div>
-      </div>
-      
-      {/* Content container */}
-      <div className="p-4 flex flex-col flex-grow">
-        {/* Category and rating */}
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs text-emerald-600 font-semibold uppercase tracking-wide truncate max-w-[60%]">
-            {product.subcategory}
+        {badgeText && (
+          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/85 backdrop-blur-md text-[11px] font-semibold text-gray-900 shadow-sm">
+            {badgeText}
           </span>
-          <div className="flex items-center text-amber-400 flex-shrink-0">
-            <Icon name="Star" size={14} className="fill-current" />
-            <span className="text-xs ml-1 text-gray-600">{product.rating}</span>
-          </div>
-        </div>
-        
-        {/* Title */}
-        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors text-sm leading-snug min-h-[40px]">
+        )}
+      </div>
+
+      <div className="flex flex-col flex-1 p-3 sm:p-4">
+        <p className="text-xs text-gray-500 truncate">{product.subcategory}</p>
+        <h3 className="mt-0.5 text-sm sm:text-[15px] font-semibold text-gray-900 leading-snug line-clamp-2 min-h-[2.6em]">
           {product.name}
         </h3>
-        
-        {/* Price */}
-        <div className="flex items-baseline gap-2 mb-2">
+
+        <div className="mt-auto pt-3 flex items-end justify-between gap-2">
+          <div className="min-w-0">
+            {hasPrice ? (
+              <>
+                <p className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight leading-none">
+                  {displayPrice}
+                </p>
+                <p className="mt-1 text-[11px] text-gray-500 truncate">
+                  {product.oldPrice ? (
+                    <span className="line-through mr-1">{formatPrice(product.oldPrice)}</span>
+                  ) : null}
+                  {product.priceUnit === 'each' ? 'each' : product.priceUnit ? `per ${product.priceUnit}` : ''}
+                </p>
+              </>
+            ) : (
+              <p className="text-sm font-medium text-gray-500 leading-tight">Price on request</p>
+            )}
+          </div>
+
           {hasPrice ? (
-            <>
-              <span className="text-lg font-bold text-emerald-600">{displayPrice}</span>
-              {product.oldPrice && (
-                <span className="text-sm text-gray-400 line-through">{formatPrice(product.oldPrice)}</span>
-              )}
-            </>
-          ) : (
-            <span className="text-lg font-bold text-amber-600">Inquire</span>
-          )}
-        </div>
-        
-        {/* Description */}
-        <p className="text-xs text-gray-500 line-clamp-2 mb-3 flex-grow">
-          {product.description}
-        </p>
-        
-        {/* Footer with Add to Cart */}
-        <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
-          <span className="text-xs text-gray-500">Min: {product.minOrder}</span>
-          {hasPrice ? (
-            <Button 
-              variant="primary" 
-              size="sm"
-              className="bg-emerald-600 hover:bg-emerald-700"
+            <button
+              type="button"
               onClick={handleAddToCart}
+              aria-label={added ? `${product.name} added to cart` : `Add ${product.name} to cart`}
+              className={`press flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-white ${
+                added ? 'bg-gray-900' : 'bg-emerald-600 hover:bg-emerald-700'
+              }`}
             >
-              <Icon name="Plus" size={16} className="mr-1" />
-              Add
-            </Button>
+              <Icon name={added ? 'Check' : 'Plus'} size={20} />
+            </button>
           ) : (
-            <Button 
-              variant="primary" 
-              size="sm"
-              className="bg-amber-500 hover:bg-amber-600"
+            <button
+              type="button"
               onClick={handleInquireClick}
+              aria-label={`Ask for a quote on ${product.name}`}
+              className="press flex-shrink-0 h-11 px-4 rounded-full flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-semibold"
             >
-              Inquire
-            </Button>
+              Quote
+            </button>
           )}
         </div>
       </div>

@@ -47,7 +47,7 @@ const ServicesGrid = () => {
             <div
               key={service.id}
               onClick={() => go(service.id)}
-              className="relative rounded-2xl overflow-hidden cursor-pointer group"
+              className="press relative rounded-2xl overflow-hidden cursor-pointer group"
             >
               <img
                 src={service.image}
@@ -71,7 +71,7 @@ const ServicesGrid = () => {
           {/* HERO card — top-right (col 3-4, rows 1-2), diagonal to second large */}
           <div
             onClick={() => go(hero.id)}
-            className="col-span-2 row-span-2 lg:col-start-3 lg:row-start-1 relative rounded-2xl overflow-hidden cursor-pointer group"
+            className="col-span-2 row-span-2 lg:col-start-3 lg:row-start-1 press relative rounded-2xl overflow-hidden cursor-pointer group"
           >
             <img
               src={hero.image}
@@ -103,7 +103,7 @@ const ServicesGrid = () => {
           {/* SECOND LARGE card — signage-solutions, bottom-left (diagonal to hero) */}
           <div
             onClick={() => go(secondLarge.id)}
-            className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden cursor-pointer group"
+            className="col-span-2 row-span-2 press relative rounded-2xl overflow-hidden cursor-pointer group"
           >
             <img
               src={secondLarge.image}
@@ -136,7 +136,7 @@ const ServicesGrid = () => {
             <div
               key={service.id}
               onClick={() => go(service.id)}
-              className="relative rounded-2xl overflow-hidden cursor-pointer group"
+              className="press relative rounded-2xl overflow-hidden cursor-pointer group"
             >
               <img
                 src={service.image}

@@ -123,7 +123,7 @@ const CaseStudies = () => {
                 </div>
 
                 {/* Testimonial */}
-                <div className="bg-primary-50 rounded-xl p-6">
+                <div className="rounded-xl p-6 border border-black/[0.06]">
                   <div className="flex items-start space-x-4">
                     <Icon name="Quote" size={32} className="text-primary flex-shrink-0" />
                     <div>
@@ -153,7 +153,7 @@ const CaseStudies = () => {
                 <h4 className="text-xl font-heading font-bold text-primary">Key Metrics</h4>
                 <div className="space-y-4">
                   {caseStudies[activeCase].metrics.map((metric, index) => (
-                    <div key={index} className="bg-surface-50 rounded-lg p-4">
+                    <div key={index} className="rounded-lg p-4 border border-black/[0.06]">
                       <div className="text-2xl font-heading font-bold text-primary mb-1">
                         {metric.value}
                       </div>

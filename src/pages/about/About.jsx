@@ -187,7 +187,7 @@ const About = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                className="bg-green-50 p-8 rounded-2xl"
+                className="bg-white card-surface p-8 rounded-2xl"
               >
                 <h3 className="text-2xl font-heading font-bold text-gray-900 mb-6">Our Core Capabilities</h3>
                 <div className="space-y-4">

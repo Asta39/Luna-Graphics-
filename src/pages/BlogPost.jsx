@@ -222,7 +222,7 @@ const BlogPost = () => {
         </div>
 
         {/* Author Bio */}
-        <div className="mt-12 bg-gray-50 rounded-2xl p-6 md:p-8">
+        <div className="mt-12 bg-white card-surface rounded-2xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row gap-6">
             <Image
               src={post.author.avatar}

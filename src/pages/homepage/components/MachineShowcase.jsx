@@ -50,7 +50,7 @@ const MachineShowcase = () => {
         </div>
 
         {/* Machine Details */}
-        <div className="bg-surface-50 rounded-2xl p-8 lg:p-12">
+        <div className="bg-white card-surface rounded-2xl p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Machine Image */}
             <div className="relative">

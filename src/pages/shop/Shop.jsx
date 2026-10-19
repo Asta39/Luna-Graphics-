@@ -214,7 +214,7 @@ const Shop = () => {
       </div>
       
       {/* Category Navigation */}
-      <section className="py-4 lg:py-6 bg-white border-b border-gray-200 sticky top-16 lg:top-0 z-30">
+      <section className="py-4 lg:py-6 material-bar border-b border-black/[0.06] sticky top-16 lg:top-0 z-30">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Active Search Indicator */}
           {searchQuery && (

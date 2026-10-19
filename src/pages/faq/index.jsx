@@ -53,7 +53,7 @@ const FAQPage = () => {
 
         {/* Still Need Help CTA */}
         <section className="max-w-4xl mx-auto px-4 mt-16">
-          <div className="bg-primary-50 rounded-2xl p-8 md:p-12 text-center">
+          <div className="bg-white card-surface rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Still Have Questions?
             </h2>

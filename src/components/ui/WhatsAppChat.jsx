@@ -30,14 +30,14 @@ const WhatsAppChat = () => {
     <>
       {/* Main Widget Container */}
       <div 
-        className={`fixed bottom-6 left-6 z-50 flex flex-col items-end transition-all duration-500 ease-out ${
+        className={`wa-bubble fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-4 sm:bottom-6 sm:left-6 z-50 flex flex-col items-start transition-all duration-500 ease-out ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         
         {/* Chat Popup - Only shows when toggled */}
         {isOpen && (
-<div className="mb-4 bg-white rounded-2xl shadow-2xl overflow-hidden w-80 border border-gray-100 animate-in slide-in-from-bottom-5 fade-in duration-300 items-start">            {/* Header */}
+<div className="materialize-up mb-3 bg-white rounded-3xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.25)] overflow-hidden w-[min(20rem,calc(100vw-2rem))] border border-black/[0.06]">            {/* Header */}
             <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -48,13 +48,13 @@ const WhatsAppChat = () => {
   alt="Luna Graphics" 
   className="w-12 h-12 rounded-full object-cover border-2 border-white/30 bg-white/10"
 />                    {/* Online Indicator */}
-                    <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-300 border-2 border-emerald-500 rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-300 border-2 border-emerald-500 rounded-full"></div>
                   </div>
                   
                   <div>
                     <h3 className="text-white font-semibold text-sm leading-tight">{brandName}</h3>
                     <div className="flex items-center gap-1.5 mt-0.5">
-                      <div className="w-1.5 h-1.5 bg-emerald-200 rounded-full animate-pulse"></div>
+                      <div className="w-1.5 h-1.5 bg-emerald-200 rounded-full"></div>
                       <span className="text-emerald-100 text-xs font-medium">{tagline}</span>
                     </div>
                   </div>
@@ -62,7 +62,8 @@ const WhatsAppChat = () => {
                 
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-white hover:bg-white/10 rounded-full p-1.5 transition-all duration-200"
+                  aria-label="Close chat"
+                  className="press w-9 h-9 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 rounded-full"
                 >
                   <X size={18} />
                 </button>
@@ -86,7 +87,7 @@ const WhatsAppChat = () => {
             <div className="p-4 bg-white border-t border-gray-100">
               <button
                 onClick={handleChatOpen}
-                className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 group"
+                className="press w-full h-12 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl flex items-center justify-center gap-2 group"
               >
                 <span>Start Chat</span>
                 <Send size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -101,12 +102,14 @@ const WhatsAppChat = () => {
         {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`group relative flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white pl-4 pr-2 py-2 rounded-full shadow-2xl shadow-emerald-500/30 transition-all duration-300 hover:scale-110 hover:shadow-emerald-500/50 ${isOpen ? 'bg-gray-700 hover:bg-gray-800 shadow-gray-500/30 hover:shadow-gray-500/50' : ''}`}
+          aria-label={isOpen ? 'Close chat' : 'Chat with Luna Graphics on WhatsApp'}
+          aria-expanded={isOpen}
+          className={`press relative flex items-center justify-center gap-3 text-white h-14 min-w-14 rounded-full shadow-[0_12px_28px_-8px_rgba(5,150,105,0.55)] ${isOpen ? 'bg-gray-800 hover:bg-gray-900 w-14' : 'bg-emerald-600 hover:bg-emerald-700 sm:pl-2 sm:pr-2'}`}
         >
           {/* Compact View when closed */}
           {!isOpen && (
             <>
-              <div className="flex items-center gap-2">
+              <div className="hidden sm:flex items-center gap-2">
                 <div className="relative">
                   <img 
   src={logo} 
@@ -120,17 +123,15 @@ const WhatsAppChat = () => {
                   <span className="text-sm font-semibold">Need help? Chat with us</span>
                 </div>
               </div>
-              <div className="bg-white/20 rounded-full p-2 ml-1">
-                <MessageCircle size={20} className="fill-current" />
+              <div className="w-14 h-14 sm:w-10 sm:h-10 sm:bg-white/20 rounded-full flex items-center justify-center">
+                <MessageCircle size={22} className="fill-current" />
               </div>
             </>
           )}
           
           {/* Icon when open */}
           {isOpen && (
-            <div className="p-2">
-              <X size={24} />
-            </div>
+            <X size={24} />
           )}
 
           
@@ -140,7 +141,7 @@ const WhatsAppChat = () => {
       {/* Backdrop for mobile - closes widget when clicking outside */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+          className="fixed inset-0 bg-black/20 z-40 md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}

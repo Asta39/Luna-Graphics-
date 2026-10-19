@@ -355,10 +355,18 @@ const handleSearch = (e) => {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.dataset.menuOpen = '';
     } else {
       document.body.style.overflow = '';
+      delete document.body.dataset.menuOpen;
     }
-    return () => { document.body.style.overflow = ''; };
+    const onKey = (e) => { if (e.key === 'Escape') setMobileMenuOpen(false); };
+    if (mobileMenuOpen) window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      delete document.body.dataset.menuOpen;
+      window.removeEventListener('keydown', onKey);
+    };
   }, [mobileMenuOpen]);
 
   const handleNavigation = (path, isExternal = false) => {
@@ -416,10 +424,8 @@ const handleSearch = (e) => {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-md' 
-            : 'bg-white'
+        className={`fixed top-0 left-0 right-0 z-50 material-bar border-b transition-colors duration-300 ${
+          scrolled ? 'border-black/[0.08]' : 'border-transparent'
         }`}
       >
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -466,7 +472,7 @@ const handleSearch = (e) => {
               {/* Mega Menu Panel */}
               {megaMenuOpen && (
                 <div
-                  className="fixed left-0 right-0 top-16 bg-white shadow-2xl border-t border-gray-100 z-50"
+                  className="materialize fixed left-0 right-0 top-16 material-sheet shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)] border-t border-black/[0.06] z-50"
                   onMouseLeave={() => setMegaMenuOpen(false)}
                 >
                   <div className="max-w-screen-2xl mx-auto px-8 py-8 grid grid-cols-5 gap-8">
@@ -590,7 +596,7 @@ const handleSearch = (e) => {
                         ))}
                       </div>
                       {/* CTA */}
-                      <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                      <div className="bg-white card-surface rounded-xl p-4">
                         <p className="text-xs font-semibold text-emerald-800 mb-1">Need a quote?</p>
                         <p className="text-xs text-emerald-600 mb-3">Get a custom print quote in minutes.</p>
                         <button
@@ -672,7 +678,7 @@ const handleSearch = (e) => {
               
               <button
                 ref={mobileMenuButtonRef}
-                className="p-2 rounded-md text-gray-600 hover:text-emerald-600 hover:bg-gray-100 transition-colors duration-200"
+                className="press w-11 h-11 flex items-center justify-center rounded-full text-gray-700 hover:bg-black/[0.05]"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileMenuOpen}
@@ -688,11 +694,11 @@ const handleSearch = (e) => {
       {mobileMenuOpen && (
         <div 
           ref={mobileMenuContainerRef}
-          className="lg:hidden fixed inset-0 z-40 bg-white"
+          className="materialize lg:hidden fixed inset-0 z-[45] material-sheet"
           style={{ top: '64px' }}
         >
-          <div className="h-full overflow-y-auto bg-white">
-            <div className="px-4 py-4 space-y-2 pb-40">
+          <div className="h-full overflow-y-auto overscroll-contain">
+            <div className="px-4 py-4 space-y-2 pb-32">
               
               {/* Search - Mobile */}
               <div className="mb-4">
@@ -719,7 +725,7 @@ const handleSearch = (e) => {
                   navigate('/cart');
                   setMobileMenuOpen(false);
                 }}
-                className="flex items-center justify-between w-full p-4 rounded-xl bg-emerald-50 border border-emerald-100 mb-4"
+                className="press flex items-center justify-between w-full p-4 rounded-2xl bg-white card-surface mb-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
@@ -741,7 +747,7 @@ const handleSearch = (e) => {
               {/* Home */}
               <button
                 className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-colors duration-200 text-left border-b border-gray-100 ${
-                  isActivePath('/') ? 'bg-emerald-50 text-emerald-600' : 'text-gray-600 hover:bg-gray-50'
+                  isActivePath('/') ? 'bg-black/[0.05] text-emerald-700 font-semibold' : 'text-gray-700 hover:bg-black/[0.04]'
                 }`}
                 onClick={() => handleNavigation('/')}
               >
@@ -752,7 +758,7 @@ const handleSearch = (e) => {
               {/* Shop Section - Mobile */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
-                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="press flex items-center justify-between w-full min-h-[44px] px-3 py-3 rounded-xl hover:bg-black/[0.04]"
                   onClick={toggleShop}
                   aria-expanded={shopDropdownOpen}
                 >
@@ -772,7 +778,7 @@ const handleSearch = (e) => {
                     {shopCategories.map((item) => (
                       <button
                         key={item.label}
-                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-emerald-50 transition-colors duration-200 text-left"
+                        className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-emerald-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path)}
                       >
                         <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
@@ -791,7 +797,7 @@ const handleSearch = (e) => {
               {/* Services Section - Mobile */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
-                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="press flex items-center justify-between w-full min-h-[44px] px-3 py-3 rounded-xl hover:bg-black/[0.04]"
                   onClick={toggleServices}
                   aria-expanded={servicesDropdownOpen}
                 >
@@ -811,7 +817,7 @@ const handleSearch = (e) => {
                     {servicesItems.map((item) => (
                       <button
                         key={item.label}
-                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
+                        className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path)}
                       >
                         <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
@@ -830,7 +836,7 @@ const handleSearch = (e) => {
               {/* Corporate Section - Mobile - WITH ICON */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
-                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="press flex items-center justify-between w-full min-h-[44px] px-3 py-3 rounded-xl hover:bg-black/[0.04]"
                   onClick={toggleCorporate}
                   aria-expanded={corporateDropdownOpen}
                 >
@@ -850,7 +856,7 @@ const handleSearch = (e) => {
                     {corporateItems.map((item) => (
                       <button
                         key={item.label}
-                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
+                        className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path, item.isExternal)}
                       >
                         <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
@@ -872,7 +878,7 @@ const handleSearch = (e) => {
               {/* Careers Section - Mobile - WITH ICON */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
-                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="press flex items-center justify-between w-full min-h-[44px] px-3 py-3 rounded-xl hover:bg-black/[0.04]"
                   onClick={toggleCareers}
                   aria-expanded={careersDropdownOpen}
                 >
@@ -892,7 +898,7 @@ const handleSearch = (e) => {
                     {careersItems.map((item) => (
                       <button
                         key={item.label}
-                        className="flex items-center space-x-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors duration-200 text-left"
+                        className="press flex items-center space-x-3 w-full p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 text-left"
                         onClick={() => handleNavigation(item.path, item.isExternal)}
                       >
                         <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
@@ -914,7 +920,7 @@ const handleSearch = (e) => {
               {/* Resources Section - Mobile - WITH ICON */}
               <div className="border-b border-gray-100 pb-2">
                 <button 
-                  className="flex items-center justify-between w-full px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="press flex items-center justify-between w-full min-h-[44px] px-3 py-3 rounded-xl hover:bg-black/[0.04]"
                   onClick={toggleResources}
                   aria-expanded={resourcesDropdownOpen}
                 >
@@ -969,7 +975,7 @@ const handleSearch = (e) => {
               {/* Contact */}
               <button
                 className={`flex items-center space-x-3 w-full p-3 rounded-lg transition-colors duration-200 text-left border-b border-gray-100 ${
-                  isActivePath('/contact') ? 'bg-emerald-50 text-emerald-600' : 'text-gray-600 hover:bg-gray-50'
+                  isActivePath('/contact') ? 'bg-black/[0.05] text-emerald-700 font-semibold' : 'text-gray-700 hover:bg-black/[0.04]'
                 }`}
                 onClick={() => handleNavigation('/contact')}
               >
@@ -980,32 +986,14 @@ const handleSearch = (e) => {
           </div>
 
           {/* Mobile Actions */}
-          <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 space-y-3">
-            {/* Cart Quick Access */}
+          <div className="absolute bottom-0 left-0 right-0 material-bar border-t border-black/[0.06] px-4 pt-3 pb-[max(1rem,env(safe-area-inset-bottom))]">
             <button
-              onClick={() => {
-                navigate('/cart');
-                setMobileMenuOpen(false);
-              }}
-              className="w-full flex items-center justify-center gap-2 p-3 bg-emerald-50 text-emerald-700 rounded-lg font-medium"
-            >
-              <Icon name="ShoppingCart" size={20} />
-              <span>View Cart ({cartCount})</span>
-              {cartCount > 0 && (
-                <span className="text-sm">- {formatPrice(cartTotal)}</span>
-              )}
-            </button>
-            
-            <Button
-              variant="outline"
-              size="md"
-              iconName="MessageCircle"
-              iconPosition="left"
               onClick={handleWhatsAppClick}
-              className="w-full text-emerald-600 border-emerald-600 hover:bg-emerald-50"
+              className="press w-full h-12 flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
             >
-              WhatsApp Us
-            </Button>
+              <Icon name="MessageCircle" size={20} />
+              <span>Chat on WhatsApp</span>
+            </button>
           </div>
         </div>
       )}

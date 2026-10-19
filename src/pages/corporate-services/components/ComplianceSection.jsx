@@ -116,7 +116,7 @@ const ComplianceSection = () => {
           </h3>
           <div className="grid lg:grid-cols-2 gap-8">
             {complianceAreas.map((area, index) => (
-              <div key={index} className="bg-surface-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-white card-surface rounded-2xl p-8">
                 <div className="flex items-start space-x-4 mb-6">
                   <div className={`w-12 h-12 bg-${area.color}-100 rounded-xl flex items-center justify-center flex-shrink-0`}>
                     <Icon name={area.icon} size={24} color={`var(--color-${area.color})`} />
@@ -208,7 +208,7 @@ const ComplianceSection = () => {
 
           {/* Special Services */}
           <div className="mt-12 grid lg:grid-cols-2 gap-8">
-            <div className="bg-surface-50 rounded-xl p-6">
+            <div className="bg-white card-surface rounded-xl p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <Icon name="Zap" size={24} className="text-warning" />
                 <h4 className="text-lg font-semibold text-text-primary">Rush Orders</h4>
@@ -232,7 +232,7 @@ const ComplianceSection = () => {
               </ul>
             </div>
 
-            <div className="bg-surface-50 rounded-xl p-6">
+            <div className="bg-white card-surface rounded-xl p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <Icon name="Package" size={24} className="text-accent" />
                 <h4 className="text-lg font-semibold text-text-primary">Installation Services</h4>
