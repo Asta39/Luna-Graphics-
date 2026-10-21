@@ -2729,8 +2729,8 @@ Applications:
     priceUnit: '500 pcs',
     minOrder: 500,
     images: [
-      '/products/164.jfif',
-      '/products/165.jfif'
+      '/products/164.webp',
+      '/products/165.webp'
     ],
     rating: 4.7,
     reviews: 234,

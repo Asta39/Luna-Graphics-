@@ -39,12 +39,11 @@ const Cart = () => {
   });
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  // Prefer the catalogue's current image; the path saved in the cart can go stale after a redeploy
   const getCartItemImage = (item) => {
-    if (item.image) return item.image;
     const product = getProductById(item.id);
-    if (!product) return '/images/placeholder-product.jpg';
-    if (product.images && product.images.length > 0) return product.images[0];
-    return product.image || '/images/placeholder-product.jpg';
+    const current = product && ((product.images && product.images[0]) || product.image);
+    return current || item.image || '/images/placeholder-product.jpg';
   };
 
   const formatPrice = (price) => {
