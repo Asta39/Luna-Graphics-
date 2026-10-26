@@ -1,5 +1,5 @@
 {
-  "count": 533,
+  "count": 518,
   "routes": [
     {
       "url": "/",
@@ -7,7 +7,7 @@
       "changefreq": "daily",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/about",
@@ -15,7 +15,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/blog",
@@ -23,7 +23,7 @@
       "changefreq": "daily",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/blog/3d-printing-corporate-branding-applications",
@@ -3266,12 +3266,20 @@
       "lastmod": "2026-07-07"
     },
     {
+      "url": "/careers",
+      "priority": "0.6",
+      "changefreq": "weekly",
+      "type": "page",
+      "source": "static",
+      "lastmod": "2026-10-26"
+    },
+    {
       "url": "/contact",
       "priority": "0.8",
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/corporate-services",
@@ -3279,7 +3287,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/corporate/corporate-branding",
@@ -3287,7 +3295,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/corporate/events-exhibitions",
@@ -3295,7 +3303,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/faq",
@@ -3303,7 +3311,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/gallery",
@@ -3311,87 +3319,7 @@
       "changefreq": "weekly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
-    },
-    {
-      "url": "/service/branding-consultation",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/digital-printing",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/embroidery",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/large-format-printing",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/laser-engraving",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/screen-printing",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/signage-solutions",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/sublimation-printing",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/uv-printing",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/service/vehicle-branding",
-      "priority": "0.65",
-      "changefreq": "monthly",
-      "type": "service-detail",
-      "source": "src/data/services.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/cnc-cutting",
@@ -3399,7 +3327,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/digital-printing",
@@ -3407,7 +3335,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/dtf-printing",
@@ -3415,7 +3343,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/large-format",
@@ -3423,7 +3351,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/laser-cutting",
@@ -3431,7 +3359,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/plotting",
@@ -3439,7 +3367,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/sublimation-printing",
@@ -3447,7 +3375,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/t-shirt-printing",
@@ -3455,7 +3383,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/services/uv-printing",
@@ -3463,7 +3391,7 @@
       "changefreq": "monthly",
       "type": "service-page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     },
     {
       "url": "/shop/product/3d-signage",
@@ -3471,7 +3399,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/acrylic-signage-10mm",
@@ -3479,7 +3407,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/acrylic-signage-5mm",
@@ -3487,7 +3415,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/annual-reports",
@@ -3495,7 +3423,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/banner-printing",
@@ -3503,15 +3431,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/shop/product/banners",
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "type": "product",
-      "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-bottles",
@@ -3519,7 +3439,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-caps",
@@ -3527,7 +3447,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-diaries",
@@ -3535,7 +3455,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-hoodies",
@@ -3543,7 +3463,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-mugs-ceramic",
@@ -3551,7 +3471,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-mugs-travel",
@@ -3559,7 +3479,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-notebooks",
@@ -3567,7 +3487,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-pens",
@@ -3575,7 +3495,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-powerbank",
@@ -3583,7 +3503,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-reflector-jackets",
@@ -3591,7 +3511,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-tshirts-polo",
@@ -3599,7 +3519,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-tshirts-round",
@@ -3607,7 +3527,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/branded-usb",
@@ -3615,7 +3535,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/brochures-a4",
@@ -3623,7 +3543,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/business-cards-luxury",
@@ -3631,7 +3551,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/business-cards-premium",
@@ -3639,7 +3559,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/calendar-2026",
@@ -3647,7 +3567,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/catalogue-printing",
@@ -3655,7 +3575,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/certificates",
@@ -3663,7 +3583,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/compliment-slips",
@@ -3671,7 +3591,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/conference-bags",
@@ -3679,7 +3599,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/construction-safety-helmet",
@@ -3687,15 +3607,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/shop/product/corporate",
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "type": "product",
-      "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/custom-notepads",
@@ -3703,7 +3615,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/custom-tshirts",
@@ -3711,7 +3623,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/custom-water-bottles",
@@ -3719,7 +3631,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/door-hangers",
@@ -3727,7 +3639,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/door-stand-frame",
@@ -3735,7 +3647,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/emergency-signs",
@@ -3743,7 +3655,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/event-backdrop-fabric",
@@ -3751,7 +3663,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/event-signage-a0",
@@ -3759,7 +3671,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/event-signage-a1",
@@ -3767,7 +3679,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/event-tickets",
@@ -3775,15 +3687,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/shop/product/events",
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "type": "product",
-      "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/fabric-backdrop",
@@ -3791,7 +3695,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/fabric-backdrop-10x8",
@@ -3799,7 +3703,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/feather-banner-3m",
@@ -3807,7 +3711,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/feather-banner-4m",
@@ -3815,7 +3719,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/floor-graphics",
@@ -3823,7 +3727,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/flyers-a4",
@@ -3831,7 +3735,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/foam-board",
@@ -3839,7 +3743,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/gazebo-2x2",
@@ -3847,7 +3751,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/gazebo-3x3",
@@ -3855,7 +3759,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/id-cards",
@@ -3863,7 +3767,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/lanyards",
@@ -3871,15 +3775,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/shop/product/large-format",
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "type": "product",
-      "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/led-signage-acrylic",
@@ -3887,7 +3783,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/letterheads",
@@ -3895,7 +3791,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/light-box-signage",
@@ -3903,7 +3799,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/magazine-printing",
@@ -3911,7 +3807,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/magic-cup",
@@ -3919,7 +3815,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/media-banner-3x2-25",
@@ -3927,7 +3823,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/menu-folders",
@@ -3935,15 +3831,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/shop/product/merchandise",
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "type": "product",
-      "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/metal-signage",
@@ -3951,7 +3839,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/mouse-pad-branding",
@@ -3959,7 +3847,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/name-tags",
@@ -3967,7 +3855,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/neon-signage-led",
@@ -3975,7 +3863,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/office-signs",
@@ -3983,7 +3871,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/overall-apron-branded",
@@ -3991,7 +3879,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/plastic-card-printing",
@@ -3999,7 +3887,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/pop-up-backdrop-3x3",
@@ -4007,7 +3895,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/pop-up-banner-1-6",
@@ -4015,7 +3903,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/pop-up-banner-2m",
@@ -4023,7 +3911,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/posters-a2",
@@ -4031,7 +3919,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/presentation-folders",
@@ -4039,7 +3927,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/pull-up-banner",
@@ -4047,7 +3935,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/red-carpet-runner",
@@ -4055,7 +3943,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/reflective-signs",
@@ -4063,7 +3951,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/roll-up-banner-1000",
@@ -4071,7 +3959,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/roll-up-banner-850",
@@ -4079,7 +3967,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/s-banner-stand",
@@ -4087,7 +3975,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/safety-signage",
@@ -4095,7 +3983,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/safety-vest-branding",
@@ -4103,15 +3991,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
-    },
-    {
-      "url": "/shop/product/signage",
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "type": "product",
-      "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/step-repeat-banner",
@@ -4119,7 +3999,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/sticker-printing",
@@ -4127,7 +4007,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/sublimation-mugs",
@@ -4135,7 +4015,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/table-covers",
@@ -4143,7 +4023,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/table-tents",
@@ -4151,7 +4031,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/teardrop-banner-3-5",
@@ -4159,7 +4039,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/teardrop-banner-4-5",
@@ -4167,7 +4047,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/telescopic-banner-3m",
@@ -4175,7 +4055,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/telescopic-banner-4m",
@@ -4183,7 +4063,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/thermal-mug-branding",
@@ -4191,7 +4071,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/umbrella-branding",
@@ -4199,7 +4079,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/vehicle-branding",
@@ -4207,7 +4087,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/vinyl-banner",
@@ -4215,7 +4095,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/wayfinding-signage",
@@ -4223,7 +4103,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/wheel-covers",
@@ -4231,7 +4111,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/window-graphics",
@@ -4239,7 +4119,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/wristbands",
@@ -4247,7 +4127,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/shop/product/x-banner-stand",
@@ -4255,7 +4135,7 @@
       "changefreq": "weekly",
       "type": "product",
       "source": "src/data/products.js",
-      "lastmod": "2026-07-07"
+      "lastmod": "2026-10-21"
     },
     {
       "url": "/team",
@@ -4263,7 +4143,7 @@
       "changefreq": "monthly",
       "type": "page",
       "source": "static",
-      "lastmod": "2026-09-03"
+      "lastmod": "2026-10-26"
     }
   ]
 }

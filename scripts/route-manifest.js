@@ -28,6 +28,7 @@ const STATIC_ROUTES = [
   { url: '/gallery', priority: '0.75', changefreq: 'weekly', type: 'page' },
   { url: '/blog', priority: '0.8', changefreq: 'daily', type: 'page' },
   { url: '/faq', priority: '0.65', changefreq: 'monthly', type: 'page' },
+  { url: '/careers', priority: '0.6', changefreq: 'weekly', type: 'page' },
   // noindex pages omitted: /sitemap, /privacy-policy, /terms-of-service, /corporate-terms, /home
 ];
 
@@ -50,11 +51,13 @@ function extractStringValues(content, key) {
   return [...new Set(matches.map(match => match[1]).filter(Boolean))];
 }
 
+// Import the real catalogue: text-scanning for `id:` also picked up category ids (banners, signage...)
+const { products: PRODUCTS } = await import('../src/data/products.js');
+
 function extractProductIds() {
   const filePath = path.join(DATA_DIR, 'products.js');
-  const content = readIfExists(filePath);
-  return extractStringValues(content, 'id').map(id => ({
-    url: `/shop/product/${id}`,
+  return PRODUCTS.map(product => ({
+    url: `/shop/product/${product.id}`,
     priority: '0.7',
     changefreq: 'weekly',
     type: 'product',
@@ -86,19 +89,6 @@ function extractBlogSlugs() {
   }));
 }
 
-function extractServiceIds() {
-  const filePath = path.join(DATA_DIR, 'services.js');
-  const content = readIfExists(filePath);
-  return extractStringValues(content, 'id').map(id => ({
-    url: `/service/${id}`,
-    priority: '0.65',
-    changefreq: 'monthly',
-    type: 'service-detail',
-    source: 'src/data/services.js',
-    lastmod: lastModifiedFor(filePath),
-  }));
-}
-
 export function getIndexableRoutes() {
   const routes = [
     ...STATIC_ROUTES.map(route => ({
@@ -108,7 +98,6 @@ export function getIndexableRoutes() {
     })),
     ...extractBlogSlugs(),
     ...extractProductIds(),
-    ...extractServiceIds(),
   ];
 
   const seen = new Set();

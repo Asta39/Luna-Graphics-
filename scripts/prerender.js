@@ -8,9 +8,22 @@ import { getIndexableRoutes } from './route-manifest.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-if (process.env.VERCEL) {
-  console.log('⏭️  Vercel environment detected — skipping prerender (no Chrome available).');
-  process.exit(0);
+// Vercel's build image lacks the system libraries full Chrome needs, so use the
+// self-contained @sparticuz/chromium build there and regular puppeteer locally.
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const { default: chromium } = await import('@sparticuz/chromium');
+    const { default: puppeteerCore } = await import('puppeteer-core');
+    return puppeteerCore.launch({
+      args: await puppeteerCore.defaultArgs({ args: chromium.args, headless: 'shell' }),
+      executablePath: await chromium.executablePath(),
+      headless: 'shell',
+    });
+  }
+  return puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
 }
 
 const BUILD_DIR = path.resolve(__dirname, '../build');
@@ -28,9 +41,22 @@ async function renderUrl(browser, urlPath) {
   const page = await browser.newPage();
   try {
     await page.setViewport({ width: 1366, height: 900, deviceScaleFactor: 1 });
+    // Keep the cookie banner out of the saved HTML
+    await page.evaluateOnNewDocument(() => {
+      localStorage.setItem('lunaCookieConsent', JSON.stringify({ necessary: true, analytics: false, marketing: false }));
+    });
     await page.goto(`http://localhost:${PORT}${urlPath}`, {
       waitUntil: 'networkidle0',
       timeout: 45000,
+    });
+    // Network idle can fire before react-helmet writes the page's own title and canonical
+    await page.waitForFunction((route) => {
+      const canonical = document.querySelector('link[rel="canonical"][data-rh]');
+      if (!canonical) return false;
+      const canonicalPath = new URL(canonical.href).pathname.replace(/\/$/, '') || '/';
+      return canonicalPath === (route.replace(/\/$/, '') || '/');
+    }, { timeout: 10000 }, urlPath).catch(() => {
+      console.warn(`⚠️ Canonical never matched ${urlPath}; saving anyway`);
     });
 
     const html = await page.content();
@@ -64,7 +90,15 @@ async function main() {
   }
 
   const app = express();
-  const pristineIndexHtml = fs.readFileSync(path.join(BUILD_DIR, 'index.html'), 'utf8');
+  // Keep the untouched Vite shell: once "/" is prerendered, build/index.html holds the home page
+  const shellPath = path.join(BUILD_DIR, '.prerender-shell.html');
+  if (!fs.existsSync(shellPath)) {
+    fs.copyFileSync(path.join(BUILD_DIR, 'index.html'), shellPath);
+  }
+  const pristineIndexHtml = fs.readFileSync(shellPath, 'utf8');
+  if (pristineIndexHtml.includes('data-rh=')) {
+    throw new Error('build/index.html is already prerendered. Run `npm run build:vite` first.');
+  }
 
   app.use((req, res, next) => {
     const ext = path.extname(req.path);
@@ -84,12 +118,16 @@ async function main() {
     console.log(`🚀 Prerender server: http://localhost:${PORT}`);
     console.log(`📋 Total URLs to prerender: ${urls.length}`);
 
-    browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    }).catch(err => {
+    try {
+      browser = await launchBrowser();
+    } catch (err) {
+      if (process.env.VERCEL) {
+        // Don't block the deploy; the site still works as a client-rendered app
+        console.error(`🚨 PRERENDER SKIPPED: Chromium failed to launch on Vercel: ${err.message}`);
+        return;
+      }
       throw new Error(`Puppeteer failed to launch Chrome: ${err.message}\nRun: npm run puppeteer:install`);
-    });
+    }
 
     const results = await renderInBatches(browser, urls);
     const failed = results.filter(result => !result.ok);
