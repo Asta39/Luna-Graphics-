@@ -5,7 +5,8 @@
       "name": "Luna Graphics",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "start"],
-      "port": 4028
+      "port": 4028,
+      "autoPort": true
     }
   ]
 }
